@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0b1d33">
+<title>MY WALK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1d33; --navy2:#0e2340; --card:#122a47; --card2:#16304f;
+  --line:rgba(201,162,75,.32); --line2:rgba(201,162,75,.14);
+  --gold:#c9a24b; --gold2:#e2c274; --parch:#f2e8d5; --parch2:#e6d9bd;
+  --ink:#2b2312; --dim:#9fb0c4; --dim2:#6e819a;
+  --accent:var(--gold); --accent2:var(--gold2);
+  --danger:#c96a5a; --ok:#7fae7f;
+}
+body.wing-devo{--accent:#d9b45e;--accent2:#ecd08a}
+body.wing-prayer{--accent:#d08a6a;--accent2:#e8b294}
+body.wing-study{--accent:#8fb4cf;--accent2:#b8d4e8}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--navy);color:var(--parch);font-family:"EB Garamond",Georgia,serif;font-size:18px;line-height:1.5;min-height:100vh;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+#app{max-width:640px;margin:0 auto;padding:14px 14px 24px}
+a{color:var(--accent2);text-decoration:none}
+button{font-family:"Oswald",sans-serif;cursor:pointer;border:none;background:none;color:inherit}
+input,textarea,select{font-family:"EB Garamond",serif;font-size:17px;color:var(--parch);background:var(--navy2);border:1px solid var(--line2);border-radius:8px;padding:9px 11px;width:100%}
+input:focus,textarea:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+h1,h2,h3{font-family:"Cinzel",serif;font-weight:600;color:var(--gold2);letter-spacing:.04em}
+.eyebrow{font-family:"Oswald",sans-serif;font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line2);border-radius:14px;padding:16px;margin:12px 0;position:relative}
+.card.tap{cursor:pointer}
+.card.tap:active{background:var(--card2)}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);border:none;margin:10px 0}
+/* ---- gilt hero ---- */
+.hero{border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative;margin:14px 0;box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#13345c 0%,#0b1d33 70%);background-size:cover;background-position:center}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,29,51,.25) 0%,rgba(11,29,51,.82) 78%)}
+.hero-in{position:relative;padding:22px 18px 18px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-frame{position:absolute;inset:9px;border:1px solid var(--line);border-radius:11px;pointer-events:none}
+.hero-frame::before,.hero-frame::after{content:"✦";position:absolute;color:var(--gold);font-size:10px;line-height:1}
+.hero-frame::before{top:-6px;left:50%;transform:translateX(-50%)}
+.hero-frame::after{bottom:-6px;left:50%;transform:translateX(-50%)}
+.hero-date{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}
+.hero-verse{font-size:20px;line-height:1.45;font-style:italic;color:var(--parch);text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.hero-ref{font-family:"Cinzel",serif;font-size:13px;color:var(--gold2);margin-top:7px;letter-spacing:.08em}
+.hero-story{margin-top:12px;padding-top:10px;border-top:1px solid var(--line2);font-family:"Cinzel",serif;font-size:15px;color:var(--parch2)}
+.greet{font-family:"Cinzel",serif;font-size:24px;color:var(--gold2);margin:6px 2px 0;letter-spacing:.03em}
+/* ---- home cards ---- */
+.hcard{display:flex;align-items:center;gap:13px}
+.hcard .ic{width:38px;height:38px;flex:0 0 38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:17px;font-family:"Cinzel",serif}
+.hcard .bd{flex:1;min-width:0}
+.hcard .t1{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.hcard .t2{font-size:18px;color:var(--parch);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hcard .t3{font-size:14px;color:var(--dim)}
+.hcard .go{color:var(--dim2);font-size:18px}
+/* ---- nav ---- */
+nav{position:fixed;bottom:0;left:0;right:0;background:rgba(9,22,40,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line2);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;padding:10px 0 8px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim2);display:flex;flex-direction:column;align-items:center;gap:3px}
+nav button .nic{font-size:19px;line-height:1;font-family:"EB Garamond",serif}
+nav button.on{color:var(--accent2)}
+/* ---- sections ---- */
+.pagehead{display:flex;align-items:baseline;justify-content:space-between;margin:8px 2px 2px}
+.pagehead h1{font-size:22px}
+.tabs{display:flex;gap:8px;margin:12px 0 4px}
+.tabs button{flex:1;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:9px 0;border:1px solid var(--line2);border-radius:9px;color:var(--dim)}
+.tabs button.on{border-color:var(--accent);color:var(--accent2);background:var(--navy2)}
+.btn{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent2);border-radius:9px;padding:9px 15px}
+.btn:active{background:var(--navy2)}
+.btn.solid{background:var(--accent);color:var(--navy);font-weight:500}
+.btn.ghost{border-color:var(--line2);color:var(--dim)}
+.btn.sm{padding:5px 10px;font-size:11px}
+.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0}
+/* scripture text panel (parchment) */
+.scripture{background:var(--parch);color:var(--ink);border-radius:11px;padding:15px 16px;font-size:19px;line-height:1.55;box-shadow:inset 0 0 0 1px rgba(139,109,44,.25)}
+.scripture .ref{font-family:"Cinzel",serif;font-size:13px;color:#7a5c1e;display:block;margin-top:8px;letter-spacing:.06em}
+.naves{white-space:pre-wrap;font-size:16.5px;line-height:1.55;color:var(--parch2)}
+.naves a{border-bottom:1px dotted var(--line)}
+.reflink{border-bottom:1px dotted var(--line)}
+.check{width:26px;height:26px;flex:0 0 26px;border:1.5px solid var(--accent);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;color:transparent;font-size:16px}
+.check.on{background:var(--accent);color:var(--navy)}
+.row{display:flex;align-items:center;gap:11px}
+.grow{flex:1;min-width:0}
+.small{font-size:14px;color:var(--dim)}
+.tiny{font-size:12px;color:var(--dim2)}
+.right{text-align:right}
+.center{text-align:center}
+.mt{margin-top:12px}.mb{margin-bottom:12px}
+/* calendar */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:10px}
+.cal .d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:14px;color:var(--dim);border:1px solid transparent}
+.cal .d.has{color:var(--parch);border-color:var(--line2)}
+.cal .d.read{background:var(--accent);color:var(--navy);font-weight:600;border-color:var(--accent)}
+.cal .d.today{outline:2px solid var(--accent2)}
+.cal .hd{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.1em;color:var(--dim2);text-align:center}
+/* hymn */
+.hymn-v{margin:14px 0;font-size:19px;line-height:1.6;white-space:pre-line}
+.hymn-c{margin:14px 0;padding:12px 14px;border-left:2px solid var(--accent);font-style:italic;white-space:pre-line;color:var(--gold2)}
+.vnum{font-family:"Cinzel",serif;font-size:12px;color:var(--accent);display:block;margin-bottom:3px;letter-spacing:.14em}
+/* flash card */
+.flash{border:1px solid var(--line);border-radius:16px;background:linear-gradient(170deg,var(--card2),var(--card));padding:26px 20px;min-height:290px;display:flex;flex-direction:column;box-shadow:0 8px 26px rgba(0,0,0,.4)}
+.flash .fh{font-family:"Cinzel",serif;font-size:13px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase}
+.flash .fn{font-family:"Cinzel",serif;font-size:26px;color:var(--parch);margin:8px 0 4px}
+.flash ul{list-style:none;margin-top:10px}
+.flash li{padding:7px 0;border-bottom:1px solid var(--line2);font-size:18px}
+.prog{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.2em;color:var(--dim)}
+/* memory practice */
+.mem-w{display:inline-block;margin:0 3px 6px 0;padding:2px 7px;border-radius:6px;background:var(--parch);color:var(--ink);font-size:19px;cursor:pointer;user-select:none}
+.mem-w.hid{background:var(--navy2);color:var(--navy2);border:1px dashed var(--line2)}
+/* character medallion */
+.medal{width:86px;height:86px;border-radius:50%;border:2px solid var(--gold);margin:0 auto;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 38% 32%,#1b3a63,#0d2240);box-shadow:0 0 0 5px rgba(201,162,75,.12)}
+.medal svg{width:52px;height:52px;stroke:var(--gold2);fill:none;stroke-width:1.4}
+/* lists */
+.li{display:flex;align-items:center;gap:10px;padding:11px 2px;border-bottom:1px solid var(--line2)}
+.li:last-child{border-bottom:none}
+.pill{font-family:"Oswald",sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--accent2)}
+.iconb{font-size:17px;color:var(--dim2);padding:5px 7px}
+.modal{position:fixed;inset:0;background:rgba(5,13,24,.8);z-index:90;display:flex;align-items:flex-end;justify-content:center}
+.modal .mbox{background:var(--card);border:1px solid var(--line);border-radius:18px 18px 0 0;max-width:640px;width:100%;max-height:86vh;overflow:auto;padding:20px 16px calc(20px + env(safe-area-inset-bottom))}
+.searchwrap{position:sticky;top:0;background:var(--card);padding-bottom:8px}
+details summary{cursor:pointer;font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);padding:8px 0}
+.loading{text-align:center;color:var(--dim);padding:60px 0;font-style:italic}
+@media (prefers-reduced-motion:no-preference){
+  .view{animation:fadein .25s ease}
+  @keyframes fadein{from{opacity:0;transform:translateY(5px)}to{opacity:1}}
+}
+</style>
+</head>
+<body>
+<div id="app"><div class="loading">Opening the Book…</div></div>
+<nav id="nav">
+  <button data-w="home"><span class="nic">✦</span>Home</button>
+  <button data-w="devo"><span class="nic">❧</span>Devo</button>
+  <button data-w="prayer"><span class="nic">🙏</span>Prayer</button>
+  <button data-w="study"><span class="nic">✒</span>Study</button>
+</nav>
+<script>
+/* ============ MY WALK — single-file app ============ */
+'use strict';
+/* ---------- state ---------- */
+const LS='mywalk1';
+const S=Object.assign({
+  reads:{}, seqMode:false,
+  currentTopic:null, currentCharacter:null,
+  memArchive:[], memProgress:{},
+  notes:[], gdoc:'',
+  userQuestions:[], qStudied:{},
+  albums:null, sermons:null, sermonDone:{}, albumAdds:[],
+  prayer:null, prayerChecks:{}, testimony:[],
+  studyTab:'topic'
+}, JSON.parse(localStorage.getItem(LS)||'{}'));
+function save(){ localStorage.setItem(LS, JSON.stringify(S)); }
+
+/* ---------- data ---------- */
+const D={}; // kjv, naves, plan, hymns, bios, content, strongs, webster:{}
+async function j(u){ const r=await fetch(u); if(!r.ok) throw new Error(u); return r.json(); }
+async function boot(){
+  [D.plan,D.hymns,D.content,D.naves,D.kjv,D.bios] = await Promise.all([
+    j('data/plan.json'), j('data/hymns.json'), j('data/content.json'),
+    j('data/naves.json'), j('data/kjv.json'), j('data/bios.json')
+  ]);
+  if(!S.currentTopic) S.currentTopic = randNave('t');
+  if(!S.currentCharacter) S.currentCharacter = randNave('c');
+  if(S.albums===null) S.albums = D.content.albums.slice();
+  if(S.sermons===null) S.sermons = D.content.sermons.slice();
+  if(!S.prayer) S.prayer = seedPrayer();
+  save();
+  go(location.hash.replace('#','')||'home');
+}
+async function getStrongs(){ if(!D.strongs) D.strongs=await j('data/strongs.json'); return D.strongs; }
+D.webster={};
+async function getWebster(letter){ if(!D.webster[letter]) D.webster[letter]=await j('data/webster/'+letter+'.json'); return D.webster[letter]; }
+function seedPrayer(){
+  let id=1;
+  return { headings: D.content.prayerSeed.map(h=>({id:'h'+(id++),name:h.h,
+    items:h.items.map(n=>({id:'i'+(id++),name:n,sched:{type:'daily',days:[]},requests:[]}))})),
+    nextId:id };
+}
+function pid(){ S.prayer.nextId=(S.prayer.nextId||1000)+1; return 'p'+S.prayer.nextId; }
+
+/* ---------- dates & weeks ---------- */
+const DAY0=new Date(2026,6,2); // Jul 2 2026 = plan index 0
+function todayKey(d){ d=d||new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function dayIndexFor(date){ const a=new Date(date.getFullYear(),date.getMonth(),date.getDate()); return Math.round((a-DAY0)/86400000); }
+function dateForIndex(i){ const d=new Date(DAY0); d.setDate(d.getDate()+i); return d; }
+function clampDay(i){ return Math.max(0, Math.min(D.plan.length-1, i)); }
+function calendarDay(){ return clampDay(dayIndexFor(new Date())); }
+function seqDay(){ for(let i=0;i<D.plan.length;i++) if(!S.reads[i]) return i; return D.plan.length-1; }
+function currentDay(){ return S.seqMode ? Math.min(seqDay(), calendarDay()) : calendarDay(); }
+function weekOfYear(d){ d=d||new Date(); const jan1=new Date(d.getFullYear(),0,1); return Math.min(52, Math.floor((d-jan1)/86400000/7)+1); }
+function fmtDate(d){ return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'}); }
+function fmtShort(d){ return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}); }
+function streak(){
+  let n=0, i=calendarDay();
+  if(!S.reads[i]) i--; // today not yet read: streak counts through yesterday
+  for(; i>=0 && S.reads[i]; i--) n++;
+  return n;
+}
+
+/* ---------- scripture references ---------- */
+const BOOKMAP={GEN:'Genesis',EXO:'Exodus',LEV:'Leviticus',NUM:'Numbers',DEU:'Deuteronomy',JOS:'Joshua',JDG:'Judges',RUT:'Ruth','1SA':'1 Samuel','2SA':'2 Samuel','1KI':'1 Kings','2KI':'2 Kings','1CH':'1 Chronicles','2CH':'2 Chronicles',EZR:'Ezra',NEH:'Nehemiah',EST:'Esther',JOB:'Job',PSA:'Psalms',PRO:'Proverbs',ECC:'Ecclesiastes',So:'Song of Solomon',ISA:'Isaiah',JER:'Jeremiah',LAM:'Lamentations',EZK:'Ezekiel',DAN:'Daniel',HOS:'Hosea',JOL:'Joel',AMO:'Amos',OBA:'Obadiah',JON:'Jonah',MIC:'Micah',NAM:'Nahum',HAB:'Habakkuk',ZEP:'Zephaniah',HAG:'Haggai',ZEC:'Zechariah',MAL:'Malachi',MAT:'Matthew',MRK:'Mark',LUK:'Luke',JHN:'John',ACT:'Acts',ROM:'Romans','1CO':'1 Corinthians','2CO':'2 Corinthians',GAL:'Galatians',EPH:'Ephesians',PHP:'Philippians',COL:'Colossians','1TH':'1 Thessalonians','2TH':'2 Thessalonians','1TI':'1 Timothy','2TI':'2 Timothy',TIT:'Titus',PHM:'Philemon',HEB:'Hebrews',JAS:'James','1PE':'1 Peter','2PE':'2 Peter','1JN':'1 John','1JHN':'1 John','2JN':'2 John','3JN':'3 John',Jude:'Jude',REV:'Revelation'};
+const CODE_RE='(?:1JHN|1CH|1CO|1JN|1KI|1PE|1SA|1TH|1TI|2CH|2CO|2JN|2KI|2PE|2SA|2TH|2TI|3JN|ACT|AMO|COL|DAN|DEU|ECC|EPH|EST|EXO|EZK|EZR|GAL|GEN|HAB|HAG|HEB|HOS|ISA|JAS|JDG|JER|JHN|JOB|JOL|JON|JOS|LAM|LEV|LUK|MAL|MAT|MIC|MRK|NAM|NEH|NUM|OBA|PHM|PHP|PRO|PSA|REV|ROM|RUT|TIT|ZEC|ZEP|Jude|So)';
+function bibleHref(book,ch,v){ return 'bible://'+encodeURIComponent(book+' '+ch+(v?':'+v:'')); }
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+/* linkify a verbatim Nave's entry: stateful scan; keeps display text identical */
+function linkifyNaves(text){
+  const tok=new RegExp('\\b'+CODE_RE+'\\b|\\d+(?::\\d+)?(?:[\\-–]\\d+(?::\\d+)?)?(?:,\\d+(?::\\d+)?(?:[\\-–]\\d+(?::\\d+)?)?)*','g');
+  let out='', last=0, book=null, m;
+  while((m=tok.exec(text))!==null){
+    const gap=text.slice(last,m.index);
+    out+=esc(gap);
+    const t=m[0];
+    if(BOOKMAP[t]){ // book code
+      book=BOOKMAP[t];
+      out+=esc(t);
+    } else { // number cluster
+      const glueOk = book && /^[\s;,]*(?:with|and|cf\.?|to)?[\s;,]*$/i.test(gap);
+      const first = t.match(/^(\d+)(?::(\d+))?/);
+      if(glueOk && first){
+        out+='<a class="reflink" href="'+bibleHref(book,first[1],first[2]||'')+'">'+esc(t)+'</a>';
+      } else { book=null; out+=esc(t); }
+    }
+    last=m.index+t.length;
+  }
+  out+=esc(text.slice(last));
+  return out;
+}
+/* full-name refs like "Genesis 1:1-2:3", "Psalm 1", "1 Peter 3:18-20" */
+function refLink(ref){
+  return '<a class="reflink" href="'+('bible://'+encodeURIComponent(ref))+'">'+esc(ref)+'</a>';
+}
+function parseFullRef(ref){ // -> {book,ch,v} first verse of ref, book normalized to KJV key
+  const m=String(ref).trim().match(/^([1-3]?\s?[A-Za-z][A-Za-z ]+?)\s+(\d+)(?::(\d+))?/);
+  if(!m) return null;
+  let book=m[1].trim();
+  if(book==='Psalm') book='Psalms';
+  if(book==='Song of Songs') book='Song of Solomon';
+  if(!D.kjv[book]){ const k=Object.keys(D.kjv).find(b=>b.toLowerCase()===book.toLowerCase()); if(k) book=k; else return null; }
+  return {book, ch:+m[2], v:m[3]?+m[3]:1};
+}
+function kjvText(book,ch,v){
+  const B=D.kjv[book]; if(!B) return null;
+  const C=B[ch-1]; if(!C) return null;
+  return C[v-1]||null;
+}
+/* first reference in a Nave's entry -> {book,ch,v,label} */
+function firstNaveRef(entry){
+  const re=new RegExp('\\b('+CODE_RE+')\\s+(\\d+)(?::(\\d+))?');
+  const m=entry.match(re);
+  if(!m) return null;
+  const book=BOOKMAP[m[1]]; if(!book) return null;
+  const ch=+m[2], v=m[3]?+m[3]:1;
+  return {book,ch,v,label:book+' '+ch+':'+v};
+}
+
+/* ---------- naves helpers ---------- */
+function randNave(kind){
+  const pool=D.naves.map((x,i)=>({x,i})).filter(o=>o.x.k===kind&&o.x.r===1);
+  return pool[Math.floor(Math.random()*pool.length)].i;
+}
+function naveByIndex(i){ return D.naves[i]; }
+
+/* ---------- router ---------- */
+const APP=document.getElementById('app');
+let WING='home';
+function go(w,sub){
+  WING=w;
+  document.body.className='wing-'+w;
+  location.hash=w;
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.w===w));
+  window.scrollTo(0,0);
+  ({home:renderHome,devo:renderDevo,prayer:renderPrayer,study:renderStudy}[w]||renderHome)(sub);
+}
+document.getElementById('nav').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(b) go(b.dataset.w);
+});
+function h(html){ APP.innerHTML='<div class="view">'+html+'</div>'; }
+function el(id){ return document.getElementById(id); }
+function modal(html){
+  const m=document.createElement('div'); m.className='modal';
+  m.innerHTML='<div class="mbox">'+html+'</div>';
+  m.addEventListener('click',e=>{ if(e.target===m) m.remove(); });
+  document.body.appendChild(m); return m;
+}
+
+/* ---------- HOME ---------- */
+function greeting(){
+  const h=new Date().getHours();
+  return h<12?'Good Morning':h<17?'Good Afternoon':'Good Evening';
+}
+function memVerseInfo(){
+  const t=naveByIndex(S.currentTopic);
+  const r=firstNaveRef(t.e);
+  if(!r) return {text:'', ref:'', topic:t.s};
+  const txt=kjvText(r.book,r.ch,r.v)||'';
+  return {text:txt, ref:r.label, topic:t.s, r};
+}
+function heroImg(){
+  const imgs=D.content.heroImages||[];
+  if(!imgs.length) return '';
+  const i=Math.floor((new Date()-new Date(2026,0,1))/86400000)%imgs.length;
+  return imgs[i];
+}
+function hymnOfWeek(){ const w=weekOfYear(); return D.hymns.find(x=>x.w===w)||D.hymns[0]; }
+function albumOfWeek(){ if(!S.albums.length) return null; return S.albums[(weekOfYear()-1)%S.albums.length]; }
+function sermonsOfWeek(){
+  if(!S.sermons.length) return [];
+  const w=weekOfYear()-1;
+  const a=S.sermons[(w*2)%S.sermons.length], b=S.sermons[(w*2+1)%S.sermons.length];
+  return a===b?[a]:[a,b];
+}
+function prayerDue(){
+  const dow=new Date().getDay(); const items=[];
+  S.prayer.headings.forEach(hd=>hd.items.forEach(it=>{
+    const s=it.sched||{type:'daily'};
+    if(s.type==='daily'||(s.days||[]).includes(dow)) items.push({hd,it});
+  }));
+  const done=S.prayerChecks[todayKey()]||[];
+  return {items, remaining:items.filter(x=>!done.includes(x.it.id))};
+}
+function renderHome(){
+  const day=currentDay(), plan=D.plan[day];
+  const mv=memVerseInfo();
+  const hy=hymnOfWeek(), al=albumOfWeek(), sm=sermonsOfWeek();
+  const pd=prayerDue();
+  const stories=plan[0].map(s=>s[0]).join(' · ');
+  const img=heroImg();
+  h(`
+  <div class="greet">${greeting()}, Andrew</div>
+  <div class="hero" onclick="go('study','memory')" role="button" tabindex="0">
+    <div class="hero-bg" ${img?`style="background-image:linear-gradient(180deg,rgba(11,29,51,.2),rgba(11,29,51,.75)),url('${img}')"`:''}></div>
+    <div class="hero-frame"></div>
+    <div class="hero-in">
+      <div class="hero-date">${fmtDate(new Date())}</div>
+      <div class="hero-verse">${esc(mv.text)}</div>
+      <div class="hero-ref">${esc(mv.ref)}</div>
+      <div class="hero-story">${esc(stories)}</div>
+    </div>
+  </div>
+  <div class="card tap hcard" onclick="go('devo')">
+    <div class="ic">❧</div><div class="bd">
+      <div class="t1">Passage of the Day</div>
+      <div class="t2">${esc(plan[0].map(s=>s[0]).join(', '))}</div>
+      <div class="t3">${esc(plan[0].map(s=>s[1]).join(' · '))}</div>
+    </div><div class="go">›</div>
+  </div>
+  <div class="card tap hcard" onclick="go('prayer')">
+    <div class="ic">🙏</div><div class="bd">
+      <div class="t1">Prayer</div>
+      <div class="t2">${pd.items.length? pd.remaining.length+' of '+pd.items.length+' remaining' : 'Build your prayer list'}</div>
+    </div><div class="go">›</div>
+  </div>
+  <div class="card tap hcard" onclick="go('devo','hymn')">
+    <div class="ic">♪</div><div class="bd">
+      <div class="t1">Song of the Week</div>
+      <div class="t2">${esc(hy.t)}</div>
+      <div class="t3">${esc(hy.a)}</div>
+    </div><div class="go">›</div>
+  </div>
+  ${al?`<div class="card tap hcard" onclick="openAlbum()">
+    <div class="ic">◉</div><div class="bd">
+      <div class="t1">Album of the Week</div>
+      <div class="t2">${esc(al.t)}</div>${al.a?`<div class="t3">${esc(al.a)}</div>`:''}
+    </div><div class="go">›</div>
+  </div>`:`<div class="card tap hcard" onclick="go('devo','albums')">
+    <div class="ic">◉</div><div class="bd">
+      <div class="t1">Album of the Week</div>
+      <div class="t2">Add your album queue</div>
+    </div><div class="go">›</div>
+  </div>`}
+  ${sm.length?`<div class="card">
+    <div class="hcard" style="margin-bottom:6px"><div class="ic">🕮</div><div class="bd"><div class="t1">Sermons of the Week</div></div></div>
+    ${sm.map((s,i)=>`<div class="li" onclick="openSermon(${i})" role="button" tabindex="0"><div class="grow">${esc(s.t)}</div><div class="go">▶</div></div>`).join('')}
+  </div>`:`<div class="card tap hcard" onclick="go('devo','sermons')">
+    <div class="ic">🕮</div><div class="bd">
+      <div class="t1">Sermons of the Week</div>
+      <div class="t2">Add your sermon queue</div>
+    </div><div class="go">›</div>
+  </div>`}
+  <div class="card tap hcard" onclick="go('study')">
+    <div class="ic">✒</div><div class="bd">
+      <div class="t1">Study Topic</div>
+      <div class="t2">${esc(naveByIndex(S.currentTopic).s)}</div>
+      <div class="t3">Character: ${esc(naveByIndex(S.currentCharacter).s)}</div>
+    </div><div class="go">›</div>
+  </div>`);
+}
+function openAlbum(){
+  const al=albumOfWeek(); if(!al) return;
+  location.href = al.u || 'https://music.apple.com/search?term='+encodeURIComponent(al.t+(al.a?' '+al.a:''));
+}
+function openSermon(i){
+  const s=sermonsOfWeek()[i]; if(!s) return;
+  if(s.u) location.href=s.u;
+  else location.href='https://music.apple.com/search?term='+encodeURIComponent(s.t);
+}
+
+/* ---------- DEVO ---------- */
+let devoDay=null;
+function renderDevo(sub){
+  if(sub==='hymn') return renderHymn();
+  if(sub==='albums') return renderAlbums();
+  if(sub==='sermons') return renderSermons();
+  if(devoDay===null) devoDay=currentDay();
+  const day=devoDay, plan=D.plan[day], date=dateForIndex(day);
+  const read=!!S.reads[day];
+  h(`
+  <div class="pagehead"><h1>Devotions</h1><span class="prog">Streak · ${streak()} day${streak()===1?'':'s'}</span></div>
+  <div class="card">
+    <div class="row">
+      <button class="iconb" onclick="devoNav(-1)" aria-label="Previous day">‹</button>
+      <div class="grow center">
+        <div class="eyebrow">${esc(fmtDate(date))}</div>
+      </div>
+      <button class="iconb" onclick="devoNav(1)" aria-label="Next day">›</button>
+    </div>
+    <hr class="rule">
+    <p style="font-size:17.5px;color:var(--parch2)">${esc(plan[2])}</p>
+    <hr class="rule">
+    ${plan[0].map(s=>`<div class="li"><div class="grow">
+        <div style="font-family:Cinzel,serif;font-size:16px">${esc(s[0])}</div>
+        <div class="small">${refLink(s[1])}</div>
+      </div></div>`).join('')}
+    <div class="mt small"><span class="eyebrow" style="font-size:10px">Companion</span><br>
+      ${plan[1].map(r=>refLink(r)).join(' &nbsp;·&nbsp; ')}</div>
+    <div class="row mt">
+      <div class="check ${read?'on':''}" role="checkbox" aria-checked="${read}" tabindex="0" onclick="toggleRead(${day})">✓</div>
+      <div class="grow">Mark as read</div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="row">
+      <div class="grow eyebrow">Pick up where I left off</div>
+      <div class="check ${S.seqMode?'on':''}" role="switch" aria-checked="${S.seqMode}" tabindex="0" onclick="S.seqMode=!S.seqMode;save();devoDay=null;renderDevo()">✓</div>
+    </div>
+    <div class="tiny mt">${S.seqMode?'Reading in sequence — next unread day is shown first.':'Calendar mode — today\u2019s date maps to the reading.'}</div>
+    ${renderCal(day)}
+  </div>
+  <div class="card tap hcard" onclick="go('devo','hymn')">
+    <div class="ic">♪</div><div class="bd"><div class="t1">Song of the Week</div><div class="t2">${esc(hymnOfWeek().t)}</div></div><div class="go">›</div>
+  </div>
+  <div class="card tap hcard" onclick="go('devo','albums')">
+    <div class="ic">◉</div><div class="bd"><div class="t1">Album Queue</div><div class="t2">${S.albums.length} album${S.albums.length===1?'':'s'}</div></div><div class="go">›</div>
+  </div>
+  <div class="card tap hcard" onclick="go('devo','sermons')">
+    <div class="ic">🕮</div><div class="bd"><div class="t1">Sermon Queue</div><div class="t2">${S.sermons.length} sermon${S.sermons.length===1?'':'s'} · 2 per week</div></div><div class="go">›</div>
+  </div>`);
+}
+function devoNav(d){ devoDay=clampDay(devoDay+d); renderDevo(); }
+function toggleRead(i){ if(S.reads[i]) delete S.reads[i]; else S.reads[i]=true; save(); renderDevo(); }
+function renderCal(sel){
+  const selDate=dateForIndex(sel);
+  const y=selDate.getFullYear(), m=selDate.getMonth();
+  const first=new Date(y,m,1), start=first.getDay(), dim=new Date(y,m+1,0).getDate();
+  const tk=calendarDay();
+  let cells='<div class="cal">'+['S','M','T','W','T','F','S'].map(d=>`<div class="hd">${d}</div>`).join('');
+  for(let i=0;i<start;i++) cells+='<div></div>';
+  for(let d=1;d<=dim;d++){
+    const idx=dayIndexFor(new Date(y,m,d));
+    const has=idx>=0&&idx<D.plan.length;
+    const cls='d'+(has?' has':'')+(has&&S.reads[idx]?' read':'')+(has&&idx===tk?' today':'');
+    cells+=`<div class="${cls}" ${has?`role="button" tabindex="0" onclick="devoDay=${idx};renderDevo()"`:''}>${d}</div>`;
+  }
+  cells+='</div>';
+  return `<div class="row mt">
+    <button class="iconb" onclick="calMove(${sel},-1)">‹</button>
+    <div class="grow center eyebrow">${selDate.toLocaleDateString('en-US',{month:'long',year:'numeric'})}</div>
+    <button class="iconb" onclick="calMove(${sel},1)">›</button></div>`+cells;
+}
+function calMove(sel,dir){
+  const d=dateForIndex(sel); d.setMonth(d.getMonth()+dir,15);
+  devoDay=clampDay(dayIndexFor(d)); renderDevo();
+}
+function renderHymn(){
+  const hy=hymnOfWeek();
+  h(`
+  <div class="pagehead"><h1>Song of the Week</h1><button class="btn sm ghost" onclick="go('devo')">Back</button></div>
+  <div class="card">
+    <div class="center">
+      <div class="eyebrow">Week ${hy.w}</div>
+      <h2 style="font-size:22px;margin:6px 0 2px">${esc(hy.t)}</h2>
+      <div class="small">${esc(hy.a)}</div>
+    </div>
+    <hr class="rule">
+    ${hy.v.map((v,i)=>`<div class="hymn-v"><span class="vnum">Verse ${i+1}</span>${esc(v)}</div>${hy.c&&i===0?`<div class="hymn-c">${esc(hy.c)}</div>`:''}`).join('')}
+  </div>
+  ${renderHymnList()}`);
+}
+function renderHymnList(){
+  return `<details class="card"><summary>All 52 weeks</summary>
+    ${D.hymns.map(x=>`<div class="li" role="button" tabindex="0" onclick="showHymn(${x.w})"><div class="pill">${x.w}</div><div class="grow">${esc(x.t)}</div></div>`).join('')}
+  </details>`;
+}
+function showHymn(w){
+  const hy=D.hymns.find(x=>x.w===w);
+  modal(`<div class="center"><div class="eyebrow">Week ${hy.w}</div>
+    <h2 style="font-size:21px;margin:6px 0 2px">${esc(hy.t)}</h2><div class="small">${esc(hy.a)}</div></div>
+    <hr class="rule">
+    ${hy.v.map((v,i)=>`<div class="hymn-v"><span class="vnum">Verse ${i+1}</span>${esc(v)}</div>${hy.c&&i===0?`<div class="hymn-c">${esc(hy.c)}</div>`:''}`).join('')}`);
+}
+function renderAlbums(){
+  const wk=weekOfYear();
+  h(`
+  <div class="pagehead"><h1>Album Queue</h1><button class="btn sm ghost" onclick="go('devo')">Back</button></div>
+  ${S.albums.length?'':`<div class="card small">Your album queue is empty. Add albums one at a time, or paste your whole album-queue list below — one album per line, e.g. <i>Artist — Title</i> (an Apple Music link on the line is kept).</div>`}
+  <div class="card">
+    <div class="btnrow"><button class="btn" onclick="addAlbum()">Add album</button><button class="btn ghost" onclick="importList('albums')">Paste list</button></div>
+    ${S.albums.map((a,i)=>{
+      const isNow = S.albums.length && ((wk-1)%S.albums.length)===i;
+      return `<div class="li"><div class="pill">${i+1}</div><div class="grow" ${a.u?`onclick="location.href='${esc(a.u)}'" role="button" tabindex="0"`:''}>${esc(a.t)}${a.a?`<div class="tiny">${esc(a.a)}</div>`:''}</div>${isNow?'<span class="pill">this week</span>':''}<button class="iconb" aria-label="Remove" onclick="S.albums.splice(${i},1);save();renderAlbums()">✕</button></div>`;
+    }).join('')}
+  </div>`);
+}
+function addAlbum(){
+  const m=modal(`<h3 class="mb">Add album</h3>
+    <input id="al-t" placeholder="Album title"><div class="mt"></div>
+    <input id="al-a" placeholder="Artist (optional)"><div class="mt"></div>
+    <input id="al-u" placeholder="Apple Music link (optional)"><div class="mt"></div>
+    <button class="btn solid" id="al-go">Add to queue</button>`);
+  m.querySelector('#al-go').onclick=()=>{
+    const t=m.querySelector('#al-t').value.trim(); if(!t) return;
+    S.albums.push({t,a:m.querySelector('#al-a').value.trim(),u:m.querySelector('#al-u').value.trim()});
+    save(); m.remove(); renderAlbums();
+  };
+}
+function importList(kind){
+  const m=modal(`<h3 class="mb">Paste ${kind==='albums'?'album':'sermon'} list</h3>
+    <div class="small mb">One per line. "Artist — Title" or plain titles both work; any http link on a line is kept as its link.</div>
+    <textarea id="imp" rows="10"></textarea><div class="mt"></div>
+    <button class="btn solid" id="imp-go">Import</button>`);
+  m.querySelector('#imp-go').onclick=()=>{
+    const lines=m.querySelector('#imp').value.split('\n').map(l=>l.trim()).filter(l=>l&&!l.startsWith('#'));
+    const items=lines.map(l=>{
+      const um=l.match(/https?:\/\/\S+/); const u=um?um[0]:'';
+      let rest=l.replace(/https?:\/\/\S+/,'').replace(/[|\s]+$/,'').trim();
+      rest=rest.replace(/^\d+[\.\)]\s*/,'').replace(/^[-*•]\s*/,'');
+      const parts=rest.split(/\s+[—–]\s+| - /);
+      if(kind==='albums'&&parts.length>=2) return {a:parts[0].trim(),t:parts.slice(1).join(' — ').trim(),u};
+      return kind==='albums'?{t:rest,a:'',u}:{t:rest,u};
+    }).filter(x=>x.t);
+    S[kind]=S[kind].concat(items); save(); m.remove();
+    kind==='albums'?renderAlbums():renderSermons();
+  };
+}
+function renderSermons(){
+  const wk=weekOfYear();
+  const nowIdx = S.sermons.length ? [((wk-1)*2)%S.sermons.length, ((wk-1)*2+1)%S.sermons.length] : [];
+  h(`
+  <div class="pagehead"><h1>Sermon Queue</h1><button class="btn sm ghost" onclick="go('devo')">Back</button></div>
+  ${S.sermons.length?'':`<div class="card small">Your sermon queue is empty. Add sermons or paste your sermon-queue list — one per line. Two sermons rotate in each week. <i>Preaching from the Pulpit is permanently excluded from this queue.</i></div>`}
+  <div class="card">
+    <div class="btnrow"><button class="btn" onclick="addSermon()">Add sermon</button><button class="btn ghost" onclick="importList('sermons')">Paste list</button></div>
+    ${S.sermons.map((s,i)=>`<div class="li">
+      <div class="check ${S.sermonDone[i]?'on':''}" role="checkbox" aria-checked="${!!S.sermonDone[i]}" tabindex="0" onclick="S.sermonDone[${i}]=!S.sermonDone[${i}];save();renderSermons()">✓</div>
+      <div class="grow" ${s.u?`onclick="location.href='${esc(s.u)}'" role="button" tabindex="0"`:''}>${esc(s.t)}</div>
+      ${nowIdx.includes(i)?'<span class="pill">this week</span>':''}
+      <button class="iconb" aria-label="Remove" onclick="S.sermons.splice(${i},1);save();renderSermons()">✕</button>
+    </div>`).join('')}
+  </div>`);
+}
+function addSermon(){
+  const m=modal(`<h3 class="mb">Add sermon</h3>
+    <input id="sm-t" placeholder="Sermon title"><div class="mt"></div>
+    <input id="sm-u" placeholder="Link to play (optional)"><div class="mt"></div>
+    <button class="btn solid" id="sm-go">Add to queue</button>`);
+  m.querySelector('#sm-go').onclick=()=>{
+    const t=m.querySelector('#sm-t').value.trim(); if(!t) return;
+    S.sermons.push({t,u:m.querySelector('#sm-u').value.trim()});
+    save(); m.remove(); renderSermons();
+  };
+}
+
+/* ---------- PRAYER ---------- */
+let flashPos=0, prayerView='pray'; // pray | manage | log
+function renderPrayer(sub){
+  if(sub) prayerView=sub;
+  h(`
+  <div class="pagehead"><h1>Prayer</h1></div>
+  <div class="tabs">
+    <button class="${prayerView==='pray'?'on':''}" onclick="prayerView='pray';flashPos=0;renderPrayer()">Pray</button>
+    <button class="${prayerView==='manage'?'on':''}" onclick="prayerView='manage';renderPrayer()">List</button>
+    <button class="${prayerView==='log'?'on':''}" onclick="prayerView='log';renderPrayer()">Answered</button>
+  </div>
+  <div id="pv"></div>`);
+  ({pray:renderPray,manage:renderManage,log:renderLog}[prayerView])();
+}
+function renderPray(){
+  const pd=prayerDue();
+  const done=S.prayerChecks[todayKey()]||[];
+  const cards=pd.items.filter(x=>!done.includes(x.it.id));
+  const pv=el('pv');
+  if(!pd.items.length){
+    pv.innerHTML=`<div class="card center"><p class="small">No prayer items are scheduled yet.</p>
+      <div class="mt"><button class="btn" onclick="prayerView='manage';renderPrayer()">Build your list</button></div></div>`;
+    return;
+  }
+  if(!cards.length){
+    pv.innerHTML=`<div class="card center" style="padding:40px 16px">
+      <div style="font-family:Cinzel,serif;font-size:22px;color:var(--gold2)">Amen.</div>
+      <p class="small mt">All ${pd.items.length} of today\u2019s prayers are finished.</p></div>`;
+    return;
+  }
+  if(flashPos>=cards.length) flashPos=0;
+  const c=cards[flashPos];
+  pv.innerHTML=`
+  <div class="center prog mb">${pd.items.length-cards.length+1} of ${pd.items.length} · ${cards.length} remaining</div>
+  <div class="flash">
+    <div class="fh">${esc(c.hd.name)}</div>
+    <div class="fn">${esc(c.it.name)}</div>
+    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p class="small" style="margin-top:8px">No specific requests written — pray as led.</p>'}
+    <div style="flex:1"></div>
+    <div class="btnrow" style="margin-bottom:0">
+      <button class="btn ghost" onclick="flashPos=(flashPos+1)%${cards.length};renderPray()">Skip</button>
+      <button class="btn solid grow" style="flex:1" onclick="prayDone('${c.it.id}')">Prayed ✓</button>
+    </div>
+  </div>`;
+}
+function prayDone(id){
+  const k=todayKey();
+  (S.prayerChecks[k]=S.prayerChecks[k]||[]).push(id);
+  save(); renderPray();
+}
+function renderManage(){
+  el('pv').innerHTML=`
+  <div class="btnrow"><button class="btn" onclick="editHeading()">Add heading</button></div>
+  ${S.prayer.headings.map((hd,hi)=>`
+  <div class="card">
+    <div class="row">
+      <div class="grow" style="font-family:Cinzel,serif;color:var(--gold2);font-size:17px">${esc(hd.name)}</div>
+      <button class="iconb" onclick="moveH(${hi},-1)" aria-label="Move up">↑</button>
+      <button class="iconb" onclick="moveH(${hi},1)" aria-label="Move down">↓</button>
+      <button class="iconb" onclick="editHeading(${hi})" aria-label="Edit">✎</button>
+    </div>
+    ${hd.items.map((it,ii)=>`
+      <div class="li">
+        <div class="grow" role="button" tabindex="0" onclick="openItem(${hi},${ii})">
+          ${esc(it.name)}
+          <div class="tiny">${schedLabel(it.sched)}${it.requests.length?` · ${it.requests.length} request${it.requests.length===1?'':'s'}`:''}</div>
+        </div>
+        <button class="iconb" onclick="moveI(${hi},${ii},-1)" aria-label="Move up">↑</button>
+        <button class="iconb" onclick="moveI(${hi},${ii},1)" aria-label="Move down">↓</button>
+      </div>`).join('')}
+    <div class="mt"><button class="btn sm ghost" onclick="editItem(${hi})">Add person / item</button></div>
+  </div>`).join('')}`;
+}
+function schedLabel(s){
+  if(!s||s.type==='daily') return 'Daily';
+  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return (s.days||[]).map(d=>names[d]).join(' · ')||'Unscheduled';
+}
+function moveH(i,d){ const a=S.prayer.headings; const j=i+d; if(j<0||j>=a.length) return; [a[i],a[j]]=[a[j],a[i]]; save(); renderManage(); }
+function moveI(hi,i,d){ const a=S.prayer.headings[hi].items; const j=i+d; if(j<0||j>=a.length) return; [a[i],a[j]]=[a[j],a[i]]; save(); renderManage(); }
+function editHeading(hi){
+  const hd=hi!==undefined?S.prayer.headings[hi]:null;
+  const m=modal(`<h3 class="mb">${hd?'Edit':'Add'} heading</h3>
+    <input id="hd-n" value="${hd?esc(hd.name):''}" placeholder="Heading name"><div class="mt"></div>
+    <div class="btnrow"><button class="btn solid" id="hd-go">Save</button>
+    ${hd?'<button class="btn ghost" id="hd-del">Delete heading</button>':''}</div>`);
+  m.querySelector('#hd-go').onclick=()=>{
+    const n=m.querySelector('#hd-n').value.trim(); if(!n) return;
+    if(hd) hd.name=n; else S.prayer.headings.push({id:pid(),name:n,items:[]});
+    save(); m.remove(); renderManage();
+  };
+  if(hd) m.querySelector('#hd-del').onclick=()=>{
+    if(!confirm('Delete this heading and everything under it?')) return;
+    S.prayer.headings.splice(hi,1); save(); m.remove(); renderManage();
+  };
+}
+function editItem(hi,ii){
+  const hd=S.prayer.headings[hi];
+  const it=ii!==undefined?hd.items[ii]:null;
+  const s=it?it.sched:{type:'daily',days:[]};
+  const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const m=modal(`<h3 class="mb">${it?'Edit':'Add'} — ${esc(hd.name)}</h3>
+    <input id="it-n" value="${it?esc(it.name):''}" placeholder="Name"><div class="mt"></div>
+    <div class="eyebrow mb">Schedule</div>
+    <div class="btnrow">
+      <button class="btn sm ${s.type==='daily'?'solid':'ghost'}" id="sc-d">Daily</button>
+      <button class="btn sm ${s.type==='days'?'solid':'ghost'}" id="sc-w">Specific days</button>
+    </div>
+    <div id="dayrow" class="btnrow" style="${s.type==='days'?'':'display:none'}">
+      ${names.map((n,i)=>`<button class="btn sm ${(s.days||[]).includes(i)?'solid':'ghost'}" data-d="${i}">${n}</button>`).join('')}
+    </div>
+    <div class="btnrow"><button class="btn solid" id="it-go">Save</button>
+    ${it?'<button class="btn ghost" id="it-del">Delete</button>':''}</div>`);
+  let type=s.type, days=(s.days||[]).slice();
+  m.querySelector('#sc-d').onclick=()=>{type='daily';m.querySelector('#sc-d').className='btn sm solid';m.querySelector('#sc-w').className='btn sm ghost';m.querySelector('#dayrow').style.display='none';};
+  m.querySelector('#sc-w').onclick=()=>{type='days';m.querySelector('#sc-w').className='btn sm solid';m.querySelector('#sc-d').className='btn sm ghost';m.querySelector('#dayrow').style.display='';};
+  m.querySelectorAll('#dayrow button').forEach(b=>b.onclick=()=>{
+    const d=+b.dataset.d;
+    if(days.includes(d)){days=days.filter(x=>x!==d);b.className='btn sm ghost';}
+    else {days.push(d);b.className='btn sm solid';}
+  });
+  m.querySelector('#it-go').onclick=()=>{
+    const n=m.querySelector('#it-n').value.trim(); if(!n) return;
+    if(it){it.name=n;it.sched={type,days};}
+    else hd.items.push({id:pid(),name:n,sched:{type,days},requests:[]});
+    save(); m.remove(); renderManage();
+  };
+  if(it) m.querySelector('#it-del').onclick=()=>{
+    if(!confirm('Delete '+it.name+'?')) return;
+    hd.items.splice(ii,1); save(); m.remove(); renderManage();
+  };
+}
+function openItem(hi,ii){
+  const hd=S.prayer.headings[hi], it=hd.items[ii];
+  const m=modal(`<div class="row"><div class="grow">
+      <div class="eyebrow">${esc(hd.name)}</div>
+      <h3>${esc(it.name)}</h3><div class="tiny">${schedLabel(it.sched)}</div>
+    </div><button class="btn sm ghost" id="it-edit">Edit</button></div>
+    <hr class="rule">
+    <div id="reqs">${it.requests.map((r,ri)=>`
+      <div class="li"><div class="grow">${esc(r.text)}</div>
+        <button class="btn sm ghost" data-ans="${ri}">Answered</button>
+        <button class="iconb" data-del="${ri}" aria-label="Remove">✕</button></div>`).join('')||'<p class="small">No requests yet.</p>'}
+    </div>
+    <div class="mt"><input id="rq-n" placeholder="New request"></div>
+    <div class="btnrow"><button class="btn solid" id="rq-go">Add request</button></div>`);
+  m.querySelector('#it-edit').onclick=()=>{m.remove();editItem(hi,ii);};
+  m.querySelector('#rq-go').onclick=()=>{
+    const t=m.querySelector('#rq-n').value.trim(); if(!t) return;
+    it.requests.push({id:pid(),text:t,added:todayKey()});
+    save(); m.remove(); openItem(hi,ii);
+  };
+  m.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{
+    const ri=+b.dataset.ans, r=it.requests[ri];
+    const note=prompt('Praise report — how was it answered? (optional)')||'';
+    S.testimony.unshift({date:todayKey(),heading:hd.name,item:it.name,text:r.text,note});
+    it.requests.splice(ri,1); save(); m.remove(); openItem(hi,ii);
+  });
+  m.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{
+    it.requests.splice(+b.dataset.del,1); save(); m.remove(); openItem(hi,ii);
+  });
+}
+function renderLog(){
+  el('pv').innerHTML = S.testimony.length ? S.testimony.map(t=>`
+    <div class="card">
+      <div class="eyebrow">${esc(t.date)} · ${esc(t.heading)} — ${esc(t.item)}</div>
+      <div class="mt" style="font-size:18px">${esc(t.text)}</div>
+      ${t.note?`<div class="small mt" style="font-style:italic;color:var(--gold2)">“${esc(t.note)}”</div>`:''}
+    </div>`).join('')
+    : `<div class="card center small" style="padding:36px 16px">Answered prayers will gather here as a testimony log.<br><br><i>“Bless the LORD, O my soul, and forget not all his benefits.”</i></div>`;
+}
+
+/* ---------- STUDY ---------- */
+const FEMALE=new Set(['MIRIAM','MARY','RACHEL','RAHAB','REBEKAH (REBECCA)','RUTH','SARAH','JEZEBEL','QUEEN']);
+const PLACES=new Set(['BETH-SHEMESH','CANAAN','DEBIR','DEER','DIBON','EDOMITES','GATH','GAZA','GEZER','HAMATH','HARAN','JEBUSITES','JUDEA','KEILAH','KIDRON','KIRJATH-JEARIM','LION','LOT, THE','MEGIDDO','OPHIR','RABBAH','RAMOTH','RAMOTH-GILEAD','REHOB','RIMMON','SHITTIM','SIDON','SODOM','TABERNACLES, FEAST OF','TARSHISH','TIRZAH','ZOBAH','ZORAH']);
+function renderStudy(sub){
+  if(sub==='memory'){ S.studyTab='topic'; renderStudyShell(); renderMemory(); return; }
+  renderStudyShell();
+  ({topic:renderTopic,character:renderCharacter,notes:renderNotes}[S.studyTab])();
+}
+function renderStudyShell(){
+  h(`
+  <div class="pagehead"><h1>Study</h1><button class="btn sm ghost" onclick="browseNaves()">Browse all</button></div>
+  <div class="tabs">
+    <button class="${S.studyTab==='topic'?'on':''}" onclick="S.studyTab='topic';save();renderStudy()">Topic</button>
+    <button class="${S.studyTab==='character'?'on':''}" onclick="S.studyTab='character';save();renderStudy()">Character</button>
+    <button class="${S.studyTab==='notes'?'on':''}" onclick="S.studyTab='notes';save();renderStudy()">Notes</button>
+  </div>
+  <div id="sv"></div>`);
+}
+function renderTopic(){
+  const t=naveByIndex(S.currentTopic);
+  const mv=memVerseInfo();
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="row"><div class="grow">
+      <div class="eyebrow">Current Topic</div>
+      <h2 style="font-size:24px;margin-top:3px">${esc(titleCase(t.s))}</h2>
+    </div><button class="btn sm" onclick="newTopic()">New topic</button></div>
+  </div>
+  <div class="card tap" onclick="renderMemory()" role="button" tabindex="0">
+    <div class="eyebrow mb">Memory Verse</div>
+    <div class="scripture">${esc(mv.text)}<span class="ref">${esc(mv.ref)}</span></div>
+    <div class="tiny mt center">Tap to practice</div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">Nave's Topical Bible</div>
+    <div class="naves">${linkifyNaves(t.e)}</div>
+  </div>
+  <div class="card" id="strongs-card"><div class="eyebrow mb">Strong's Concordance</div><div class="small">Loading…</div></div>
+  <div class="card" id="webster-card"><div class="eyebrow mb">Webster's 1828</div><div class="small">Loading…</div></div>
+  <div class="card">
+    <div class="btnrow" style="margin:0"><button class="btn" onclick="addNote('t')">Add note on this topic</button></div>
+  </div>
+  ${questionsCard()}`;
+  fillStrongs(t.s,'strongs-card');
+  fillWebster(t.s,'webster-card');
+}
+function titleCase(s){ return s.replace(/\w\S*/g,w=>w[0].toUpperCase()+w.slice(1).toLowerCase()); }
+function headword(s){ return s.split(/[ ,(]/)[0].toLowerCase().replace(/[^a-z\-]/g,''); }
+async function fillStrongs(subject,id){
+  try{
+    const st=await getStrongs();
+    const w=headword(subject);
+    const nums=(st.i[w]||[]).slice(0,8);
+    const box=el(id); if(!box) return;
+    if(!nums.length){ box.innerHTML=`<div class="eyebrow mb">Strong's Concordance</div><div class="small">No Hebrew or Greek entry matches “${esc(w)}”.</div>`; return; }
+    const heb=nums.filter(n=>n[0]==='H').slice(0,4), grk=nums.filter(n=>n[0]==='G').slice(0,4);
+    const block=(title,list)=>list.length?`<div class="mt"><div class="tiny" style="letter-spacing:.18em;text-transform:uppercase">${title}</div>
+      ${list.map(n=>{const e=st.e[n];return `<div class="mt" style="margin-top:7px"><b style="font-family:Cinzel,serif;color:var(--gold2)">${esc(e.l)}</b> <span class="small">${esc(e.x||'')} · ${n}</span><br><span style="font-size:16.5px;color:var(--parch2)">${esc(e.d)}</span></div>`;}).join('')}</div>`:'';
+    box.innerHTML=`<div class="eyebrow mb">Strong's Concordance</div>${block('Hebrew',heb)}${block('Greek',grk)}`;
+  }catch(e){ const box=el(id); if(box) box.innerHTML=`<div class="eyebrow mb">Strong's Concordance</div><div class="small">Unavailable offline until first viewed online.</div>`; }
+}
+async function fillWebster(subject,id){
+  try{
+    const w=headword(subject);
+    const dict=await getWebster(w[0]);
+    const defs=dict[w];
+    const box=el(id); if(!box) return;
+    if(!defs){ box.innerHTML=`<div class="eyebrow mb">Webster's 1828</div><div class="small">No 1828 entry for “${esc(w)}”.</div>`; return; }
+    box.innerHTML=`<div class="eyebrow mb">Webster's 1828 — ${esc(w.toUpperCase())}</div>
+      ${defs.slice(0,3).map(d=>`<div class="mt" style="font-size:16.5px;color:var(--parch2)"><i class="small">${esc(d[0])}</i> ${esc(d[1])}</div>`).join('')}`;
+  }catch(e){ const box=el(id); if(box) box.innerHTML=`<div class="eyebrow mb">Webster's 1828</div><div class="small">Unavailable offline until first viewed online.</div>`; }
+}
+function newTopic(){
+  S.currentTopic=randNave('t');
+  const t=naveByIndex(S.currentTopic), r=firstNaveRef(t.e);
+  if(r) S.memProgress={}; // fresh memory verse
+  save(); renderStudy();
+}
+function newCharacter(){ S.currentCharacter=randNave('c'); save(); renderStudy(); }
+function medallion(name){
+  if(PLACES.has(name)) return `<svg viewBox="0 0 24 24"><path d="M12 3 L20 9 V20 H4 V9 Z M9 20 V13 H15 V20 M4 9 H20"/></svg>`;
+  if(FEMALE.has(name)) return `<svg viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.6"/><path d="M8.5 6.5 C7 9 6.5 11 6 12.5 M15.5 6.5 C17 9 17.5 11 18 12.5 M5.5 20 C6 15.8 8.6 13.6 12 13.6 C15.4 13.6 18 15.8 18.5 20"/></svg>`;
+  return `<svg viewBox="0 0 24 24"><circle cx="12" cy="7.8" r="3.4"/><path d="M5.5 20 C6 15.6 8.6 13.4 12 13.4 C15.4 13.4 18 15.6 18.5 20 M9.2 5.4 C10 4.2 14 4.2 14.8 5.4"/></svg>`;
+}
+function renderCharacter(){
+  const c=naveByIndex(S.currentCharacter);
+  const bio=D.bios[c.s]||'';
+  el('sv').innerHTML=`
+  <div class="card center" style="padding-top:24px">
+    <div class="medal">${medallion(c.s)}</div>
+    <div class="eyebrow mt">Character of the Week</div>
+    <h2 style="font-size:26px;margin:4px 0 10px">${esc(titleCase(c.s))}</h2>
+    <button class="btn sm" onclick="newCharacter()">New character</button>
+  </div>
+  <div class="card">
+    <div class="scripture" style="font-size:18px">${esc(bio)}</div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">Nave's Passages</div>
+    <div class="naves">${linkifyNaves(c.e)}</div>
+  </div>
+  <div class="card">
+    <div class="btnrow" style="margin:0">
+      <button class="btn" onclick="everyMention()">Every mention in the KJV</button>
+      <button class="btn ghost" onclick="addNote('c')">Add note</button>
+    </div>
+    <div id="mentions"></div>
+  </div>`;
+}
+function everyMention(){
+  const c=naveByIndex(S.currentCharacter);
+  const name=titleCase(c.s.split(/[ ,(]/)[0]);
+  const re=new RegExp('\\b'+name+'\\b','i');
+  const hits=[];
+  for(const book in D.kjv){
+    const chs=D.kjv[book];
+    for(let ci=0;ci<chs.length;ci++){
+      const vs=chs[ci];
+      for(let vi=0;vi<vs.length;vi++){
+        if(re.test(vs[vi])){ hits.push(book+' '+(ci+1)+':'+(vi+1)); if(hits.length>=400) break; }
+      }
+      if(hits.length>=400) break;
+    }
+    if(hits.length>=400) break;
+  }
+  el('mentions').innerHTML=`<hr class="rule"><div class="eyebrow mb">“${esc(name)}” — ${hits.length}${hits.length>=400?'+':''} verses</div>
+    <div class="small" style="line-height:2">${hits.map(r=>refLink(r)).join(' · ')||'No mentions found.'}</div>`;
+}
+/* ---------- Questions ---------- */
+function allQuestions(){ return D.content.questions.concat(S.userQuestions); }
+function questionsCard(){
+  const qs=allQuestions();
+  return `<details class="card"><summary>Questions from the Scriptures (${qs.length})</summary>
+    <div class="btnrow"><button class="btn sm" onclick="addQuestion()">Add question</button></div>
+    ${qs.map((q,i)=>`<div class="li">
+      <div class="check ${S.qStudied[i]?'on':''}" role="checkbox" aria-checked="${!!S.qStudied[i]}" tabindex="0" onclick="S.qStudied[${i}]=!S.qStudied[${i}];save();renderStudy()">✓</div>
+      <div class="grow"><span style="font-size:17px">${i+1}. ${esc(q.q)}</span><div class="tiny mt" style="margin-top:4px">${q.r.map(r=>refLink(r)).join(' · ')}</div></div>
+    </div>`).join('')}
+  </details>`;
+}
+function addQuestion(){
+  const m=modal(`<h3 class="mb">Add a question</h3>
+    <textarea id="q-t" rows="3" placeholder="The question"></textarea><div class="mt"></div>
+    <input id="q-r" placeholder="References, comma-separated (John 3:16, Romans 5)"><div class="mt"></div>
+    <button class="btn solid" id="q-go">Add</button>`);
+  m.querySelector('#q-go').onclick=()=>{
+    const q=m.querySelector('#q-t').value.trim(); if(!q) return;
+    const r=m.querySelector('#q-r').value.split(',').map(x=>x.trim()).filter(Boolean);
+    S.userQuestions.push({q,r}); save(); m.remove(); renderStudy();
+  };
+}
+/* ---------- Notes ---------- */
+function addNote(kind){
+  const subj=kind==='t'?naveByIndex(S.currentTopic).s:naveByIndex(S.currentCharacter).s;
+  const m=modal(`<h3 class="mb">Note — ${esc(titleCase(subj))}</h3>
+    <textarea id="n-t" rows="6" placeholder="Write your note"></textarea><div class="mt"></div>
+    <button class="btn solid" id="n-go">Save note</button>`);
+  m.querySelector('#n-go').onclick=()=>{
+    const t=m.querySelector('#n-t').value.trim(); if(!t) return;
+    S.notes.unshift({id:Date.now(),subject:subj,kind,text:t,date:todayKey()});
+    save(); m.remove();
+  };
+}
+function renderNotes(){
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="btnrow" style="margin:0">
+      <button class="btn" onclick="exportNotes()">Download backup</button>
+      <button class="btn ghost" onclick="setGdoc()">${S.gdoc?'Open Google Doc':'Link a Google Doc'}</button>
+    </div>
+  </div>
+  ${S.notes.length? S.notes.map(n=>`
+    <div class="card">
+      <div class="row"><div class="grow eyebrow">${esc(titleCase(n.subject))} · ${esc(n.date)}</div>
+        <button class="iconb" aria-label="Delete note" onclick="delNote(${n.id})">✕</button></div>
+      <div class="mt" style="white-space:pre-wrap">${esc(n.text)}</div>
+    </div>`).join('')
+    : `<div class="card center small" style="padding:36px 16px">Notes you attach to topics and characters gather here.</div>`}`;
+}
+function delNote(id){ if(!confirm('Delete this note?')) return; S.notes=S.notes.filter(n=>n.id!==id); save(); renderNotes(); }
+function exportNotes(){
+  const txt=S.notes.map(n=>`[${n.date}] ${n.subject}\n${n.text}`).join('\n\n---\n\n')||'No notes yet.';
+  const blob=new Blob([txt],{type:'text/plain'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download='mywalk-notes-'+todayKey()+'.txt';
+  a.click(); URL.revokeObjectURL(a.href);
+}
+function setGdoc(){
+  if(S.gdoc){ window.open(S.gdoc,'_blank'); return; }
+  const u=prompt('Paste your Google Doc link:');
+  if(u){ S.gdoc=u.trim(); save(); renderNotes(); }
+}
+/* ---------- Memory practice ---------- */
+function renderMemory(){
+  const mv=memVerseInfo();
+  if(!mv.text){ el('sv').innerHTML='<div class="card small">The current topic has no parsable first reference — draw a new topic.</div>'; return; }
+  const words=mv.text.split(/\s+/);
+  const hidden=S.memProgress[mv.ref]||[];
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="row"><div class="grow eyebrow">Memory Practice — ${esc(titleCase(mv.topic))}</div>
+      <button class="btn sm ghost" onclick="renderStudy()">Back</button></div>
+    <div class="mt" id="memwords">
+      ${words.map((w,i)=>`<span class="mem-w ${hidden.includes(i)?'hid':''}" onclick="memToggle('${esc(mv.ref)}',${i})">${esc(w)}</span>`).join('')}
+    </div>
+    <div class="hero-ref mt">${esc(mv.ref)}</div>
+    <div class="btnrow mt">
+      <button class="btn ghost sm" onclick="memHideMore('${esc(mv.ref)}',${words.length})">Hide a few more</button>
+      <button class="btn ghost sm" onclick="S.memProgress['${esc(mv.ref)}']=[];save();renderMemory()">Reveal all</button>
+      <button class="btn solid sm" onclick="memComplete()">Recited — archive it ✓</button>
+    </div>
+    <div class="tiny">Tap words to hide them; recite from the blanks until you can say it all.</div>
+  </div>
+  ${S.memArchive.length?`<details class="card"><summary>Memorized verses (${S.memArchive.length})</summary>
+    ${S.memArchive.map(m=>`<div class="li"><div class="grow"><b style="font-family:Cinzel,serif;font-size:14px;color:var(--gold2)">${esc(m.ref)}</b><div class="small" style="font-style:italic">${esc(m.text)}</div><div class="tiny">${esc(m.topic)} · ${esc(m.date)}</div></div></div>`).join('')}
+  </details>`:''}`;
+}
+function memToggle(ref,i){
+  const a=S.memProgress[ref]=S.memProgress[ref]||[];
+  const p=a.indexOf(i); if(p>=0) a.splice(p,1); else a.push(i);
+  save(); renderMemory();
+}
+function memHideMore(ref,total){
+  const a=S.memProgress[ref]=S.memProgress[ref]||[];
+  const pool=[]; for(let i=0;i<total;i++) if(!a.includes(i)) pool.push(i);
+  for(let k=0;k<Math.min(3,pool.length);k++){
+    const j=Math.floor(Math.random()*pool.length);
+    a.push(pool.splice(j,1)[0]);
+  }
+  save(); renderMemory();
+}
+function memComplete(){
+  const mv=memVerseInfo();
+  if(!S.memArchive.some(m=>m.ref===mv.ref))
+    S.memArchive.unshift({ref:mv.ref,text:mv.text,topic:titleCase(mv.topic),date:todayKey()});
+  save(); renderMemory();
+}
+/* ---------- Browse all of Nave's ---------- */
+function browseNaves(){
+  const m=modal(`<div class="searchwrap"><h3 class="mb">Nave's Topical Bible</h3>
+    <input id="nv-q" placeholder="Search 5,319 subjects…"></div>
+    <div id="nv-r" class="mt small">Type to search topics, characters, and places.</div>`);
+  const rbox=m.querySelector('#nv-r');
+  m.querySelector('#nv-q').addEventListener('input',e=>{
+    const q=e.target.value.trim().toUpperCase();
+    if(q.length<2){ rbox.innerHTML='Type to search topics, characters, and places.'; return; }
+    const hits=[];
+    for(let i=0;i<D.naves.length&&hits.length<60;i++)
+      if(D.naves[i].s.indexOf(q)>=0) hits.push(i);
+    rbox.innerHTML=hits.map(i=>{
+      const x=D.naves[i];
+      return `<div class="li" role="button" tabindex="0" onclick="pickNave(${i});this.closest('.modal').remove()">
+        <div class="pill">${x.k==='c'?'Char':x.k==='p'?'Place':'Topic'}</div>
+        <div class="grow">${esc(titleCase(x.s))}</div></div>`;
+    }).join('')||'<p class="small">No matches.</p>';
+  });
+}
+function pickNave(i){
+  const x=D.naves[i];
+  if(x.k==='c'){ S.currentCharacter=i; S.studyTab='character'; }
+  else { S.currentTopic=i; S.studyTab='topic'; }
+  save(); go('study');
+}
+
+/* ---------- service worker + boot ---------- */
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
+
+</script>
+</body>
+</html>
