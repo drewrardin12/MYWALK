@@ -160,6 +160,23 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 .journey .jflag{font-size:20px;opacity:.8}
 .jbar{height:8px;border-radius:99px;background:var(--tint);overflow:hidden}
 .jbar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue2),var(--blue));border-radius:99px}
+
+.subtabs{display:flex;gap:8px;margin:14px 0 6px;overflow-x:auto}
+.subtabs button{flex:1;white-space:nowrap;font-size:12.5px;font-weight:600;padding:10px 12px;border:1px solid var(--div);border-radius:10px;color:var(--text2);background:var(--card)}
+.subtabs button.on{border-color:var(--accent);color:#fff;background:var(--accent)}
+.pstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end;text-align:center}
+.pcol{display:flex;flex-direction:column;align-items:center;gap:5px}
+.pflame{font-family:"Playfair Display",serif;font-weight:700;font-size:26px;color:var(--gold)}
+.pdays{font-family:"Playfair Display",serif;font-weight:700;font-size:26px;color:var(--text)}
+.pdays span{font-family:"Inter",sans-serif;font-weight:400;font-size:13px;color:var(--text2)}
+.pring{width:56px;height:56px;display:block}
+.plabel{font-size:11px;color:var(--text2)}
+.playb{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--accent);font-size:12px;display:flex;align-items:center;justify-content:center}
+.check.sm{width:22px;height:22px;flex:0 0 22px;font-size:13px}
+.cal .d{position:relative}
+.cdot{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--blue2)}
+.cal .d.sel{border-color:var(--blue2);background:var(--tint)}
+.cal .d.read .cdot{display:none}
 .loading{text-align:center;color:var(--text2);padding:70px 0;font-family:"Playfair Display",serif;font-style:italic}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
@@ -184,8 +201,8 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
-const BUILD_NAME='Open Road';
-const BUILD_VERSION='1.1.0';
+const BUILD_NAME='Still Waters';
+const BUILD_VERSION='1.2.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -524,65 +541,157 @@ function ringSVG(){
       stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}" transform="rotate(-90 38 38)"/>
   </svg>`;
 }
+let devoTab='today';
+function setDevoTab(t){ devoTab=t; renderDevo(); }
 function renderDevo(sub){
   if(sub==='hymn') return renderHymn();
   if(sub==='albums') return renderAlbums();
   if(sub==='sermons') return renderSermons();
+  if(sub==='calendar'){ devoTab='calendar'; }
+  else if(sub==='today'){ devoTab='today'; }
+  else if(sub==='music'){ devoTab='music'; }
   if(devoDay===null) devoDay=currentDay();
+  h(`
+  <div class="pagehead"><h1>Devo</h1></div>
+  <div class="subtabs">
+    <button class="${devoTab==='today'?'on':''}" onclick="setDevoTab('today')">Today</button>
+    <button class="${devoTab==='music'?'on':''}" onclick="setDevoTab('music')">Music &amp; Sermons</button>
+    <button class="${devoTab==='calendar'?'on':''}" onclick="setDevoTab('calendar')">Calendar</button>
+  </div>
+  <div id="dv"></div>`);
+  ({today:devoToday,music:devoMusic,calendar:devoCalendar}[devoTab])();
+}
+function devoToday(){
   const day=devoDay, plan=D.plan[day], date=dateForIndex(day);
   const read=!!S.reads[day];
-  h(`
-  <div class="pagehead"><h1>Devotions</h1></div>
-  <div class="card ring">
-    ${ringSVG()}
-    <div class="grow">
-      <div class="rn">${Object.keys(S.reads).length} <span style="font-family:Inter,sans-serif;font-weight:400;font-size:14px;color:var(--text2)">of ${D.plan.length}</span></div>
-      <div class="rl">days complete · ${streak()}-day streak</div>
-      <div class="rl" style="margin-top:2px"><b style="color:var(--accent)">${storyStats().pct}%</b> of all ${storyStats().total} stories read (${storyStats().read})</div>
-    </div>
-  </div>
+  const st=storyStats();
+  const mv=memVerseInfo();
+  el('dv').innerHTML=`
   <div class="card">
     <div class="row">
       <button class="iconb" onclick="devoNav(-1)" aria-label="Previous day">‹</button>
-      <div class="grow center">
-        <div class="eyebrow">${esc(fmtDate(date))}</div>
-      </div>
+      <div class="grow center"><div class="eyebrow">${esc(fmtDate(date))}</div>
+        <div class="tiny" style="margin-top:2px">Day ${day+1} of ${D.plan.length}</div></div>
       <button class="iconb" onclick="devoNav(1)" aria-label="Next day">›</button>
     </div>
     <hr class="rule">
-    <p style="font-size:17.5px;color:var(--parch2)">${esc(plan[2])}</p>
-    <hr class="rule">
+    <div class="eyebrow mb">Today's Story</div>
     ${plan[0].map(s=>`<div class="li"><div class="grow">
-        <div style="font-family:Cinzel,serif;font-size:16px">${esc(s[0])}</div>
-        <div class="small">${refLink(s[1])}</div>
-      </div></div>`).join('')}
-    <div class="mt small"><span class="eyebrow" style="font-size:10px">Companion</span><br>
-      ${plan[1].map(r=>refLink(r)).join(' &nbsp;·&nbsp; ')}</div>
+        <div class="rtitle" style="font-size:17px">${esc(s[0])}</div>
+        <div class="small">${refLink(s[1])}</div></div></div>`).join('')}
+    <div class="rblurb mt">${esc(plan[2])}</div>
     <div class="row mt">
       <div class="check ${read?'on':''}" role="checkbox" aria-checked="${read}" tabindex="0" onclick="toggleRead(${day})">✓</div>
-      <div class="grow">Mark as read</div>
+      <div class="grow">${read?'Read':'Mark as read'}</div>
     </div>
   </div>
+
+  <div class="card" style="position:relative">
+    <div class="bookmark" aria-hidden="true"></div>
+    <div class="eyebrow mb">Memory Verse</div>
+    <div class="mvtext">${esc(mv.text)}</div>
+    <div class="mvref">${esc(mv.ref)}</div>
+    <div class="mt"><button class="linkbtn" onclick="go('study','memory')">Practice Now →</button></div>
+  </div>
+
+  <div class="card hcard tap" onclick="location.href='${'bible://'+encodeURIComponent(plan[1][0])}'">
+    <div class="ic">🌿</div>
+    <div class="bd"><div class="t1">Companion Reading</div>
+      <div class="t2" style="font-size:15px">${plan[1].map(r=>esc(r)).join(' · ')}</div></div>
+    <div class="go">›</div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow mb">Your Progress</div>
+    <div class="pstrip">
+      <div class="pcol"><div class="pflame">${streak()}</div><div class="plabel">day streak</div></div>
+      <div class="pcol">${bigRing(st.pct)}<div class="plabel">of stories</div></div>
+      <div class="pcol"><div class="pdays">${day+1}<span>/${D.plan.length}</span></div><div class="plabel">journey</div></div>
+    </div>
+  </div>
+
   <div class="card">
     <div class="row">
-      <div class="grow eyebrow">Pick up where I left off</div>
+      <div class="grow"><div class="eyebrow">Reading Mode</div>
+        <div class="tiny mt">${S.seqMode?'Sequence — next unread day shown first':'Calendar — today\u2019s date maps to the reading'}</div></div>
       <div class="check ${S.seqMode?'on':''}" role="switch" aria-checked="${S.seqMode}" tabindex="0" onclick="S.seqMode=!S.seqMode;save();devoDay=null;renderDevo()">✓</div>
     </div>
-    <div class="tiny mt">${S.seqMode?'Reading in sequence — next unread day is shown first.':'Calendar mode — today\u2019s date maps to the reading.'}</div>
-    ${renderCal(day)}
-  </div>
-  <div class="card tap hcard" onclick="go('devo','hymn')">
-    <div class="ic">♪</div><div class="bd"><div class="t1">Song of the Week</div><div class="t2">${esc(hymnOfWeek().t)}</div></div><div class="go">›</div>
-  </div>
-  <div class="card tap hcard" onclick="go('devo','albums')">
-    <div class="ic">◉</div><div class="bd"><div class="t1">Album Queue</div><div class="t2">${S.albums.length} album${S.albums.length===1?'':'s'}</div></div><div class="go">›</div>
-  </div>
-  <div class="card tap hcard" onclick="go('devo','sermons')">
-    <div class="ic">🕮</div><div class="bd"><div class="t1">Sermon Queue</div><div class="t2">${S.sermons.length} sermon${S.sermons.length===1?'':'s'} · 2 per week</div></div><div class="go">›</div>
-  </div>`);
+  </div>`;
+}
+function bigRing(pct){
+  const R=22,C=2*Math.PI*R,off=C*(1-pct/100);
+  return `<svg class="pring" viewBox="0 0 56 56"><circle cx="28" cy="28" r="${R}" fill="none" stroke="var(--div)" stroke-width="5"/><circle cx="28" cy="28" r="${R}" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${off}" transform="rotate(-90 28 28)"/><text x="28" y="32" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="14" fill="var(--text)">${pct}%</text></svg>`;
 }
 function devoNav(d){ devoDay=clampDay(devoDay+d); renderDevo(); }
 function toggleRead(i){ if(S.reads[i]) delete S.reads[i]; else S.reads[i]=true; save(); renderDevo(); }
+
+function devoMusic(){
+  const hy=hymnOfWeek(), al=albumOfWeek(), sm=sermonsOfWeek();
+  const wk=weekOfYear();
+  const nowIdx = S.sermons.length ? [((wk-1)*2)%S.sermons.length, ((wk-1)*2+1)%S.sermons.length] : [];
+  el('dv').innerHTML=`
+  <div class="card">
+    <div class="eyebrow mb">Hymn of the Week</div>
+    <div class="rtitle">${esc(hy.t)}</div>
+    <div class="small">${esc(hy.a)}</div>
+    <div class="btnrow"><button class="btn sm" onclick="go('devo','hymn')">View Full Lyrics →</button></div>
+    <hr class="rule">
+    <div class="row tap" onclick="showAllHymns()" role="button" tabindex="0">
+      <div class="grow"><div style="font-weight:600">All Hymns (52)</div><div class="tiny">Browse all hymns anytime</div></div>
+      <div class="go">›</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow mb">Album of the Week</div>
+    ${al?`<div class="rtitle">${esc(al.t)}</div>${al.a?`<div class="small">${esc(al.a)}</div>`:''}
+    <div class="btnrow"><button class="btn sm" onclick="openAlbum()">Play on Apple Music ↗</button></div>`
+    :`<div class="small">No albums queued yet.</div>`}
+    <hr class="rule">
+    <div class="row tap" onclick="go('devo','albums')" role="button" tabindex="0">
+      <div class="grow"><div style="font-weight:600">All Albums (${S.albums.length})</div><div class="tiny">Manage your album queue</div></div>
+      <div class="go">›</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow mb">Sermons of the Week</div>
+    ${sm.length?sm.map((s,i)=>`<div class="li"><div class="grow">${esc(s.t)}</div>
+      <button class="playb" onclick="openSermon(${i})" aria-label="Play">▶</button></div>`).join('')
+      :`<div class="small">No sermons queued yet.</div>`}
+    <hr class="rule">
+    <div class="row tap" onclick="go('devo','sermons')" role="button" tabindex="0">
+      <div class="grow"><div style="font-weight:600">All Sermons (${S.sermons.length})</div><div class="tiny">Manage your sermon queue</div></div>
+      <div class="go">›</div>
+    </div>
+  </div>`;
+}
+function showAllHymns(){
+  modal(`<h3 class="mb">All Hymns</h3>
+    ${D.hymns.map(x=>`<div class="li" role="button" tabindex="0" onclick="showHymn(${x.w})"><div class="pill">${x.w}</div><div class="grow">${esc(x.t)}</div><div class="go">›</div></div>`).join('')}`);
+}
+
+function devoCalendar(){
+  const day=devoDay, sel=dateForIndex(day);
+  const read=!!S.reads[day], plan=D.plan[day];
+  const mv=memVerseInfo();
+  el('dv').innerHTML=`
+  <div class="tabs" style="margin-top:2px">
+    <button class="${!S.seqMode?'on':''}" onclick="S.seqMode=false;save();renderDevo()">Calendar</button>
+    <button class="${S.seqMode?'on':''}" onclick="S.seqMode=true;save();devoDay=seqDay();renderDevo()">Pick Up Where I Left Off</button>
+  </div>
+  <div class="card">${renderCal(day)}</div>
+  <div class="card">
+    <div class="row"><div class="grow eyebrow">${esc(fmtDate(sel))}</div>
+      <div class="gold tiny" style="color:var(--gold);font-weight:600">Day ${day+1} of ${D.plan.length}</div></div>
+    <hr class="rule">
+    ${plan[0].map(s=>`<div class="li"><div class="grow"><div style="font-weight:600">${esc(s[0])}</div><div class="small">${esc(s[1])}</div></div>
+      <div class="check sm ${read?'on':''}">${read?'✓':''}</div></div>`).join('')}
+    <div class="li"><div class="grow"><div style="font-weight:600">Memory Verse</div><div class="small">${esc(mv.ref)}</div></div></div>
+    <div class="li"><div class="grow"><div style="font-weight:600">Companion</div><div class="small">${plan[1].map(r=>esc(r)).join(' · ')}</div></div></div>
+    <div class="btnrow"><button class="btn solid grow" style="flex:1" onclick="setDevoTab('today')">Go to This Day</button></div>
+  </div>`;
+}
 function renderCal(sel){
   const selDate=dateForIndex(sel);
   const y=selDate.getFullYear(), m=selDate.getMonth();
@@ -593,11 +702,13 @@ function renderCal(sel){
   for(let d=1;d<=dim;d++){
     const idx=dayIndexFor(new Date(y,m,d));
     const has=idx>=0&&idx<D.plan.length;
-    const cls='d'+(has?' has':'')+(has&&S.reads[idx]?' read':'')+(has&&idx===tk?' today':'');
-    cells+=`<div class="${cls}" ${has?`role="button" tabindex="0" onclick="devoDay=${idx};renderDevo()"`:''}>${d}</div>`;
+    const isSel=idx===sel;
+    const cls='d'+(has?' has':'')+(has&&S.reads[idx]?' read':'')+(has&&idx===tk?' today':'')+(isSel&&!S.reads[idx]?' sel':'');
+    const dot = has&&!S.reads[idx] ? '<span class="cdot"></span>' : '';
+    cells+=`<div class="${cls}" ${has?`role="button" tabindex="0" onclick="devoDay=${idx};renderDevo()"`:''}>${d}${dot}</div>`;
   }
   cells+='</div>';
-  return `<div class="row mt">
+  return `<div class="row">
     <button class="iconb" onclick="calMove(${sel},-1)">‹</button>
     <div class="grow center eyebrow">${selDate.toLocaleDateString('en-US',{month:'long',year:'numeric'})}</div>
     <button class="iconb" onclick="calMove(${sel},1)">›</button></div>`+cells;
@@ -618,13 +729,7 @@ function renderHymn(){
     </div>
     <hr class="rule">
     ${hy.v.map((v,i)=>`<div class="hymn-v"><span class="vnum">Verse ${i+1}</span>${esc(v)}</div>${hy.c&&i===0?`<div class="hymn-c">${esc(hy.c)}</div>`:''}`).join('')}
-  </div>
-  ${renderHymnList()}`);
-}
-function renderHymnList(){
-  return `<details class="card"><summary>All 52 weeks</summary>
-    ${D.hymns.map(x=>`<div class="li" role="button" tabindex="0" onclick="showHymn(${x.w})"><div class="pill">${x.w}</div><div class="grow">${esc(x.t)}</div></div>`).join('')}
-  </details>`;
+  </div>`);
 }
 function showHymn(w){
   const hy=D.hymns.find(x=>x.w===w);
@@ -633,6 +738,7 @@ function showHymn(w){
     <hr class="rule">
     ${hy.v.map((v,i)=>`<div class="hymn-v"><span class="vnum">Verse ${i+1}</span>${esc(v)}</div>${hy.c&&i===0?`<div class="hymn-c">${esc(hy.c)}</div>`:''}`).join('')}`);
 }
+
 function renderAlbums(){
   const wk=weekOfYear();
   h(`
@@ -1143,7 +1249,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=9').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=10').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
