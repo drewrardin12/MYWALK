@@ -177,6 +177,19 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 .cdot{position:absolute;bottom:5px;left:50%;transform:translateX(-50%);width:4px;height:4px;border-radius:50%;background:var(--blue2)}
 .cal .d.sel{border-color:var(--blue2);background:var(--tint)}
 .cal .d.read .cdot{display:none}
+
+.amen{font-family:"Playfair Display",serif;font-weight:600;font-size:26px;color:var(--blue)}
+.prayline{font-size:16px;color:var(--text);margin-top:3px}
+.prayline b{font-family:"Playfair Display",serif;font-size:22px;color:var(--text)}
+.fverse{margin-top:14px;padding-top:12px;border-top:1px solid var(--div2);font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--text2)}
+.fvref{display:block;font-family:"Inter",sans-serif;font-style:normal;font-weight:600;font-size:11px;color:var(--blue);margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
+.prayrow{display:flex;align-items:flex-start;justify-content:space-around;gap:10px;margin-top:6px}
+.circ{display:flex;flex-direction:column;align-items:center;gap:7px}
+.cg{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
+.cg.ghost{border:1.5px solid var(--div);color:var(--text2)}
+.cg.solid{background:var(--accent);color:#fff;width:60px;height:60px;font-size:24px}
+.cl{font-size:11px;font-weight:600;color:var(--text2)}
+.star{color:var(--gold);font-size:18px}
 .loading{text-align:center;color:var(--text2);padding:70px 0;font-family:"Playfair Display",serif;font-style:italic}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
@@ -201,8 +214,8 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
-const BUILD_NAME='Still Waters';
-const BUILD_VERSION='1.2.0';
+const BUILD_NAME='Quiet Table';
+const BUILD_VERSION='1.3.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -812,18 +825,30 @@ function addSermon(){
 }
 
 /* ---------- PRAYER ---------- */
-let flashPos=0, prayerView='pray'; // pray | manage | log
+let flashPos=0, prayerView='today';
+function setPrayerView(v){ prayerView=v; if(v==='today') flashPos=0; renderPrayer(); }
 function renderPrayer(sub){
   if(sub) prayerView=sub;
   h(`
   <div class="pagehead"><h1>Prayer</h1></div>
-  <div class="tabs">
-    <button class="${prayerView==='pray'?'on':''}" onclick="prayerView='pray';flashPos=0;renderPrayer()">Pray</button>
-    <button class="${prayerView==='manage'?'on':''}" onclick="prayerView='manage';renderPrayer()">List</button>
-    <button class="${prayerView==='log'?'on':''}" onclick="prayerView='log';renderPrayer()">Answered</button>
+  <div class="subtabs">
+    <button class="${prayerView==='today'?'on':''}" onclick="setPrayerView('today')">Today</button>
+    <button class="${prayerView==='overview'?'on':''}" onclick="setPrayerView('overview')">Overview</button>
+    <button class="${prayerView==='tree'?'on':''}" onclick="setPrayerView('tree')">List</button>
+    <button class="${prayerView==='log'?'on':''}" onclick="setPrayerView('log')">Answered</button>
   </div>
   <div id="pv"></div>`);
-  ({pray:renderPray,manage:renderManage,log:renderLog}[prayerView])();
+  ({today:renderPray,overview:renderOverview,tree:renderManage,log:renderLog}[prayerView])();
+}
+function verseForItem(){
+  const pool=[
+    ['The LORD is nigh unto all them that call upon him, to all that call upon him in truth.','Psalm 145:18'],
+    ['Call unto me, and I will answer thee.','Jeremiah 33:3'],
+    ['Be careful for nothing; but in every thing by prayer and supplication...let your requests be made known unto God.','Philippians 4:6'],
+    ['The effectual fervent prayer of a righteous man availeth much.','James 5:16'],
+    ['Ask, and it shall be given you; seek, and ye shall find.','Matthew 7:7']
+  ];
+  return pool[(new Date().getDate()+flashPos)%pool.length];
 }
 function renderPray(){
   const pd=prayerDue();
@@ -832,34 +857,87 @@ function renderPray(){
   const pv=el('pv');
   if(!pd.items.length){
     pv.innerHTML=`<div class="card center"><p class="small">No prayer items are scheduled yet.</p>
-      <div class="mt"><button class="btn" onclick="prayerView='manage';renderPrayer()">Build your list</button></div></div>`;
+      <div class="btnrow" style="justify-content:center"><button class="btn" onclick="setPrayerView('tree')">Build your list</button></div></div>`;
     return;
   }
+  const doneCount=pd.items.length-cards.length;
   if(!cards.length){
-    pv.innerHTML=`<div class="card center" style="padding:40px 16px">
-      <div style="font-family:Cinzel,serif;font-size:22px;color:var(--gold2)">Amen.</div>
+    pv.innerHTML=`<div class="card center" style="padding:44px 16px">
+      <div class="amen">Amen.</div>
       <p class="small mt">All ${pd.items.length} of today\u2019s prayers are finished.</p></div>`;
     return;
   }
   if(flashPos>=cards.length) flashPos=0;
   const c=cards[flashPos];
+  const v=verseForItem();
   pv.innerHTML=`
-  <div class="center prog mb">${pd.items.length-cards.length+1} of ${pd.items.length} · ${cards.length} remaining</div>
+  <div class="card" style="padding:14px 16px">
+    <div class="row"><div class="grow"><div class="eyebrow">Today\u2019s Prayer Cards</div>
+      <div class="prayline"><b>${cards.length}</b> remaining</div></div>
+      <div class="pcol" style="flex:0 0 auto"><div class="pflame">${streak()}</div><div class="plabel">day streak</div></div>
+    </div>
+    <div class="jbar mt"><span style="width:${Math.round(100*doneCount/pd.items.length)}%"></span></div>
+  </div>
   <div class="flash">
     <div class="fh">${esc(c.hd.name)}</div>
     <div class="fn">${esc(c.it.name)}</div>
-    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p class="small" style="margin-top:8px">No specific requests written — pray as led.</p>'}
+    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p class="small" style="margin-top:8px">Pray as led.</p>'}
+    <div class="fverse"><i>${esc(v[0])}</i><span class="fvref">${esc(v[1])}</span></div>
     <div style="flex:1"></div>
-    <div class="btnrow" style="margin-bottom:0">
-      <button class="btn ghost" onclick="flashPos=(flashPos+1)%${cards.length};renderPray()">Skip</button>
-      <button class="btn solid grow" style="flex:1" onclick="prayDone('${c.it.id}')">Prayed ✓</button>
+    <div class="prayrow">
+      <button class="circ" onclick="praySkip(${cards.length})" aria-label="Skip"><span class="cg ghost">↻</span><span class="cl">Skip</span></button>
+      <button class="circ" onclick="prayDone('${c.it.id}')" aria-label="Prayed"><span class="cg solid">✓</span><span class="cl">Prayed</span></button>
+      <button class="circ" onclick="prayAnswer('${c.hd.id}','${c.it.id}')" aria-label="Answered"><span class="cg ghost">★</span><span class="cl">Answer</span></button>
     </div>
-  </div>`;
+  </div>
+  <div class="center prog mt">${doneCount+1} of ${pd.items.length}</div>`;
 }
+function praySkip(n){ flashPos=(flashPos+1)%n; renderPray(); }
 function prayDone(id){
   const k=todayKey();
   (S.prayerChecks[k]=S.prayerChecks[k]||[]).push(id);
   save(); renderPray();
+}
+function prayAnswer(hid,iid){
+  const hd=S.prayer.headings.find(h=>h.id===hid); if(!hd) return;
+  const it=hd.items.find(x=>x.id===iid); if(!it) return;
+  const note=prompt('Praise report — how was it answered? (optional)')||'';
+  S.testimony.unshift({date:todayKey(),heading:hd.name,item:it.name,text:it.name,note,cat:hd.name});
+  const k=todayKey(); (S.prayerChecks[k]=S.prayerChecks[k]||[]).push(iid);
+  save(); renderPray();
+}
+function renderOverview(){
+  const pd=prayerDue();
+  const done=(S.prayerChecks[todayKey()]||[]);
+  const doneToday=pd.items.filter(x=>done.includes(x.it.id)).length;
+  let allItems=0; S.prayer.headings.forEach(h=>allItems+=h.items.length);
+  const wkKeys=[]; for(let i=0;i<7;i++){const d=new Date();d.setDate(d.getDate()-i);wkKeys.push(todayKey(d));}
+  let wkDone=0; wkKeys.forEach(k=>wkDone+=(S.prayerChecks[k]||[]).length);
+  const upcoming=[]; const dow=new Date().getDay();
+  S.prayer.headings.forEach(h=>h.items.forEach(it=>{const s=it.sched||{type:'daily'}; if(s.type==='days'&&(s.days||[]).length) upcoming.push(it);}));
+  el('pv').innerHTML=`
+  <div class="card">
+    <div class="eyebrow mb">Today at a Glance</div>
+    <div class="pstrip">
+      <div class="pcol"><div class="pdays">${pd.remaining.length}</div><div class="plabel">remaining</div></div>
+      <div class="pcol"><div class="pflame">${streak()}</div><div class="plabel">day streak</div></div>
+      <div class="pcol"><div class="pdays">${doneToday}</div><div class="plabel">prayed today</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">This Week</div>
+    <div class="prayline"><b>${wkDone}</b> prayers lifted in the last 7 days</div>
+    <div class="jbar mt"><span style="width:${Math.min(100,wkDone*4)}%"></span></div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">Prayer History</div>
+    <div class="li tap" onclick="setPrayerView('log')"><div class="grow"><div style="font-weight:600">Answered Prayers</div><div class="tiny">${S.testimony.length} testimon${S.testimony.length===1?'y':'ies'}</div></div><div class="go">›</div></div>
+    <div class="li tap" onclick="setPrayerView('today')"><div class="grow"><div style="font-weight:600">Pray All Items</div><div class="tiny">${allItems} prayer items</div></div><div class="go">›</div></div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">Quick Actions</div>
+    <div class="btnrow" style="margin:0"><button class="btn" onclick="editHeading()">+ Add Heading</button><button class="btn ghost" onclick="setPrayerView('tree')">Build Prayer Tree</button></div>
+  </div>`;
 }
 function renderManage(){
   el('pv').innerHTML=`
@@ -867,7 +945,7 @@ function renderManage(){
   ${S.prayer.headings.map((hd,hi)=>`
   <div class="card">
     <div class="row">
-      <div class="grow" style="font-family:Cinzel,serif;color:var(--gold2);font-size:17px">${esc(hd.name)}</div>
+      <div class="grow" style="font-family:Playfair Display,serif;font-weight:600;color:var(--text);font-size:17px">${esc(hd.name)}</div>
       <button class="iconb" onclick="moveH(${hi},-1)" aria-label="Move up">↑</button>
       <button class="iconb" onclick="moveH(${hi},1)" aria-label="Move down">↓</button>
       <button class="iconb" onclick="editHeading(${hi})" aria-label="Edit">✎</button>
@@ -875,9 +953,10 @@ function renderManage(){
     ${hd.items.map((it,ii)=>`
       <div class="li">
         <div class="grow" role="button" tabindex="0" onclick="openItem(${hi},${ii})">
-          ${esc(it.name)}
+          <div style="font-weight:500">${esc(it.name)}</div>
           <div class="tiny">${schedLabel(it.sched)}${it.requests.length?` · ${it.requests.length} request${it.requests.length===1?'':'s'}`:''}</div>
         </div>
+        <div class="pill">${it.requests.length}</div>
         <button class="iconb" onclick="moveI(${hi},${ii},-1)" aria-label="Move up">↑</button>
         <button class="iconb" onclick="moveI(${hi},${ii},1)" aria-label="Move down">↓</button>
       </div>`).join('')}
@@ -900,11 +979,11 @@ function editHeading(hi){
   m.querySelector('#hd-go').onclick=()=>{
     const n=m.querySelector('#hd-n').value.trim(); if(!n) return;
     if(hd) hd.name=n; else S.prayer.headings.push({id:pid(),name:n,items:[]});
-    save(); m.remove(); renderManage();
+    save(); m.remove(); renderPrayer();
   };
   if(hd) m.querySelector('#hd-del').onclick=()=>{
     if(!confirm('Delete this heading and everything under it?')) return;
-    S.prayer.headings.splice(hi,1); save(); m.remove(); renderManage();
+    S.prayer.headings.splice(hi,1); save(); m.remove(); renderPrayer();
   };
 }
 function editItem(hi,ii){
@@ -966,22 +1045,40 @@ function openItem(hi,ii){
   m.querySelectorAll('[data-ans]').forEach(b=>b.onclick=()=>{
     const ri=+b.dataset.ans, r=it.requests[ri];
     const note=prompt('Praise report — how was it answered? (optional)')||'';
-    S.testimony.unshift({date:todayKey(),heading:hd.name,item:it.name,text:r.text,note});
+    S.testimony.unshift({date:todayKey(),heading:hd.name,item:it.name,text:r.text,note,cat:hd.name});
     it.requests.splice(ri,1); save(); m.remove(); openItem(hi,ii);
   });
   m.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{
     it.requests.splice(+b.dataset.del,1); save(); m.remove(); openItem(hi,ii);
   });
 }
+let logFilter='all';
 function renderLog(){
-  el('pv').innerHTML = S.testimony.length ? S.testimony.map(t=>`
+  const now=new Date();
+  const items=S.testimony.filter(t=>{
+    if(logFilter==='all') return true;
+    const d=new Date(t.date);
+    if(logFilter==='month') return d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear();
+    if(logFilter==='year') return d.getFullYear()===now.getFullYear();
+    return true;
+  });
+  el('pv').innerHTML=`
+  <div class="tabs" style="margin-top:2px">
+    <button class="${logFilter==='all'?'on':''}" onclick="logFilter='all';renderLog()">All Answers</button>
+    <button class="${logFilter==='month'?'on':''}" onclick="logFilter='month';renderLog()">This Month</button>
+    <button class="${logFilter==='year'?'on':''}" onclick="logFilter='year';renderLog()">This Year</button>
+  </div>
+  ${items.length? items.map(t=>`
     <div class="card">
-      <div class="eyebrow">${esc(t.date)} · ${esc(t.heading)} — ${esc(t.item)}</div>
-      <div class="mt" style="font-size:18px">${esc(t.text)}</div>
-      ${t.note?`<div class="small mt" style="font-style:italic;color:var(--gold2)">“${esc(t.note)}”</div>`:''}
+      <div class="row"><div class="grow"><div style="font-family:Playfair Display,serif;font-weight:600;font-size:17px">${esc(t.item)}</div>
+        <div class="tiny">${esc(t.date)}</div></div><div class="star">★</div></div>
+      ${t.note?`<div class="mt" style="font-size:15px">${esc(t.note)}</div>`:''}
+      <div class="mt"><span class="pill">${esc(t.cat||t.heading||'Prayer')}</span></div>
     </div>`).join('')
-    : `<div class="card center small" style="padding:36px 16px">Answered prayers will gather here as a testimony log.<br><br><i>“Bless the LORD, O my soul, and forget not all his benefits.”</i></div>`;
+    : `<div class="card center small" style="padding:36px 16px">Answered prayers will gather here as a testimony.<br><br><i>“Bless the LORD, O my soul, and forget not all his benefits.”</i></div>`}
+  <div class="btnrow"><button class="btn solid grow" style="flex:1" onclick="setPrayerView('today')">+ Back to Praying</button></div>`;
 }
+
 
 /* ---------- STUDY ---------- */
 const FEMALE=new Set(['MIRIAM','MARY','RACHEL','RAHAB','REBEKAH (REBECCA)','RUTH','SARAH','JEZEBEL','QUEEN']);
@@ -1249,7 +1346,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=10').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=11').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
