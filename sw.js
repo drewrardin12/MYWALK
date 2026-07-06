@@ -1,5 +1,8 @@
-const V='mywalk-v1';
-const SHELL=['./','index.html','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
+/* MY WALK service worker — permanent file.
+   Version comes from the registration URL (sw.js?v=N in index.html),
+   so updates only ever require editing index.html. */
+const V='mywalk-'+(new URL(self.location).searchParams.get('v')||'1');
+const SHELL=['./','index.html','icon-180.png','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(V).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()));
 });
@@ -9,7 +12,7 @@ self.addEventListener('activate',e=>{
 self.addEventListener('fetch',e=>{
   if(e.request.method!=='GET') return;
   e.respondWith(
-    caches.match(e.request).then(hit=>hit||fetch(e.request).then(res=>{
+    caches.match(e.request,{ignoreSearch:e.request.url.includes('sw.js')}).then(hit=>hit||fetch(e.request).then(res=>{
       if(res.ok && (e.request.url.startsWith(self.location.origin)||e.request.url.includes('fonts.g'))){
         const copy=res.clone(); caches.open(V).then(c=>c.put(e.request,copy));
       }
