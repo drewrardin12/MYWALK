@@ -67,7 +67,7 @@ h1,h2,h3{font-family:"Playfair Display",serif;font-weight:600;color:var(--text);
 /* ---- nav ---- */
 nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);display:flex;z-index:50;padding-bottom:env(safe-area-inset-bottom);border-top:1px solid var(--div)}
 nav button{flex:1;padding:11px 0 9px;font-size:10.5px;font-weight:500;letter-spacing:.06em;color:var(--text2);display:flex;flex-direction:column;align-items:center;gap:3px;position:relative}
-nav button .nic{font-size:19px;line-height:1}
+nav button .nic{width:24px;height:24px}
 nav button.on{color:var(--accent)}
 nav button.on::after{content:"";position:absolute;bottom:3px;width:4px;height:4px;border-radius:50%;background:var(--accent)}
 /* ---- sections ---- */
@@ -132,6 +132,7 @@ nav button.on::after{content:"";position:absolute;bottom:3px;width:4px;height:4p
 .searchwrap{position:sticky;top:-24px;background:var(--card);padding:4px 0 10px;z-index:2}
 details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:8px 0;list-style:none}
 
+body.wing-home .gear{display:none}
 .gear{position:fixed;top:12px;right:max(16px,calc(50vw - 320px + 16px));z-index:60;width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:19px;box-shadow:0 1px 3px rgba(32,33,36,.08)}
 .gear:active{background:var(--tint)}
 .sheet-h{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;color:var(--text);margin-bottom:2px}
@@ -201,6 +202,74 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 .chip{font-family:"Inter",sans-serif;font-weight:600;font-size:12.5px;padding:7px 13px;border-radius:99px;background:var(--tint);color:var(--blue);border:none}
 .chip:active{background:#E2ECF6}
 .searchbar input{background:var(--card);border:1px solid var(--div);font-size:15px;padding:12px 14px}
+
+nav button .nic{width:24px;height:24px}
+.ic-svg{width:24px;height:24px;display:block}
+nav button.on .nic{stroke-width:2.1}
+
+/* home header */
+.homehead{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 2px;margin-bottom:8px}
+.hicon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--text2)}
+.hicon .ic-svg{width:22px;height:22px}
+.greet-c{text-align:center;line-height:1.15}
+.greet-sm{font-family:"Playfair Display",serif;font-size:19px;color:var(--text2)}
+.greet-lg{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;color:var(--text)}
+/* hero */
+.hero2{border-radius:18px;overflow:hidden;position:relative;height:184px;box-shadow:0 4px 16px rgba(32,33,36,.06)}
+.hero2-bg{position:absolute;inset:0;background:linear-gradient(160deg,#C4D2E2,#9DB3CC);background-size:cover;background-position:center}
+.hero2-date{position:absolute;left:18px;bottom:16px;font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:.16em;color:#fff;text-shadow:0 1px 6px rgba(10,20,35,.5)}
+/* memory verse overlap card */
+.mvcard{position:relative;z-index:2;text-align:left;box-shadow:0 4px 16px rgba(32,33,36,.08)}
+.ribbon{position:absolute;top:-2px;right:18px;color:var(--gold)}
+.ribbon .ic-svg{width:22px;height:30px;fill:var(--gold);stroke:var(--gold)}
+.mv2{font-family:"Playfair Display",serif;font-style:italic;font-size:18px;line-height:1.5;color:var(--text);text-align:center;margin-top:6px}
+.mvcard .mvref{text-align:center;margin-top:8px}
+.tbtn{font-family:"Inter",sans-serif;font-weight:600;font-size:13px;color:var(--blue);display:inline-flex;align-items:center;gap:3px}
+.tbtn .chev{width:15px;height:15px}
+.tbtn .ic-svg{width:15px;height:15px}
+/* generic bits */
+.lbl{font-family:"Inter",sans-serif;font-weight:600;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--text2)}
+.serif-t{font-family:"Playfair Display",serif;font-weight:600;font-size:18px;color:var(--text);margin:2px 0 2px;line-height:1.25}
+.meta{font-family:"Inter",sans-serif;font-size:13px;color:var(--text2)}
+.summary{font-size:14px;line-height:1.55;color:var(--text2)}
+.sq{width:38px;height:38px;flex:0 0 38px;border-radius:11px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.sq .ic-svg{width:20px;height:20px}
+.mt2{margin-top:14px}.mt-s{margin-top:6px}
+.pbtn{font-family:"Inter",sans-serif;font-weight:600;font-size:14px;background:var(--blue);color:#fff;border-radius:11px;padding:12px 16px;text-align:center}
+.pbtn:active{background:#26405f}
+.markpill{font-family:"Inter",sans-serif;font-weight:600;font-size:13px;border:1px solid var(--div);color:var(--text2);border-radius:11px;padding:12px 14px;display:inline-flex;align-items:center;gap:5px;flex:0 0 auto}
+.markpill.on{border-color:var(--blue);color:var(--blue);background:var(--tint)}
+.markpill .chk,.markpill .ic-svg{width:15px;height:15px}
+.chev{color:#C4BCA9}
+.chev .ic-svg,.chev.ic-svg{width:18px;height:18px}
+/* metrics */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}
+.metric{background:var(--card);border:1px solid var(--div);border-radius:16px;padding:14px 8px 12px;text-align:center;box-shadow:0 4px 16px rgba(32,33,36,.05);display:flex;flex-direction:column;align-items:center;gap:2px}
+.m-ic{color:var(--blue)}.m-ic.gold{color:var(--gold)}
+.m-ic .ic-svg{width:20px;height:20px}
+.m-num{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;color:var(--text);line-height:1.1}
+.m-lbl{font-size:11px;color:var(--text2)}
+.m-cap{font-family:"Inter",sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-top:3px}
+.m-ring{height:46px;display:flex;align-items:center}
+/* journey */
+.journey2 .jtext2{font-size:14.5px;color:var(--text);margin-top:3px}
+.journey2 .jmtn{color:var(--blue)}
+.journey2 .jmtn .ic-svg{width:26px;height:26px}
+.jbar2{height:7px;border-radius:99px;background:var(--tint);overflow:hidden}
+.jbar2 span{display:block;height:100%;background:var(--blue);border-radius:99px}
+/* timeline */
+.plan-lbl{margin:18px 2px 6px}
+.timeline{padding:6px 16px}
+.trow{display:flex;align-items:center;gap:12px;padding:13px 0;position:relative;cursor:pointer}
+.trow:not(.last)::after{content:"";position:absolute;left:8px;top:30px;bottom:-13px;width:1.5px;background:var(--div)}
+.tdot{width:17px;height:17px;flex:0 0 17px;border-radius:50%;border:1.5px solid var(--div);background:var(--card);z-index:1;display:flex;align-items:center;justify-content:center;color:#fff}
+.tdot.done{background:var(--blue);border-color:var(--blue)}
+.tdot .tchk,.tdot .ic-svg{width:11px;height:11px}
+.tico{width:22px;height:22px;color:var(--blue2);flex:0 0 22px}
+.tico .ic-svg{width:22px;height:22px}
+.ttitle{font-family:"Inter",sans-serif;font-weight:600;font-size:15px;color:var(--text)}
+.tdesc{font-size:12.5px;color:var(--text2);margin-top:1px}
+.wk-card .chev .ic-svg{width:20px;height:20px}
 .loading{text-align:center;color:var(--text2);padding:70px 0;font-family:"Playfair Display",serif;font-style:italic}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
@@ -216,17 +285,39 @@ details summary{cursor:pointer;font-family:"Inter",sans-serif;font-weight:600;fo
 <body>
 <div id="app"><div class="loading">Opening the Book…</div></div>
 <button class="gear" id="gearBtn" onclick="openSettings()" aria-label="Settings">⚙</button>
-<nav id="nav">
-  <button data-w="home"><span class="nic">⌂</span>Home</button>
-  <button data-w="devo"><span class="nic">▤</span>Devo</button>
-  <button data-w="prayer"><span class="nic">🙏</span>Prayer</button>
-  <button data-w="study"><span class="nic">✎</span>Study</button>
-</nav>
+<nav id="nav"></nav>
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
-const BUILD_NAME='Lampstand';
-const BUILD_VERSION='1.4.0';
+/* ---------- SF-style outline icons ---------- */
+const ICON={
+  home:'<path d="M3 10.2 12 3l9 7.2M5 9.5V20h5v-6h4v6h5V9.5"/>',
+  book:'<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5A1.5 1.5 0 0 0 20 17.5z"/>',
+  pray:'<path d="M12 3v5m0 0c0 2-1.5 3-3 4l-2 1.5V19h10v-5.5L15 12c-1.5-1-3-2-3-4z"/>',
+  study:'<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>',
+  bookmark:'<path d="M7 4h10v16l-5-3.5L7 20z"/>',
+  note:'<path d="M6 3h9l4 4v14H6zM15 3v4h4"/>',
+  flame:'<path d="M12 3c1 3 4 4.5 4 8a4 4 0 1 1-8 0c0-1.5.5-2.5 1.2-3.3C10 9 11 7 12 3z"/>',
+  music:'<path d="M9 17V6l9-2v11"/><circle cx="7" cy="17" r="2"/><circle cx="16" cy="15" r="2"/>',
+  disc:'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/>',
+  play:'<path d="M8 5v14l11-7z"/>',
+  mountain:'<path d="M3 19l6-11 4 7 2-3 6 7z"/><path d="M13 8l-1.5 3"/>',
+  chevron:'<path d="M9 5l7 7-7 7"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3m0 14v3m10-10h-3M5 12H2m15.5-6.5-2 2m-7 7-2 2m11 0-2-2m-7-7-2-2"/>',
+  bell:'<path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+  menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+  leaf:'<path d="M4 20C4 10 12 4 20 4c0 8-6 16-16 16zM8 16c3-3 6-5 9-6"/>',
+  star:'<path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/>',
+  check:'<path d="M5 12l5 5 9-11"/>',
+  download:'<path d="M12 3v12m0 0l-4-4m4 4l4-4M5 20h14"/>',
+  external:'<path d="M14 4h6v6M20 4l-9 9M18 13v6H5V5h6"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  refresh:'<path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2M18 4v5h-5M6 20v-5h5"/>'
+};
+function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
+
+const BUILD_NAME='First Light';
+const BUILD_VERSION='1.5.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -375,6 +466,12 @@ function go(w,sub){
   window.scrollTo(0,0);
   ({home:renderHome,devo:renderDevo,prayer:renderPrayer,study:renderStudy}[w]||renderHome)(sub);
 }
+const NAV=[['home','Home','home'],['devo','Devo','book'],['prayer','Prayer','pray'],['study','Study','study']];
+function buildNav(){
+  document.getElementById('nav').innerHTML=NAV.map(([w,label,icon])=>
+    `<button data-w="${w}">${ic(icon,'nic')}<span>${label}</span></button>`).join('');
+}
+buildNav();
 document.getElementById('nav').addEventListener('click',e=>{
   const b=e.target.closest('button'); if(b) go(b.dataset.w);
 });
@@ -431,111 +528,109 @@ function renderHome(){
   const img=heroImg();
   const read=!!S.reads[day];
   const storyTitle=plan[0][0][0];
+  const done=S.prayerChecks[todayKey()]||[];
+  const planRead=read;
   h(`
-  <div class="greet">${greeting()}, Andrew</div>
-  <div class="hero" onclick="go('study','memory')" role="button" tabindex="0">
-    <div class="hero-bg" ${img?`style="background-image:linear-gradient(180deg,rgba(11,29,51,.2),rgba(11,29,51,.75)),url('${img}')"`:''}></div>
-    <div class="hero-in">
-      <div class="hero-date">${fmtDate(new Date())}</div>
-      <div class="hero-verse">${esc(mv.text)}</div>
-      <div class="hero-ref">${esc(mv.ref)}</div>
-      <div class="hero-story">${esc(storyTitle)}</div>
-    </div>
+  <div class="homehead">
+    <button class="hicon" onclick="openSettings()" aria-label="Menu">${ic('menu')}</button>
+    <div class="greet-c"><div class="greet-sm">${greeting()},</div><div class="greet-lg">Andrew</div></div>
+    <button class="hicon" onclick="openSettings()" aria-label="Settings">${ic('gear')}</button>
   </div>
 
-  <div class="card" style="position:relative">
-    <div class="bookmark" aria-hidden="true"></div>
-    <div class="eyebrow mb">Memory Verse</div>
-    <div class="mvtext">${esc(mv.text)}</div>
-    <div class="mvref">${esc(mv.ref)}</div>
-    <div class="mt"><button class="linkbtn" onclick="go('study','memory')">Practice Now →</button></div>
+  <div class="hero2">
+    <div class="hero2-bg" ${img?`style="background-image:linear-gradient(180deg,rgba(20,32,50,.05),rgba(20,32,50,.35)),url('${img}')"`:''}></div>
+    <div class="hero2-date">${fmtDate(new Date()).toUpperCase()}</div>
+  </div>
+
+  <div class="card mvcard" style="margin-top:-46px">
+    <div class="ribbon">${ic('bookmark')}</div>
+    <div class="lbl">Memory Verse</div>
+    <div class="mv2">${esc(mv.text)}</div>
+    <div class="mvref center">${esc(mv.ref)}</div>
+    <div class="center mt"><button class="tbtn" onclick="go('study','memory')">Practice Now ${ic('chevron','chev')}</button></div>
   </div>
 
   <div class="card">
-    <div class="row" style="align-items:flex-start;gap:12px">
-      <div class="ic" style="background:var(--tint);flex:0 0 40px">📖</div>
+    <div class="row" style="gap:13px;align-items:flex-start">
+      <div class="sq">${ic('book')}</div>
       <div class="grow">
-        <div class="eyebrow">Today's Reading</div>
-        <div class="rtitle">${esc(storyTitle)}</div>
-        <div class="small">${refLink(plan[0][0][1])}</div>
+        <div class="lbl">Today's Reading</div>
+        <div class="serif-t">${esc(storyTitle)}</div>
+        <div class="meta">${esc(plan[0][0][1])}</div>
       </div>
     </div>
-    <div class="rblurb mt">${esc(plan[2])}</div>
-    <div class="row mt" style="gap:10px">
-      <button class="btn solid grow" onclick="go('devo')">${read?'Continue Reading':'Read Now'}</button>
-      <button class="markbtn ${read?'on':''}" onclick="toggleReadHome(${day})" aria-pressed="${read}">${read?'Read ✓':'Mark Read'}</button>
+    <div class="summary mt">${esc(shortSummary(plan[2]))}</div>
+    <div class="row mt2" style="gap:10px">
+      <button class="pbtn grow" onclick="go('devo')">Read Now</button>
+      <button class="markpill ${read?'on':''}" onclick="toggleReadHome(${day})">${read?ic('check','chk')+' Read':'Mark Read'}</button>
     </div>
   </div>
 
-  <div class="tiles">
-    <div class="tile tap" onclick="go('prayer')">
-      <div class="tlabel">Prayer</div>
-      <div class="tnum">${pd.items.length?pd.remaining.length:'—'}</div>
-      <div class="tsub">${pd.items.length?'remaining':'set up'}</div>
+  <div class="metrics">
+    <div class="metric" onclick="go('prayer')">
+      <div class="m-ic">${ic('pray')}</div>
+      <div class="m-num">${pd.items.length?pd.remaining.length:'—'}</div>
+      <div class="m-lbl">${pd.items.length?'remaining':'set up'}</div>
+      <div class="m-cap">Prayer</div>
     </div>
-    <div class="tile tap" onclick="go('devo')">
-      <div class="tlabel">Streak</div>
-      <div class="tnum gold">${streak()}</div>
-      <div class="tsub">day${streak()===1?'':'s'}</div>
+    <div class="metric" onclick="go('devo')">
+      <div class="m-ic gold">${ic('flame')}</div>
+      <div class="m-num">${streak()}</div>
+      <div class="m-lbl">day${streak()===1?'':'s'}</div>
+      <div class="m-cap">Streak</div>
     </div>
-    <div class="tile tap" onclick="go('devo')">
-      <div class="tlabel">Progress</div>
-      ${miniRing(st.pct)}
-      <div class="tsub">of stories</div>
+    <div class="metric" onclick="go('devo')">
+      <div class="m-ring">${homeRing(st.pct)}</div>
+      <div class="m-cap">Progress</div>
     </div>
   </div>
 
-  <div class="card journey" onclick="go('devo')" role="button" tabindex="0">
+  <div class="card journey2" onclick="go('devo')" role="button" tabindex="0">
     <div class="row">
-      <div class="grow">
-        <div class="eyebrow">183-Day Journey</div>
-        <div class="jtext">You're on day <b>${day+1}</b> of ${D.plan.length}</div>
-      </div>
-      <div class="jflag">⛰</div>
+      <div class="grow"><div class="lbl">183-Day Journey</div>
+        <div class="jtext2">You're on day <b>${day+1}</b> of ${D.plan.length}</div></div>
+      <div class="jmtn">${ic('mountain')}</div>
     </div>
-    <div class="jbar mt"><span style="width:${Math.round(100*(day+1)/D.plan.length)}%"></span></div>
-    <div class="tiny right mt">${day+1} / ${D.plan.length}</div>
+    <div class="jbar2 mt"><span style="width:${Math.round(100*(day+1)/D.plan.length)}%"></span></div>
+    <div class="meta right mt-s">${day+1} / ${D.plan.length}</div>
   </div>
 
-  <div class="card tap hcard" onclick="go('devo','hymn')">
-    <div class="ic">♪</div><div class="bd">
-      <div class="t1">Song of the Week</div>
-      <div class="t2">${esc(hy.t)}</div>
-      <div class="t3">${esc(hy.a)}</div>
-    </div><div class="go">›</div>
+  <div class="lbl plan-lbl">Today's Plan</div>
+  <div class="card timeline">
+    ${planRow('book', "Read Today's Story", esc(plan[0][0][1]), "go('devo')", planRead)}
+    ${planRow('bookmark', 'Practice Memory Verse', esc(mv.ref), "go('study','memory')", false)}
+    ${planRow('pray', "Pray Today's Cards", pd.items.length? pd.remaining.length+' remaining':'set up your list', "go('prayer')", pd.items.length&&!pd.remaining.length)}
+    ${planRow('music', 'Hymn of the Week', esc(hy.t), "go('devo','hymn')", false)}
+    ${planRow('disc', 'Album of the Week', al?esc(al.t):'add your queue', al?"openAlbum()":"go('devo','albums')", false)}
+    ${planRow('play', 'Sermons of the Week', sm.length?sm.length+' to listen':'add your queue', "go('devo','sermons')", false, true)}
   </div>
-  ${al?`<div class="card tap hcard" onclick="openAlbum()">
-    <div class="ic">◉</div><div class="bd">
-      <div class="t1">Album of the Week</div>
-      <div class="t2">${esc(al.t)}</div>${al.a?`<div class="t3">${esc(al.a)}</div>`:''}
-    </div><div class="go">›</div>
-  </div>`:`<div class="card tap hcard" onclick="go('devo','albums')">
-    <div class="ic">◉</div><div class="bd">
-      <div class="t1">Album of the Week</div>
-      <div class="t2">Add your album queue</div>
-    </div><div class="go">›</div>
-  </div>`}
-  ${sm.length?`<div class="card">
-    <div class="hcard" style="margin-bottom:6px"><div class="ic">🕮</div><div class="bd"><div class="t1">Sermons of the Week</div></div></div>
-    ${sm.map((s,i)=>`<div class="li" onclick="openSermon(${i})" role="button" tabindex="0"><div class="grow">${esc(s.t)}</div><div class="go">▶</div></div>`).join('')}
-  </div>`:`<div class="card tap hcard" onclick="go('devo','sermons')">
-    <div class="ic">🕮</div><div class="bd">
-      <div class="t1">Sermons of the Week</div>
-      <div class="t2">Add your sermon queue</div>
-    </div><div class="go">›</div>
-  </div>`}
-  <div class="card tap hcard" onclick="go('study')">
-    <div class="ic">✒</div><div class="bd">
-      <div class="t1">Weekly Study</div>
-      <div class="t2">${esc(titleCase(naveByIndex(S.currentTopic).s))}</div>
-      <div class="t3">Nave's Topical Bible</div>
-    </div><div class="go">›</div>
+
+  <div class="card tap wk-card" onclick="go('study')">
+    <div class="row" style="gap:13px">
+      <div class="sq">${ic('study')}</div>
+      <div class="grow"><div class="lbl">Weekly Study</div>
+        <div class="serif-t">${esc(titleCase(naveByIndex(S.currentTopic).s))}</div>
+        <div class="meta">Nave's Topical Bible</div></div>
+      <div class="chev">${ic('chevron')}</div>
+    </div>
   </div>`);
 }
+function planRow(icon,title,desc,action,doneState,last){
+  return `<div class="trow ${last?'last':''}" onclick="${action}" role="button" tabindex="0">
+    <div class="tdot ${doneState?'done':''}">${doneState?ic('check','tchk'):''}</div>
+    <div class="tico">${ic(icon)}</div>
+    <div class="grow"><div class="ttitle">${title}</div><div class="tdesc">${desc}</div></div>
+    <div class="chev">${ic('chevron')}</div>
+  </div>`;
+}
+function shortSummary(s){
+  const sentences=String(s).split(/(?<=[.!?])\s+/);
+  return sentences.slice(0,2).join(' ');
+}
 function toggleReadHome(i){ if(S.reads[i]) delete S.reads[i]; else S.reads[i]=true; save(); renderHome(); }
-function miniRing(pct){
-  const R=20,C=2*Math.PI*R,off=C*(1-pct/100);
-  return `<svg class="mring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="${R}" fill="none" stroke="var(--div)" stroke-width="5"/><circle cx="24" cy="24" r="${R}" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${off}" transform="rotate(-90 24 24)"/><text x="24" y="28" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="13" fill="var(--text)">${pct}%</text></svg>`;
+function homeRing(pct){
+  const R=19,C=2*Math.PI*R,off=C*(1-pct/100);
+  return `<svg viewBox="0 0 46 46" width="46" height="46"><circle cx="23" cy="23" r="${R}" fill="none" stroke="var(--div)" stroke-width="4"/><circle cx="23" cy="23" r="${R}" fill="none" stroke="var(--blue)" stroke-width="4" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${off}" transform="rotate(-90 23 23)"/><text x="23" y="27" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="12" fill="var(--text)">${pct}%</text></svg>`;
 }
 
 function openAlbum(){
@@ -1461,7 +1556,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=12').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=13').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
