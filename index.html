@@ -458,6 +458,14 @@ body.wing-home .homehead{margin-bottom:6px}
 .am-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:13.5px;color:var(--blue);background:var(--tint);border:1px solid var(--div);border-radius:10px;padding:10px 16px;text-decoration:none}
 .am-btn .ic-svg{width:16px;height:16px;color:var(--accent)}
 .am-btn:active{background:#EDE7DC}
+/* in-app scripture reader */
+.rdr-head{text-align:center;padding:2px 0 14px;border-bottom:1px solid var(--div2);margin-bottom:14px}
+.rdr-ref{font-family:"Playfair Display",serif;font-weight:600;font-size:23px;color:var(--blue)}
+.rdr-sub{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);margin-top:4px}
+.rdr-body{max-height:64vh;overflow:auto}
+.rdr-v{font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.62;color:var(--text);margin:0 0 4px;text-indent:0}
+.rdr-v .rdr-n{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;color:var(--gold);vertical-align:super;margin-right:5px}
+.rdr-v i{font-style:italic;color:var(--text2)}
 /* numbered gold verse rail */
 .lyrics{padding:8px 4px 4px}
 .vrail{display:flex;gap:16px;padding:14px 0}
@@ -693,8 +701,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Living Well';
-const BUILD_VERSION='2.8.0';
+const BUILD_NAME='Open Word';
+const BUILD_VERSION='2.9.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -861,6 +869,39 @@ function streak(){
 const BOOKMAP={GEN:'Genesis',EXO:'Exodus',LEV:'Leviticus',NUM:'Numbers',DEU:'Deuteronomy',JOS:'Joshua',JDG:'Judges',RUT:'Ruth','1SA':'1 Samuel','2SA':'2 Samuel','1KI':'1 Kings','2KI':'2 Kings','1CH':'1 Chronicles','2CH':'2 Chronicles',EZR:'Ezra',NEH:'Nehemiah',EST:'Esther',JOB:'Job',PSA:'Psalms',PRO:'Proverbs',ECC:'Ecclesiastes',So:'Song of Solomon',ISA:'Isaiah',JER:'Jeremiah',LAM:'Lamentations',EZK:'Ezekiel',DAN:'Daniel',HOS:'Hosea',JOL:'Joel',AMO:'Amos',OBA:'Obadiah',JON:'Jonah',MIC:'Micah',NAM:'Nahum',HAB:'Habakkuk',ZEP:'Zephaniah',HAG:'Haggai',ZEC:'Zechariah',MAL:'Malachi',MAT:'Matthew',MRK:'Mark',LUK:'Luke',JHN:'John',ACT:'Acts',ROM:'Romans','1CO':'1 Corinthians','2CO':'2 Corinthians',GAL:'Galatians',EPH:'Ephesians',PHP:'Philippians',COL:'Colossians','1TH':'1 Thessalonians','2TH':'2 Thessalonians','1TI':'1 Timothy','2TI':'2 Timothy',TIT:'Titus',PHM:'Philemon',HEB:'Hebrews',JAS:'James','1PE':'1 Peter','2PE':'2 Peter','1JN':'1 John','1JHN':'1 John','2JN':'2 John','3JN':'3 John',Jude:'Jude',REV:'Revelation'};
 const CODE_RE='(?:1JHN|1CH|1CO|1JN|1KI|1PE|1SA|1TH|1TI|2CH|2CO|2JN|2KI|2PE|2SA|2TH|2TI|3JN|ACT|AMO|COL|DAN|DEU|ECC|EPH|EST|EXO|EZK|EZR|GAL|GEN|HAB|HAG|HEB|HOS|ISA|JAS|JDG|JER|JHN|JOB|JOL|JON|JOS|LAM|LEV|LUK|MAL|MAT|MIC|MRK|NAM|NEH|NUM|OBA|PHM|PHP|PRO|PSA|REV|ROM|RUT|TIT|ZEC|ZEP|Jude|So)';
 function bibleHref(book,ch,v){ return 'bible://'+encodeURIComponent(book+' '+ch+(v?':'+v:'')); }
+
+/* ---------- In-app scripture reader (uses bundled KJV) ---------- */
+function parseRef(ref){
+  const m=String(ref).trim().match(/^([1-3]?\s?[A-Za-z][A-Za-z. ]+?)\s+(\d+)(?::(\d+)(?:[-–—](\d+))?)?/);
+  if(!m) return null;
+  let book=m[1].trim().replace(/\.$/,'');
+  const alias={Psalm:'Psalms','Song of Songs':'Song of Solomon','Song of Sol':'Song of Solomon','Canticles':'Song of Solomon',Rev:'Revelation'};
+  if(alias[book]) book=alias[book];
+  if(!D.kjv[book]){ const k=Object.keys(D.kjv).find(b=>b.toLowerCase()===book.toLowerCase()||b.toLowerCase().indexOf(book.toLowerCase())===0); if(k) book=k; else return null; }
+  const ch=+m[2];
+  const vStart=m[3]?+m[3]:null;
+  const vEnd=m[4]?+m[4]:(m[3]?+m[3]:null);
+  return {book, ch, vStart, vEnd};
+}
+function cleanKjv(t){ return esc(String(t||'')).replace(/\{([^}]*)\}/g,'<i>$1</i>'); }
+function openScripture(ref){
+  const p=parseRef(ref);
+  if(!p || !D.kjv[p.book] || !D.kjv[p.book][p.ch-1]){
+    modal(`<div class="rdr"><div class="rdr-head"><div class="rdr-ref">${esc(ref)}</div><div class="rdr-sub">King James Version</div></div>
+      <div class="rdr-body"><p class="small">This passage isn't available offline yet. Open the app online once to cache the King James text.</p></div></div>`);
+    return;
+  }
+  const chap=D.kjv[p.book][p.ch-1];
+  const start=p.vStart||1, end=p.vEnd||chap.length;
+  let verses=[];
+  for(let i=start;i<=end && i<=chap.length;i++){ if(chap[i-1]!=null) verses.push({n:i,t:chap[i-1]}); }
+  const title=p.book+' '+p.ch+(p.vStart?(':'+p.vStart+(p.vEnd&&p.vEnd!==p.vStart?'-'+p.vEnd:'')):'');
+  modal(`<div class="rdr">
+    <div class="rdr-head"><div class="rdr-ref">${esc(title)}</div><div class="rdr-sub">King James Version</div></div>
+    <div class="rdr-body">${verses.map(v=>`<p class="rdr-v"><span class="rdr-n">${v.n}</span>${cleanKjv(v.t)}</p>`).join('')||'<p class="small">Verse not found.</p>'}</div>
+  </div>`);
+}
+function refClick(ref){ return `onclick="openScripture('${String(ref).replace(/\\/g,'\\\\').replace(/'/g,"\\'")}')"`; }
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 /* linkify a verbatim Nave's entry: stateful scan; keeps display text identical */
 function navesSections(entry){
@@ -902,7 +943,7 @@ function linkifyNaves(text){
       const glueOk = book && /^[\s;,]*(?:with|and|cf\.?|to)?[\s;,]*$/i.test(gap);
       const first = t.match(/^(\d+)(?::(\d+))?/);
       if(glueOk && first){
-        out+='<a class="reflink" href="'+bibleHref(book,first[1],first[2]||'')+'">'+esc(t)+'</a>';
+        out+='<a class="reflink" role="button" tabindex="0" '+refClick(book+' '+first[1]+(first[2]?':'+first[2]:''))+'>'+esc(t)+'</a>';
       } else { book=null; out+=esc(t); }
     }
     last=m.index+t.length;
@@ -912,7 +953,7 @@ function linkifyNaves(text){
 }
 /* full-name refs like "Genesis 1:1-2:3", "Psalm 1", "1 Peter 3:18-20" */
 function refLink(ref){
-  return '<a class="reflink" href="'+('bible://'+encodeURIComponent(ref))+'">'+esc(ref)+'</a>';
+  return '<a class="reflink" role="button" tabindex="0" '+refClick(ref)+'>'+esc(ref)+'</a>';
 }
 function parseFullRef(ref){ // -> {book,ch,v} first verse of ref, book normalized to KJV key
   const m=String(ref).trim().match(/^([1-3]?\s?[A-Za-z][A-Za-z ]+?)\s+(\d+)(?::(\d+))?/);
@@ -1329,7 +1370,7 @@ function devoToday(){
     <button class="mv-practice" onclick="go('study','memory')">Practice Now →</button>
   </div>
 
-  <div class="card companion" onclick="location.href='${'bible://'+encodeURIComponent(plan[1][0])}'">
+  <div class="card companion" onclick="openScripture('${esc(plan[1][0]).replace(/'/g,"\\'")}')">
     <div class="sage-ic">${ic('leaf')}</div>
     <div class="grow"><div class="lbl">Companion Reading</div>
       <div class="serif-t" style="font-size:17px;margin-top:1px">${plan[1].map(r=>esc(r)).join(' · ')}</div></div>
@@ -2018,7 +2059,7 @@ function studyHomeStory(s){
     <div class="sy-title" style="font-size:27px">${esc(s.title)}</div>
     <div class="sy-week"><div><div class="sw-lbl">Story of the Week</div>
       <div class="sw-num">${ic('cal')}Week ${weekOfYear()}</div></div></div>
-    <div class="sy-cta"><a class="btn solid" style="width:100%;text-align:center;padding:15px;display:block;text-decoration:none" href="${bibleHrefFull(s.ref)}">Read the Passage — ${esc(s.ref)} →</a></div>
+    <div class="sy-cta"><button class="btn solid" style="width:100%;text-align:center;padding:15px" onclick="openScripture('${esc(s.ref).replace(/'/g,"\\'")}')">Read the Passage — ${esc(s.ref)} →</button></div>
   </div>
 
   <div class="card">
@@ -2047,7 +2088,7 @@ function studyHomeQuestion(s){
     <div class="eyebrow mb">How to Study It</div>
     <div style="font-size:15px;line-height:1.6">Search the Scriptures before you settle your answer. Use the tools below to trace every relevant passage, then write your position with book, chapter, and verse.</div>
     ${(s.qrefs&&s.qrefs.length)?`<div class="mt" style="margin-top:14px"><div class="eyebrow mb">Starting Passages</div>
-      <div class="chips">${s.qrefs.map(r=>`<a class="chip" href="${bibleHrefFull(r)}">${esc(r)}</a>`).join('')}</div></div>`:''}
+      <div class="chips">${s.qrefs.map(r=>`<a class="chip" role="button" tabindex="0" ${refClick(r)}>${esc(r)}</a>`).join('')}</div></div>`:''}
   </div>
 
   <div class="card">
@@ -2350,8 +2391,7 @@ function renderTopic(){
   <div class="card" id="webster-card"><div class="eyebrow mb">Webster's 1828</div><div class="small">Loading…</div></div>
   <div class="card">
     <div class="btnrow" style="margin:0"><button class="btn" onclick="addNote('t')">Add note on this topic</button><button class="btn ghost" onclick="newTopic()">New topic</button></div>
-  </div>
-  ${questionsCard()}`;
+  </div>`;
   fillStrongs(t.s,'strongs-card');
   fillWebster(t.s,'webster-card');
   if(!def) fillDefinition(t.s,'def-card');
@@ -2651,7 +2691,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=30').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=31').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
