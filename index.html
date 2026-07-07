@@ -110,12 +110,7 @@ nav button.on::after{content:"";position:absolute;bottom:3px;width:4px;height:4p
 .hymn-c{margin:16px 0;padding:13px 16px;border-left:2px solid var(--gold);font-family:"Playfair Display",serif;font-style:italic;white-space:pre-line;color:var(--blue);background:var(--tint);border-radius:0 10px 10px 0}
 .vnum{font-family:"Nunito Sans",sans-serif;font-style:normal;font-weight:600;font-size:11px;color:var(--text2);display:block;margin-bottom:4px;letter-spacing:.13em;text-transform:uppercase}
 /* flash card */
-.flash{border:1px solid var(--div);border-radius:16px;background:var(--card);padding:28px 22px;min-height:300px;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(32,33,36,.06)}
-.flash .fh{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:11.5px;color:var(--text2);letter-spacing:.14em;text-transform:uppercase}
-.flash .fn{font-family:"Playfair Display",serif;font-size:28px;font-weight:600;color:var(--text);margin:10px 0 4px}
-.flash ul{list-style:none;margin-top:10px}
-.flash li{padding:9px 0;border-bottom:1px solid var(--div2);font-size:16px}
-.prog{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:12px;letter-spacing:.1em;color:var(--text2);text-transform:uppercase}
+
 /* memory practice */
 .mem-w{display:inline-block;margin:0 4px 8px 0;padding:3px 9px;border-radius:8px;background:var(--tint);color:var(--text);font-family:"Playfair Display",serif;font-size:17.5px;cursor:pointer;user-select:none}
 .mem-w.hid{background:var(--card);color:transparent;border:1px dashed var(--div);box-shadow:none}
@@ -159,17 +154,12 @@ body.wing-home .gear{display:none}
 .mring{width:52px;height:52px;margin:2px auto 0;display:block}
 .journey .jtext{font-size:15px;color:var(--text);margin-top:3px}
 .journey .jflag{font-size:20px;opacity:.8}
-.jbar{height:8px;border-radius:99px;background:var(--tint);overflow:hidden}
-.jbar span{display:block;height:100%;background:linear-gradient(90deg,var(--blue2),var(--blue));border-radius:99px}
+
 
 .subtabs{display:flex;gap:8px;margin:14px 0 6px;overflow-x:auto}
 .subtabs button{flex:1;white-space:nowrap;font-size:12.5px;font-weight:600;padding:10px 12px;border:1px solid var(--div);border-radius:10px;color:var(--text2);background:var(--card)}
 .subtabs button.on{border-color:var(--accent);color:#fff;background:var(--accent)}
-.pstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end;text-align:center}
-.pcol{display:flex;flex-direction:column;align-items:center;gap:5px}
-.pflame{font-family:"Playfair Display",serif;font-weight:700;font-size:26px;color:var(--gold)}
-.pdays{font-family:"Playfair Display",serif;font-weight:700;font-size:26px;color:var(--text)}
-.pdays span{font-family:"Nunito Sans",sans-serif;font-weight:400;font-size:13px;color:var(--text2)}
+
 .pring{width:56px;height:56px;display:block}
 .plabel{font-size:11px;color:var(--text2)}
 .playb{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--tint);color:var(--accent);font-size:12px;display:flex;align-items:center;justify-content:center}
@@ -179,18 +169,7 @@ body.wing-home .gear{display:none}
 .cal .d.sel{border-color:var(--blue2);background:var(--tint)}
 .cal .d.read .cdot{display:none}
 
-.amen{font-family:"Playfair Display",serif;font-weight:600;font-size:26px;color:var(--blue)}
-.prayline{font-size:16px;color:var(--text);margin-top:3px}
-.prayline b{font-family:"Playfair Display",serif;font-size:22px;color:var(--text)}
-.fverse{margin-top:14px;padding-top:12px;border-top:1px solid var(--div2);font-family:"Playfair Display",serif;font-style:italic;font-size:15px;color:var(--text2)}
-.fvref{display:block;font-family:"Nunito Sans",sans-serif;font-style:normal;font-weight:600;font-size:11px;color:var(--blue);margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
-.prayrow{display:flex;align-items:flex-start;justify-content:space-around;gap:10px;margin-top:6px}
-.circ{display:flex;flex-direction:column;align-items:center;gap:7px}
-.cg{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
-.cg.ghost{border:1.5px solid var(--div);color:var(--text2)}
-.cg.solid{background:var(--accent);color:#fff;width:60px;height:60px;font-size:24px}
-.cl{font-size:11px;font-weight:600;color:var(--text2)}
-.star{color:var(--gold);font-size:18px}
+
 
 .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:14px 0}
 .gtile{background:var(--card);border:1px solid var(--div);border-radius:14px;padding:16px 14px;cursor:pointer;box-shadow:0 1px 2px rgba(32,33,36,.04)}
@@ -484,6 +463,65 @@ body.wing-home .homehead{margin-bottom:6px}
 .vrail .vr-text{flex:1;font-family:"Playfair Display",serif;font-style:italic;font-size:13.5px;line-height:1.6;white-space:pre-line;color:var(--text)}
 .vrail.chorus .vr-num .vn{font-size:11px;font-style:normal;font-family:"Nunito Sans",sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);color:var(--gold)}
 .vrail.chorus .vr-text{color:var(--blue);background:var(--tint);border-radius:10px;padding:12px 15px}
+/* ===== Batch E — Prayer ===== */
+/* summary strip card */
+.pray-sum{display:flex;align-items:center;gap:14px}
+.pray-sum .grow{min-width:0}
+.pray-sum .ps-eyebrow{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--text2)}
+.pray-sum .ps-count{font-family:"Playfair Display",serif;font-size:16px;color:var(--text);margin-top:3px}
+.pray-sum .ps-count b{font-size:21px;color:var(--blue)}
+.ps-flame{flex:0 0 auto;text-align:center}
+.ps-flame .pf-num{display:inline-flex;align-items:center;gap:4px;font-family:"Playfair Display",serif;font-weight:700;font-size:22px;color:var(--gold)}
+.ps-flame .pf-num .ic-svg{width:17px;height:17px}
+.ps-flame .plabel{font-size:10.5px;color:var(--text2);margin-top:1px}
+/* navy flash card centerpiece */
+.flash{position:relative;overflow:hidden;border:none;border-radius:18px;background:linear-gradient(158deg,#2D4C73,#1d3251);color:#fff;padding:26px 22px 22px;min-height:308px;display:flex;flex-direction:column;box-shadow:0 10px 30px rgba(20,32,50,.30)}
+.flash .fl-wm{position:absolute;top:-16px;right:-12px;width:120px;height:120px;color:#E4C97A;opacity:.10;pointer-events:none}
+.flash .fl-wm svg{width:100%;height:100%}
+.flash .fbook{position:absolute;top:18px;right:20px;color:#E4C97A;opacity:.9}
+.flash .fbook .ic-svg{width:20px;height:20px}
+.flash .fh{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11.5px;color:#E4C97A;letter-spacing:.16em;text-transform:uppercase;position:relative;z-index:1}
+.flash .fn{font-family:"Playfair Display",serif;font-size:27px;font-weight:600;color:#fff;margin:9px 0 4px;position:relative;z-index:1;line-height:1.15}
+.flash ul{list-style:none;margin-top:12px;position:relative;z-index:1}
+.flash li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;color:rgba(255,255,255,.9)}
+.flash li:last-child{border-bottom:none}
+.fverse{margin-top:16px;padding:14px 0 0;border-top:1px solid rgba(228,201,122,.28);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:rgba(255,255,255,.82);position:relative;z-index:1}
+.fvref{display:block;font-family:"Nunito Sans",sans-serif;font-style:normal;font-weight:700;font-size:10.5px;color:#E4C97A;margin-top:7px;letter-spacing:.12em;text-transform:uppercase}
+.prog{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--text2);text-transform:uppercase}
+/* three circular actions */
+.prayrow{display:flex;align-items:flex-start;justify-content:space-around;gap:10px;margin-top:8px}
+.circ{display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
+.cg{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px}
+.cg .ic-svg{width:21px;height:21px}
+.cg.ghost{border:1.5px solid var(--div);color:var(--text2);background:var(--card)}
+.cg.gold{border:1.5px solid var(--gold);color:var(--gold);background:var(--card)}
+.cg.solid{background:linear-gradient(155deg,#2D4C73,#22385c);color:#fff;width:64px;height:64px;font-size:26px;box-shadow:0 6px 16px rgba(45,76,115,.32)}
+.cl{font-size:11px;font-weight:600;color:var(--text2)}
+.amen{font-family:"Playfair Display",serif;font-weight:600;font-size:28px;color:var(--blue)}
+.prayline{font-size:16px;color:var(--text);margin-top:3px}
+.prayline b{font-family:"Playfair Display",serif;font-size:22px;color:var(--blue)}
+/* overview stat strip */
+.pstrip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end;text-align:center}
+.pcol{display:flex;flex-direction:column;align-items:center;gap:5px}
+.pflame{font-family:"Playfair Display",serif;font-weight:700;font-size:27px;color:var(--gold)}
+.pflame .ic-svg{width:20px;height:20px}
+.pdays{font-family:"Playfair Display",serif;font-weight:700;font-size:27px;color:var(--blue)}
+.pdays span{font-family:"Nunito Sans",sans-serif;font-weight:400;font-size:13px;color:var(--text2)}
+.plabel{font-size:11px;color:var(--text2)}
+.jbar{height:8px;border-radius:99px;background:var(--tint);overflow:hidden}
+.jbar span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),#c9a84a);border-radius:99px}
+/* list heading cards */
+.phead-title{display:flex;align-items:center;gap:9px;flex:1;min-width:0}
+.phead-title .pleaf{color:var(--gold);flex:0 0 auto}
+.phead-title .pleaf .ic-svg{width:17px;height:17px}
+.phead-title .pt{font-family:"Playfair Display",serif;font-weight:600;color:var(--text);font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* answered testimony cards w/ gold bookmark ribbon */
+.testcard{position:relative;padding-right:44px}
+.tribbon{position:absolute;top:-2px;right:18px;width:22px;height:34px;background:linear-gradient(180deg,var(--gold),#c9a84a);border-radius:0 0 3px 3px;display:flex;align-items:flex-start;justify-content:center;padding-top:5px;box-shadow:0 2px 5px rgba(180,150,60,.3)}
+.tribbon::after{content:"";position:absolute;bottom:0;left:0;border-left:11px solid var(--gold);border-right:11px solid var(--gold);border-bottom:7px solid var(--bg);width:0;height:0}
+.tribbon .ic-svg{width:11px;height:11px;color:#fff;position:relative;z-index:1}
+.testcard .tt{font-family:"Playfair Display",serif;font-weight:600;font-size:17px;color:var(--text)}
+.star{color:var(--gold);font-size:18px}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
 .ring svg{width:76px;height:76px;flex:0 0 76px}
@@ -537,8 +575,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Green Pastures';
-const BUILD_VERSION='2.4.0';
+const BUILD_NAME='Still Waters';
+const BUILD_VERSION='2.5.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -1303,23 +1341,26 @@ function renderPray(){
   const c=cards[flashPos];
   const v=verseForItem();
   pv.innerHTML=`
-  <div class="card" style="padding:14px 16px">
-    <div class="row"><div class="grow"><div class="eyebrow">Today\u2019s Prayer Cards</div>
-      <div class="prayline"><b>${cards.length}</b> remaining</div></div>
-      <div class="pcol" style="flex:0 0 auto"><div class="pflame">${streak()}</div><div class="plabel">day streak</div></div>
+  <div class="card">
+    <div class="pray-sum">
+      <div class="grow"><div class="ps-eyebrow">Today's Prayer Cards</div>
+        <div class="ps-count"><b>${cards.length}</b> remaining</div></div>
+      <div class="ps-flame"><div class="pf-num">${ic('flame')}${streak()}</div><div class="plabel">day streak</div></div>
     </div>
-    <div class="jbar mt"><span style="width:${Math.round(100*doneCount/pd.items.length)}%"></span></div>
+    <div class="jbar" style="margin-top:12px"><span style="width:${Math.round(100*doneCount/pd.items.length)}%"></span></div>
   </div>
   <div class="flash">
+    <div class="fl-wm">${ic('pray')}</div>
+    <div class="fbook">${ic('bookmark')}</div>
     <div class="fh">${esc(c.hd.name)}</div>
     <div class="fn">${esc(c.it.name)}</div>
-    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p class="small" style="margin-top:8px">Pray as led.</p>'}
+    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p style="margin-top:10px;color:rgba(255,255,255,.72);position:relative;z-index:1">Pray as led.</p>'}
     <div class="fverse"><i>${esc(v[0])}</i><span class="fvref">${esc(v[1])}</span></div>
     <div style="flex:1"></div>
     <div class="prayrow">
       <button class="circ" onclick="praySkip(${cards.length})" aria-label="Skip"><span class="cg ghost">${ic('refresh')}</span><span class="cl">Skip</span></button>
-      <button class="circ" onclick="prayDone('${c.it.id}')" aria-label="Prayed"><span class="cg solid">✓</span><span class="cl">Prayed</span></button>
-      <button class="circ" onclick="prayAnswer('${c.hd.id}','${c.it.id}')" aria-label="Answered"><span class="cg ghost">★</span><span class="cl">Answer</span></button>
+      <button class="circ" onclick="prayDone('${c.it.id}')" aria-label="Prayed"><span class="cg solid">${ic('check')}</span><span class="cl">Prayed</span></button>
+      <button class="circ" onclick="prayAnswer('${c.hd.id}','${c.it.id}')" aria-label="Answered"><span class="cg gold">${ic('star')}</span><span class="cl">Answer</span></button>
     </div>
   </div>
   <div class="center prog mt">${doneCount+1} of ${pd.items.length}</div>`;
@@ -1352,7 +1393,7 @@ function renderOverview(){
     <div class="eyebrow mb">Today at a Glance</div>
     <div class="pstrip">
       <div class="pcol"><div class="pdays">${pd.remaining.length}</div><div class="plabel">remaining</div></div>
-      <div class="pcol"><div class="pflame">${streak()}</div><div class="plabel">day streak</div></div>
+      <div class="pcol"><div class="pflame" style="display:inline-flex;align-items:center;gap:4px">${ic('flame')}${streak()}</div><div class="plabel">day streak</div></div>
       <div class="pcol"><div class="pdays">${doneToday}</div><div class="plabel">prayed today</div></div>
     </div>
   </div>
@@ -1377,7 +1418,7 @@ function renderManage(){
   ${S.prayer.headings.map((hd,hi)=>`
   <div class="card">
     <div class="row">
-      <div class="grow" style="font-family:Playfair Display,serif;font-weight:600;color:var(--text);font-size:17px">${esc(hd.name)}</div>
+      <div class="phead-title"><span class="pleaf">${ic('leaf')}</span><span class="pt">${esc(hd.name)}</span></div>
       <button class="iconb" onclick="moveH(${hi},-1)" aria-label="Move up">↑</button>
       <button class="iconb" onclick="moveH(${hi},1)" aria-label="Move down">↓</button>
       <button class="iconb" onclick="editHeading(${hi})" aria-label="Edit">${ic('edit')}</button>
@@ -1501,9 +1542,10 @@ function renderLog(){
     <button class="${logFilter==='year'?'on':''}" onclick="logFilter='year';renderLog()">This Year</button>
   </div>
   ${items.length? items.map(t=>`
-    <div class="card">
-      <div class="row"><div class="grow"><div style="font-family:Playfair Display,serif;font-weight:600;font-size:17px">${esc(t.item)}</div>
-        <div class="tiny">${esc(t.date)}</div></div><div class="star">★</div></div>
+    <div class="card testcard">
+      <div class="tribbon">${ic('bookmark')}</div>
+      <div class="tt">${esc(t.item)}</div>
+      <div class="tiny" style="margin-top:2px">${esc(t.date)}</div>
       ${t.note?`<div class="mt" style="font-size:15px">${esc(t.note)}</div>`:''}
       <div class="mt"><span class="pill">${esc(t.cat||t.heading||'Prayer')}</span></div>
     </div>`).join('')
@@ -1883,7 +1925,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=25').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=26').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
