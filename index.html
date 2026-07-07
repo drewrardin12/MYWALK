@@ -127,9 +127,10 @@ nav button.on::after{content:"";position:absolute;bottom:3px;width:4px;height:4p
 .searchwrap{position:sticky;top:-24px;background:var(--card);padding:4px 0 10px;z-index:2}
 details summary{cursor:pointer;font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:8px 0;list-style:none}
 
-.gear{display:none}
-.gear{position:fixed;top:12px;right:max(16px,calc(50vw - 320px + 16px));z-index:60;width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:19px;box-shadow:0 1px 3px rgba(32,33,36,.08)}
-.gear:active{background:var(--tint)}
+.homebtn{position:fixed;top:12px;right:max(16px,calc(50vw - 320px + 16px));z-index:60;width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--accent);box-shadow:0 1px 3px rgba(32,33,36,.08)}
+.homebtn .ic-svg{width:19px;height:19px}
+.homebtn:active{background:var(--tint)}
+body.wing-home .homebtn{display:none}
 .sheet-h{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;color:var(--text);margin-bottom:2px}
 .sset{background:var(--tint);border-radius:12px;padding:2px 0;margin-top:14px}
 .sset .li{padding:13px 15px;border-color:rgba(45,76,115,.10)}
@@ -635,7 +636,7 @@ body.wing-home .homehead{margin-bottom:6px}
 <body>
 <div id="heroFixed"></div>
 <div id="app"><div class="loading">Opening the Book…</div></div>
-<button class="gear" id="gearBtn" onclick="openSettings()" aria-label="Settings"></button>
+<button class="homebtn" id="homeBtn" onclick="go('home')" aria-label="Home"></button>
 <nav id="nav"></nav>
 <script>
 /* ============ MY WALK — single-file app ============ */
@@ -675,8 +676,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Open Vine';
-const BUILD_VERSION='2.7.0';
+const BUILD_NAME='Clear Spring';
+const BUILD_VERSION='2.7.1';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -772,7 +773,7 @@ function subjectForWeek(w){
   const type=LOOP_TYPES[((w%4)+4)%4];
   if(type==='story'){ const s=STORY_LOOP[((w>>2)%STORY_LOOP.length+STORY_LOOP.length)%STORY_LOOP.length]; return {type,title:s.title,ref:s.ref}; }
   if(type==='person'){ const p=PERSON_LOOP[((w>>2)%PERSON_LOOP.length+PERSON_LOOP.length)%PERSON_LOOP.length]; return {type,title:titleCase(p),ref:p}; }
-  if(type==='question'){ const qs=D.content.questions||['']; const idx=((w>>2)%qs.length+qs.length)%qs.length; return {type,title:qs[idx],ref:'Q'+idx,qidx:idx}; }
+  if(type==='question'){ const qs=D.content.questions||[]; if(!qs.length) return {type,title:'',ref:'Q0',qidx:0,qrefs:[]}; const idx=((w>>2)%qs.length+qs.length)%qs.length; const q=qs[idx]; return {type,title:(q&&q.q)||String(q),ref:'Q'+idx,qidx:idx,qrefs:(q&&q.r)||[]}; }
   const t=STUDY_TOPICS[((w>>2)%STUDY_TOPICS.length+STUDY_TOPICS.length)%STUDY_TOPICS.length]; return {type,title:titleCase(t),ref:t};
 }
 function currentSubject(){ return subjectForWeek(loopWeek(0)); }
@@ -806,7 +807,8 @@ async function boot(){
   if(!S.sermons||!S.sermons.length) S.sermons = SEED_SERMONS.slice();
   if(!S.prayer) S.prayer = seedPrayer();
   save();
-  go(location.hash.replace('#','')||'home');
+  try{ history.replaceState({mw:1,d:{w:'home'}}, ''); }catch(e){}
+  go('home');
 }
 async function getStrongs(){ if(!D.strongs) D.strongs=await j('data/strongs.json'); return D.strongs; }
 D.webster={};
@@ -944,7 +946,6 @@ function go(w,sub){
   document.body.className='wing-'+w;
   const hf=document.getElementById('heroFixed');
   if(hf){ if(w==='home'){ hf.style.backgroundImage="url('"+HERO_IMG+"')"; hf.style.display='block'; } else hf.style.display='none'; }
-  location.hash=w;
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.w===w));
   window.scrollTo(0,0);
   ({home:renderHome,devo:renderDevo,prayer:renderPrayer,study:renderStudy}[w]||renderHome)(sub);
@@ -952,8 +953,8 @@ function go(w,sub){
 }
 const NAV=[['home','Home','home'],['devo','Devo','book'],['prayer','Prayer','pray'],['study','Study','study']];
 
-/* ---------- Navigation history + left-edge swipe back ---------- */
-let navHist=[]; let navSuppress=false;
+/* ---------- Navigation history + back gesture ---------- */
+let navSuppress=false;
 function navDesc(){
   if(WING==='study'){
     if(studyView==='step') return {w:'study',v:'step',i:currentStepIdx};
@@ -966,9 +967,9 @@ function navDesc(){
 }
 function navRecord(){
   if(navSuppress) return;
-  const d=navDesc(), last=navHist[navHist.length-1];
-  if(last && JSON.stringify(last)===JSON.stringify(d)) return;
-  navHist.push(d); if(navHist.length>60) navHist.shift();
+  const d=navDesc(), cur=history.state;
+  if(cur && cur.mw && JSON.stringify(cur.d)===JSON.stringify(d)) return;
+  try{ history.pushState({mw:1,d}, ''); }catch(e){}
 }
 function navApply(d){
   navSuppress=true;
@@ -983,27 +984,20 @@ function navApply(d){
     else go(d.w||'home');
   } finally { navSuppress=false; }
 }
-function navBack(){
-  if(navHist.length<2) return false;
-  navHist.pop();                       // drop current
-  const prev=navHist[navHist.length-1];
-  navApply(prev);
-  return true;
-}
+window.addEventListener('popstate',e=>{
+  const d=e.state&&e.state.d;
+  if(d) navApply(d);
+  else { navSuppress=true; try{ go('home'); }finally{ navSuppress=false; } }
+});
+function navBack(){ history.back(); return true; }
+// In standalone (home-screen) mode there is no native edge-swipe, so provide one.
 (function initEdgeSwipe(){
-  let sx=0, sy=0, tracking=false;
-  const EDGE=28, THRESH=64;
-  document.addEventListener('touchstart',e=>{
-    const t=e.touches[0];
-    tracking = t.clientX<=EDGE;
-    sx=t.clientX; sy=t.clientY;
-  },{passive:true});
-  document.addEventListener('touchend',e=>{
-    if(!tracking) return; tracking=false;
-    const t=e.changedTouches[0];
-    const dx=t.clientX-sx, dy=Math.abs(t.clientY-sy);
-    if(dx>THRESH && dy<60) navBack();
-  },{passive:true});
+  const standalone = (window.navigator&&window.navigator.standalone===true) ||
+    (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+  if(!standalone) return;               // browser tabs already have the native back gesture
+  let sx=0, sy=0, tracking=false; const EDGE=28, THRESH=64;
+  document.addEventListener('touchstart',e=>{ const t=e.touches[0]; tracking=t.clientX<=EDGE; sx=t.clientX; sy=t.clientY; },{passive:true});
+  document.addEventListener('touchend',e=>{ if(!tracking) return; tracking=false; const t=e.changedTouches[0]; const dx=t.clientX-sx, dy=Math.abs(t.clientY-sy); if(dx>THRESH&&dy<60) history.back(); },{passive:true});
 })();
 
 function buildNav(){
@@ -1011,9 +1005,12 @@ function buildNav(){
     `<button data-w="${w}">${ic(icon,'nic')}<span>${label}</span></button>`).join('');
 }
 buildNav();
-document.getElementById('gearBtn').innerHTML=ic('gear');
+document.getElementById('homeBtn').innerHTML=ic('home');
 document.getElementById('nav').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(b) go(b.dataset.w);
+  const b=e.target.closest('button'); if(!b) return;
+  const w=b.dataset.w;
+  const ROOT={devo:'today',prayer:'today',study:'home'};
+  go(w, ROOT[w]);
 });
 function h(html){ APP.innerHTML='<div class="view">'+html+'</div>'; }
 function el(id){ return document.getElementById(id); }
@@ -1847,7 +1844,7 @@ function renderStudy(sub){
 }
 function renderStudyShell(){
   h(`
-  <div class="pagehead"><h1>Study</h1>${studyView!=='home'?`<button class="btn sm ghost" onclick="setStudyView('home')">Home</button>`:''}</div>
+  <div class="pagehead"><h1>Study</h1></div>
   <div id="sv"></div>`);
 }
 function studyHome(){
@@ -1955,6 +1952,8 @@ function studyHomeQuestion(s){
   <div class="card">
     <div class="eyebrow mb">How to Study It</div>
     <div style="font-size:15px;line-height:1.6">Search the Scriptures before you settle your answer. Use the tools below to trace every relevant passage, then write your position with book, chapter, and verse.</div>
+    ${(s.qrefs&&s.qrefs.length)?`<div class="mt" style="margin-top:14px"><div class="eyebrow mb">Starting Passages</div>
+      <div class="chips">${s.qrefs.map(r=>`<a class="chip" href="${bibleHrefFull(r)}">${esc(r)}</a>`).join('')}</div></div>`:''}
   </div>
 
   <div class="card">
@@ -2227,16 +2226,14 @@ function relatedTopics(entry){
   return out.slice(0,8);
 }
 function firstSentence(entry){
-  // take the first human-readable definition line, without breaking on abbreviations
-  let e=entry.replace(/^[-\s]*/,'');
-  const line=e.split('\n').find(l=>{const t=l.replace(/^-/,'').trim(); return t && /[a-z]/.test(t) && t.length>25;});
-  if(!line) return '';
-  let s=line.replace(/^-/,'').trim();
-  // only end at a sentence break that is NOT an abbreviation (period preceded by 2+ letters, followed by space+capital)
-  const m=s.match(/[a-z]{2,}\.\s+[A-Z]/);
-  if(m && m.index>40) s=s.slice(0, m.index+m[0].length-2).trim();
-  if(s.length>260){ s=s.slice(0,258); const sp=s.lastIndexOf(' '); if(sp>200) s=s.slice(0,sp); s+='…'; }
-  return s;
+  // Only treat a genuine parenthetical opening line as the Nave's definition
+  const first=entry.split('\n').map(l=>l.replace(/^-\s*/,'').trim()).find(Boolean)||'';
+  if(first.startsWith('(')){
+    let s=first;
+    if(s.length>320){ s=s.slice(0,318); const sp=s.lastIndexOf(' '); if(sp>240) s=s.slice(0,sp); s+='…'; }
+    return s;
+  }
+  return ''; // no real definition in Nave's — caller falls back to Webster's 1828
 }
 function renderTopic(){
   const t=naveByIndex(S.currentTopic);
@@ -2248,7 +2245,8 @@ function renderTopic(){
     <h2 style="font-size:24px;margin-top:3px">${esc(titleCase(t.s))}</h2>
     <div class="small">Nave's Topical Bible</div>
   </div>
-  ${def?`<div class="card" id="def-card"><div class="eyebrow mb">Definition</div><div style="font-size:15.5px;line-height:1.55">${esc(def)}</div></div>`:''}
+  ${def?`<div class="card" id="def-card"><div class="eyebrow mb">Definition</div><div style="font-size:15.5px;line-height:1.55">${esc(def)}</div></div>`
+    :`<div class="card" id="def-card"><div class="eyebrow mb">Definition</div><div class="small">Loading…</div></div>`}
   <div class="card" id="naves-card">
     <div class="eyebrow mb">Nave's Topical Bible</div>
     <div class="nvlist">${navesAccordion(t.e)}</div>
@@ -2263,6 +2261,7 @@ function renderTopic(){
   ${questionsCard()}`;
   fillStrongs(t.s,'strongs-card');
   fillWebster(t.s,'webster-card');
+  if(!def) fillDefinition(t.s,'def-card');
   applyPendingScroll();
 }
 function jumpTopic(name){
@@ -2289,6 +2288,19 @@ async function fillStrongs(subject,id){
       ${list.map(n=>{const e=st.e[n];return `<div class="mt" style="margin-top:7px"><b style="font-family:Playfair Display,serif;color:var(--blue)">${esc(e.l)}</b> <span class="small">${esc(e.x||'')} · ${n}</span><br><span style="font-size:15px">${esc(e.d)}</span></div>`;}).join('')}</div>`:'';
     box.innerHTML=`<div class="eyebrow mb">Strong's Concordance</div>${block('Hebrew',heb)}${block('Greek',grk)}`;
   }catch(e){ const box=el(id); if(box) box.innerHTML=`<div class="eyebrow mb">Strong's Concordance</div><div class="small">Unavailable offline until first viewed online.</div>`; }
+}
+async function fillDefinition(subject,id){
+  try{
+    const w=headword(subject);
+    const dict=await getWebster(w[0]);
+    const defs=dict[w];
+    const box=el(id); if(!box) return;
+    if(!defs||!defs.length){ box.innerHTML=`<div class="eyebrow mb">Definition</div><div class="small">No dictionary definition available for this subject.</div>`; return; }
+    const d=defs[0];
+    box.innerHTML=`<div class="eyebrow mb">Definition</div>
+      <div style="font-size:15.5px;line-height:1.55">${esc(d[1])}</div>
+      <div class="tiny mt" style="margin-top:8px">Webster's 1828 · ${esc(w.toUpperCase())}</div>`;
+  }catch(e){ const box=el(id); if(box) box.innerHTML=`<div class="eyebrow mb">Definition</div><div class="small">Definition unavailable offline until first viewed online.</div>`; }
 }
 async function fillWebster(subject,id){
   try{
@@ -2546,7 +2558,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=28').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=29').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
