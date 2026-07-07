@@ -522,6 +522,93 @@ body.wing-home .homehead{margin-bottom:6px}
 .tribbon .ic-svg{width:11px;height:11px;color:#fff;position:relative;z-index:1}
 .testcard .tt{font-family:"Playfair Display",serif;font-weight:600;font-size:17px;color:var(--text)}
 .star{color:var(--gold);font-size:18px}
+/* ===== Batch F — Study dashboard ===== */
+.studyhero{position:relative;overflow:hidden;padding:22px 20px 20px}
+.studyhero .sy-wm{position:absolute;top:8px;right:-6px;width:118px;height:118px;color:var(--gold);opacity:.5;pointer-events:none}
+.studyhero .sy-wm svg{width:100%;height:100%}
+.sy-eyebrow{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text2);position:relative;z-index:1}
+.sy-title{font-family:"Playfair Display",serif;font-weight:600;font-size:32px;letter-spacing:.01em;color:var(--blue);margin:6px 0 10px;position:relative;z-index:1;text-transform:uppercase;line-height:1.05}
+.sy-week{display:flex;align-items:center;gap:7px;position:relative;z-index:1}
+.sy-week .sw-lbl{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.sy-week .sw-num{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--text);margin-top:2px}
+.sy-week .sw-num .ic-svg{width:15px;height:15px;color:var(--gold)}
+.sy-prog{margin-top:16px;position:relative;z-index:1}
+.sy-prog .sp-top{display:flex;align-items:baseline;justify-content:space-between}
+.sy-prog .sp-lbl{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text2)}
+.sy-prog .sp-pct{font-family:"Playfair Display",serif;font-weight:700;font-size:20px;color:var(--blue)}
+.sy-prog .sp-sub{font-size:14px;color:var(--text);margin-top:3px}
+.sy-bar{height:8px;border-radius:99px;background:var(--tint);overflow:hidden;margin-top:9px}
+.sy-bar span{display:block;height:100%;background:linear-gradient(90deg,#2D4C73,#3a5f8a);border-radius:99px}
+.sy-cta{margin-top:16px;position:relative;z-index:1}
+.sy-cta .btn{width:100%;text-align:center;padding:15px;font-size:15px}
+/* roadmap */
+.rm-head{background:linear-gradient(155deg,#2D4C73,#1d3251);border-radius:14px 14px 0 0;padding:14px 18px;text-align:center;margin:0 -1px}
+.rm-head .rh-t{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.rmcard .eyebrow-band{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center;padding:2px 0 12px}
+.rmstep{display:flex;align-items:flex-start;gap:14px;padding:14px 2px;position:relative;cursor:pointer}
+.rmstep:not(:last-child){border-bottom:1px solid var(--div2)}
+.rmstep .rs-mark{position:relative;flex:0 0 30px;display:flex;flex-direction:column;align-items:center}
+.rmstep .rs-dot{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:13px;flex:0 0 30px}
+.rmstep .rs-dot.done{background:linear-gradient(155deg,#2D4C73,#22385c);color:#fff}
+.rmstep .rs-dot.done .ic-svg{width:15px;height:15px}
+.rmstep .rs-dot.current{border:2px solid var(--gold);color:var(--gold);background:var(--card)}
+.rmstep .rs-dot.todo{border:1.5px solid var(--div);color:var(--text2);background:var(--card)}
+.rmstep .rs-rail{position:absolute;top:30px;bottom:-14px;left:50%;width:1.5px;transform:translateX(-50%);background:var(--div2)}
+.rmstep:last-child .rs-rail{display:none}
+.rmstep.is-current{background:linear-gradient(90deg,rgba(212,175,55,.08),transparent);border-radius:10px}
+.rmstep .rs-body{flex:1;min-width:0}
+.rmstep .rs-t{font-family:"Playfair Display",serif;font-weight:600;font-size:16.5px;color:var(--text)}
+.rmstep.is-current .rs-t{color:var(--blue)}
+.rmstep .rs-d{font-size:13px;color:var(--text2);margin-top:2px}
+.rmstep .rs-chev{color:var(--text2);font-size:20px;align-self:center}
+/* coming next loop */
+.loopcard{position:relative;overflow:hidden;display:flex;align-items:center;gap:15px}
+.loop-orb{width:58px;height:58px;flex:0 0 58px;border-radius:50%;background:radial-gradient(circle at 50% 40%,#Efdca8,#E4C97A);display:flex;align-items:center;justify-content:center;color:#1d3251;box-shadow:0 3px 10px rgba(212,175,55,.3)}
+.loop-orb .ic-svg{width:26px;height:26px}
+.loopcard .grow{min-width:0}
+.loop-lbl{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.loop-kind{font-size:12.5px;color:var(--text2);margin-top:3px}
+.loop-name{font-family:"Playfair Display",serif;font-weight:600;font-size:20px;color:var(--text);margin-top:1px}
+.loopcard .achev{color:var(--text2);font-size:22px}
+/* resource rows */
+.resrow{display:flex;align-items:center;gap:14px;padding:13px 2px;cursor:pointer}
+.resrow:not(:last-child){border-bottom:1px solid var(--div2)}
+.res-ic{width:42px;height:42px;flex:0 0 42px;border-radius:11px;background:linear-gradient(155deg,#2D4C73,#22385c);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Playfair Display",serif;font-weight:700;font-size:18px}
+.res-ic .ic-svg{width:20px;height:20px}
+.resrow .grow{min-width:0}
+.res-t{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:15px;color:var(--text)}
+.res-s{font-size:12.5px;color:var(--text2);margin-top:1px}
+.resrow .achev{color:var(--text2);font-size:20px}
+/* build your position */
+.bp-head{text-align:center;padding:4px 0 2px}
+.bp-title{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--text);display:inline-flex;align-items:center;gap:10px}
+.bp-title::after,.bp-title::before{content:"";width:22px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.bp-title::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.bp-sub{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:var(--text2);text-align:center;margin:6px 0 14px;line-height:1.4}
+.bprow{display:flex;align-items:center;gap:13px;padding:13px 2px;cursor:pointer}
+.bprow:not(:last-child){border-bottom:1px solid var(--div2)}
+.bp-ic{width:30px;flex:0 0 30px;color:var(--blue);display:flex;justify-content:center}
+.bp-ic .ic-svg{width:19px;height:19px}
+.bprow .grow{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:15px;color:var(--text)}
+.bp-fill{width:7px;height:7px;border-radius:50%;background:var(--gold);flex:0 0 7px}
+.bprow .achev{color:var(--text2);font-size:19px}
+.bp-journal{margin-top:14px}
+.bp-journal .btn{width:100%;text-align:center;padding:13px;border:1.5px solid var(--div);background:var(--card)}
+/* rich text editor */
+.rte-toolbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--div2)}
+.rte-btn{min-width:34px;height:34px;padding:0 9px;border:1px solid var(--div);border-radius:8px;background:var(--card);color:var(--text);font-family:"Nunito Sans",sans-serif;font-size:14px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.rte-btn:active{background:var(--tint)}
+.rte-btn.i{font-style:italic;font-weight:500}
+.rte-btn.u{text-decoration:underline;font-weight:500}
+.rte-area{min-height:180px;border:1px solid var(--div);border-radius:12px;padding:14px;font-family:"Nunito Sans",sans-serif;font-size:15.5px;line-height:1.6;color:var(--text);background:var(--card);outline:none}
+.rte-area:focus{border-color:var(--accent)}
+.rte-area ul,.rte-area ol{margin:8px 0 8px 22px}
+.rte-area li{margin:3px 0}
+.rte-area:empty::before{content:attr(data-ph);color:var(--text2);font-style:italic}
+.bp-view h4{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.bp-view .bpv-body{font-size:15px;line-height:1.6;margin-bottom:16px}
+.bp-view .bpv-body ul,.bp-view .bpv-body ol{margin:6px 0 6px 22px}
+.bp-view .bpv-empty{font-style:italic;color:var(--text2);font-size:14px;margin-bottom:16px}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
 .ring svg{width:76px;height:76px;flex:0 0 76px}
@@ -557,6 +644,7 @@ const ICON={
   play:'<path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/> <circle cx="12" cy="12" r="10"/>',
   mountain:'<path d="m8 3 4 8 5-5 5 15H2L8 3z"/>',
   chevron:'<path d="m9 18 6-6-6-6"/>',
+  ark:'<path d="M3 13c2 3 4 4 9 4s7-1 9-4"/> <path d="M4 13l1-4h14l1 4"/> <path d="M8 9V5h8v4"/> <path d="M12 5V3"/>',
   wmnote:'<path d="M9 18V5l12-2v13"/> <circle cx="6" cy="18" r="3"/> <circle cx="18" cy="16" r="3"/> <path d="M9 9l12-2"/>',
   wmchurch:'<path d="M12 2v6"/> <path d="M9 5h6"/> <path d="M6 22V11l6-4 6 4v11"/> <path d="M6 22h12"/> <path d="M10 22v-4a2 2 0 0 1 4 0v4"/> <path d="M9 13h.01"/> <path d="M15 13h.01"/>',
   gear:'<path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/> <circle cx="12" cy="12" r="3"/>',
@@ -575,8 +663,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Still Waters';
-const BUILD_VERSION='2.5.0';
+const BUILD_NAME='Deep Roots';
+const BUILD_VERSION='2.6.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -591,9 +679,71 @@ const S=Object.assign({
   userQuestions:[], qStudied:{},
   albums:null, sermons:null, sermonDone:{}, albumAdds:[],
   prayer:null, prayerChecks:{}, testimony:[],
+  study:{mastery:{},position:{}},
   studyTab:'topic'
 }, JSON.parse(localStorage.getItem(LS)||'{}'));
 function save(){ localStorage.setItem(LS, JSON.stringify(S)); }
+if(!S.study) S.study={mastery:{},position:{}};
+if(!S.study.mastery) S.study.mastery={};
+if(!S.study.position) S.study.position={};
+
+/* ---------- Study: mastery roadmap + weekly loop ---------- */
+const MASTERY_STEPS=[
+  {t:'Definition', d:'Understand what the subject means.', ic:'book'},
+  {t:'Every Mention', d:'Trace every KJV reference.', ic:'refresh'},
+  {t:'Historical Background', d:'Learn the setting and context.', ic:'study'},
+  {t:'Symbolism', d:'Identify spiritual patterns and meaning.', ic:'star'},
+  {t:'Applications', d:'Develop practical lessons.', ic:'leaf'},
+  {t:'Common Misconceptions', d:'Clarify errors or shallow assumptions.', ic:'question'},
+  {t:'Related Topics', d:'Connect this study to Scripture as a whole.', ic:'alpha'},
+  {t:'Build Your Position', d:'Write what you believe and why.', ic:'edit'}
+];
+const POSITION_FIELDS=[
+  {k:'def', t:'My Definition', ic:'book'},
+  {k:'scriptures', t:'Key Scriptures', ic:'bookmark'},
+  {k:'obs', t:'Observations', ic:'person'},
+  {k:'questions', t:'Questions Still Open', ic:'question'},
+  {k:'position', t:'My Final Position', ic:'edit'}
+];
+// Weekly loop — alternates a topic study with a person study, week by week.
+const STUDY_LOOP=[
+  {type:'topic', title:'The Fear of the LORD', ref:'FEAR'},
+  {type:'person', title:'Noah', ref:'NOAH'},
+  {type:'topic', title:'Grace', ref:'GRACE OF GOD'},
+  {type:'person', title:'Abraham', ref:'ABRAHAM'},
+  {type:'topic', title:'Faith', ref:'FAITH'},
+  {type:'person', title:'Joseph', ref:'JOSEPH'},
+  {type:'topic', title:'Repentance', ref:'REPENTANCE'},
+  {type:'person', title:'Moses', ref:'MOSES'},
+  {type:'topic', title:'Prayer', ref:'PRAYER'},
+  {type:'person', title:'David', ref:'DAVID'},
+  {type:'topic', title:'Holiness', ref:'HOLINESS'},
+  {type:'person', title:'Elijah', ref:'ELIJAH'},
+  {type:'topic', title:'Wisdom', ref:'WISDOM'},
+  {type:'person', title:'Daniel', ref:'DANIEL'},
+  {type:'topic', title:'Salvation', ref:'SALVATION'},
+  {type:'person', title:'Peter', ref:'PETER'},
+  {type:'topic', title:'The Blood of Christ', ref:'BLOOD'},
+  {type:'person', title:'Paul', ref:'PAUL'},
+  {type:'topic', title:'Obedience', ref:'OBEDIENCE'},
+  {type:'person', title:'John the Baptist', ref:'JOHN'}
+];
+function loopIndex(offset){ return (weekOfYear()-1+(offset||0)+STUDY_LOOP.length*10)%STUDY_LOOP.length; }
+function currentSubject(){ return STUDY_LOOP[loopIndex(0)]; }
+function nextSubject(){ return STUDY_LOOP[loopIndex(1)]; }
+function subjectKey(s){ return s.type+':'+s.ref; }
+function subjectSteps(s){ return (S.study.mastery[subjectKey(s)]||{}); }
+function subjectDone(s){ const m=subjectSteps(s); let n=0; for(let i=0;i<8;i++) if(m[i]) n++; return n; }
+function toggleStep(i){
+  const s=currentSubject(), k=subjectKey(s);
+  const m=S.study.mastery[k]=S.study.mastery[k]||{};
+  m[i]=!m[i]; save();
+}
+function firstIncompleteStep(){ const m=subjectSteps(currentSubject()); for(let i=0;i<8;i++) if(!m[i]) return i; return 7; }
+function subjectLabel(s){ return s.type==='person'?'Person of the Week':'Study of the Week'; }
+function positionKey(s){ return subjectKey(s); }
+function getPosition(s,field){ const p=S.study.position[positionKey(s)]||{}; return p[field]||''; }
+function setPosition(s,field,html){ const k=positionKey(s); const p=S.study.position[k]=S.study.position[k]||{}; p[field]=html; save(); }
 
 /* ---------- data ---------- */
 const D={}; // kjv, naves, plan, hymns, bios, content, strongs, webster:{}
@@ -1564,7 +1714,8 @@ function renderStudy(sub){
   if(sub==='browse'){ studyView='browse'; }
   else if(sub){ studyView=sub; }
   renderStudyShell();
-  ({home:studyHome,topic:renderTopic,character:renderCharacter,browse:studyBrowse,notes:renderNotes}[studyView]||studyHome)();
+  ({home:studyHome,topic:renderTopic,character:renderCharacter,browse:studyBrowse,notes:renderNotes,
+    step:renderStep,position:renderPositionField,journal:renderJournal,loopnext:renderLoopNext}[studyView]||studyHome)();
 }
 function renderStudyShell(){
   h(`
@@ -1572,32 +1723,282 @@ function renderStudyShell(){
   <div id="sv"></div>`);
 }
 function studyHome(){
-  const t=naveByIndex(S.currentTopic);
-  const qs=allQuestions();
+  const s=currentSubject();
+  const done=subjectDone(s), pct=Math.round(100*done/8);
+  const nx=nextSubject();
+  const cur=firstIncompleteStep();
   el('sv').innerHTML=`
-  <div class="card">
-    <div class="eyebrow">Current Study</div>
-    <h2 style="font-size:22px;margin:4px 0 2px">${esc(titleCase(t.s))}</h2>
-    <div class="small">Nave's Topical Bible</div>
-    <div class="btnrow" style="margin-bottom:0"><button class="btn sm" onclick="setStudyView('topic')">Open Study →</button><button class="btn sm ghost" onclick="newTopic()">Change Study</button></div>
+  <div class="card studyhero">
+    <div class="sy-wm">${ic(s.type==='person'?'person':'study')}</div>
+    <div class="sy-eyebrow">Current Study</div>
+    <div class="sy-title">${esc(s.title)}</div>
+    <div class="sy-week">
+      <div><div class="sw-lbl">${subjectLabel(s)}</div>
+      <div class="sw-num">${ic('music')}Week ${weekOfYear()}</div></div>
+    </div>
+    <div class="sy-prog">
+      <div class="sp-top"><span class="sp-lbl">Mastery Progress</span><span class="sp-pct">${pct}%</span></div>
+      <div class="sp-sub">${done} of 8 steps complete</div>
+      <div class="sy-bar"><span style="width:${pct}%"></span></div>
+    </div>
+    <div class="sy-cta"><button class="btn solid" onclick="openStep(${cur})">Continue Studying →</button></div>
   </div>
-  <div class="grid2">
-    <div class="gtile" onclick="setStudyView('browse')"><div class="gt-ic">${ic('book')}</div><div class="gt-t">Topics</div><div class="gt-s">3,419 entries</div></div>
-    <div class="gtile" onclick="studyBrowseKind('c')"><div class="gt-ic">${ic('person')}</div><div class="gt-t">Characters</div><div class="gt-s">1,370 bios</div></div>
-    <div class="gtile" onclick="setStudyView('topic')"><div class="gt-ic">${ic('question')}</div><div class="gt-t">Questions</div><div class="gt-s">${qs.length} to study</div></div>
-    <div class="gtile" onclick="studyBrowseKind('p')"><div class="gt-ic">${ic('pin')}</div><div class="gt-t">Places</div><div class="gt-s">530 places</div></div>
-    <div class="gtile" onclick="setStudyView('topic')"><div class="gt-ic">${ic('alpha')}</div><div class="gt-t">Strong's</div><div class="gt-s">Definitions</div></div>
-    <div class="gtile" onclick="setStudyView('topic')"><div class="gt-ic">${ic('dict')}</div><div class="gt-t">Webster's</div><div class="gt-s">1828</div></div>
-    <div class="gtile" onclick="setStudyView('notes')"><div class="gt-ic">${ic('note')}</div><div class="gt-t">Notes</div><div class="gt-s">${S.notes.length} saved</div></div>
-    <div class="gtile" onclick="setStudyView('character')"><div class="gt-ic">${ic('person')}</div><div class="gt-t">Character</div><div class="gt-s">of the week</div></div>
+
+  <div class="card rmcard" style="padding-top:0">
+    <div class="rm-head" style="margin-top:-1px;border-radius:14px 14px 0 0"><div class="rh-t">Mastery Roadmap</div></div>
+    <div style="height:8px"></div>
+    ${roadmapHTML(s)}
   </div>
+
+  <div class="card loopcard" onclick="setStudyView('loopnext')" role="button" tabindex="0">
+    <div class="loop-orb">${ic(nx.type==='person'?'ark':'book')}</div>
+    <div class="grow">
+      <div class="loop-lbl">Coming Next in the Loop</div>
+      <div class="loop-kind">${subjectLabel(nx)}</div>
+      <div class="loop-name">${esc(nx.title)}</div>
+    </div>
+    <div class="achev">›</div>
+  </div>
+
   <div class="card">
-    <div class="eyebrow mb">Study Tools</div>
-    <div class="li tap" onclick="newTopic()"><div class="grow"><div style="font-weight:600">Draw Random Topic</div><div class="tiny">Let God lead your study</div></div><div class="go">›</div></div>
-    <div class="li tap" onclick="newCharacter();setStudyView('character')"><div class="grow"><div style="font-weight:600">Draw Random Character</div><div class="tiny">Discover someone new</div></div><div class="go">›</div></div>
-    <div class="li tap" onclick="setStudyView('character')"><div class="grow"><div style="font-weight:600">Every Mention in the KJV</div><div class="tiny">Find every verse</div></div><div class="go">›</div></div>
+    <div class="eyebrow-band" style="text-align:left;padding-bottom:10px">Related Resources</div>
+    ${resourceRowsHTML()}
+  </div>
+
+  <div class="card">
+    <div class="bp-head"><span class="bp-title">Build Your Position</span></div>
+    <div class="bp-sub">Summarize what you've learned and what you believe.</div>
+    ${POSITION_FIELDS.map(f=>`<div class="bprow" onclick="openPosition('${f.k}')" role="button" tabindex="0">
+      <span class="bp-ic">${ic(f.ic)}</span>
+      <span class="grow">${f.t}</span>
+      ${getPosition(s,f.k)?'<span class="bp-fill"></span>':''}
+      <span class="achev">›</span></div>`).join('')}
+    <div class="bp-journal"><button class="btn" onclick="setStudyView('journal')">${ic('study')} View Full Study Journal</button></div>
   </div>`;
 }
+function roadmapHTML(s){
+  const m=subjectSteps(s);
+  const cur=firstIncompleteStep();
+  return MASTERY_STEPS.map((st,i)=>{
+    const isDone=!!m[i], isCur=!isDone&&i===cur;
+    const dotCls=isDone?'done':(isCur?'current':'todo');
+    const dotInner=isDone?ic('check'):(i+1);
+    return `<div class="rmstep ${isCur?'is-current':''}" onclick="openStep(${i})" role="button" tabindex="0">
+      <div class="rs-mark"><div class="rs-dot ${dotCls}">${dotInner}</div><div class="rs-rail"></div></div>
+      <div class="rs-body"><div class="rs-t">${st.t}</div><div class="rs-d">${st.d}</div></div>
+      <div class="rs-chev">›</div></div>`;
+  }).join('');
+}
+function resourceRowsHTML(){
+  const rows=[
+    {ic:'book', t:"Nave's Topical Bible", s:'Explore topical insights', go:"openResource('nave')"},
+    {ic:'dict', t:"Webster's 1828 Dictionary", s:'Original definitions', go:"openResource('webster')"},
+    {ic:'alpha', t:"Strong's Definitions", s:'Hebrew & Greek word studies', go:"openResource('strongs')"},
+    {ic:'refresh', t:'Every Mention in the KJV', s:'All references in Scripture', go:"openResource('mentions')"},
+    {ic:'edit', t:'Personal Notes', s:'Your study notes and highlights', go:"setStudyView('notes')"}
+  ];
+  return rows.map(r=>`<div class="resrow" onclick="${r.go}" role="button" tabindex="0">
+    <div class="res-ic">${ic(r.ic)}</div>
+    <div class="grow"><div class="res-t">${r.t}</div><div class="res-s">${r.s}</div></div>
+    <div class="achev">›</div></div>`).join('');
+}
+// Route the current subject into the existing topic/character tools
+function syncSubjectToTools(){
+  const s=currentSubject();
+  const up=s.ref.toUpperCase();
+  let idx=D.naves.findIndex(x=>x.s===up);
+  if(idx<0) idx=D.naves.findIndex(x=>x.s.indexOf(up)===0);
+  if(idx<0) idx=D.naves.findIndex(x=>x.s.indexOf(up.split(/[ ,]/)[0])===0);
+  if(idx>=0){
+    if(s.type==='person'){ S.currentCharacter=idx; }
+    else { if(S.currentTopic!==idx){ S.currentTopic=idx; S.memProgress={}; } }
+    save();
+  }
+  return idx>=0;
+}
+function openResource(kind){
+  const s=currentSubject();
+  syncSubjectToTools();
+  if(kind==='nave'||kind==='strongs'||kind==='webster'||kind==='mentions'){
+    setStudyView(s.type==='person'?'character':'topic');
+    return;
+  }
+  setStudyView('topic');
+}
+const STEP_GUIDE=[
+  'Start by defining your subject in plain words. Read the topical entry and the 1828 dictionary sense, then state what it means in your own words.',
+  'Trace every place this subject appears in the KJV. Notice how the meaning develops from Genesis to Revelation.',
+  'Learn the setting: who, when, where, and why. Understanding the historical background keeps interpretation honest.',
+  'Look for the spiritual patterns, types, and shadows. What does this subject point to about God and the gospel?',
+  'Move from meaning to obedience. What practical lessons should shape how you live this week?',
+  'Name the common errors or shallow assumptions about this subject, and correct them with Scripture.',
+  'Connect this study to the whole counsel of Scripture. Which related topics deepen or balance it?',
+  'Bring it together. Write what you now believe about this subject and why — your settled, Scriptural position.'
+];
+function openStep(i){
+  studyView='step';
+  currentStepIdx=i;
+  renderStudyShell();
+  renderStep();
+}
+let currentStepIdx=0;
+function renderStep(){
+  const i=currentStepIdx, st=MASTERY_STEPS[i], s=currentSubject();
+  const m=subjectSteps(s), isDone=!!m[i];
+  if(i===7){ renderBuildPosition(); return; }
+  const resBtn = i===0 ? `<button class="btn ghost" onclick="openResource('nave')">Open Nave's & Definitions</button>`
+    : i===1 ? `<button class="btn ghost" onclick="openResource('mentions')">Every Mention in the KJV</button>`
+    : i===6 ? `<button class="btn ghost" onclick="openResource('nave')">See Related Topics</button>` : '';
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="sy-eyebrow">Step ${i+1} of 8 · ${esc(s.title)}</div>
+    <h2 style="font-family:Playfair Display,serif;font-weight:600;font-size:23px;color:var(--blue);margin:6px 0 3px">${st.t}</h2>
+    <div class="small">${st.d}</div>
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">Guidance</div>
+    <div style="font-size:15.5px;line-height:1.6">${STEP_GUIDE[i]}</div>
+    ${resBtn?`<div class="btnrow" style="margin-bottom:0;margin-top:14px">${resBtn}</div>`:''}
+  </div>
+  <div class="card">
+    <div class="eyebrow mb">My Reflection</div>
+    ${rteHTML('step'+i, 'Write your reflection on this step…')}
+  </div>
+  <div class="card">
+    <button class="btn ${isDone?'ghost':'solid'}" style="width:100%;text-align:center;padding:14px" onclick="markStep(${i})">
+      ${isDone?'✓ Completed — tap to undo':'Mark Step Complete'}</button>
+  </div>`;
+  mountRte('step'+i);
+}
+function markStep(i){
+  saveRte('step'+i);
+  toggleStep(i);
+  renderStep();
+}
+function openPosition(field){
+  studyView='position';
+  currentPosField=field;
+  renderStudyShell();
+  renderPositionField();
+}
+let currentPosField='def';
+function renderPositionField(){
+  const s=currentSubject();
+  const f=POSITION_FIELDS.find(x=>x.k===currentPosField)||POSITION_FIELDS[0];
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="sy-eyebrow">Build Your Position · ${esc(s.title)}</div>
+    <h2 style="font-family:Playfair Display,serif;font-weight:600;font-size:23px;color:var(--blue);margin:6px 0 0">${f.t}</h2>
+  </div>
+  <div class="card">
+    ${rteHTML('pos_'+f.k, positionPlaceholder(f.k))}
+  </div>
+  <div class="card">
+    <button class="btn solid" style="width:100%;text-align:center;padding:14px" onclick="savePositionField()">Save</button>
+  </div>`;
+  mountRte('pos_'+f.k, getPosition(s,f.k));
+}
+function positionPlaceholder(k){
+  return ({def:'In my own words, this subject means…',scriptures:'The verses that anchor my understanding…',
+    obs:'What I noticed as I studied…',questions:'What I still want to understand…',
+    position:'What I now believe about this subject, and why…'})[k]||'Write here…';
+}
+function savePositionField(){
+  const s=currentSubject();
+  saveRte('pos_'+currentPosField);
+  setPosition(s, currentPosField, rteStore['pos_'+currentPosField]||'');
+  // completing any position field counts step 8 progress; mark done when all filled
+  const p=S.study.position[positionKey(s)]||{};
+  const filled=POSITION_FIELDS.every(f=>(p[f.k]||'').replace(/<[^>]*>/g,'').trim().length);
+  const m=S.study.mastery[subjectKey(s)]=S.study.mastery[subjectKey(s)]||{};
+  m[7]=filled; save();
+  setStudyView('home');
+}
+function renderBuildPosition(){
+  const s=currentSubject();
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="sy-eyebrow">Step 8 of 8 · ${esc(s.title)}</div>
+    <h2 style="font-family:Playfair Display,serif;font-weight:600;font-size:23px;color:var(--blue);margin:6px 0 3px">Build Your Position</h2>
+    <div class="small">Write what you believe and why.</div>
+  </div>
+  <div class="card">
+    <div class="bp-sub" style="margin-top:0">Fill each section in your own words. Formatting tools let you bold, italicize, and make lists.</div>
+    ${POSITION_FIELDS.map(f=>`<div class="bprow" onclick="openPosition('${f.k}')" role="button" tabindex="0">
+      <span class="bp-ic">${ic(f.ic)}</span><span class="grow">${f.t}</span>
+      ${getPosition(s,f.k)?'<span class="bp-fill"></span>':''}<span class="achev">›</span></div>`).join('')}
+    <div class="bp-journal"><button class="btn" onclick="setStudyView('journal')">${ic('study')} View Full Study Journal</button></div>
+  </div>`;
+}
+function renderJournal(){
+  const s=currentSubject();
+  const p=S.study.position[positionKey(s)]||{};
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="sy-eyebrow">Study Journal</div>
+    <h2 style="font-family:Playfair Display,serif;font-weight:600;font-size:23px;color:var(--blue);margin:6px 0 2px">${esc(s.title)}</h2>
+    <div class="small">${subjectLabel(s)} · Week ${weekOfYear()}</div>
+  </div>
+  <div class="card bp-view">
+    ${POSITION_FIELDS.map(f=>{const v=(p[f.k]||'').trim();
+      return `<h4>${f.t}</h4>${v?`<div class="bpv-body">${v}</div>`:`<div class="bpv-empty">Not yet written.</div>`}`;}).join('')}
+  </div>
+  <div class="card">
+    <div class="btnrow" style="margin:0"><button class="btn" onclick="exportJournal()">${ic('study')} Download Journal (Text)</button>
+    <button class="btn ghost" onclick="setStudyView('home')">Back to Study</button></div>
+  </div>`;
+}
+function exportJournal(){
+  const s=currentSubject();
+  const p=S.study.position[positionKey(s)]||{};
+  const strip=html=>String(html||'').replace(/<\/(p|div|li|h[1-6])>/gi,'\n').replace(/<li[^>]*>/gi,'• ').replace(/<[^>]*>/g,'').replace(/\n{3,}/g,'\n\n').trim();
+  const txt=`STUDY JOURNAL — ${s.title}\n${subjectLabel(s)} · Week ${weekOfYear()}\n\n`+
+    POSITION_FIELDS.map(f=>`${f.t.toUpperCase()}\n${strip(p[f.k])||'(not written)'}`).join('\n\n---\n\n');
+  const blob=new Blob([txt],{type:'text/plain'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='mywalk-study-'+s.ref.toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.txt'; a.click(); URL.revokeObjectURL(a.href);
+}
+function renderLoopNext(){
+  const nx=nextSubject();
+  el('sv').innerHTML=`
+  <div class="card loopcard" style="cursor:default">
+    <div class="loop-orb">${ic(nx.type==='person'?'ark':'book')}</div>
+    <div class="grow"><div class="loop-lbl">Coming Next in the Loop</div>
+      <div class="loop-kind">${subjectLabel(nx)}</div>
+      <div class="loop-name">${esc(nx.title)}</div></div>
+  </div>
+  <div class="card center small" style="padding:26px 18px">
+    <p style="font-size:15px;color:var(--text)">Next week's study arrives automatically.</p>
+    <p class="mt">Each week the loop alternates between a topic study and a person of Scripture, carrying you through the whole counsel of God.</p>
+    <div class="btnrow" style="justify-content:center;margin-bottom:0"><button class="btn ghost" onclick="setStudyView('home')">Back to This Week</button></div>
+  </div>`;
+}
+/* ---------- Rich text editor (contenteditable + execCommand) ---------- */
+let rteStore={};
+function rteHTML(id, placeholder){
+  return `<div class="rte-toolbar" data-for="${id}">
+    <button type="button" class="rte-btn" onmousedown="rteCmd(event,'bold')"><b>B</b></button>
+    <button type="button" class="rte-btn i" onmousedown="rteCmd(event,'italic')">I</button>
+    <button type="button" class="rte-btn u" onmousedown="rteCmd(event,'underline')">U</button>
+    <button type="button" class="rte-btn" onmousedown="rteCmd(event,'insertUnorderedList')">• List</button>
+    <button type="button" class="rte-btn" onmousedown="rteCmd(event,'insertOrderedList')">1. List</button>
+    <button type="button" class="rte-btn" onmousedown="rteCmd(event,'indent')">→</button>
+    <button type="button" class="rte-btn" onmousedown="rteCmd(event,'outdent')">←</button>
+  </div>
+  <div class="rte-area" id="${id}" contenteditable="true" data-ph="${esc(placeholder||'Write here…')}"></div>`;
+}
+function mountRte(id, initial){
+  const area=el(id); if(!area) return;
+  area.innerHTML=initial||rteStore[id]||'';
+  area.addEventListener('input',()=>{ rteStore[id]=area.innerHTML; });
+  rteStore[id]=area.innerHTML;
+}
+function rteCmd(ev, cmd){
+  ev.preventDefault(); // keep selection/focus in the editable area
+  try{ document.execCommand(cmd,false,null); }catch(e){}
+  const bar=ev.target.closest('.rte-toolbar'); if(bar){ const id=bar.getAttribute('data-for'); const a=el(id); if(a) rteStore[id]=a.innerHTML; }
+}
+function saveRte(id){ const a=el(id); if(a) rteStore[id]=a.innerHTML; }
 function relatedTopics(entry){
   const m=[...entry.matchAll(/-See ([A-Z][A-Z0-9 ,'\-]+)/g)].map(x=>x[1].trim());
   const seen=new Set(); const out=[];
@@ -1925,7 +2326,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=26').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=27').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
