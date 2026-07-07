@@ -382,6 +382,44 @@ body.wing-home .homehead{margin-bottom:6px}
 .pt-sub{font-size:11px;color:var(--text2);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:100%}
 .pt-play{margin-top:6px;width:30px;height:30px;border-radius:50%;border:1px solid var(--div);color:var(--blue);display:flex;align-items:center;justify-content:center}
 .pt-play .ic-svg{width:15px;height:15px}
+/* ===== Batch C — Music & Sermons ===== */
+.mcard{position:relative;overflow:hidden}
+.mc-wm{position:absolute;top:-14px;right:-10px;width:112px;height:112px;opacity:.05;pointer-events:none}
+.mc-wm svg{width:100%;height:100%}
+.mc-eyebrow{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text2);position:relative;z-index:1}
+.mc-title{font-family:"Playfair Display",serif;font-weight:600;font-size:21px;color:var(--text);margin-top:5px;position:relative;z-index:1}
+.mc-sub{font-size:13.5px;color:var(--text2);margin-top:2px;position:relative;z-index:1}
+.mc-btn{margin-top:13px;position:relative;z-index:1}
+.mc-div{display:flex;align-items:center;justify-content:center;gap:9px;margin:16px 0 4px}
+.mc-div .dl{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--div))}
+.mc-div .dl:last-child{background:linear-gradient(90deg,var(--div),transparent)}
+.mc-div .dd{color:var(--gold);font-size:8px}
+.allrow{display:flex;align-items:center;gap:12px;padding:11px 2px 2px;cursor:pointer;position:relative;z-index:1}
+.allrow .grow .a1{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:14.5px;color:var(--text)}
+.allrow .grow .a2{font-size:12px;color:var(--text2);margin-top:1px}
+.allrow .achev{color:var(--text2);font-size:20px;line-height:1}
+/* navy album centerpiece */
+.album-navy{background:linear-gradient(155deg,#22385c,#172a46);border:none;color:#fff;box-shadow:0 8px 26px rgba(20,32,50,.30);padding:22px 20px 18px}
+.album-navy .mc-wm{opacity:.10;color:#E4C97A}
+.album-navy .mc-eyebrow{color:#E4C97A}
+.album-navy .mc-title{color:#fff}
+.album-navy .mc-sub{color:rgba(255,255,255,.62)}
+.album-navy .mc-div .dl{background:linear-gradient(90deg,transparent,rgba(228,201,122,.5))}
+.album-navy .mc-div .dl:last-child{background:linear-gradient(90deg,rgba(228,201,122,.5),transparent)}
+.album-navy .mc-div .dd{color:#E4C97A}
+.album-navy .allrow .a1{color:#fff}
+.album-navy .allrow .a2{color:rgba(255,255,255,.55)}
+.album-navy .allrow .achev{color:rgba(255,255,255,.5)}
+.vinyl{position:absolute;top:16px;right:16px;width:66px;height:66px;border-radius:50%;z-index:1;background:#1b2d49;box-shadow:inset 0 0 0 1px rgba(228,201,122,.22),inset 0 0 0 8px rgba(255,255,255,.03),inset 0 0 0 9px rgba(228,201,122,.15),inset 0 0 0 16px rgba(255,255,255,.03),inset 0 0 0 17px rgba(228,201,122,.11),inset 0 0 0 24px rgba(255,255,255,.03)}
+.vinyl::after{content:"";position:absolute;top:50%;left:50%;width:14px;height:14px;transform:translate(-50%,-50%);border-radius:50%;background:#E4C97A;box-shadow:0 0 0 4px #22385c}
+.album-btn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:#1b2d49;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:13.5px;border-radius:10px;padding:11px 17px;letter-spacing:.02em;box-shadow:0 4px 12px rgba(212,175,55,.28)}
+.album-empty{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:17px;color:rgba(255,255,255,.72);margin-top:8px;position:relative;z-index:1}
+/* sermon rows */
+.serm-li{display:flex;align-items:center;gap:12px;padding:10px 0;position:relative;z-index:1}
+.serm-li:not(:last-of-type){border-bottom:1px solid var(--div2)}
+.serm-li .grow{font-family:"Nunito Sans",sans-serif;font-weight:500;font-size:15px;color:var(--text)}
+.serm-play{width:34px;height:34px;flex:0 0 34px;border-radius:50%;border:1px solid var(--div);color:var(--accent);display:flex;align-items:center;justify-content:center;background:var(--card)}
+.serm-play .ic-svg{width:15px;height:15px}
 .loading{text-align:center;color:var(--text2);padding:70px 0;font-family:"Playfair Display",serif;font-style:italic}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
@@ -418,6 +456,8 @@ const ICON={
   play:'<path d="M9 9.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997A1 1 0 0 1 9 14.996z"/> <circle cx="12" cy="12" r="10"/>',
   mountain:'<path d="m8 3 4 8 5-5 5 15H2L8 3z"/>',
   chevron:'<path d="m9 18 6-6-6-6"/>',
+  wmnote:'<path d="M9 18V5l12-2v13"/> <circle cx="6" cy="18" r="3"/> <circle cx="18" cy="16" r="3"/> <path d="M9 9l12-2"/>',
+  wmchurch:'<path d="M12 2v6"/> <path d="M9 5h6"/> <path d="M6 22V11l6-4 6 4v11"/> <path d="M6 22h12"/> <path d="M10 22v-4a2 2 0 0 1 4 0v4"/> <path d="M9 13h.01"/> <path d="M15 13h.01"/>',
   gear:'<path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"/> <circle cx="12" cy="12" r="3"/>',
   bell:'<path d="M10.268 21a2 2 0 0 0 3.464 0"/> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/>',
   menu:'<path d="M4 5h16"/> <path d="M4 12h16"/> <path d="M4 19h16"/>',
@@ -434,8 +474,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Steady Walk';
-const BUILD_VERSION='2.2.2';
+const BUILD_NAME='Living Water';
+const BUILD_VERSION='2.3.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -939,40 +979,45 @@ function devoMusic(){
   const hy=hymnOfWeek(), al=albumOfWeek(), sm=sermonsOfWeek();
   const wk=weekOfYear();
   const nowIdx = S.sermons.length ? [((wk-1)*2)%S.sermons.length, ((wk-1)*2+1)%S.sermons.length] : [];
+  const hymnTotal = (D.hymns&&D.hymns.length)||52;
   el('dv').innerHTML=`
-  <div class="card">
-    <div class="eyebrow mb">Hymn of the Week</div>
-    <div class="rtitle">${esc(hy.t)}</div>
-    <div class="small">${esc(hy.a)}</div>
-    <div class="btnrow"><button class="btn sm" onclick="go('devo','hymn')">View Full Lyrics →</button></div>
-    <hr class="rule">
-    <div class="row tap" onclick="showAllHymns()" role="button" tabindex="0">
-      <div class="grow"><div style="font-weight:600">All Hymns (52)</div><div class="tiny">Browse all hymns anytime</div></div>
-      <div class="go">›</div>
+  <div class="card mcard">
+    <div class="mc-wm">${ic('wmnote')}</div>
+    <div class="mc-eyebrow">Hymn of the Week</div>
+    <div class="mc-title">${esc(hy.t)}</div>
+    <div class="mc-sub">${esc(hy.a)}</div>
+    <div class="mc-btn"><button class="btn sm" onclick="go('devo','hymn')">View Full Lyrics →</button></div>
+    <div class="mc-div"><span class="dl"></span><span class="dd">✦</span><span class="dl"></span></div>
+    <div class="allrow" onclick="showAllHymns()" role="button" tabindex="0">
+      <div class="grow"><div class="a1">All Hymns (${hymnTotal})</div><div class="a2">Browse the full hymnal anytime</div></div>
+      <div class="achev">›</div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="eyebrow mb">Album of the Week</div>
-    ${al?`<div class="rtitle">${esc(al.t)}</div>${al.a?`<div class="small">${esc(al.a)}</div>`:''}
-    <div class="btnrow"><button class="btn sm" onclick="openAlbum()">Play on Apple Music ↗</button></div>`
-    :`<div class="small">No albums queued yet.</div>`}
-    <hr class="rule">
-    <div class="row tap" onclick="go('devo','albums')" role="button" tabindex="0">
-      <div class="grow"><div style="font-weight:600">All Albums (${S.albums.length})</div><div class="tiny">Manage your album queue</div></div>
-      <div class="go">›</div>
+  <div class="card mcard album-navy">
+    <div class="mc-wm">${ic('wmnote')}</div>
+    <div class="vinyl"></div>
+    <div class="mc-eyebrow">Album of the Week</div>
+    ${al?`<div class="mc-title">${esc(al.t)}</div>${al.a?`<div class="mc-sub">${esc(al.a)}</div>`:''}
+    <div class="mc-btn"><button class="album-btn" onclick="openAlbum()">${ic('play')} Play on Apple Music</button></div>`
+    :`<div class="album-empty">Your album queue is empty.</div>`}
+    <div class="mc-div"><span class="dl"></span><span class="dd">✦</span><span class="dl"></span></div>
+    <div class="allrow" onclick="go('devo','albums')" role="button" tabindex="0">
+      <div class="grow"><div class="a1">All Albums (${S.albums.length})</div><div class="a2">Manage your album queue</div></div>
+      <div class="achev">›</div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="eyebrow mb">Sermons of the Week</div>
-    ${sm.length?sm.map((s,i)=>`<div class="li"><div class="grow">${esc(s.t)}</div>
-      <button class="playb" onclick="openSermon(${i})" aria-label="Play">▶</button></div>`).join('')
-      :`<div class="small">No sermons queued yet.</div>`}
-    <hr class="rule">
-    <div class="row tap" onclick="go('devo','sermons')" role="button" tabindex="0">
-      <div class="grow"><div style="font-weight:600">All Sermons (${S.sermons.length})</div><div class="tiny">Manage your sermon queue</div></div>
-      <div class="go">›</div>
+  <div class="card mcard">
+    <div class="mc-wm">${ic('wmchurch')}</div>
+    <div class="mc-eyebrow">Sermons of the Week</div>
+    ${sm.length?`<div style="margin-top:8px">${sm.map((s,i)=>`<div class="serm-li"><div class="grow">${esc(s.t)}</div>
+      <button class="serm-play" onclick="openSermon(${i})" aria-label="Play">${ic('play')}</button></div>`).join('')}</div>`
+      :`<div class="mc-sub" style="margin-top:8px">No sermons queued yet.</div>`}
+    <div class="mc-div"><span class="dl"></span><span class="dd">✦</span><span class="dl"></span></div>
+    <div class="allrow" onclick="go('devo','sermons')" role="button" tabindex="0">
+      <div class="grow"><div class="a1">All Sermons (${S.sermons.length})</div><div class="a2">Manage your sermon queue</div></div>
+      <div class="achev">›</div>
     </div>
   </div>`;
 }
@@ -1748,7 +1793,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=23').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=24').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
