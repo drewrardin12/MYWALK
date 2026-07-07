@@ -127,7 +127,7 @@ nav button.on::after{content:"";position:absolute;bottom:3px;width:4px;height:4p
 .searchwrap{position:sticky;top:-24px;background:var(--card);padding:4px 0 10px;z-index:2}
 details summary{cursor:pointer;font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);padding:8px 0;list-style:none}
 
-body.wing-home .gear{display:none}
+.gear{display:none}
 .gear{position:fixed;top:12px;right:max(16px,calc(50vw - 320px + 16px));z-index:60;width:40px;height:40px;border-radius:12px;background:var(--card);border:1px solid var(--div);display:flex;align-items:center;justify-content:center;color:var(--text2);font-size:19px;box-shadow:0 1px 3px rgba(32,33,36,.08)}
 .gear:active{background:var(--tint)}
 .sheet-h{font-family:"Playfair Display",serif;font-weight:700;font-size:24px;color:var(--text);margin-bottom:2px}
@@ -609,6 +609,18 @@ body.wing-home .homehead{margin-bottom:6px}
 .bp-view .bpv-body{font-size:15px;line-height:1.6;margin-bottom:16px}
 .bp-view .bpv-body ul,.bp-view .bpv-body ol{margin:6px 0 6px 22px}
 .bp-view .bpv-empty{font-style:italic;color:var(--text2);font-size:14px;margin-bottom:16px}
+/* Nave's sectioned list */
+.nvsec{padding:11px 0}
+.nvsec:not(:last-child){border-bottom:1px solid var(--div2)}
+.nvsec-l{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:14.5px;color:var(--text);line-height:1.35}
+.nvsec-r{font-size:14px;color:var(--text2);margin-top:5px;line-height:1.7}
+.nvsec-r .reflink{color:var(--accent);font-weight:600;text-decoration:none}
+.nvmore{margin-top:6px}
+.nvmore summary{cursor:pointer;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;color:var(--accent);padding:12px 0 4px;list-style:none;text-align:center}
+.nvmore summary::-webkit-details-marker{display:none}
+.nvmore[open] summary{border-bottom:1px solid var(--div2);margin-bottom:2px}
+.res-flash{animation:resflash 1.4s ease}
+@keyframes resflash{0%{box-shadow:0 0 0 2px var(--gold)}60%{box-shadow:0 0 0 2px var(--gold)}100%{box-shadow:0 1px 2px rgba(32,33,36,.04)}}
 /* devo progress ring */
 .ring{display:flex;align-items:center;gap:16px}
 .ring svg{width:76px;height:76px;flex:0 0 76px}
@@ -663,8 +675,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Deep Roots';
-const BUILD_VERSION='2.6.0';
+const BUILD_NAME='Open Vine';
+const BUILD_VERSION='2.7.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -705,42 +717,77 @@ const POSITION_FIELDS=[
   {k:'questions', t:'Questions Still Open', ic:'question'},
   {k:'position', t:'My Final Position', ic:'edit'}
 ];
-// Weekly loop — alternates a topic study with a person study, week by week.
-const STUDY_LOOP=[
-  {type:'topic', title:'The Fear of the LORD', ref:'FEAR'},
-  {type:'person', title:'Noah', ref:'NOAH'},
-  {type:'topic', title:'Grace', ref:'GRACE OF GOD'},
-  {type:'person', title:'Abraham', ref:'ABRAHAM'},
-  {type:'topic', title:'Faith', ref:'FAITH'},
-  {type:'person', title:'Joseph', ref:'JOSEPH'},
-  {type:'topic', title:'Repentance', ref:'REPENTANCE'},
-  {type:'person', title:'Moses', ref:'MOSES'},
-  {type:'topic', title:'Prayer', ref:'PRAYER'},
-  {type:'person', title:'David', ref:'DAVID'},
-  {type:'topic', title:'Holiness', ref:'HOLINESS'},
-  {type:'person', title:'Elijah', ref:'ELIJAH'},
-  {type:'topic', title:'Wisdom', ref:'WISDOM'},
-  {type:'person', title:'Daniel', ref:'DANIEL'},
-  {type:'topic', title:'Salvation', ref:'SALVATION'},
-  {type:'person', title:'Peter', ref:'PETER'},
-  {type:'topic', title:'The Blood of Christ', ref:'BLOOD'},
-  {type:'person', title:'Paul', ref:'PAUL'},
-  {type:'topic', title:'Obedience', ref:'OBEDIENCE'},
-  {type:'person', title:'John the Baptist', ref:'JOHN'}
+// ===== Weekly loop: Story -> Person -> Question -> Study, repeating =====
+// Story of the Week: title + KJV passage (points to Scripture itself; prose not bundled)
+const STORY_LOOP=[
+  {title:'Creation', ref:'Genesis 1'},
+  {title:'The Fall of Man', ref:'Genesis 3'},
+  {title:'The Flood', ref:'Genesis 7'},
+  {title:'The Tower of Babel', ref:'Genesis 11:1-9'},
+  {title:"Abraham's Call", ref:'Genesis 12:1-9'},
+  {title:'The Offering of Isaac', ref:'Genesis 22:1-19'},
+  {title:"Jacob's Ladder", ref:'Genesis 28:10-22'},
+  {title:'Joseph Sold into Egypt', ref:'Genesis 37'},
+  {title:'The Burning Bush', ref:'Exodus 3'},
+  {title:'The Passover', ref:'Exodus 12:1-30'},
+  {title:'Crossing the Red Sea', ref:'Exodus 14'},
+  {title:'The Ten Commandments', ref:'Exodus 20:1-21'},
+  {title:'The Fall of Jericho', ref:'Joshua 6'},
+  {title:"Gideon's Three Hundred", ref:'Judges 7'},
+  {title:'Ruth and Boaz', ref:'Ruth 2'},
+  {title:'The Call of Samuel', ref:'1 Samuel 3'},
+  {title:'David and Goliath', ref:'1 Samuel 17'},
+  {title:"Solomon's Wisdom", ref:'1 Kings 3:16-28'},
+  {title:'Elijah on Mount Carmel', ref:'1 Kings 18:17-40'},
+  {title:'The Fiery Furnace', ref:'Daniel 3'},
+  {title:"Daniel in the Lions' Den", ref:'Daniel 6'},
+  {title:'Jonah and the Great Fish', ref:'Jonah 1'},
+  {title:'The Birth of Jesus', ref:'Luke 2:1-20'},
+  {title:'The Baptism of Jesus', ref:'Matthew 3:13-17'},
+  {title:'The Sermon on the Mount', ref:'Matthew 5'},
+  {title:'Calming the Storm', ref:'Mark 4:35-41'},
+  {title:'Feeding the Five Thousand', ref:'John 6:1-14'},
+  {title:'The Prodigal Son', ref:'Luke 15:11-32'},
+  {title:'The Good Samaritan', ref:'Luke 10:25-37'},
+  {title:'Raising of Lazarus', ref:'John 11:1-44'},
+  {title:'The Triumphal Entry', ref:'Matthew 21:1-11'},
+  {title:'The Last Supper', ref:'Luke 22:7-23'},
+  {title:'The Crucifixion', ref:'Luke 23:33-49'},
+  {title:'The Resurrection', ref:'Luke 24:1-12'},
+  {title:'The Road to Emmaus', ref:'Luke 24:13-35'},
+  {title:'The Ascension', ref:'Acts 1:1-11'},
+  {title:'The Day of Pentecost', ref:'Acts 2:1-21'},
+  {title:'The Conversion of Saul', ref:'Acts 9:1-19'},
+  {title:'The New Jerusalem', ref:'Revelation 21'}
 ];
-function loopIndex(offset){ return (weekOfYear()-1+(offset||0)+STUDY_LOOP.length*10)%STUDY_LOOP.length; }
-function currentSubject(){ return STUDY_LOOP[loopIndex(0)]; }
-function nextSubject(){ return STUDY_LOOP[loopIndex(1)]; }
+// Person of the Week: Nave's characters (distinct from Study topics)
+const PERSON_LOOP=['NOAH','ABRAHAM','JOSEPH','MOSES','JOSHUA','GIDEON','RUTH','SAMUEL','DAVID','ELIJAH','ELISHA','NEHEMIAH','ESTHER','DANIEL','JONAH','PETER','JOHN','STEPHEN','PAUL','TIMOTHY'];
+// Study of the Week: Nave's topics — doctrinal themes, never a person
+const STUDY_TOPICS=['FAITH','GRACE OF GOD','REPENTANCE','HOLINESS','PRAYER','WISDOM','SALVATION','OBEDIENCE','LOVE','MERCY','FORGIVENESS','JUSTIFICATION','SANCTIFICATION','REDEMPTION','ATONEMENT','RIGHTEOUSNESS','HOPE','JOY','PEACE','HUMILITY'];
+const LOOP_TYPES=['story','person','question','study'];
+
+function questionCount(){ return (D.content&&D.content.questions?D.content.questions.length:0); }
+function loopWeek(offset){ return weekOfYear()-1+(offset||0); }
+function subjectForWeek(w){
+  const type=LOOP_TYPES[((w%4)+4)%4];
+  if(type==='story'){ const s=STORY_LOOP[((w>>2)%STORY_LOOP.length+STORY_LOOP.length)%STORY_LOOP.length]; return {type,title:s.title,ref:s.ref}; }
+  if(type==='person'){ const p=PERSON_LOOP[((w>>2)%PERSON_LOOP.length+PERSON_LOOP.length)%PERSON_LOOP.length]; return {type,title:titleCase(p),ref:p}; }
+  if(type==='question'){ const qs=D.content.questions||['']; const idx=((w>>2)%qs.length+qs.length)%qs.length; return {type,title:qs[idx],ref:'Q'+idx,qidx:idx}; }
+  const t=STUDY_TOPICS[((w>>2)%STUDY_TOPICS.length+STUDY_TOPICS.length)%STUDY_TOPICS.length]; return {type,title:titleCase(t),ref:t};
+}
+function currentSubject(){ return subjectForWeek(loopWeek(0)); }
+function nextSubject(){ return subjectForWeek(loopWeek(1)); }
 function subjectKey(s){ return s.type+':'+s.ref; }
 function subjectSteps(s){ return (S.study.mastery[subjectKey(s)]||{}); }
 function subjectDone(s){ const m=subjectSteps(s); let n=0; for(let i=0;i<8;i++) if(m[i]) n++; return n; }
+function usesRoadmap(s){ return s.type==='study'||s.type==='person'; }
 function toggleStep(i){
   const s=currentSubject(), k=subjectKey(s);
   const m=S.study.mastery[k]=S.study.mastery[k]||{};
   m[i]=!m[i]; save();
 }
 function firstIncompleteStep(){ const m=subjectSteps(currentSubject()); for(let i=0;i<8;i++) if(!m[i]) return i; return 7; }
-function subjectLabel(s){ return s.type==='person'?'Person of the Week':'Study of the Week'; }
+function subjectLabel(s){ return ({story:'Story of the Week',person:'Person of the Week',question:'Question of the Week',study:'Study of the Week'})[s.type]; }
 function positionKey(s){ return subjectKey(s); }
 function getPosition(s,field){ const p=S.study.position[positionKey(s)]||{}; return p[field]||''; }
 function setPosition(s,field,html){ const k=positionKey(s); const p=S.study.position[k]=S.study.position[k]||{}; p[field]=html; save(); }
@@ -797,6 +844,31 @@ const CODE_RE='(?:1JHN|1CH|1CO|1JN|1KI|1PE|1SA|1TH|1TI|2CH|2CO|2JN|2KI|2PE|2SA|2
 function bibleHref(book,ch,v){ return 'bible://'+encodeURIComponent(book+' '+ch+(v?':'+v:'')); }
 function esc(s){ return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 /* linkify a verbatim Nave's entry: stateful scan; keeps display text identical */
+function navesSections(entry){
+  const codeRe=new RegExp('\\b'+CODE_RE+'\\b');
+  return entry.split('\n').map(l=>l.replace(/^-\s*/,'').trim()).filter(Boolean).map(line=>{
+    const m=line.match(codeRe);
+    if(m && m.index>0){
+      let label=line.slice(0,m.index).trim().replace(/[,:;]\s*$/,'');
+      const refs=line.slice(m.index).trim();
+      return {label, refs};
+    }
+    return {label:line, refs:''};
+  });
+}
+function navesAccordion(entry){
+  const secs=navesSections(entry);
+  const rowHTML=s=>`<div class="nvsec">
+    ${s.label?`<div class="nvsec-l">${esc(s.label)}</div>`:''}
+    ${s.refs?`<div class="nvsec-r">${linkifyNaves(s.refs)}</div>`:''}
+  </div>`;
+  const head=secs.slice(0,6), rest=secs.slice(6);
+  let html=head.map(rowHTML).join('');
+  if(rest.length){
+    html+=`<details class="nvmore"><summary>Show all ${secs.length} sections</summary>${rest.map(rowHTML).join('')}</details>`;
+  }
+  return html;
+}
 function linkifyNaves(text){
   const tok=new RegExp('\\b'+CODE_RE+'\\b|\\d+(?::\\d+)?(?:[\\-–]\\d+(?::\\d+)?)?(?:,\\d+(?::\\d+)?(?:[\\-–]\\d+(?::\\d+)?)?)*','g');
   let out='', last=0, book=null, m;
@@ -876,8 +948,64 @@ function go(w,sub){
   document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b.dataset.w===w));
   window.scrollTo(0,0);
   ({home:renderHome,devo:renderDevo,prayer:renderPrayer,study:renderStudy}[w]||renderHome)(sub);
+  navRecord();
 }
 const NAV=[['home','Home','home'],['devo','Devo','book'],['prayer','Prayer','pray'],['study','Study','study']];
+
+/* ---------- Navigation history + left-edge swipe back ---------- */
+let navHist=[]; let navSuppress=false;
+function navDesc(){
+  if(WING==='study'){
+    if(studyView==='step') return {w:'study',v:'step',i:currentStepIdx};
+    if(studyView==='position') return {w:'study',v:'position',f:currentPosField};
+    return {w:'study',v:studyView};
+  }
+  if(WING==='prayer') return {w:'prayer',v:prayerView};
+  if(WING==='devo') return {w:'devo',v:devoTab};
+  return {w:WING};
+}
+function navRecord(){
+  if(navSuppress) return;
+  const d=navDesc(), last=navHist[navHist.length-1];
+  if(last && JSON.stringify(last)===JSON.stringify(d)) return;
+  navHist.push(d); if(navHist.length>60) navHist.shift();
+}
+function navApply(d){
+  navSuppress=true;
+  try{
+    if(d.w==='study'){
+      go('study');
+      if(d.v==='step') openStep(d.i);
+      else if(d.v==='position') openPosition(d.f);
+      else setStudyView(d.v);
+    } else if(d.w==='prayer'){ go('prayer'); setPrayerView(d.v); }
+    else if(d.w==='devo'){ go('devo'); setDevoTab(d.v); }
+    else go(d.w||'home');
+  } finally { navSuppress=false; }
+}
+function navBack(){
+  if(navHist.length<2) return false;
+  navHist.pop();                       // drop current
+  const prev=navHist[navHist.length-1];
+  navApply(prev);
+  return true;
+}
+(function initEdgeSwipe(){
+  let sx=0, sy=0, tracking=false;
+  const EDGE=28, THRESH=64;
+  document.addEventListener('touchstart',e=>{
+    const t=e.touches[0];
+    tracking = t.clientX<=EDGE;
+    sx=t.clientX; sy=t.clientY;
+  },{passive:true});
+  document.addEventListener('touchend',e=>{
+    if(!tracking) return; tracking=false;
+    const t=e.changedTouches[0];
+    const dx=t.clientX-sx, dy=Math.abs(t.clientY-sy);
+    if(dx>THRESH && dy<60) navBack();
+  },{passive:true});
+})();
+
 function buildNav(){
   document.getElementById('nav').innerHTML=NAV.map(([w,label,icon])=>
     `<button data-w="${w}">${ic(icon,'nic')}<span>${label}</span></button>`).join('');
@@ -1117,7 +1245,7 @@ function ringSVG(){
   </svg>`;
 }
 let devoTab='today';
-function setDevoTab(t){ devoTab=t; renderDevo(); }
+function setDevoTab(t){ devoTab=t; renderDevo(); navRecord(); }
 function renderDevo(sub){
   if(sub==='hymn') return renderHymn();
   if(sub==='albums') return renderAlbums();
@@ -1446,7 +1574,7 @@ function addSermon(){
 
 /* ---------- PRAYER ---------- */
 let flashPos=0, prayerView='today';
-function setPrayerView(v){ prayerView=v; if(v==='today') flashPos=0; renderPrayer(); }
+function setPrayerView(v){ prayerView=v; if(v==='today') flashPos=0; renderPrayer(); navRecord(); }
 function renderPrayer(sub){
   if(sub) prayerView=sub;
   h(`
@@ -1708,7 +1836,7 @@ function renderLog(){
 const FEMALE=new Set(['MIRIAM','MARY','RACHEL','RAHAB','REBEKAH (REBECCA)','RUTH','SARAH','JEZEBEL','QUEEN','DEBORAH','HANNAH','ESTHER','NAOMI','ABIGAIL','BATHSHEBA','DELILAH','EVE','LEAH','ELISABETH','DORCAS','LYDIA','PRISCILLA','MARTHA','SALOME']);
 const PLACES=new Set(['BETH-SHEMESH','CANAAN','DEBIR','DEER','DIBON','EDOMITES','GATH','GAZA','GEZER','HAMATH','HARAN','JEBUSITES','JUDEA','KEILAH','KIDRON','KIRJATH-JEARIM','LION','LOT, THE','MEGIDDO','OPHIR','RABBAH','RAMOTH','RAMOTH-GILEAD','REHOB','RIMMON','SHITTIM','SIDON','SODOM','TABERNACLES, FEAST OF','TARSHISH','TIRZAH','ZOBAH','ZORAH']);
 let studyView='home';
-function setStudyView(v){ studyView=v; renderStudy(); }
+function setStudyView(v){ studyView=v; renderStudy(); navRecord(); }
 function renderStudy(sub){
   if(sub==='memory'){ studyView='topic'; renderStudyShell(); renderMemory(); return; }
   if(sub==='browse'){ studyView='browse'; }
@@ -1724,12 +1852,43 @@ function renderStudyShell(){
 }
 function studyHome(){
   const s=currentSubject();
-  const done=subjectDone(s), pct=Math.round(100*done/8);
+  if(s.type==='story') return studyHomeStory(s);
+  if(s.type==='question') return studyHomeQuestion(s);
+  return studyHomeMastery(s);
+}
+function loopCardHTML(){
   const nx=nextSubject();
+  const orb={story:'book',person:'ark',question:'question',study:'study'}[nx.type];
+  return `<div class="card loopcard" onclick="setStudyView('loopnext')" role="button" tabindex="0">
+    <div class="loop-orb">${ic(orb)}</div>
+    <div class="grow">
+      <div class="loop-lbl">Coming Next in the Loop</div>
+      <div class="loop-kind">${subjectLabel(nx)}</div>
+      <div class="loop-name">${esc(clampTitle(nx.title))}</div>
+    </div>
+    <div class="achev">›</div>
+  </div>`;
+}
+function clampTitle(t){ return t.length>52?t.slice(0,50).trim()+'…':t; }
+function heroWm(s){ return ic({story:'book',person:'person',question:'question',study:'study'}[s.type]||'study'); }
+function buildPositionCardHTML(s,intro){
+  return `<div class="card">
+    <div class="bp-head"><span class="bp-title">Build Your Position</span></div>
+    <div class="bp-sub">${intro||"Summarize what you've learned and what you believe."}</div>
+    ${POSITION_FIELDS.map(f=>`<div class="bprow" onclick="openPosition('${f.k}')" role="button" tabindex="0">
+      <span class="bp-ic">${ic(f.ic)}</span>
+      <span class="grow">${f.t}</span>
+      ${getPosition(s,f.k)?'<span class="bp-fill"></span>':''}
+      <span class="achev">›</span></div>`).join('')}
+    <div class="bp-journal"><button class="btn" onclick="setStudyView('journal')">${ic('study')} View Full Study Journal</button></div>
+  </div>`;
+}
+function studyHomeMastery(s){
+  const done=subjectDone(s), pct=Math.round(100*done/8);
   const cur=firstIncompleteStep();
   el('sv').innerHTML=`
   <div class="card studyhero">
-    <div class="sy-wm">${ic(s.type==='person'?'person':'study')}</div>
+    <div class="sy-wm">${heroWm(s)}</div>
     <div class="sy-eyebrow">Current Study</div>
     <div class="sy-title">${esc(s.title)}</div>
     <div class="sy-week">
@@ -1750,31 +1909,70 @@ function studyHome(){
     ${roadmapHTML(s)}
   </div>
 
-  <div class="card loopcard" onclick="setStudyView('loopnext')" role="button" tabindex="0">
-    <div class="loop-orb">${ic(nx.type==='person'?'ark':'book')}</div>
-    <div class="grow">
-      <div class="loop-lbl">Coming Next in the Loop</div>
-      <div class="loop-kind">${subjectLabel(nx)}</div>
-      <div class="loop-name">${esc(nx.title)}</div>
-    </div>
-    <div class="achev">›</div>
-  </div>
+  ${loopCardHTML()}
 
   <div class="card">
     <div class="eyebrow-band" style="text-align:left;padding-bottom:10px">Related Resources</div>
     ${resourceRowsHTML()}
   </div>
 
+  ${buildPositionCardHTML(s)}`;
+}
+function studyHomeStory(s){
+  const filled=POSITION_FIELDS.filter(f=>getPosition(s,f.k)).length;
+  el('sv').innerHTML=`
+  <div class="card studyhero">
+    <div class="sy-wm">${ic('book')}</div>
+    <div class="sy-eyebrow">This Week</div>
+    <div class="sy-title" style="font-size:27px">${esc(s.title)}</div>
+    <div class="sy-week"><div><div class="sw-lbl">Story of the Week</div>
+      <div class="sw-num">${ic('music')}Week ${weekOfYear()}</div></div></div>
+    <div class="sy-cta"><a class="btn solid" style="width:100%;text-align:center;padding:15px;display:block;text-decoration:none" href="${bibleHrefFull(s.ref)}">Read the Passage — ${esc(s.ref)} →</a></div>
+  </div>
+
   <div class="card">
-    <div class="bp-head"><span class="bp-title">Build Your Position</span></div>
-    <div class="bp-sub">Summarize what you've learned and what you believe.</div>
-    ${POSITION_FIELDS.map(f=>`<div class="bprow" onclick="openPosition('${f.k}')" role="button" tabindex="0">
-      <span class="bp-ic">${ic(f.ic)}</span>
-      <span class="grow">${f.t}</span>
-      ${getPosition(s,f.k)?'<span class="bp-fill"></span>':''}
-      <span class="achev">›</span></div>`).join('')}
-    <div class="bp-journal"><button class="btn" onclick="setStudyView('journal')">${ic('study')} View Full Study Journal</button></div>
-  </div>`;
+    <div class="eyebrow mb">Reflect on the Story</div>
+    <div style="font-size:15px;line-height:1.6;color:var(--text)">Read ${esc(s.ref)} slowly. Ask: What does this account reveal about God? About people? What is God asking of me through it?</div>
+    ${storyPassagePreview(s.ref)}
+  </div>
+
+  ${loopCardHTML()}
+
+  ${buildPositionCardHTML(s, filled?`${filled} of 5 sections written. Capture what this story teaches you.`:'Capture what this story teaches you and what you believe.')}`;
+}
+function studyHomeQuestion(s){
+  const filled=POSITION_FIELDS.filter(f=>getPosition(s,f.k)).length;
+  const qs=D.content.questions||[];
+  el('sv').innerHTML=`
+  <div class="card studyhero">
+    <div class="sy-wm">${ic('question')}</div>
+    <div class="sy-eyebrow">This Week</div>
+    <div class="sy-title" style="font-size:22px;text-transform:none;font-style:italic;color:var(--blue)">${esc(s.title)}</div>
+    <div class="sy-week"><div><div class="sw-lbl">Question of the Week</div>
+      <div class="sw-num">${ic('music')}Week ${weekOfYear()} · Question ${(s.qidx||0)+1} of ${qs.length}</div></div></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow mb">How to Study It</div>
+    <div style="font-size:15px;line-height:1.6">Search the Scriptures before you settle your answer. Use the tools below to trace every relevant passage, then write your position with book, chapter, and verse.</div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow-band" style="text-align:left;padding-bottom:10px">Study Tools</div>
+    ${resourceRowsHTML()}
+  </div>
+
+  ${loopCardHTML()}
+
+  ${buildPositionCardHTML(s, filled?`${filled} of 5 sections written. Answer the question from Scripture.`:'Answer the question from Scripture — what you believe and why.')}`;
+}
+function bibleHrefFull(ref){ return 'bible://'+encodeURIComponent(ref); }
+function storyPassagePreview(ref){
+  const p=parseFullRef(ref);
+  if(!p) return '';
+  const txt=kjvText(p.book,p.ch,p.v||1);
+  if(!txt) return '';
+  return `<div class="mt" style="border-left:2px solid var(--gold);padding:8px 0 8px 14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--text2)">${esc(txt.length>150?txt.slice(0,148)+'…':txt)}<span style="display:block;font-family:'Nunito Sans',sans-serif;font-style:normal;font-weight:700;font-size:10.5px;letter-spacing:.1em;color:var(--accent);margin-top:6px">${esc(ref)}</span></div>`;
 }
 function roadmapHTML(s){
   const m=subjectSteps(s);
@@ -1805,6 +2003,7 @@ function resourceRowsHTML(){
 // Route the current subject into the existing topic/character tools
 function syncSubjectToTools(){
   const s=currentSubject();
+  if(s.type!=='study'&&s.type!=='person') return false; // story & question have no single nave entry
   const up=s.ref.toUpperCase();
   let idx=D.naves.findIndex(x=>x.s===up);
   if(idx<0) idx=D.naves.findIndex(x=>x.s.indexOf(up)===0);
@@ -1816,14 +2015,26 @@ function syncSubjectToTools(){
   }
   return idx>=0;
 }
+let pendingScroll=null;
+function applyPendingScroll(){
+  if(!pendingScroll) return;
+  const id=pendingScroll; pendingScroll=null;
+  setTimeout(()=>{ const box=el(id); if(box){ box.scrollIntoView({behavior:'smooth',block:'start'}); box.classList.add('res-flash'); setTimeout(()=>box.classList.remove('res-flash'),1400); } },80);
+}
 function openResource(kind){
   const s=currentSubject();
-  syncSubjectToTools();
-  if(kind==='nave'||kind==='strongs'||kind==='webster'||kind==='mentions'){
-    setStudyView(s.type==='person'?'character':'topic');
+  const isPerson=s.type==='person';
+  const mapped=syncSubjectToTools();
+  // Story & question weeks: their resources open the general study tools on the current topic
+  if(!mapped && (s.type==='story'||s.type==='question')){
+    const map={ nave:'naves-card', strongs:'strongs-card', webster:'webster-card', mentions:'naves-card', def:'def-card' };
+    pendingScroll=map[kind]||null;
+    setStudyView('topic');
     return;
   }
-  setStudyView('topic');
+  const map={ nave:'naves-card', strongs:'strongs-card', webster:'webster-card', mentions: isPerson?'mentions-card':'naves-card', def:'def-card' };
+  pendingScroll = map[kind] || null;
+  setStudyView(isPerson?'character':'topic');
 }
 const STEP_GUIDE=[
   'Start by defining your subject in plain words. Read the topical entry and the 1828 dictionary sense, then state what it means in your own words.',
@@ -1840,6 +2051,7 @@ function openStep(i){
   currentStepIdx=i;
   renderStudyShell();
   renderStep();
+  navRecord();
 }
 let currentStepIdx=0;
 function renderStep(){
@@ -1880,6 +2092,7 @@ function openPosition(field){
   currentPosField=field;
   renderStudyShell();
   renderPositionField();
+  navRecord();
 }
 let currentPosField='def';
 function renderPositionField(){
@@ -1960,16 +2173,17 @@ function exportJournal(){
 }
 function renderLoopNext(){
   const nx=nextSubject();
+  const orb={story:'book',person:'ark',question:'question',study:'study'}[nx.type];
   el('sv').innerHTML=`
   <div class="card loopcard" style="cursor:default">
-    <div class="loop-orb">${ic(nx.type==='person'?'ark':'book')}</div>
+    <div class="loop-orb">${ic(orb)}</div>
     <div class="grow"><div class="loop-lbl">Coming Next in the Loop</div>
       <div class="loop-kind">${subjectLabel(nx)}</div>
-      <div class="loop-name">${esc(nx.title)}</div></div>
+      <div class="loop-name">${esc(clampTitle(nx.title))}</div></div>
   </div>
   <div class="card center small" style="padding:26px 18px">
     <p style="font-size:15px;color:var(--text)">Next week's study arrives automatically.</p>
-    <p class="mt">Each week the loop alternates between a topic study and a person of Scripture, carrying you through the whole counsel of God.</p>
+    <p class="mt">The loop moves through four rhythms — a Story, a Person, a Question, and a Study — carrying you through the whole counsel of God, one week at a time.</p>
     <div class="btnrow" style="justify-content:center;margin-bottom:0"><button class="btn ghost" onclick="setStudyView('home')">Back to This Week</button></div>
   </div>`;
 }
@@ -1991,6 +2205,13 @@ function mountRte(id, initial){
   const area=el(id); if(!area) return;
   area.innerHTML=initial||rteStore[id]||'';
   area.addEventListener('input',()=>{ rteStore[id]=area.innerHTML; });
+  area.addEventListener('keydown',e=>{
+    if(!(e.metaKey||e.ctrlKey)) return;
+    const k=e.key.toLowerCase();
+    const map={b:'bold',i:'italic',u:'underline'};
+    if(map[k]){ e.preventDefault(); try{ document.execCommand(map[k],false,null); }catch(_){}
+      rteStore[id]=area.innerHTML; }
+  });
   rteStore[id]=area.innerHTML;
 }
 function rteCmd(ev, cmd){
@@ -2006,17 +2227,19 @@ function relatedTopics(entry){
   return out.slice(0,8);
 }
 function firstSentence(entry){
-  // strip leading refs/codes; take first human sentence up to ~160 chars
+  // take the first human-readable definition line, without breaking on abbreviations
   let e=entry.replace(/^[-\s]*/,'');
   const line=e.split('\n').find(l=>{const t=l.replace(/^-/,'').trim(); return t && /[a-z]/.test(t) && t.length>25;});
   if(!line) return '';
   let s=line.replace(/^-/,'').trim();
-  const dot=s.indexOf('. '); if(dot>30&&dot<180) s=s.slice(0,dot+1);
-  return s.length>200?s.slice(0,197)+'…':s;
+  // only end at a sentence break that is NOT an abbreviation (period preceded by 2+ letters, followed by space+capital)
+  const m=s.match(/[a-z]{2,}\.\s+[A-Z]/);
+  if(m && m.index>40) s=s.slice(0, m.index+m[0].length-2).trim();
+  if(s.length>260){ s=s.slice(0,258); const sp=s.lastIndexOf(' '); if(sp>200) s=s.slice(0,sp); s+='…'; }
+  return s;
 }
 function renderTopic(){
   const t=naveByIndex(S.currentTopic);
-  const mv=memVerseInfo();
   const chips=relatedTopics(t.e);
   const def=firstSentence(t.e);
   el('sv').innerHTML=`
@@ -2025,15 +2248,10 @@ function renderTopic(){
     <h2 style="font-size:24px;margin-top:3px">${esc(titleCase(t.s))}</h2>
     <div class="small">Nave's Topical Bible</div>
   </div>
-  ${def?`<div class="card"><div class="eyebrow mb">Definition</div><div style="font-size:15.5px">${esc(def)}</div></div>`:''}
-  <div class="card tap" onclick="renderMemory()" role="button" tabindex="0">
-    <div class="eyebrow mb">Memory Verse</div>
-    <div class="scripture">${esc(mv.text)}<span class="ref">${esc(mv.ref)}</span></div>
-    <div class="tiny mt center">Tap to practice</div>
-  </div>
-  <div class="card">
+  ${def?`<div class="card" id="def-card"><div class="eyebrow mb">Definition</div><div style="font-size:15.5px;line-height:1.55">${esc(def)}</div></div>`:''}
+  <div class="card" id="naves-card">
     <div class="eyebrow mb">Nave's Topical Bible</div>
-    <div class="naves">${linkifyNaves(t.e)}</div>
+    <div class="nvlist">${navesAccordion(t.e)}</div>
   </div>
   ${chips.length?`<div class="card"><div class="eyebrow mb">Related Topics</div>
     <div class="chips">${chips.map(c=>`<button class="chip" onclick="jumpTopic('${esc(c).replace(/'/g,"\\'")}')">${esc(titleCase(c))}</button>`).join('')}</div></div>`:''}
@@ -2045,6 +2263,7 @@ function renderTopic(){
   ${questionsCard()}`;
   fillStrongs(t.s,'strongs-card');
   fillWebster(t.s,'webster-card');
+  applyPendingScroll();
 }
 function jumpTopic(name){
   const up=name.toUpperCase();
@@ -2123,17 +2342,18 @@ function renderCharacter(){
   </div>
   ${kv.length?`<div class="card"><div class="eyebrow mb">Key Verses</div>
     ${kv.map(k=>`<div class="li"><div class="grow"><div style="font-weight:600">${refLink(k.ref)}</div>${k.txt?`<div class="small" style="font-style:italic">${esc(k.txt.length>90?k.txt.slice(0,88)+'…':k.txt)}</div>`:''}</div></div>`).join('')}</div>`:''}
-  <div class="card">
+  <div class="card" id="naves-card">
     <div class="eyebrow mb">Nave's Passages</div>
-    <div class="naves">${linkifyNaves(c.e)}</div>
+    <div class="nvlist">${navesAccordion(c.e)}</div>
   </div>
-  <div class="card">
+  <div class="card" id="mentions-card">
     <div class="btnrow" style="margin:0">
       <button class="btn" onclick="everyMention()">Every mention in the KJV</button>
       <button class="btn ghost" onclick="addNote('c')">Add note</button>
     </div>
     <div id="mentions"></div>
   </div>`;
+  applyPendingScroll();
 }
 function everyMention(){
   const c=naveByIndex(S.currentCharacter);
@@ -2326,7 +2546,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=27').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=28').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
