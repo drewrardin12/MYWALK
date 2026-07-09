@@ -570,6 +570,18 @@ body.wing-home .homehead{margin-bottom:6px}
 .flash.focus li{font-size:16.5px}
 .flash.focus .fverse{font-size:18px}
 .pf-hint{margin-top:18px;font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:12px;letter-spacing:.06em;color:rgba(255,255,255,.5)}
+/* backup expiry warning */
+.bkwarn{position:fixed;inset:0;z-index:300;background:rgba(20,28,42,.72);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:22px;animation:fadeIn .18s ease}
+.bw-card{background:var(--card);border-radius:18px;padding:26px 22px 18px;max-width:420px;width:100%;box-shadow:0 24px 60px rgba(0,0,0,.35);text-align:center}
+.bw-ic{width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.bw-ic.bad{background:#F6E7E5;color:#B4544F}
+.bw-ic .ic-svg{width:26px;height:26px}
+.bw-t{font-family:"Playfair Display",serif;font-weight:600;font-size:23px;color:var(--text)}
+.bw-b{font-size:15px;line-height:1.55;color:var(--text2);margin-top:8px}
+.bw-steps{display:flex;flex-direction:column;gap:8px;margin-top:18px}
+.bw-steps .btn{width:100%;text-align:center;padding:13px}
+.bw-msg{min-height:16px;margin-top:8px;color:var(--accent)}
+.bw-later{margin-top:10px;background:none;border:none;color:var(--text2);font-family:"Nunito Sans",sans-serif;font-size:13px;padding:8px;cursor:pointer;text-decoration:underline}
 /* ===== Batch F — Study dashboard ===== */
 .studyhero{position:relative;overflow:hidden;padding:22px 20px 20px}
 .studyhero .sy-wm{position:absolute;top:8px;right:-6px;width:118px;height:118px;color:var(--gold);opacity:.5;pointer-events:none}
@@ -724,8 +736,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Sure Foundation';
-const BUILD_VERSION='2.12.0';
+const BUILD_NAME='Watchful';
+const BUILD_VERSION='2.13.1';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -873,6 +885,8 @@ async function boot(){
   save();
   try{ history.replaceState({mw:1,d:{w:'home'}}, ''); }catch(e){}
   go('home');
+  setTimeout(()=>{ try{ autoBackup(); }catch(e){} }, 2500);
+  setTimeout(()=>{ try{ showBackupWarning(); }catch(e){} }, 4000);
 }
 async function getStrongs(){ if(!D.strongs) D.strongs=await j('data/strongs.json'); return D.strongs; }
 D.webster={};
@@ -1025,7 +1039,175 @@ function randNave(kind){
 }
 function naveByIndex(i){ return D.naves[i]; }
 
+/* ---------- Backup: file export/import + private Gist auto-sync ---------- */
+const BK='mywalk_backup';   // stores {token, gistId, lastSync, everyDays}
+function bkCfg(){ try{ return JSON.parse(localStorage.getItem(BK)||'{}'); }catch(e){ return {}; } }
+function bkSave(c){ try{ localStorage.setItem(BK, JSON.stringify(c)); }catch(e){} }
+
+// Everything worth keeping. Deliberately excludes the token (never backed up).
+function backupSnapshot(){
+  return {
+    _app:'MY WALK', _version:BUILD_VERSION, _saved:new Date().toISOString(),
+    data:{
+      reads:S.reads, seqMode:S.seqMode,
+      currentTopic:S.currentTopic, currentCharacter:S.currentCharacter,
+      memArchive:S.memArchive, memProgress:S.memProgress,
+      notes:S.notes, gdoc:S.gdoc,
+      userQuestions:S.userQuestions, qStudied:S.qStudied,
+      albums:S.albums, sermons:S.sermons, sermonDone:S.sermonDone, albumAdds:S.albumAdds,
+      prayer:S.prayer, prayerChecks:S.prayerChecks, testimony:S.testimony,
+      study:S.study, seeded:S.seeded, studyTab:S.studyTab
+    }
+  };
+}
+function backupApply(snap){
+  const d=(snap&&snap.data)?snap.data:null;
+  if(!d) throw new Error('Not a MY WALK backup file.');
+  Object.keys(d).forEach(k=>{ if(d[k]!==undefined) S[k]=d[k]; });
+  if(!S.seeded) S.seeded={albums:1,sermons:1,prayer:1};
+  save();
+}
+function backupFilename(){
+  const d=new Date(), p=n=>String(n).padStart(2,'0');
+  return `mywalk-backup-${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}.json`;
+}
+function exportBackupFile(){
+  const blob=new Blob([JSON.stringify(backupSnapshot(),null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob); a.download=backupFilename(); a.click();
+  URL.revokeObjectURL(a.href);
+}
+function importBackupFile(){
+  const inp=document.createElement('input');
+  inp.type='file'; inp.accept='application/json,.json';
+  inp.onchange=()=>{
+    const f=inp.files&&inp.files[0]; if(!f) return;
+    const rd=new FileReader();
+    rd.onload=()=>{
+      try{
+        const snap=JSON.parse(rd.result);
+        if(!confirm('Restore this backup? It will replace the data currently on this device.')) return;
+        backupApply(snap);
+        alert('Restored. Reloading…'); location.reload();
+      }catch(e){ alert('Could not restore: '+e.message); }
+    };
+    rd.readAsText(f);
+  };
+  inp.click();
+}
+
+/* --- Private Gist sync --- */
+const GIST_FILE='mywalk-backup.json';
+async function gistApi(path,opts){
+  const c=bkCfg();
+  if(!c.token) throw new Error('No GitHub token saved.');
+  const r=await fetch('https://api.github.com'+path, Object.assign({
+    headers:{'Authorization':'Bearer '+c.token,'Accept':'application/vnd.github+json','Content-Type':'application/json'}
+  }, opts||{}));
+  if(!r.ok){
+    if(r.status===401){ const x=bkCfg(); x.tokenBad=1; bkSave(x); throw new Error('Token rejected (401). Check the token and that it has "gist" scope.'); }
+    if(r.status===404) throw new Error('Gist not found (404).');
+    throw new Error('GitHub error '+r.status);
+  }
+  { const x=bkCfg(); if(x.tokenBad){ delete x.tokenBad; bkSave(x); } }
+  return r.json();
+}
+async function gistPush(){
+  const c=bkCfg();
+  const body={ description:'MY WALK backup', files:{ [GIST_FILE]:{ content:JSON.stringify(backupSnapshot(),null,2) } } };
+  let res;
+  if(c.gistId){
+    try{ res=await gistApi('/gists/'+c.gistId,{method:'PATCH',body:JSON.stringify(body)}); }
+    catch(e){ if(/404/.test(e.message)){ res=await gistApi('/gists',{method:'POST',body:JSON.stringify(Object.assign({public:false},body))}); } else throw e; }
+  } else {
+    res=await gistApi('/gists',{method:'POST',body:JSON.stringify(Object.assign({public:false},body))});
+  }
+  const c2=bkCfg(); c2.gistId=res.id; c2.lastSync=Date.now(); bkSave(c2);
+  return res.id;
+}
+async function gistPull(){
+  const c=bkCfg();
+  if(!c.gistId) throw new Error('No backup gist yet — back up once first.');
+  const res=await gistApi('/gists/'+c.gistId);
+  const f=res.files&&res.files[GIST_FILE];
+  if(!f) throw new Error('Backup file missing from gist.');
+  let content=f.content;
+  if(f.truncated && f.raw_url){ content=await (await fetch(f.raw_url)).text(); }
+  return JSON.parse(content);
+}
+// Auto-sync: runs on load and when the app is hidden, honoring the interval.
+function bkDue(){
+  const c=bkCfg();
+  if(!c.token || !c.auto) return false;
+  const days=c.everyDays||1;
+  return !c.lastSync || (Date.now()-c.lastSync) >= days*86400000;
+}
+async function autoBackup(force){
+  const c=bkCfg();
+  if(!c.token || !c.auto) return;
+  if(!force && !bkDue()) return;
+  if(!navigator.onLine) return;                 // silently skip offline; retries later
+  try{ await gistPush(); }catch(e){ console.warn('auto-backup failed',e.message);
+    if(/401|rejected/i.test(e.message)) { try{ showBackupWarning(); }catch(_){} } }
+}
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='hidden') autoBackup(); });
+window.addEventListener('online',()=>autoBackup());
+
+/* --- Backup health: warn loudly before the token expires or if backups stall --- */
+const TOKEN_LIFE_DAYS=365;
+function daysSince(ms){ return ms?Math.floor((Date.now()-ms)/86400000):null; }
+function backupHealth(){
+  const c=bkCfg();
+  if(!c.token) return {level:'none'};
+  if(c.tokenBad) return {level:'expired', why:'Your GitHub token was rejected — it has expired or been revoked.'};
+  const age=daysSince(c.tokenAdded);
+  if(age!==null && age>=TOKEN_LIFE_DAYS) return {level:'expired', why:'Your GitHub token is about a year old and has likely expired.'};
+  if(age!==null && age>=TOKEN_LIFE_DAYS-21) return {level:'soon', days:TOKEN_LIFE_DAYS-age, why:'Your GitHub token expires soon.'};
+  const stale=daysSince(c.lastSync);
+  if(c.auto && stale!==null && stale>=14) return {level:'stale', days:stale, why:'Your last successful backup was '+stale+' days ago.'};
+  return {level:'ok'};
+}
+function bkSnoozed(){ const c=bkCfg(); return c.snooze && Date.now()<c.snooze; }
+function snoozeWarning(days){ const c=bkCfg(); c.snooze=Date.now()+days*86400000; bkSave(c); const o=el('bkwarn'); if(o) o.remove(); }
+function showBackupWarning(force){
+  const h=backupHealth();
+  if(!force){
+    if(h.level==='ok'||h.level==='none') return;
+    if(bkSnoozed()) return;
+  }
+  if(el('bkwarn')) return;
+  const urgent = h.level==='expired';
+  const o=document.createElement('div'); o.id='bkwarn'; o.className='bkwarn';
+  o.innerHTML=`
+    <div class="bw-card">
+      <div class="bw-ic ${urgent?'bad':''}">${ic(urgent?'bell':'refresh')}</div>
+      <div class="bw-t">${urgent?'Backups Have Stopped':'Backup Needs Attention'}</div>
+      <div class="bw-b">${esc(h.why||'')}</div>
+      <div class="bw-b" style="margin-top:10px">Create a new token on GitHub (Settings → Developer settings → Tokens (classic), <b>gist</b> scope only), then paste it below.</div>
+      <div class="bw-steps">
+        <button class="btn solid" id="bw-token">Paste New Token</button>
+        <button class="btn ghost" id="bw-file">Save Backup File Instead</button>
+      </div>
+      <div class="bw-msg tiny" id="bw-msg"></div>
+      <button class="bw-later" id="bw-later">Remind me in 3 days</button>
+    </div>`;
+  document.body.appendChild(o);
+  const msg=t=>{ const m=el('bw-msg'); if(m) m.textContent=t||''; };
+  el('bw-token').onclick=async()=>{
+    const v=prompt('Paste your new GitHub token (gist scope):','');
+    if(v===null||!v.trim()) return;
+    const c=bkCfg(); c.token=v.trim(); c.tokenAdded=Date.now(); delete c.tokenBad; delete c.snooze; c.auto=true; bkSave(c);
+    msg('Testing…');
+    try{ await gistPush(); msg('Backed up. You are protected again.'); setTimeout(()=>{const x=el('bkwarn'); if(x) x.remove();},1200); }
+    catch(e){ msg(e.message); }
+  };
+  el('bw-file').onclick=()=>{ exportBackupFile(); msg('Backup file saved.'); };
+  el('bw-later').onclick=()=>snoozeWarning(3);
+}
+
 function openSettings(){
+  const c=bkCfg();
+  const last=c.lastSync?new Date(c.lastSync).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}):'never';
   modal(`<div class="sheet-h">My Walk</div>
     <div class="small">A personal devotional</div>
     <div class="sset">
@@ -1033,7 +1215,65 @@ function openSettings(){
       <div class="li"><div class="grow k">Build Version</div><div class="v">${BUILD_VERSION}</div></div>
       <div class="li"><div class="grow k">Last Updated</div><div class="v">${BUILD_UPDATED}</div></div>
     </div>
+
+    <div class="eyebrow mb" style="margin-top:20px">Backup &amp; Restore</div>
+    <div class="sset">
+      <div class="li"><div class="grow k">Auto-backup</div>
+        <div class="v"><button class="btn sm ${c.auto?'solid':'ghost'}" id="bk-auto">${c.auto?'On':'Off'}</button></div></div>
+      <div class="li"><div class="grow k">Every</div>
+        <div class="v"><button class="btn sm ghost" id="bk-days">${c.everyDays||1} day${(c.everyDays||1)>1?'s':''}</button></div></div>
+      <div class="li"><div class="grow k">Last backup</div><div class="v" id="bk-last">${last}</div></div>
+      <div class="li"><div class="grow k">Token status</div><div class="v" id="bk-health">${(()=>{const h=backupHealth();
+        return h.level==='none'?'not set':h.level==='expired'?'<span style="color:#B4544F">expired</span>':
+          h.level==='soon'?'<span style="color:#B4864F">expires in '+h.days+'d</span>':
+          h.level==='stale'?'<span style="color:#B4864F">stale</span>':'<span style="color:#4F7F5B">healthy</span>';})()}</div></div>
+      <div class="li"><div class="grow k">GitHub token</div>
+        <div class="v"><button class="btn sm ghost" id="bk-token">${c.token?'Change':'Add'}</button></div></div>
+    </div>
+    <div class="btnrow" style="margin-top:10px">
+      <button class="btn sm solid" id="bk-now">Back Up Now</button>
+      <button class="btn sm ghost" id="bk-restore">Restore From Cloud</button>
+    </div>
+    <div class="btnrow" style="margin-top:4px">
+      <button class="btn sm ghost" id="bk-file">Save Backup File</button>
+      <button class="btn sm ghost" id="bk-load">Load Backup File</button>
+    </div>
+    <div class="tiny" id="bk-msg" style="margin-top:8px;min-height:16px"></div>
+    <div class="tiny" style="margin-top:6px;color:var(--text2)">Auto-backup saves to a <b>private gist</b> in your own GitHub account. Your token stays on this device and is never included in a backup.</div>
+
     <div class="sfoot">Thy word is a lamp unto my feet, and a light unto my path.</div>`);
+
+  const msg=t=>{ const m=el('bk-msg'); if(m) m.textContent=t||''; };
+
+  el('bk-auto').onclick=()=>{ const x=bkCfg(); if(!x.token){ msg('Add a GitHub token first.'); return; }
+    x.auto=!x.auto; bkSave(x); el('bk-auto').textContent=x.auto?'On':'Off';
+    el('bk-auto').className='btn sm '+(x.auto?'solid':'ghost');
+    msg(x.auto?'Auto-backup on.':'Auto-backup off.'); if(x.auto) autoBackup(true); };
+
+  el('bk-days').onclick=()=>{ const x=bkCfg(); const cur=x.everyDays||1;
+    x.everyDays = cur===1?2:(cur===2?3:1); bkSave(x);
+    el('bk-days').textContent=x.everyDays+' day'+(x.everyDays>1?'s':''); };
+
+  el('bk-token').onclick=()=>{ const x=bkCfg();
+    const v=prompt('Paste a GitHub personal access token with "gist" scope.\n(Leave blank to remove.)', '');
+    if(v===null) return;
+    if(!v.trim()){ delete x.token; delete x.tokenAdded; delete x.tokenBad; x.auto=false; bkSave(x); msg('Token removed.'); return; }
+    x.token=v.trim(); x.tokenAdded=Date.now(); delete x.tokenBad; delete x.snooze; bkSave(x); msg('Token saved.'); };
+
+  el('bk-now').onclick=async()=>{ msg('Backing up…');
+    try{ await gistPush(); const x=bkCfg();
+      el('bk-last').textContent=new Date(x.lastSync).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+      msg('Backed up to your private gist.'); }
+    catch(e){ msg(e.message); } };
+
+  el('bk-restore').onclick=async()=>{
+    if(!confirm('Restore from your cloud backup? This replaces the data on this device.')) return;
+    msg('Restoring…');
+    try{ const snap=await gistPull(); backupApply(snap); msg('Restored. Reloading…'); setTimeout(()=>location.reload(),600); }
+    catch(e){ msg(e.message); } };
+
+  el('bk-file').onclick=()=>{ exportBackupFile(); msg('Backup file saved.'); };
+  el('bk-load').onclick=()=>importBackupFile();
 }
 /* ---------- router ---------- */
 const APP=document.getElementById('app');
@@ -2807,7 +3047,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http'))
-  navigator.serviceWorker.register('sw.js?v=37').catch(()=>{});
+  navigator.serviceWorker.register('sw.js?v=39').catch(()=>{});
 boot().catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
 </script>
