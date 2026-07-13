@@ -272,6 +272,9 @@ body.wing-home .homehead{margin-bottom:6px}
 .readhead{display:flex;align-items:flex-start;gap:13px}
 .readhead .grow{min-width:0}
 .readbtn{flex:0 0 auto;align-self:center;padding:11px 20px;border-radius:99px;font-size:14px}
+.lib-badge{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:99px;white-space:nowrap;margin-right:6px}
+.lib-badge.done{background:rgba(45,120,80,.15);color:#2e7d50;border:1px solid rgba(46,125,80,.4)}
+.lib-badge.wip{background:rgba(228,201,122,.16);color:#9a7d2e;border:1px solid rgba(228,201,122,.5)}
 .summary{margin-top:14px;font-size:14.5px;line-height:1.6;color:var(--text2)}
 .readfoot{display:flex;justify-content:flex-end;margin-top:16px}
 .marklink{font-family:"Nunito Sans",sans-serif;font-weight:600;font-size:14px;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
@@ -505,6 +508,15 @@ body.wing-home .homehead{margin-bottom:6px}
 .flash ul{list-style:none;margin-top:12px;position:relative;z-index:1}
 .flash li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px;color:rgba(255,255,255,.9)}
 .flash li:last-child{border-bottom:none}
+.flash li.p-req{cursor:pointer;padding-left:0;transition:opacity .25s,color .25s}
+.flash li.p-req .p-txt{position:relative;display:inline-block}
+.flash li.p-req.struck{opacity:.42}
+.flash li.p-req.struck .p-txt::after{content:'';position:absolute;left:0;right:0;top:52%;height:1px;background:rgba(255,255,255,.85)}
+.flash li.p-req.now{color:#E4C97A}
+.flash li.p-req.now .p-txt::before{content:'';position:absolute;left:-11px;top:50%;transform:translateY(-50%);width:5px;height:5px;border-radius:50%;background:#E4C97A}
+.pt-each{display:flex;align-items:center;gap:8px;margin-top:9px}
+.pt-seg{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
+.f-prayed{margin-top:12px;text-align:center;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#E4C97A;opacity:.85;position:relative;z-index:1}
 .fverse{margin-top:16px;padding:14px 0 0;border-top:1px solid rgba(228,201,122,.28);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:rgba(255,255,255,.82);position:relative;z-index:1}
 .fvref{display:block;font-family:"Nunito Sans",sans-serif;font-style:normal;font-weight:700;font-size:10.5px;color:#E4C97A;margin-top:7px;letter-spacing:.12em;text-transform:uppercase}
 .prog{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--text2);text-transform:uppercase}
@@ -746,8 +758,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Fresh Manna';
-const BUILD_VERSION='2.14.0';
+const BUILD_NAME='Open Field';
+const BUILD_VERSION='2.16.0';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -761,8 +773,8 @@ const S=Object.assign({
   notes:[], gdoc:'',
   userQuestions:[], qStudied:{},
   albums:null, sermons:null, sermonDone:{}, albumAdds:[],
-  prayer:null, prayerChecks:{}, testimony:[],
-  study:{mastery:{},position:{}},
+  prayer:null, prayerChecks:{}, prayerStrikes:{}, testimony:[],
+  study:{mastery:{},position:{},defined:{}},
   seeded:null,
   studyTab:'topic'
 }, JSON.parse(localStorage.getItem(LS)||'{}'));
@@ -779,6 +791,7 @@ if(!S.seeded){
 if(!S.study) S.study={mastery:{},position:{}};
 if(!S.study.mastery) S.study.mastery={};
 if(!S.study.position) S.study.position={};
+if(!S.study.defined) S.study.defined={};
 
 /* ---------- Study: mastery roadmap + weekly loop ---------- */
 const MASTERY_STEPS=[
@@ -856,7 +869,8 @@ function subjectForWeek(w){
   if(type==='question'){ const qs=D.content.questions||[]; if(!qs.length) return {type,title:'',ref:'Q0',qidx:0,qrefs:[]}; const idx=((w>>2)%qs.length+qs.length)%qs.length; const q=qs[idx]; return {type,title:(q&&q.q)||String(q),ref:'Q'+idx,qidx:idx,qrefs:(q&&q.r)||[]}; }
   const t=STUDY_TOPICS[((w>>2)%STUDY_TOPICS.length+STUDY_TOPICS.length)%STUDY_TOPICS.length]; return {type,title:titleCase(t),ref:t};
 }
-function currentSubject(){ return subjectForWeek(loopWeek(0)); }
+let libSubject=null;
+function currentSubject(){ return libSubject || subjectForWeek(loopWeek(0)); }
 function nextSubject(){ return subjectForWeek(loopWeek(1)); }
 function subjectKey(s){ return s.type+':'+s.ref; }
 function subjectSteps(s){ return (S.study.mastery[subjectKey(s)]||{}); }
@@ -870,6 +884,8 @@ function toggleStep(i){
 function firstIncompleteStep(){ const m=subjectSteps(currentSubject()); for(let i=0;i<8;i++) if(!m[i]) return i; return 7; }
 function subjectLabel(s){ return ({story:'Story of the Week',person:'Person of the Week',question:'Question of the Week',study:'Study of the Week'})[s.type]; }
 function positionKey(s){ return subjectKey(s); }
+function isDefined(s){ return !!S.study.defined[subjectKey(s)]; }
+function toggleDefined(s){ const k=subjectKey(s); if(S.study.defined[k]) delete S.study.defined[k]; else S.study.defined[k]=todayKey(); save(); }
 function getPosition(s,field){ const p=S.study.position[positionKey(s)]||{}; return p[field]||''; }
 function setPosition(s,field,html){ const k=positionKey(s); const p=S.study.position[k]=S.study.position[k]||{}; p[field]=html; save(); }
 
@@ -1065,7 +1081,7 @@ function backupSnapshot(){
       notes:S.notes, gdoc:S.gdoc,
       userQuestions:S.userQuestions, qStudied:S.qStudied,
       albums:S.albums, sermons:S.sermons, sermonDone:S.sermonDone, albumAdds:S.albumAdds,
-      prayer:S.prayer, prayerChecks:S.prayerChecks, testimony:S.testimony,
+      prayer:S.prayer, prayerChecks:S.prayerChecks, prayerStrikes:S.prayerStrikes, testimony:S.testimony,
       study:S.study, seeded:S.seeded, studyTab:S.studyTab
     }
   };
@@ -1642,13 +1658,13 @@ function devoToday(){
         <div class="serif-t" style="font-size:22px">${esc(stories[0][0])}</div>
         <div class="meta" style="color:var(--blue)">${refLink(stories[0][1])}</div>
       </div>
-      <button class="pbtn readbtn" onclick="go('devo')">Read Now →</button>
+      <button class="pbtn readbtn" ${refClick(stories[0][1])}>Read Now →</button>
     </div>
     <div class="summary" style="margin-top:12px">${esc(shortSummary(plan[2]))}</div>
     <hr class="thin mt2">
     <div class="tline">
       ${stories.map((s,i)=>`<div class="tl-row ${i===stories.length-1?'last':''}">
-        <div class="tl-dot ${i===0?'on':''}"></div>
+        <div class="tl-dot on"></div>
         <div class="grow"><div class="tl-title">${esc(s[0])}</div><div class="tl-ref">${refLink(s[1])}</div></div>
       </div>`).join('')}
     </div>
@@ -1962,20 +1978,15 @@ function verseForItem(){
 function renderPray(){
   const pd=prayerDue();
   const done=S.prayerChecks[todayKey()]||[];
-  const cards=pd.items.filter(x=>!done.includes(x.it.id));
+  const cards=pd.items;
   const pv=el('pv');
   if(!pd.items.length){
     pv.innerHTML=`<div class="card center"><p class="small">No prayer items are scheduled yet.</p>
       <div class="btnrow" style="justify-content:center"><button class="btn" onclick="setPrayerView('tree')">Build your list</button></div></div>`;
     return;
   }
-  const doneCount=pd.items.length-cards.length;
-  if(!cards.length){
-    pv.innerHTML=`<div class="card center" style="padding:44px 16px">
-      <div class="amen">Amen.</div>
-      <p class="small mt">All ${pd.items.length} of today\u2019s prayers are finished.</p></div>`;
-    return;
-  }
+  const doneCount=pd.items.filter(x=>done.includes(x.it.id)).length;
+  const allDone=doneCount===pd.items.length;
   if(flashPos>=cards.length) flashPos=0;
   const c=cards[flashPos];
   const v=verseForItem();
@@ -1983,7 +1994,7 @@ function renderPray(){
   <div class="card">
     <div class="pray-sum">
       <div class="grow"><div class="ps-eyebrow">Today's Prayer Cards</div>
-        <div class="ps-count"><b>${cards.length}</b> remaining</div></div>
+        <div class="ps-count">${allDone?`<b>Amen.</b> all ${pd.items.length} prayed`:`<b>${pd.items.length-doneCount}</b> remaining`}</div></div>
       <div class="ps-flame"><div class="pf-num">${ic('flame')}${streak()}</div><div class="plabel">day streak</div></div>
     </div>
     <div class="jbar" style="margin-top:12px"><span style="width:${Math.round(100*doneCount/pd.items.length)}%"></span></div>
@@ -1991,20 +2002,31 @@ function renderPray(){
   <div class="flash ${prayEnterDir?'slide-in-'+(prayEnterDir>0?'l':'r'):''}" id="prayflash" onclick="prayCardTap(event)">
     ${prayerFlashInner(c,v,cards.length)}
   </div>
-  <div class="center prog mt">${doneCount+1} of ${pd.items.length} &middot; swipe to move &middot; tap to focus</div>`;
+  <div class="center prog mt">${flashPos+1} of ${pd.items.length} &middot; swipe to move &middot; tap to focus</div>`;
   prayEnterDir=0;
   mountPraySwipe('prayflash');
 }
 function prayerFlashInner(c,v,n){
+  const struck=strikesToday();
+  const isPrayed=(S.prayerChecks[todayKey()]||[]).includes(c.it.id);
+  const reqs=c.it.requests.length
+    ? `<ul>${c.it.requests.map(r=>{
+        const cls=['p-req'];
+        if(struck.includes(r.id)) cls.push('struck');
+        if(eachCurrentId===r.id) cls.push('now');
+        return `<li class="${cls.join(' ')}" onclick="strikeRequest(event,'${r.id}')"><span class="p-txt">${esc(r.text)}</span></li>`;
+      }).join('')}</ul>`
+    : '<p style="margin-top:10px;color:rgba(255,255,255,.72);position:relative;z-index:1">Pray as led.</p>';
   return `
     <div class="fl-wm">${ic('pray')}</div>
     <div class="fbook">${ic('bookmark')}</div>
     <div class="fh">${esc(c.hd.name)}</div>
     <div class="fn">${esc(c.it.name)}</div>
-    ${c.it.requests.length?`<ul>${c.it.requests.map(r=>`<li>${esc(r.text)}</li>`).join('')}</ul>`:'<p style="margin-top:10px;color:rgba(255,255,255,.72);position:relative;z-index:1">Pray as led.</p>'}
+    ${reqs}
     <div class="fverse"><i>${esc(v[0])}</i><span class="fvref">${esc(v[1])}</span></div>
+    ${isPrayed?'<div class="f-prayed">Prayed</div>':''}
     <div style="flex:1"></div>
-    <div class="ptimer" id="ptimer">${prayTimerHTML()}</div>
+    <div class="ptimer" id="ptimer">${prayTimerHTML(c)}</div>
     <div class="prayrow">
       <button class="circ" onclick="praySkip()" aria-label="Skip"><span class="cg ghost">${ic('refresh')}</span><span class="cl">Skip</span></button>
       <button class="circ" onclick="prayDone('${c.it.id}')" aria-label="Prayed"><span class="cg solid">${ic('check')}</span><span class="cl">Prayed</span></button>
@@ -2012,13 +2034,22 @@ function prayerFlashInner(c,v,n){
     </div>`;
 }
 function prayCardTap(e){
-  if(e.target.closest('button')||e.target.closest('.ptimer')) return; // let controls work
+  if(e.target.closest('button')||e.target.closest('.ptimer')||e.target.closest('.p-req')) return; // let controls work
   if(prayDragMoved) return; // was a swipe, not a tap
   openPrayerFocus();
 }
 /* ---------- Prayer timer + soft chime ---------- */
 let prayTimerId=null, prayTimerEnd=0, prayTimerDur=0;
-function prayTimerHTML(){
+function prayTimerHTML(c){
+  if(eachTimerId){
+    const left=Math.max(0,Math.ceil((eachEnd-Date.now())/1000));
+    return `<div class="pt-run">
+      <button class="pt-x" onclick="stopEachTimer()" aria-label="Stop timer">${ic('refresh')}</button>
+      <div class="pt-count" id="pt-count">${fmtClock(left)}</div>
+      <div class="pt-bar"><span id="pt-bar" style="width:${eachSegDur?Math.round(100*left/eachSegDur):0}%"></span></div>
+      <div class="pt-seg" id="pt-seg">${eachIdx+1} of ${eachQueue.length}</div>
+    </div>`;
+  }
   if(prayTimerId){
     const left=Math.max(0,Math.ceil((prayTimerEnd-Date.now())/1000));
     return `<div class="pt-run">
@@ -2027,16 +2058,23 @@ function prayTimerHTML(){
       <div class="pt-bar"><span id="pt-bar" style="width:${prayTimerDur?Math.round(100*left/prayTimerDur):0}%"></span></div>
     </div>`;
   }
+  const open = c ? c.it.requests.filter(r=>!strikesToday().includes(r.id)).length : 0;
+  const eachRow = open>1 ? `<div class="pt-each">
+    <span class="pt-lbl">Each</span>
+    <button class="pt-pill" onclick="startEachTimer(30,'${c.it.id}')">30s</button>
+    <button class="pt-pill" onclick="startEachTimer(60,'${c.it.id}')">1 min</button>
+    <button class="pt-pill" onclick="startEachTimerCustom('${c.it.id}')">Custom</button>
+  </div>` : '';
   return `<div class="pt-set">
     <span class="pt-lbl">Timer</span>
     <button class="pt-pill" onclick="startPrayTimer(30)">30s</button>
     <button class="pt-pill" onclick="startPrayTimer(60)">1 min</button>
     <button class="pt-pill" onclick="startPrayTimerCustom()">Custom</button>
-  </div>`;
+  </div>${eachRow}`;
 }
 function fmtClock(s){ const m=Math.floor(s/60), r=s%60; return m+':'+String(r).padStart(2,'0'); }
 function startPrayTimer(sec){
-  stopPrayTimer(true);
+  stopPrayTimer(true); stopEachTimer(true);
   prayTimerDur=sec; prayTimerEnd=Date.now()+sec*1000;
   unlockChime();
   prayTimerId=setInterval(()=>{
@@ -2044,13 +2082,11 @@ function startPrayTimer(sec){
     const cd=el('pt-count'), bar=el('pt-bar');
     if(cd) cd.textContent=fmtClock(left);
     if(bar) bar.style.width=(prayTimerDur?Math.round(100*left/prayTimerDur):0)+'%';
-    if(left<=0){ prayChime(); const box=el('ptimer'); clearInterval(prayTimerId); prayTimerId=null;
-      // gently move to the next prayer
-      const done=S.prayerChecks[todayKey()]||[]; const cards=prayerDue().items.filter(x=>!done.includes(x.it.id));
-      praySkip();
+    if(left<=0){ prayChime(); clearInterval(prayTimerId); prayTimerId=null;
+      praySkip(); // gently move to the next prayer
     }
   },250);
-  const box=el('ptimer'); if(box) box.innerHTML=prayTimerHTML();
+  prayRerender();
 }
 function startPrayTimerCustom(){
   const v=prompt('Timer length — minutes (e.g. 2 or 1.5):','2');
@@ -2061,7 +2097,75 @@ function startPrayTimerCustom(){
 function stopPrayTimer(silent){
   if(prayTimerId){ clearInterval(prayTimerId); prayTimerId=null; }
   prayTimerEnd=0; prayTimerDur=0;
-  if(!silent){ const box=el('ptimer'); if(box) box.innerHTML=prayTimerHTML(); }
+  if(!silent) prayRerender();
+}
+
+/* ---------- "Each" timer: split a duration across a card's requests ---------- */
+let eachTimerId=null, eachEnd=0, eachSegDur=0, eachQueue=[], eachIdx=0, eachCurrentId=null, eachItemId=null;
+function strikesToday(){ return S.prayerStrikes[todayKey()]||[]; }
+function addStrike(rid){
+  const k=todayKey();
+  const arr=(S.prayerStrikes[k]=S.prayerStrikes[k]||[]);
+  if(!arr.includes(rid)){ arr.push(rid); save(); }
+}
+function strikeRequest(e,rid){
+  if(e){ e.stopPropagation(); }
+  if(strikesToday().includes(rid)) return;   // strikes are one-way until midnight
+  addStrike(rid);
+  if(eachTimerId && eachCurrentId===rid){ eachNextSegment(); return; }
+  prayRerender();
+}
+function findItem(itemId){
+  if(!S.prayer||!S.prayer.headings) return null;
+  for(const hd of S.prayer.headings){ const it=hd.items.find(x=>x.id===itemId); if(it) return it; }
+  return null;
+}
+function startEachTimer(totalSec,itemId){
+  stopPrayTimer(true); stopEachTimer(true);
+  const it=findItem(itemId); if(!it) return;
+  const struck=strikesToday();
+  eachQueue=it.requests.filter(r=>!struck.includes(r.id)).map(r=>r.id);
+  if(eachQueue.length<2) return;
+  eachItemId=itemId;
+  eachSegDur=Math.max(3,Math.round(totalSec/eachQueue.length));
+  eachIdx=0;
+  unlockChime();
+  runEachSegment();
+}
+function startEachTimerCustom(itemId){
+  const v=prompt('Total time for this card \u2014 minutes (e.g. 3 or 1.5):','3');
+  if(v===null) return;
+  const mins=parseFloat(v); if(isNaN(mins)||mins<=0||mins>60) return;
+  startEachTimer(Math.round(mins*60),itemId);
+}
+function runEachSegment(){
+  if(eachIdx>=eachQueue.length){ stopEachTimer(); return; }
+  eachCurrentId=eachQueue[eachIdx];
+  eachEnd=Date.now()+eachSegDur*1000;
+  if(eachTimerId){ clearInterval(eachTimerId); }
+  eachTimerId=setInterval(()=>{
+    const left=Math.max(0,Math.ceil((eachEnd-Date.now())/1000));
+    const cd=el('pt-count'), bar=el('pt-bar');
+    if(cd) cd.textContent=fmtClock(left);
+    if(bar) bar.style.width=(eachSegDur?Math.round(100*left/eachSegDur):0)+'%';
+    if(left<=0){ addStrike(eachCurrentId); eachNextSegment(); }
+  },250);
+  prayRerender();
+}
+function eachNextSegment(){
+  prayChime();
+  if(eachTimerId){ clearInterval(eachTimerId); eachTimerId=null; }
+  eachIdx++;
+  // skip anything struck by hand while the timer ran
+  const struck=strikesToday();
+  while(eachIdx<eachQueue.length && struck.includes(eachQueue[eachIdx])) eachIdx++;
+  if(eachIdx>=eachQueue.length){ stopEachTimer(); return; }  // card sits; user taps Prayed
+  runEachSegment();
+}
+function stopEachTimer(silent){
+  if(eachTimerId){ clearInterval(eachTimerId); eachTimerId=null; }
+  eachEnd=0; eachSegDur=0; eachQueue=[]; eachIdx=0; eachCurrentId=null; eachItemId=null;
+  if(!silent) prayRerender();
 }
 let _chimeEl=null, _chimeUri=null;
 function makeChimeUri(){
@@ -2093,10 +2197,10 @@ function prayChime(){
   try{ if(navigator.vibrate) navigator.vibrate([50,70,50]); }catch(e){} // no-op on iOS Safari
 }
 function prayRerender(){ if(prayFocusOpen) renderPrayerFocus(); else renderPray(); }
-function prayCount(){ const pd=prayerDue(); const done=S.prayerChecks[todayKey()]||[]; return pd.items.filter(x=>!done.includes(x.it.id)).length; }
+function prayCount(){ return prayerDue().items.length; }
 function prayAdvance(dir){
   const n=prayCount(); if(n<=0) return;
-  stopPrayTimer(true);
+  stopPrayTimer(true); stopEachTimer(true);
   flashPos=((flashPos+dir)%n+n)%n;
   prayEnterDir=dir;
   if(prayFocusOpen) renderPrayerFocus(); else renderPray();
@@ -2127,10 +2231,10 @@ function mountPraySwipe(id){
 
 /* full-screen focus mode */
 function openPrayerFocus(){ prayFocusOpen=true; const pv=el('pv'); if(pv) pv.innerHTML=''; renderPrayerFocus(); }
-function closePrayerFocus(){ prayFocusOpen=false; stopPrayTimer(true); const o=el('prayfocus'); if(o) o.remove(); renderPray(); }
+function closePrayerFocus(){ prayFocusOpen=false; stopPrayTimer(true); stopEachTimer(true); const o=el('prayfocus'); if(o) o.remove(); renderPray(); }
 function renderPrayerFocus(){
-  const pd=prayerDue(); const done=S.prayerChecks[todayKey()]||[];
-  const cards=pd.items.filter(x=>!done.includes(x.it.id));
+  const pd=prayerDue();
+  const cards=pd.items;
   if(!cards.length){ closePrayerFocus(); return; }
   if(flashPos>=cards.length) flashPos=0;
   const c=cards[flashPos], v=verseForItem();
@@ -2147,15 +2251,17 @@ function renderPrayerFocus(){
 }
 
 function prayDone(id){
-  stopPrayTimer(true);
+  stopPrayTimer(true); stopEachTimer(true);
   const k=todayKey();
-  (S.prayerChecks[k]=S.prayerChecks[k]||[]).push(id);
-  save(); prayRerender();
+  const arr=(S.prayerChecks[k]=S.prayerChecks[k]||[]);
+  if(!arr.includes(id)) arr.push(id);
+  save();
+  if(prayCount()>1) prayAdvance(1); else prayRerender();
 }
 function prayAnswer(hid,iid){
   const hd=S.prayer.headings.find(h=>h.id===hid); if(!hd) return;
   const it=hd.items.find(x=>x.id===iid); if(!it) return;
-  stopPrayTimer(true);
+  stopPrayTimer(true); stopEachTimer(true);
   const note=prompt('Praise report — how was it answered? (optional)')||'';
   S.testimony.unshift({date:todayKey(),heading:hd.name,item:it.name,text:it.name,note,cat:hd.name});
   const k=todayKey(); (S.prayerChecks[k]=S.prayerChecks[k]||[]).push(iid);
@@ -2345,9 +2451,11 @@ function renderStudy(sub){
   if(sub==='memory'){ studyView='topic'; renderStudyShell(); renderMemory(); return; }
   if(sub==='browse'){ studyView='browse'; }
   else if(sub){ studyView=sub; }
+  // Leaving the Library entirely drops the override so the weekly subject returns.
+  if(studyView!=='library' && studyView!=='position' && studyView!=='journal' && studyView!=='step') libSubject=null;
   renderStudyShell();
   ({home:studyHome,topic:renderTopic,character:renderCharacter,browse:studyBrowse,notes:renderNotes,
-    step:renderStep,position:renderPositionField,journal:renderJournal,loopnext:renderLoopNext}[studyView]||studyHome)();
+    step:renderStep,position:renderPositionField,journal:renderJournal,loopnext:renderLoopNext,library:renderLibrary}[studyView]||studyHome)();
 }
 function renderStudyShell(){
   h(`
@@ -2498,7 +2606,8 @@ function resourceRowsHTML(){
     {ic:'dict', t:"Webster's 1828 Dictionary", s:'Original definitions', go:"openResource('webster')"},
     {ic:'alpha', t:"Strong's Definitions", s:'Hebrew & Greek word studies', go:"openResource('strongs')"},
     {ic:'refresh', t:'Every Mention in the KJV', s:'All references in Scripture', go:"openResource('mentions')"},
-    {ic:'edit', t:'Personal Notes', s:'Your study notes and highlights', go:"setStudyView('notes')"}
+    {ic:'edit', t:'Personal Notes', s:'Your study notes and highlights', go:"setStudyView('notes')"},
+    {ic:'study', t:'Study Library', s:'Work any question, person, or topic', go:"openLibrary()"}
   ];
   return rows.map(r=>`<div class="resrow" onclick="${r.go}" role="button" tabindex="0">
     <div class="res-ic">${ic(r.ic)}</div>
@@ -2647,6 +2756,70 @@ function renderBuildPosition(){
     <div class="bp-journal"><button class="btn" onclick="setStudyView('journal')">${ic('study')} View Full Study Journal</button></div>
   </div>`;
 }
+/* ---------- Study Library: work any subject out of turn ---------- */
+let libFilter='all';  // all | question | person | study
+function openLibrary(){ libSubject=null; setStudyView('library'); }
+function libSetFilter(f){ libFilter=f; renderLibrary(); }
+function libTouched(s){
+  // a subject counts as "worked" if it has any saved position text or a Defined flag
+  if(isDefined(s)) return true;
+  const p=S.study.position[subjectKey(s)]||{};
+  return POSITION_FIELDS.some(f=>(p[f.k]||'').replace(/<[^>]*>/g,'').trim().length);
+}
+function libQuestions(){
+  const qs=(D.content&&D.content.questions)||[];
+  return qs.map((q,idx)=>({type:'question',title:(q&&q.q)||String(q),ref:'Q'+idx,qidx:idx,qrefs:(q&&q.r)||[]}));
+}
+function libPeople(){ return PERSON_LOOP.map(p=>({type:'person',title:titleCase(p),ref:p})); }
+function libTopics(){
+  // Filtered: only topics the user has actually worked (per your call — no 3,419-row dictionary here)
+  return STUDY_TOPICS.map(t=>({type:'study',title:titleCase(t),ref:t})).filter(libTouched);
+}
+function libItems(){
+  let items=[];
+  if(libFilter==='all'||libFilter==='question') items=items.concat(libQuestions());
+  if(libFilter==='all'||libFilter==='person')   items=items.concat(libPeople());
+  if(libFilter==='all'||libFilter==='study')    items=items.concat(libTopics());
+  return items;
+}
+function openLibItem(type,ref){
+  // rebuild the full subject object (questions carry extra fields)
+  let s=null;
+  if(type==='question'){ s=libQuestions().find(x=>x.ref===ref); }
+  else if(type==='person'){ s={type:'person',title:titleCase(ref),ref}; }
+  else { s={type:'study',title:titleCase(ref),ref}; }
+  if(!s) return;
+  libSubject=s;
+  studyView='journal'; renderStudyShell(); renderJournal(); navRecord();
+}
+function renderLibrary(){
+  const items=libItems();
+  const chip=(f,label)=>`<button class="${libFilter===f?'on':''}" onclick="libSetFilter('${f}')">${label}</button>`;
+  const typeWord={question:'Question',person:'Person',study:'Topic'};
+  const rows=items.map(s=>{
+    const done=isDefined(s), touched=libTouched(s);
+    const badge=done?'<span class="lib-badge done">Defined</span>'
+              : touched?'<span class="lib-badge wip">In progress</span>':'';
+    return `<div class="resrow" onclick="openLibItem('${s.type}','${esc(s.ref).replace(/'/g,"\\'")}')" role="button" tabindex="0">
+      <div class="res-ic">${ic({question:'question',person:'person',study:'study'}[s.type])}</div>
+      <div class="grow"><div class="res-t">${esc(clampTitle(s.title))}</div>
+        <div class="res-s">${typeWord[s.type]}${badge?' · ':''}${done?'Position defined':(touched?'Started':'')}</div></div>
+      ${badge}<div class="achev">›</div></div>`;
+  }).join('');
+  const empty = !items.length
+    ? `<div class="card center small" style="padding:26px 18px">Nothing here yet. Work a topic and it will appear.</div>` : '';
+  el('sv').innerHTML=`
+  <div class="card">
+    <div class="sy-eyebrow">Study Library</div>
+    <h2 style="font-family:Playfair Display,serif;font-weight:600;font-size:23px;color:var(--blue);margin:6px 0 2px">Work Any Subject</h2>
+    <div class="small">Pick anything and build your position. When its week comes in the loop, your notes are already here.</div>
+    <div class="tabs lib-chips" style="margin-top:12px">
+      ${chip('all','All')}${chip('question','Questions')}${chip('person','People')}${chip('study','Topics')}
+    </div>
+  </div>
+  <div class="card" style="padding:6px 14px">${rows||empty}</div>
+  <div class="card"><button class="btn ghost" style="width:100%" onclick="setStudyView('home')">Back to This Week</button></div>`;
+}
 function renderJournal(){
   const s=currentSubject();
   const p=S.study.position[positionKey(s)]||{};
@@ -2661,9 +2834,22 @@ function renderJournal(){
       return `<h4>${f.t}</h4>${v?`<div class="bpv-body">${v}</div>`:`<div class="bpv-empty">Not yet written.</div>`}`;}).join('')}
   </div>
   <div class="card">
+    <button class="btn ${isDefined(s)?'':'solid'}" style="width:100%;text-align:center;padding:14px" onclick="defineFromJournal()">
+      ${isDefined(s)?ic('check')+' Position Defined \u2014 tap to reopen':'Mark Position Defined'}
+    </button>
+  </div>
+  <div class="card">
     <div class="btnrow" style="margin:0"><button class="btn" onclick="exportJournal()">${ic('study')} Download Journal (Text)</button>
-    <button class="btn ghost" onclick="setStudyView('home')">Back to Study</button></div>
+    <button class="btn ghost" onclick="${libSubject?'openLibrary':"()=>setStudyView('home')"}()">${libSubject?'Back to Library':'Back to Study'}</button></div>
   </div>`;
+}
+function defineFromJournal(){
+  const s=currentSubject();
+  toggleDefined(s);
+  // keep the roadmap's step-8 flag in sync so weekly progress reflects it too
+  const m=S.study.mastery[subjectKey(s)]=S.study.mastery[subjectKey(s)]||{};
+  m[7]=isDefined(s); save();
+  renderJournal();
 }
 function exportJournal(){
   const s=currentSubject();
@@ -3062,7 +3248,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=41').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=43').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
