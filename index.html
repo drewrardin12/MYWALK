@@ -537,8 +537,8 @@ body.wing-home .homehead{margin-bottom:6px}
 .pt-seg{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap}
 .f-prayed{margin-top:12px;text-align:center;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#E4C97A;opacity:.85;position:relative;z-index:1}
 .f-again{background:none;border:none;color:#F0DCA0;font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;text-decoration:underline;cursor:pointer;padding:0}
-.prayflash-cue{position:fixed;inset:0;z-index:60;pointer-events:none;background:radial-gradient(circle at 50% 42%,rgba(228,201,122,.42),rgba(228,201,122,0) 62%);opacity:0;animation:prayCue 1.2s ease-out forwards}
-@keyframes prayCue{0%{opacity:0}14%{opacity:1}100%{opacity:0}}
+.prayflash-cue{position:fixed;inset:0;z-index:60;pointer-events:none;background:radial-gradient(circle at 50% 42%,rgba(228,201,122,.58),rgba(228,201,122,0) 66%);opacity:0;animation:prayCue 1.45s ease-out forwards}
+@keyframes prayCue{0%{opacity:0}9%{opacity:1}30%{opacity:.3}46%{opacity:.92}100%{opacity:0}}
 .fverse{margin-top:16px;padding:14px 0 0;border-top:1px solid rgba(228,201,122,.28);font-family:"Cormorant Garamond",serif;font-style:italic;font-size:16px;color:rgba(255,255,255,.82);position:relative;z-index:1}
 .fvref{display:block;font-family:"Nunito Sans",sans-serif;font-style:normal;font-weight:700;font-size:10.5px;color:#E4C97A;margin-top:7px;letter-spacing:.12em;text-transform:uppercase}
 .prog{font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:11px;letter-spacing:.12em;color:var(--text2);text-transform:uppercase}
@@ -780,8 +780,8 @@ const ICON={
 };
 function ic(name,cls){ return `<svg class="ic-svg ${cls||''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICON[name]||''}</svg>`; }
 
-const BUILD_NAME='Still Small Voice';
-const BUILD_VERSION='2.22.0';
+const BUILD_NAME='Quiet Flame';
+const BUILD_VERSION='2.22.1';
 const BUILD_UPDATED='July 2026';
 /* ---------- state ---------- */
 const SEED_ALBUMS=[{"a":"Abigail Miller","t":"I Can Go In","u":""},{"a":"Abigail Miller","t":"Unfamiliar Grace","u":""},{"a":"Alisha Becker","t":"Your Ways Are Higher Than Mine","u":""},{"a":"Alvin Martinez","t":"A Miracle In The Making","u":""},{"a":"Alvin Martinez","t":"I Stand Redeemed","u":""},{"a":"Alvin Martinez","t":"Stand For Jesus","u":""},{"a":"Alvin Martinez","t":"What A Savior Is Mine","u":""},{"a":"Amen Quartet","t":"All Things Well","u":""},{"a":"Amen Quartet","t":"Amazing God","u":""},{"a":"Amen Quartet","t":"Classic Amen","u":""},{"a":"Amen Quartet","t":"Glorious Freedom","u":""},{"a":"Blackwood Brothers","t":"Bound For The Kingdom","u":""},{"a":"Breanna Hanson","t":"There's Something About That Name","u":""},{"a":"Bro. Roloff","t":"Songs of the Past","u":""},{"a":"Caleb And Katie Garraway","t":"Only By His Grace","u":""},{"a":"Calvary Trio","t":"God's Been Good","u":""},{"a":"Calvin Allen","t":"Songs of Grace","u":""},{"a":"Calvin Allen","t":"Songs of Revival","u":""},{"a":"Calvin Allen","t":"The Real Heroes","u":""},{"a":"Cary Schmidt and Clark Graham","t":"He Restoreth My Soul","u":""},{"a":"Cassie Diehl","t":"Thank You, Lord","u":""},{"a":"Champion Baptist College","t":"Blessed","u":""},{"a":"Committed Quartet","t":"The Cross","u":""},{"a":"Daniel Hudson","t":"Peace In The Valley","u":""},{"a":"Daryl Bujak","t":"He's Been Faithful","u":""},{"a":"Echoes of Joy","t":"It Is Well","u":""},{"a":"Faith Baptist Church","t":"Aspire","u":""},{"a":"Faithmen Quartet","t":"A Brand New Story","u":""},{"a":"Faithmen Quartet","t":"Brighter Day","u":""},{"a":"Faithmen Quartet","t":"God Has Been Faithful","u":""},{"a":"Faithmen Quartet","t":"He Has Not Changed","u":""},{"a":"Faithmen Quartet","t":"Home Free","u":""},{"a":"Faithmen Quartet","t":"I've Won","u":""},{"a":"Faithmen Quartet","t":"Never Too Far","u":""},{"a":"Faithmen Quartet","t":"Standing in My Storm","u":""},{"a":"Faithmen Quartet","t":"You Were There","u":""},{"a":"Few Good Men Ministry","t":"I Could Sing About Heaven For A Million Years","u":""},{"a":"Fundamental Difference","t":"God Wants To Hear You Sing","u":""},{"a":"Fundamental Difference","t":"Reclaim The Name","u":""},{"a":"Gloryland Quartet","t":"Where No One Stands Alone","u":""},{"a":"Golden State Baptist College","t":"Forever Settled","u":""},{"a":"Golden State Baptist College","t":"Give Him the Glory","u":""},{"a":"Golden State Baptist College","t":"God Is Still God","u":""},{"a":"Golden State Baptist College","t":"He'll Do It Again","u":""},{"a":"Golden State Baptist College","t":"His Love Put A Song In My Heart","u":""},{"a":"Golden State Baptist College","t":"I Know What Lies Ahead","u":""},{"a":"Golden State Baptist College","t":"Jesus Never Fails","u":""},{"a":"Golden State Baptist College","t":"Joy Unspeakable","u":""},{"a":"Golden State Baptist College","t":"Onward To The Goal","u":""},{"a":"Golden State Baptist College","t":"Some Day","u":""},{"a":"Golden State Baptist College","t":"The King Is Coming","u":""},{"a":"Golden State Baptist College","t":"Walkin' By Faith","u":""},{"a":"Heartland Baptist Bible College","t":"Glad I'm Serving God","u":""},{"a":"Heartland Baptist Bible College","t":"I Love To Tell The World","u":""},{"a":"Heartland Baptist Bible College","t":"Just Preach Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Lost Without The Cross","u":""},{"a":"Heartland Baptist Bible College","t":"Walking With Jesus","u":""},{"a":"Heartland Baptist Bible College","t":"Will You Be The One?","u":""},{"a":"Heartland Baptist Bible College","t":"Won't It Be Wonderful","u":""},{"a":"His Own","t":"What A Day!","u":""},{"a":"His Word in Me","t":"His Word in Me","u":""},{"a":"Hylander Singing Men","t":"A Love","u":""},{"a":"Hylander Singing Men","t":"Under God","u":""},{"a":"Hyles-Anderson College","t":"A Little Taste of Heaven","u":""},{"a":"Hyles-Anderson College","t":"At The Name Of Jesus","u":""},{"a":"Hyles-Anderson College","t":"Day By Day","u":""},{"a":"Hyles-Anderson College","t":"Forever King","u":""},{"a":"Hyles-Anderson College","t":"God Of All Gods","u":""},{"a":"Hyles-Anderson College","t":"I Go To Jesus","u":""},{"a":"Hyles-Anderson College","t":"I'm Amazed","u":""},{"a":"Hyles-Anderson College","t":"Jesus, What a Mighty Name!","u":""},{"a":"Hyles-Anderson College","t":"Lift Him Up!","u":""},{"a":"Hyles-Anderson College","t":"Lift Up The Cross","u":""},{"a":"Hyles-Anderson College","t":"Proclaim The Glory","u":""},{"a":"Hyles-Anderson College","t":"Something's Happening","u":""},{"a":"Hyles-Anderson College","t":"Songs From Our Heart Vol. 1","u":""},{"a":"Hyles-Anderson College","t":"The Great I Am Still Is","u":""},{"a":"Hyles-Anderson College","t":"We Believe","u":""},{"a":"Jake Geysler","t":"Tell Me The Story","u":""},{"a":"Jim Brickman","t":"Faith","u":""},{"a":"Josh Wesson","t":"There Is A River","u":""},{"a":"Kurt LaBouve","t":"20th Anniversary","u":""},{"a":"Kurt LaBouve","t":"At The Foot Of The Cross","u":""},{"a":"Kurt LaBouve","t":"More Than Enough","u":""},{"a":"Kurt LaBouve","t":"The Empty Chair","u":""},{"a":"Kurt LaBouve","t":"We're Just Strangers Passing Through","u":""},{"a":"Marion Avenue Boys","t":"Good Old Gospel Singing","u":""},{"a":"Marion Avenue Boys","t":"Soldiers Again","u":""},{"a":"Mark Rogers","t":"Always Enough","u":""},{"a":"Men of Grace","t":"Grace Reaches Farther","u":""},{"a":"Mike Zachary","t":"My Saviour's Love","u":""},{"a":"Natalie Raynes Blanton","t":"Haven Of Rest","u":""},{"a":"Natalie Raynes Blanton","t":"Lullaby - Hymns For Rest","u":""},{"a":"Nguyen Sisters","t":"I Am So Blessed","u":""},{"a":"Nicole Watson","t":"Lord, I Believe","u":""},{"a":"Pensacola Christian College","t":"Shall I Turn Back","u":""},{"a":"Ron Hamilton","t":"Rejoice in the Lord","u":""},{"a":"Ron Hamilton","t":"Wings as Eagles","u":""},{"a":"Ryan Tilby","t":"Guitar Hymn","u":""},{"a":"Sacred Heritage Quartet","t":"Forgiven, Forgotten","u":""},{"a":"Sacred Heritage Quartet","t":"Here Am I","u":""},{"a":"Sarah Barkfelt","t":"So Will I Sing Praise","u":""},{"a":"Stephanie Eskelsen and Natasha Williams","t":"Grace Given","u":""},{"a":"Stephen Ray Nichols","t":"I Can't Quit","u":""},{"a":"The Birdsong Boys","t":"Patriot of the Lamb","u":""},{"a":"The Birdsongs","t":"Midnight Cry","u":""},{"a":"The Brothers","t":"He's Still On the Throne","u":""},{"a":"The Clark Family","t":"Worth It","u":""},{"a":"The Crumpton Family","t":"Swing Wide the Gates","u":""},{"a":"The Hamilton Family","t":"Hamilton Favorites","u":""},{"a":"The High Road Trio","t":"Only By The Blood","u":""},{"a":"The Kendrick Family","t":"I'm A Soldier","u":""},{"a":"The Larry Nelson Family","t":"Yesterday","u":""},{"a":"The Morrison Sisters","t":"Still","u":""},{"a":"The Raynes Family","t":"We Need The Church","u":""},{"a":"The Sexton Trio","t":"It Is Well","u":""},{"a":"The Tharp Brothers","t":"Still Standing","u":""},{"a":"Trio","t":"He Gave Himself - Single","u":""},{"a":"Under the Blood","t":"He Still Saves","u":""},{"a":"Various","t":"I'm Still Amazed","u":""},{"a":"Various Churches","t":"Specials","u":""},{"a":"Victorious Valley Home for Girls","t":"If Not for Grace","u":""},{"a":"West Coast Baptist College","t":"Faithful","u":""},{"a":"West Coast Baptist College","t":"For the Audience of One","u":""},{"a":"West Coast Baptist College","t":"Look To God","u":""},{"a":"West Coast Baptist College","t":"Picture of Grace","u":""},{"a":"West Coast Baptist College","t":"Stand","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 1","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 2","u":""},{"a":"West Coast Baptist College","t":"Streams in the Desert Volume 3","u":""},{"a":"West Coast Baptist College","t":"We Preach Christ","u":""}];
@@ -799,7 +799,8 @@ const S=Object.assign({
   study:{mastery:{},position:{},defined:{},cursor:{doctrine:0,person:0,study:0,question:0},cursorAt:{doctrine:null,person:null,study:null,question:null}},
   seeded:null,
   studyTab:'topic',
-  dark:false
+  dark:false,
+  prayChime:false
 }, JSON.parse(localStorage.getItem(LS)||'{}'));
 function save(){ try{ localStorage.setItem(LS, JSON.stringify(S)); }catch(e){ console.warn('save failed',e); } }
 // Migrate installs made before the seed flags existed: if they already have
@@ -1294,6 +1295,13 @@ function openSettings(){
         <div class="v"><button class="btn sm ${S.dark?'solid':'ghost'}" id="dark-toggle">${S.dark?'On':'Off'}</button></div></div>
     </div>
 
+    <div class="eyebrow mb" style="margin-top:20px">Prayer</div>
+    <div class="sset">
+      <div class="li"><div class="grow k">Timer Chime</div>
+        <div class="v"><button class="btn sm ${S.prayChime?'solid':'ghost'}" id="chime-toggle">${S.prayChime?'On':'Off'}</button></div></div>
+      <div class="li"><div class="grow k" style="font-weight:400;color:var(--text2);font-size:12.5px">A gold screen flash always signals the timer, chime or not.</div><div class="v"></div></div>
+    </div>
+
     <div class="eyebrow mb" style="margin-top:20px">Backup &amp; Restore</div>
     <div class="sset">
       <div class="li"><div class="grow k">Auto-backup</div>
@@ -1325,6 +1333,9 @@ function openSettings(){
 
   el('dark-toggle').onclick=()=>{ S.dark=!S.dark; save(); applyTheme();
     const b=el('dark-toggle'); b.textContent=S.dark?'On':'Off'; b.className='btn sm '+(S.dark?'solid':'ghost'); };
+
+  el('chime-toggle').onclick=()=>{ S.prayChime=!S.prayChime; save(); if(S.prayChime) unlockChime();
+    const b=el('chime-toggle'); b.textContent=S.prayChime?'On':'Off'; b.className='btn sm '+(S.prayChime?'solid':'ghost'); };
 
   el('bk-auto').onclick=()=>{ const x=bkCfg(); if(!x.token){ msg('Add a GitHub token first.'); return; }
     x.auto=!x.auto; bkSave(x); el('bk-auto').textContent=x.auto?'On':'Off';
@@ -2155,13 +2166,13 @@ function fmtClock(s){ const m=Math.floor(s/60), r=s%60; return m+':'+String(r).p
 function startPrayTimer(sec){
   stopPrayTimer(true); stopEachTimer(true);
   prayTimerDur=sec; prayTimerEnd=Date.now()+sec*1000;
-  unlockChime(); ensureNotifyPermission();
+  unlockChime();
   prayTimerId=setInterval(()=>{
     const left=Math.max(0,Math.ceil((prayTimerEnd-Date.now())/1000));
     const cd=el('pt-count'), bar=el('pt-bar');
     if(cd) cd.textContent=fmtClock(left);
     if(bar) bar.style.width=(prayTimerDur?Math.round(100*left/prayTimerDur):0)+'%';
-    if(left<=0){ prayChime(); prayFlashCue(); prayNotify('Prayer timer done','Time to move on.'); clearInterval(prayTimerId); prayTimerId=null;
+    if(left<=0){ prayChime(); prayFlashCue(); clearInterval(prayTimerId); prayTimerId=null;
       praySkip(); // gently move to the next prayer
     }
   },250);
@@ -2208,7 +2219,7 @@ function startEachTimer(totalSec,itemId){
   eachItemId=itemId;
   eachSegDur=Math.max(3,Math.round(totalSec/eachQueue.length));
   eachIdx=0;
-  unlockChime(); ensureNotifyPermission();
+  unlockChime();
   runEachSegment();
 }
 function startEachTimerCustom(itemId){
@@ -2238,7 +2249,7 @@ function eachNextSegment(){
   // skip anything struck by hand while the timer ran
   const struck=strikesToday();
   while(eachIdx<eachQueue.length && struck.includes(eachQueue[eachIdx])) eachIdx++;
-  if(eachIdx>=eachQueue.length){ prayNotify('Prayer card complete','You have prayed through each request.'); stopEachTimer(); return; }  // card sits; user taps Prayed
+  if(eachIdx>=eachQueue.length){ stopEachTimer(); return; }  // card sits; user taps Prayed
   runEachSegment();
 }
 function stopEachTimer(silent){
@@ -2276,6 +2287,7 @@ function makeChimeUri(){
 function getChime(){ if(!_chimeEl){ _chimeEl=new Audio(makeChimeUri()); _chimeEl.preload='auto'; } return _chimeEl; }
 function unlockChime(){ try{ const a=getChime(); a.volume=0; const p=a.play(); if(p&&p.then) p.then(()=>{a.pause();a.currentTime=0;a.volume=1;}).catch(()=>{a.volume=1;}); }catch(e){} }
 function prayChime(){
+  if(!S.prayChime) return;
   try{ const a=getChime(); a.currentTime=0; a.volume=1; const p=a.play(); if(p&&p.catch) p.catch(()=>{}); }catch(e){}
   try{ if(navigator.vibrate) navigator.vibrate([50,70,50]); }catch(e){} // no-op on iOS Safari
 }
@@ -3335,7 +3347,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=51').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=52').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
