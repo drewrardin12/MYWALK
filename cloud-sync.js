@@ -4,6 +4,10 @@ window.MyWalkCloud = function(adapter) {
   let meta={}; try{meta=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
   let client, user, busy=false, timer, conflict, panelElement, refreshPending=false;
   let status='Sign in to sync your devices.';
+  // Parse the email callback immediately, before loading the offline Bible data.
+  if(cfg.url&&cfg.publishableKey&&window.supabase){
+    try{client=window.supabase.createClient(cfg.url,cfg.publishableKey);}catch(e){status='Sync unavailable: '+e.message;}
+  }
   const snapshot=()=>JSON.parse(JSON.stringify(adapter.snapshot()));
   const persist=()=>localStorage.setItem(key,JSON.stringify(meta));
   const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message); };
@@ -110,13 +114,15 @@ window.MyWalkCloud = function(adapter) {
       await client.auth.signOut(); user=null;
       notify('This device’s entries belong to another account. Sign back into that account to sync.');return;
     }
+    const wasSignedIn=!!user;
     user=next;meta.owner=user.id;persist();await sync();
+    if(!wasSignedIn && panelElement?.isConnected) panel();
   }
   async function start(){
     if(!configured()) return;
     try {
       if(!window.supabase) throw new Error('Connect to the internet to enable sync.');
-      client=window.supabase.createClient(cfg.url,cfg.publishableKey);
+      if(!client) client=window.supabase.createClient(cfg.url,cfg.publishableKey);
       client.auth.onAuthStateChange((event,value)=>{
         if(event==='SIGNED_OUT'){user=null;conflict=null;}
         else setTimeout(()=>session(value),0);
