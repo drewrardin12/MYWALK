@@ -96,6 +96,7 @@ window.MyWalkCloud = function(adapter) {
     const next=value?.user;
     if(!next){user=null;return;}
     if(meta.owner&&meta.owner!==next.id){
+      await client.auth.signOut(); user=null;
       notify('This device’s entries belong to another account. Sign back into that account to sync.');return;
     }
     user=next;meta.owner=user.id;persist();await sync();
