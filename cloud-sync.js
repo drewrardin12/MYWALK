@@ -1,6 +1,7 @@
 /* Account-scoped sync. The legacy devotional state remains usable offline. */
 window.MyWalkCloud = function(adapter) {
   const cfg=window.MYWALK_SYNC_CONFIG||{}, key='mywalk_cloud_v1';
+  const accountSetup=(window.location.search||'').includes('account=setup');
   let meta={}; try{meta=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
   let client, user, busy=false, timer, conflict, panelElement, refreshPending=false;
   let status='Sign in to sync your devices.';
@@ -23,6 +24,7 @@ window.MyWalkCloud = function(adapter) {
   }
   async function sync(){
     flushRefresh();
+    if(accountSetup&&user){notify('Signed in. Set your MYWALK password below, then sign in on the device with your existing entries.');return;}
     if(!client||!user||busy||conflict||document.querySelector('.modal:not([data-cloud-panel])')) return;
     if(!navigator.onLine){ notify('Saved on this device. Will sync when you reconnect.'); return; }
     busy=true;
