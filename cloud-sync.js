@@ -2,20 +2,23 @@
 window.MyWalkCloud = function(adapter) {
   const cfg=window.MYWALK_SYNC_CONFIG||{}, key='mywalk_cloud_v1';
   let meta={}; try{meta=JSON.parse(localStorage.getItem(key)||'{}')||{};}catch(e){}
-  let client, user, busy=false, timer, conflict, panelElement;
+  let client, user, busy=false, timer, conflict, panelElement, refreshPending=false;
   let status='Sign in to sync your devices.';
   const snapshot=()=>JSON.parse(JSON.stringify(adapter.snapshot()));
   const persist=()=>localStorage.setItem(key,JSON.stringify(meta));
-  const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; };
+  const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message); };
   const configured=()=>!!(cfg.url&&cfg.publishableKey);
   function changed(){ clearTimeout(timer); timer=setTimeout(sync,1200); }
+  function flushRefresh(){
+    if(refreshPending&&!document.querySelector("textarea:focus,input:focus,.modal")){refreshPending=false;adapter.refresh();}
+  }
   function apply(data){
     if(MyWalkMerge.equal(snapshot(),data)) return;
     adapter.apply(data);
-    if(!document.querySelector('textarea:focus, input:focus, .modal')) adapter.refresh();
-    else notify('Synced. Reopen this page to see updates from your other devices.');
+    refreshPending=true; flushRefresh();
   }
   async function sync(){
+    flushRefresh();
     if(!client||!user||busy||conflict||document.querySelector('.modal:not([data-cloud-panel])')) return;
     if(!navigator.onLine){ notify('Saved on this device. Will sync when you reconnect.'); return; }
     busy=true;
@@ -71,7 +74,7 @@ window.MyWalkCloud = function(adapter) {
       <p id="cloud-status" class="small" role="status" aria-live="polite"></p>
       ${!configured()?'<p class="small">Cloud sync is waiting for the one-time account setup. Your entries are still saved on this device.</p>':
       user?`<p class="small">Signed in as ${adapter.escape(user.email||'')}</p><div class="btnrow"><button class="btn solid" id="cloud-now">Sync now</button><button class="btn ghost" id="cloud-out">Sign out</button></div>`:
-      '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" class="input" placeholder="you@example.com"><button class="btn solid" id="cloud-login">Email me a sign-in code</button><label class="small" for="cloud-code">Code from your email</label><input id="cloud-code" inputmode="numeric" autocomplete="one-time-code" class="input"><button class="btn ghost" id="cloud-verify">Sign in</button>'}
+      '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" required class="input" placeholder="you@example.com"><button class="btn solid" id="cloud-login">Email me a sign-in link</button><p class="tiny">Open the link on this device, in the browser where you use MYWALK.</p>'}
       ${conflict?'<p class="small">This device and the cloud have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.</p><div class="btnrow"><button class="btn ghost" id="cloud-copies">Download both copies</button><button class="btn solid" id="cloud-use">Use cloud version</button><button class="btn ghost" id="cloud-keep">Use this device’s version</button></div>':''}
       <p class="tiny">Edits save offline and sync when you reconnect. Sign in with the same email on your phone, iPad and laptop.</p>`);
     panelElement.dataset.cloudPanel='true';
@@ -81,12 +84,7 @@ window.MyWalkCloud = function(adapter) {
     bind('cloud-login',async()=>{
       if(!client) throw new Error('Connect to the internet and reopen the app to sign in.');
       const email=document.getElementById('cloud-email'); if(!email.reportValidity()||!email.value.trim()) return;
-      const {error}=await client.auth.signInWithOtp({email:email.value.trim()});if(error) throw error;notify('Check your email, then enter the code below.');
-    });
-    bind('cloud-verify',async()=>{
-      if(!client) throw new Error('Connect to the internet to sign in.');
-      const {data,error}=await client.auth.verifyOtp({email:document.getElementById('cloud-email').value.trim(),token:document.getElementById('cloud-code').value.trim(),type:'email'});
-      if(error) throw error; await session(data.session); panel();
+      const {error}=await client.auth.signInWithOtp({email:email.value.trim(),options:{emailRedirectTo:'https://drewrardin12.github.io/MYWALK/'}});if(error) throw error;notify('Check your email and open the sign-in link on this device.');
     });
     bind('cloud-out',async()=>{if(busy) throw new Error('Wait for the current sync to finish.');const {error}=await client.auth.signOut();if(error)throw error;user=null;conflict=null;notify('Signed out. Your entries remain on this device.');panel();});
     bind('cloud-copies',()=>{download(snapshot(),'device');download(conflict.data,'cloud');});
@@ -114,9 +112,10 @@ window.MyWalkCloud = function(adapter) {
       setInterval(()=>{if(document.visibilityState==='visible'&&!document.querySelector('textarea:focus,input:focus')) sync();},15000);
     }catch(e){notify('Sync unavailable: '+e.message);}
   }
+  document.addEventListener('click',()=>setTimeout(flushRefresh,0));
   window.addEventListener('online',sync);
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')sync();});
   // A stale browser tab must reload local changes before it can save.
   window.addEventListener('storage',event=>{if(event.key===adapter.storageKey&&event.newValue) location.reload();});
-  return {start,changed,panel};
+  return {start,changed,panel,getStatus:()=>status};
 };

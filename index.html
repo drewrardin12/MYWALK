@@ -746,10 +746,10 @@ body.wing-home .homehead{margin-bottom:6px}
 <div id="app"><div class="loading">Opening the Book…</div></div>
 <button class="homebtn" id="homeBtn" onclick="go('home')" aria-label="Home"></button>
 <nav id="nav"></nav>
-<script src="sync-config.js?v=1"></script>
+<script src="sync-config.js?v=2"></script>
 <script src="vendor/supabase.js"></script>
 <script src="sync-merge.js?v=1"></script>
-<script src="cloud-sync.js?v=1"></script>
+<script src="cloud-sync.js?v=3"></script>
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
@@ -1254,6 +1254,7 @@ function backupHealth(){
 function bkSnoozed(){ const c=bkCfg(); return c.snooze && Date.now()<c.snooze; }
 function snoozeWarning(days){ const c=bkCfg(); c.snooze=Date.now()+days*86400000; bkSave(c); const o=el('bkwarn'); if(o) o.remove(); }
 function showBackupWarning(force){
+  if(!bkCfg().token && window.MYWALK_SYNC_CONFIG?.url) return;
   const h=backupHealth();
   if(!force){
     if(h.level==='ok'||h.level==='none') return;
@@ -1311,7 +1312,7 @@ function openSettings(){
     <div class="sset">
     </div>
 
-    <div class="eyebrow mb" style="margin-top:20px">Your devices</div><button class="btn solid" onclick="window.mywalkCloud.panel()">Sync &amp; Account</button>
+    <div class="eyebrow mb" style="margin-top:20px">Your devices</div><button class="btn solid" onclick="this.closest('.modal').remove();window.mywalkCloud.panel()">Sync &amp; Account</button>
     <div class="eyebrow mb" style="margin-top:20px">Backup &amp; Restore</div>
     <div class="sset">
       <div class="li"><div class="grow k">Auto-backup</div>
@@ -1597,6 +1598,7 @@ function renderHome(){
     <button class="hicon gear-abs" onclick="openSettings()" aria-label="Settings">${ic('gear')}</button>
   </div>
 
+  <div class="center" style="margin-bottom:16px"><button class="btn ghost sm" onclick="window.mywalkCloud.panel()">Sync: <span data-cloud-status>${esc(window.mywalkCloud?.getStatus()||'Sign in to sync your devices.')}</span></button></div>
   <div class="card mvcard">
     <div class="ribbon">${ic('bookmark')}</div>
     <div class="lbl" style="color:var(--blue)">Memory Verse</div>
@@ -3372,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=60').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=61').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }

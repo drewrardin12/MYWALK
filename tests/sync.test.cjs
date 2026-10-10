@@ -9,7 +9,7 @@ function setup({local,remote,base,offline=false,race=false}){
   let writes=0, revision=remote?1:0, value=local;
   const context={console,JSON,Set,Blob,URL,navigator:{onLine:!offline},location:{reload(){}},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,addEventListener(){}},
+    document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,querySelectorAll:()=>[],addEventListener(){}},
     setTimeout:()=>1,clearTimeout(){},setInterval(){},addEventListener(){},
     MYWALK_SYNC_CONFIG:{url:'https://test.supabase.co',publishableKey:'public'},
     supabase:{createClient:()=>({auth:{onAuthStateChange(){},getSession:async()=>({data:{session:{user:{id:'one'}}}})},
