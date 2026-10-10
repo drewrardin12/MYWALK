@@ -14,6 +14,6 @@
 3. First open loads ~9 MB of data (KJV, Nave's, Strong's); after that it works fully offline.
 
 ## Notes
-- All state (readings, streak, prayer list, notes, memory verses) lives on the phone in localStorage. The **Download backup** button in Study → Notes exports notes as a text file.
+- State saves on each device in localStorage. Optional account sync keeps devices connected; see [SYNC-SETUP.md](SYNC-SETUP.md) to activate it. The **Download backup** button in Study → Notes exports notes as a text file.
 - Album & sermon queues start empty: Devo → Album Queue / Sermon Queue → **Paste list** accepts your whole album-queue.md / sermon-queue.md contents, one item per line.
 - If you ever update the data files in the repo, bump the `V` string in sw.js (e.g. `mywalk-v2`) so phones fetch the new versions.

@@ -2,7 +2,7 @@
    Version comes from the registration URL (sw.js?v=N in index.html),
    so updates only ever require editing index.html. */
 const V='mywalk-'+(new URL(self.location).searchParams.get('v')||'1');
-const SHELL=['./','index.html','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
+const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=1','cloud-sync.js?v=4','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(V).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()));
@@ -21,6 +21,7 @@ function isShellDoc(req){
 self.addEventListener('fetch',e=>{
   const req=e.request;
   if(req.method!=='GET') return;
+  if(new URL(req.url).origin!==self.location.origin && !req.url.includes('fonts.g')) return;
   // Never cache/intercept the backup API — it must always hit the network.
   if(req.url.indexOf('api.github.com')>-1 || req.url.indexOf('gist.githubusercontent.com')>-1) return;
 
