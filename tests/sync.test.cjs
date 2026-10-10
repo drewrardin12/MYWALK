@@ -4,10 +4,10 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const merge=fs.readFileSync('sync-merge.js','utf8');
 const code=fs.readFileSync('cloud-sync.js','utf8');
-function setup({local,remote,base,offline=false,race=false}){
+function setup({local,remote,base,offline=false,race=false,accountSetup=false}){
   const storage=new Map(base?[['mywalk_cloud_v1',JSON.stringify({owner:'one',base})]]:[]);
   let writes=0, revision=remote?1:0, value=local; const panels=[];
-  const context={console,JSON,Set,Blob,URL,navigator:{onLine:!offline},location:{reload(){}},
+  const context={console,JSON,Set,Blob,URL,navigator:{onLine:!offline},location:{search:accountSetup?'?account=setup':'',reload(){}},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,querySelectorAll:()=>[],addEventListener(){}},
     setTimeout:()=>1,clearTimeout(){},setInterval(){},addEventListener(){},
@@ -47,4 +47,10 @@ test('a panel opened during sign-in refreshes after the session arrives',async()
   await s.cloud.start();
   assert.match(s.panels.at(-1),/Signed in as/);
   assert.doesNotMatch(s.panels.at(-1),/id="cloud-email"/);
+});
+
+test('password recovery setup does not upload a fresh browser’s devotional state',async()=>{
+  const s=setup({local:{notes:[]},accountSetup:true});await s.cloud.start();
+  assert.equal(s.state().writes,0);s.cloud.panel();
+  assert.match(s.panels.at(-1),/Set a MYWALK sign-in password/);
 });
