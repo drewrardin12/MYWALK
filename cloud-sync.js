@@ -73,8 +73,8 @@ window.MyWalkCloud = function(adapter) {
       <p class="small">Your notes, prayers, study and reading progress travel with you.</p>
       <p id="cloud-status" class="small" role="status" aria-live="polite"></p>
       ${!configured()?'<p class="small">Cloud sync is waiting for the one-time account setup. Your entries are still saved on this device.</p>':
-      user?`<p class="small">Signed in as ${adapter.escape(user.email||'')}</p><div class="btnrow"><button class="btn solid" id="cloud-now">Sync now</button><button class="btn ghost" id="cloud-out">Sign out</button></div>`:
-      '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" required class="input" placeholder="you@example.com"><button class="btn solid" id="cloud-login">Email me a sign-in link</button><p class="tiny">Open the link on this device, in the browser where you use MYWALK.</p>'}
+      user?`<p class="small">Signed in as ${adapter.escape(user.email||'')}</p><div class="btnrow"><button class="btn solid" id="cloud-now">Sync now</button><button class="btn ghost" id="cloud-out">Sign out</button></div><label class="small" for="cloud-new-password">Set a MYWALK sign-in password</label><input id="cloud-new-password" type="password" autocomplete="new-password" minlength="12" class="input"><button class="btn ghost" id="cloud-set-password">Save sign-in password</button><p class="tiny">Use at least 12 characters. This is separate from your database password. It lets you sign in on your other devices without another email.</p>`:
+      '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" required class="input" placeholder="you@example.com"><label class="small" for="cloud-password">MYWALK sign-in password (if already set)</label><input id="cloud-password" type="password" autocomplete="current-password" class="input"><div class="btnrow"><button class="btn solid" id="cloud-password-login">Sign in with password</button><button class="btn ghost" id="cloud-login">Email me a sign-in link</button></div><p class="tiny">Open the link on this device, in the browser where you use MYWALK.</p>'}
       ${conflict?'<p class="small">This device and the cloud have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.</p><div class="btnrow"><button class="btn ghost" id="cloud-copies">Download both copies</button><button class="btn solid" id="cloud-use">Use cloud version</button><button class="btn ghost" id="cloud-keep">Use this device’s version</button></div>':''}
       <p class="tiny">Edits save offline and sync when you reconnect. Sign in with the same email on your phone, iPad and laptop.</p>`);
     panelElement.dataset.cloudPanel='true';
@@ -85,6 +85,19 @@ window.MyWalkCloud = function(adapter) {
       if(!client) throw new Error('Connect to the internet and reopen the app to sign in.');
       const email=document.getElementById('cloud-email'); if(!email.reportValidity()||!email.value.trim()) return;
       const {error}=await client.auth.signInWithOtp({email:email.value.trim(),options:{emailRedirectTo:'https://drewrardin12.github.io/MYWALK/'}});if(error) throw error;notify('Check your email and open the sign-in link on this device.');
+    });
+    bind('cloud-password-login',async()=>{
+      if(!client) throw new Error('Connect to the internet to sign in.');
+      const email=document.getElementById('cloud-email'), password=document.getElementById('cloud-password');
+      if(!email.reportValidity()||!password.value) throw new Error('Enter your email and MYWALK sign-in password.');
+      const {data,error}=await client.auth.signInWithPassword({email:email.value.trim(),password:password.value});
+      if(error) throw error; password.value=''; await session(data.session); panel();
+    });
+    bind('cloud-set-password',async()=>{
+      const input=document.getElementById('cloud-new-password');
+      if(input.value.length<12) throw new Error('Choose a password with at least 12 characters.');
+      const {error}=await client.auth.updateUser({password:input.value}); if(error) throw error;input.value='';
+      notify('Sign-in password saved. Save it in your password manager and use it on your other devices.');
     });
     bind('cloud-out',async()=>{if(busy) throw new Error('Wait for the current sync to finish.');const {error}=await client.auth.signOut();if(error)throw error;user=null;conflict=null;notify('Signed out. Your entries remain on this device.');panel();});
     bind('cloud-copies',()=>{download(snapshot(),'device');download(conflict.data,'cloud');});
