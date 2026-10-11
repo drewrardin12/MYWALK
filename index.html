@@ -1598,7 +1598,6 @@ function renderHome(){
     <button class="hicon gear-abs" onclick="openSettings()" aria-label="Settings">${ic('gear')}</button>
   </div>
 
-  <div class="center" style="margin-bottom:16px"><button class="btn ghost sm" onclick="window.mywalkCloud.panel()">Sync: <span data-cloud-status>${esc(window.mywalkCloud?.getStatus()||'Sign in to sync your devices.')}</span></button></div>
   <div class="card mvcard">
     <div class="ribbon">${ic('bookmark')}</div>
     <div class="lbl" style="color:var(--blue)">Memory Verse</div>
@@ -3374,7 +3373,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=64').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=65').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
