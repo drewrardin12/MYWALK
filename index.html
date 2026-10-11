@@ -3373,7 +3373,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=65').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=66').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
