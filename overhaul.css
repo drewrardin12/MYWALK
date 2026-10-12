@@ -31,3 +31,44 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 .mw-stop-icon{display:block;width:12px;height:12px;border-radius:2px;background:currentColor}.mw-timer-controls button[aria-label="Stop prayer timer"]{width:44px;min-height:44px;justify-content:center;padding:8px}
 
 #pv,.prayfocus{overflow-x:clip}.flash{will-change:transform}
+
+/* iOS-inspired controls and surfaces. Preserve the approved editorial type. */
+:root{--mw-ui-font:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Arial,sans-serif;--mw-hairline:color-mix(in srgb,var(--text) 12%,transparent)}
+body{font-family:var(--mw-ui-font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input,select,textarea,.mw-label,.mw-sub,.mw-ref,.mw-passage h3,.mw-step,.mw-search{font-family:var(--mw-ui-font)}
+button,a,summary{-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+.mw-button,.btn,.mw-back,.mw-round,.iconb,.mw-check,.mw-toolbar button,.pt-pill,nav button{transition:background-color .18s ease,color .18s ease,box-shadow .18s ease,opacity .12s ease,transform .12s ease}
+.mw-button,.btn{border-radius:15px;font-weight:500;letter-spacing:-.15px;box-shadow:0 1px 2px #00000012}
+.mw-button.secondary,.btn.ghost,.mw-back{background:color-mix(in srgb,var(--text) 6%,var(--bg));border:1px solid var(--mw-hairline)}
+button:disabled{opacity:.4;box-shadow:none}
+.mw-button:active,.btn:active,.mw-back:active,.mw-round:active,.mw-check:active,.pt-pill:active{transform:scale(.97);opacity:.8}
+.mw-link:active,.mw-step:active,.mw-hymn-title:active{opacity:.55}
+.mw-panel,.mw-media,.mw-settings-tile{border-color:var(--mw-hairline);box-shadow:inset 0 1px 0 #ffffff08,0 5px 18px #0000000a}
+.mw-check{border-color:var(--mw-hairline);border-radius:19px}
+.mw-tabs,.tabs{padding:4px;gap:3px;border-radius:13px;background:color-mix(in srgb,var(--text) 8%,var(--bg))}
+.mw-tabs button,.tabs button{border:0;border-radius:10px;background:transparent;color:var(--text2);font-weight:500;letter-spacing:-.1px;min-width:0}
+.mw-tabs button.on,.tabs button.on{background:color-mix(in srgb,var(--text) 15%,var(--bg));color:var(--text);box-shadow:0 2px 5px #00000025,inset 0 1px 0 #ffffff10}
+.mw-source{border-color:var(--mw-hairline);border-radius:18px;background:color-mix(in srgb,var(--card) 85%,var(--bg))}
+.mw-source summary{min-height:44px;box-sizing:border-box;font-weight:500;letter-spacing:.1px}
+.mw-source[open] summary{border-bottom:1px solid var(--mw-hairline);margin-bottom:16px}
+input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea{font-family:var(--mw-ui-font);font-size:16px;border-radius:13px;border-color:var(--mw-hairline);background:color-mix(in srgb,var(--card) 70%,var(--bg));box-sizing:border-box;min-height:44px}
+input[type=checkbox],input[type=radio]{accent-color:var(--accent);width:20px;height:20px;flex:none}
+input::placeholder,textarea::placeholder{color:var(--text2);opacity:.8}
+.mw-toolbar{gap:5px;padding:6px;border-radius:14px;background:color-mix(in srgb,var(--text) 6%,var(--bg));flex-wrap:wrap}
+.mw-toolbar button{border:0;border-radius:9px;min-width:44px;min-height:44px}
+.mw-editor{caret-color:var(--accent)}
+.mw-entry{border-color:var(--mw-hairline)}
+nav{background:color-mix(in srgb,var(--card) 90%,transparent)!important;border:1px solid var(--mw-hairline)!important;box-shadow:0 6px 24px #00000025;border-radius:26px!important}
+nav button{font-weight:500;letter-spacing:0;border-radius:19px!important}
+nav button.on{box-shadow:0 2px 5px #00000016}
+.modal{background:#0007;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.modal .mbox{border:1px solid var(--mw-hairline);border-radius:28px 28px 0 0;box-shadow:0 -10px 50px #0004;overscroll-behavior:contain;animation:mw-sheet-enter .22s ease-out}
+.modal .mbox::before{content:'';display:block;width:36px;height:5px;margin:-10px auto 20px;border-radius:4px;background:color-mix(in srgb,var(--text) 24%,transparent)}
+.mw-focussettings summary{border-radius:14px;border:1px solid var(--mw-hairline)}
+.mw-focussettings .mw-menu{border-radius:20px;border-color:var(--mw-hairline);box-shadow:0 12px 35px #0004;background:color-mix(in srgb,var(--card) 94%,var(--bg))}
+.mw-timer-dock{border:1px solid var(--mw-hairline);box-shadow:0 3px 18px #0002}
+.prayfocus .mw-timer-dock{border:0;border-top:1px solid var(--mw-hairline)}
+@supports(backdrop-filter:blur(16px)){nav{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}}
+@keyframes mw-sheet-enter{from{transform:translateY(28px);opacity:.6}to{transform:translateY(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){button,.mw-button,.btn,.mw-back,.mw-round,.iconb,.mw-check,.mw-toolbar button,.pt-pill,nav button{transition:none!important}.mw-button:active,.btn:active,.mw-back:active,.mw-round:active,.mw-check:active,.pt-pill:active{transform:none}.modal .mbox{animation:none}}

@@ -2,7 +2,7 @@
    Version comes from the registration URL (sw.js?v=N in index.html),
    so updates only ever require editing index.html. */
 const V='mywalk-'+(new URL(self.location).searchParams.get('v')||'1');
-const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=1','cloud-sync.js?v=7','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','overhaul.css?v=15','walk-model.js?v=4','overhaul.js?v=15','data/schedule.json','data/optional-readings.json','data/bible-images.json','data/nature-scenes.json','data/home-scripture.json','data/legacy-plan.json','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
+const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=1','cloud-sync.js?v=7','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','overhaul.css?v=16','walk-model.js?v=4','overhaul.js?v=15','data/schedule.json','data/optional-readings.json','data/bible-images.json','data/nature-scenes.json','data/home-scripture.json','data/legacy-plan.json','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(V).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()));
