@@ -29,3 +29,5 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 .mw-optional-button{margin:20px 0 24px;min-height:48px;padding:13px 22px}
 
 .mw-stop-icon{display:block;width:12px;height:12px;border-radius:2px;background:currentColor}.mw-timer-controls button[aria-label="Stop prayer timer"]{width:44px;min-height:44px;justify-content:center;padding:8px}
+
+#pv,.prayfocus{overflow-x:clip}.flash{will-change:transform}
