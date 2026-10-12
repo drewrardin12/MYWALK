@@ -54,3 +54,11 @@ test('password recovery setup does not upload a fresh browser’s devotional sta
   assert.equal(s.state().writes,0);s.cloud.panel();
   assert.match(s.panels.at(-1),/Set a MYWALK sign-in password/);
 });
+
+test('new plan notes and separate optional checks merge without losing legacy data',()=>{
+ const c={};vm.createContext(c);vm.runInContext(merge,c);
+ const base={reads:{old:true},notes:['keep'],walkV2:{days:{},optional:{}}};
+ const local={...base,walkV2:{days:{'2026-10-12':{notes:{0:{html:'phone'}}}},optional:{}}};
+ const remote={...base,walkV2:{days:{},optional:{passage:{done:true}}}};
+ const result=c.MyWalkMerge.merge(base,local,remote);assert.equal(result.conflicts.length,0);assert.equal(result.data.notes[0],'keep');assert.equal(result.data.reads.old,true);assert.equal(result.data.walkV2.days['2026-10-12'].notes[0].html,'phone');assert.equal(result.data.walkV2.optional.passage.done,true);
+});

@@ -1,0 +1,1337 @@
+{
+  "second_source": "https://ebible.org/Scriptures/eng-kjv_usfm.zip",
+  "books": 66,
+  "chapters": 1189,
+  "verses": 31102,
+  "numbering_matches": true,
+  "text_variations": [
+    {
+      "ref": "Genesis 25:4",
+      "first": "And the sons of Midian; Ephah, and Epher, and Hanoch, and Abida, and Eldaah. All these were the children of Keturah.",
+      "second": "And the sons of Midian; Ephah, and Epher, and Hanoch, and Abidah, and Eldaah. All these werethe children of Keturah."
+    },
+    {
+      "ref": "Joshua 19:2",
+      "first": "And they had in their inheritance Beer–sheba, Sheba, and Moladah,",
+      "second": "And they had in their inheritance Beer-sheba, or Sheba, and Moladah,"
+    },
+    {
+      "ref": "Psalms 3:1",
+      "first": "A Psalm of David, when he fled from Absalom his son. Lord, how are they increased that trouble me! many are they that rise up against me.",
+      "second": "LORD, how are they increased that trouble me! many arethey that rise up against me."
+    },
+    {
+      "ref": "Psalms 4:1",
+      "first": "To the chief Musician on Neginoth, A Psalm of David. Hear me when I call, O God of my righteousness: thou hast enlarged me when I was in distress; have mercy upon me, and hear my prayer.",
+      "second": "Hear me when I call, O God of my righteousness: thou hast enlarged me when I wasin distress; have mercy upon me, and hear my prayer."
+    },
+    {
+      "ref": "Psalms 5:1",
+      "first": "To the chief Musician upon Nehiloth, A Psalm of David. Give ear to my words, O Lord, consider my meditation.",
+      "second": "Give ear to my words, O LORD, consider my meditation."
+    },
+    {
+      "ref": "Psalms 6:1",
+      "first": "To the chief Musician on Neginoth upon Sheminith, A Psalm of David. O Lord, rebuke me not in thine anger, neither chasten me in thy hot displeasure.",
+      "second": "O LORD, rebuke me not in thine anger, neither chasten me in thy hot displeasure."
+    },
+    {
+      "ref": "Psalms 7:1",
+      "first": "Shiggaion of David, which he sang unto the Lord, concerning the words of Cush the Benjamite. O Lord my God, in thee do I put my trust: save me from all them that persecute me, and deliver me:",
+      "second": "O LORDmy God, in thee do I put my trust: save me from all them that persecute me, and deliver me:"
+    },
+    {
+      "ref": "Psalms 8:1",
+      "first": "To the chief Musician upon Gittith, A Psalm of David. O Lord our Lord, how excellent is thy name in all the earth! who hast set thy glory above the heavens.",
+      "second": "O LORDour Lord, how excellent isthy name in all the earth! who hast set thy glory above the heavens."
+    },
+    {
+      "ref": "Psalms 9:1",
+      "first": "To the chief Musician upon Muth–labben, A Psalm of David. I will praise thee, O Lord, with my whole heart; I will shew forth all thy marvellous works.",
+      "second": "I will praise thee, O LORD, with my whole heart; I will shew forth all thy marvellous works."
+    },
+    {
+      "ref": "Psalms 11:1",
+      "first": "To the chief Musician, A Psalm of David. In the Lord put I my trust: how say ye to my soul, Flee as a bird to your mountain?",
+      "second": "In the LORDput I my trust: how say ye to my soul, Flee asa bird to your mountain?"
+    },
+    {
+      "ref": "Psalms 12:1",
+      "first": "To the chief Musician upon Sheminith, A Psalm of David. Help, Lord; for the godly man ceaseth; for the faithful fail from among the children of men.",
+      "second": "Help, LORD; for the godly man ceaseth; for the faithful fail from among the children of men."
+    },
+    {
+      "ref": "Psalms 13:1",
+      "first": "To the chief Musician, A Psalm of David. How long wilt thou forget me, O Lord? for ever? how long wilt thou hide thy face from me?",
+      "second": "How long wilt thou forget me, O LORD? for ever? how long wilt thou hide thy face from me?"
+    },
+    {
+      "ref": "Psalms 14:1",
+      "first": "To the chief Musician, A Psalm of David. The fool hath said in his heart, There is no God. They are corrupt, they have done abominable works, there is none that doeth good.",
+      "second": "The fool hath said in his heart, There isno God. They are corrupt, they have done abominable works, there isnone that doeth good."
+    },
+    {
+      "ref": "Psalms 15:1",
+      "first": "A Psalm of David. Lord, who shall abide in thy tabernacle? who shall dwell in thy holy hill?",
+      "second": "LORD, who shall abide in thy tabernacle? who shall dwell in thy holy hill?"
+    },
+    {
+      "ref": "Psalms 16:1",
+      "first": "Michtam of David. Preserve me, O God: for in thee do I put my trust.",
+      "second": "Preserve me, O God: for in thee do I put my trust."
+    },
+    {
+      "ref": "Psalms 17:1",
+      "first": "A Prayer of David. Hear the right, O Lord, attend unto my cry, give ear unto my prayer, that goeth not out of feigned lips.",
+      "second": "Hear the right, O LORD, attend unto my cry, give ear unto my prayer, that goethnot out of feigned lips."
+    },
+    {
+      "ref": "Psalms 18:1",
+      "first": "To the chief Musician, A Psalm of David, the servant of the Lord, who spake unto the Lord the words of this song in the day that the Lord delivered him from the hand of all his enemies, and from the hand of Saul: And he said, I will love thee, O Lord, my strength.",
+      "second": "I will love thee, O LORD, my strength."
+    },
+    {
+      "ref": "Psalms 19:1",
+      "first": "To the chief Musician, A Psalm of David. The heavens declare the glory of God; and the firmament sheweth his handywork.",
+      "second": "The heavens declare the glory of God; and the firmament sheweth his handywork."
+    },
+    {
+      "ref": "Psalms 20:1",
+      "first": "To the chief Musician, A Psalm of David. The Lord hear thee in the day of trouble; the name of the God of Jacob defend thee;",
+      "second": "The LORDhear thee in the day of trouble; the name of the God of Jacob defend thee;"
+    },
+    {
+      "ref": "Psalms 21:1",
+      "first": "To the chief Musician, A Psalm of David. The king shall joy in thy strength, O Lord; and in thy salvation how greatly shall he rejoice!",
+      "second": "The king shall joy in thy strength, O LORD; and in thy salvation how greatly shall he rejoice!"
+    },
+    {
+      "ref": "Psalms 22:1",
+      "first": "To the chief Musician upon Aijeleth Shahar, A Psalm of David. My God, my God, why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?",
+      "second": "My God, my God, why hast thou forsaken me? why art thou sofar from helping me, and fromthe words of my roaring?"
+    },
+    {
+      "ref": "Psalms 23:1",
+      "first": "A Psalm of David. The Lord is my shepherd; I shall not want.",
+      "second": "The LORDismy shepherd; I shall not want."
+    },
+    {
+      "ref": "Psalms 24:1",
+      "first": "A Psalm of David. The earth is the Lord’s, and the fulness thereof; the world, and they that dwell therein.",
+      "second": "The earth isthe LORD’s, and the fulness thereof; the world, and they that dwell therein."
+    },
+    {
+      "ref": "Psalms 25:1",
+      "first": "A Psalm of David. Unto thee, O Lord, do I lift up my soul.",
+      "second": "Unto thee, O LORD, do I lift up my soul."
+    },
+    {
+      "ref": "Psalms 26:1",
+      "first": "A Psalm of David. Judge me, O Lord; for I have walked in mine integrity: I have trusted also in the Lord; therefore I shall not slide.",
+      "second": "Judge me, O LORD; for I have walked in mine integrity: I have trusted also in the LORD; thereforeI shall not slide."
+    },
+    {
+      "ref": "Psalms 27:1",
+      "first": "A Psalm of David. The Lord is my light and my salvation; whom shall I fear? the Lord is the strength of my life; of whom shall I be afraid?",
+      "second": "The LORDismy light and my salvation; whom shall I fear? the LORDisthe strength of my life; of whom shall I be afraid?"
+    },
+    {
+      "ref": "Psalms 28:1",
+      "first": "A Psalm of David. Unto thee will I cry, O Lord my rock; be not silent to me: lest, if thou be silent to me, I become like them that go down into the pit.",
+      "second": "Unto thee will I cry, O LORDmy rock; be not silent to me: lest, ifthou be silent to me, I become like them that go down into the pit."
+    },
+    {
+      "ref": "Psalms 29:1",
+      "first": "A Psalm of David. Give unto the Lord, O ye mighty, give unto the Lord glory and strength.",
+      "second": "Give unto the LORD, O ye mighty, give unto the LORDglory and strength."
+    },
+    {
+      "ref": "Psalms 30:1",
+      "first": "A Psalm and Song at the dedication of the house of David. I will extol thee, O Lord; for thou hast lifted me up, and hast not made my foes to rejoice over me.",
+      "second": "I will extol thee, O LORD; for thou hast lifted me up, and hast not made my foes to rejoice over me."
+    },
+    {
+      "ref": "Psalms 31:1",
+      "first": "To the chief Musician, A Psalm of David. In thee, O Lord, do I put my trust; let me never be ashamed: deliver me in thy righteousness.",
+      "second": "In thee, O LORD, do I put my trust; let me never be ashamed: deliver me in thy righteousness."
+    },
+    {
+      "ref": "Psalms 32:1",
+      "first": "A Psalm of David, Maschil. Blessed is he whose transgression is forgiven, whose sin is covered.",
+      "second": "Blessed is he whosetransgression isforgiven, whosesin iscovered."
+    },
+    {
+      "ref": "Psalms 34:1",
+      "first": "A Psalm of David, when he changed his behaviour before Abimelech; who drove him away, and he departed. I will bless the Lord at all times: his praise shall continually be in my mouth.",
+      "second": "I will bless the LORDat all times: his praise shallcontinually bein my mouth."
+    },
+    {
+      "ref": "Psalms 35:1",
+      "first": "A Psalm of David. Plead my cause, O Lord, with them that strive with me: fight against them that fight against me.",
+      "second": "Plead my cause, O LORD, with them that strive with me: fight against them that fight against me."
+    },
+    {
+      "ref": "Psalms 36:1",
+      "first": "To the chief Musician, A Psalm of David the servant of the Lord. The transgression of the wicked saith within my heart, that there is no fear of God before his eyes.",
+      "second": "The transgression of the wicked saith within my heart, that there isno fear of God before his eyes."
+    },
+    {
+      "ref": "Psalms 37:1",
+      "first": "A Psalm of David. Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity.",
+      "second": "Fret not thyself because of evildoers, neither be thou envious against the workers of iniquity."
+    },
+    {
+      "ref": "Psalms 38:1",
+      "first": "A Psalm of David, to bring to remembrance. O Lord, rebuke me not in thy wrath: neither chasten me in thy hot displeasure.",
+      "second": "O LORD, rebuke me not in thy wrath: neither chasten me in thy hot displeasure."
+    },
+    {
+      "ref": "Psalms 39:1",
+      "first": "To the chief Musician, even to Jeduthun, A Psalm of David. I said, I will take heed to my ways, that I sin not with my tongue: I will keep my mouth with a bridle, while the wicked is before me.",
+      "second": "I said, I will take heed to my ways, that I sin not with my tongue: I will keep my mouth with a bridle, while the wicked is before me."
+    },
+    {
+      "ref": "Psalms 40:1",
+      "first": "To the chief Musician, A Psalm of David. I waited patiently for the Lord; and he inclined unto me, and heard my cry.",
+      "second": "I waited patiently for the LORD; and he inclined unto me, and heard my cry."
+    },
+    {
+      "ref": "Psalms 41:1",
+      "first": "To the chief Musician, A Psalm of David. Blessed is he that considereth the poor: the Lord will deliver him in time of trouble.",
+      "second": "Blessed ishe that considereth the poor: the LORDwill deliver him in time of trouble."
+    },
+    {
+      "ref": "Psalms 42:1",
+      "first": "To the chief Musician, Maschil, for the sons of Korah. As the hart panteth after the water brooks, so panteth my soul after thee, O God.",
+      "second": "As the hart panteth after the water brooks, so panteth my soul after thee, O God."
+    },
+    {
+      "ref": "Psalms 44:1",
+      "first": "To the chief Musician for the sons of Korah, Maschil. We have heard with our ears, O God, our fathers have told us, what work thou didst in their days, in the times of old.",
+      "second": "We have heard with our ears, O God, our fathers have told us, whatwork thou didst in their days, in the times of old."
+    },
+    {
+      "ref": "Psalms 45:1",
+      "first": "To the chief Musician upon Shoshannim, for the sons of Korah, Maschil, A Song of loves. My heart is inditing a good matter: I speak of the things which I have made touching the king: my tongue is the pen of a ready writer.",
+      "second": "My heart is inditing a good matter: I speak of the things which I have made touching the king: my tongue isthe pen of a ready writer."
+    },
+    {
+      "ref": "Psalms 46:1",
+      "first": "To the chief Musician for the sons of Korah, A Song upon Alamoth. God is our refuge and strength, a very present help in trouble.",
+      "second": "God isour refuge and strength, a very present help in trouble."
+    },
+    {
+      "ref": "Psalms 47:1",
+      "first": "To the chief Musician, A Psalm for the sons of Korah. O clap your hands, all ye people; shout unto God with the voice of triumph.",
+      "second": "O clap your hands, all ye people; shout unto God with the voice of triumph."
+    },
+    {
+      "ref": "Psalms 48:1",
+      "first": "A Song and Psalm for the sons of Korah. Great is the Lord, and greatly to be praised in the city of our God, in the mountain of his holiness.",
+      "second": "Great isthe LORD, and greatly to be praised in the city of our God, inthe mountain of his holiness."
+    },
+    {
+      "ref": "Psalms 49:1",
+      "first": "To the chief Musician, A Psalm for the sons of Korah. Hear this, all ye people; give ear, all ye inhabitants of the world:",
+      "second": "Hear this, all yepeople; give ear, all yeinhabitants of the world:"
+    },
+    {
+      "ref": "Psalms 50:1",
+      "first": "A Psalm of Asaph. The mighty God, even the Lord, hath spoken, and called the earth from the rising of the sun unto the going down thereof.",
+      "second": "The mighty God, eventhe LORD, hath spoken, and called the earth from the rising of the sun unto the going down thereof."
+    },
+    {
+      "ref": "Psalms 51:1",
+      "first": "To the chief Musician, A Psalm of David, when Nathan the prophet came unto him, after he had gone in to Bath–sheba. Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions.",
+      "second": "Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions."
+    },
+    {
+      "ref": "Psalms 52:1",
+      "first": "To the chief Musician, Maschil, A Psalm of David, when Doeg the Edomite came and told Saul, and said unto him, David is come to the house of Ahimelech. Why boastest thou thyself in mischief, O mighty man? the goodness of God endureth continually.",
+      "second": "Why boastest thou thyself in mischief, O mighty man? the goodness of God endurethcontinually."
+    },
+    {
+      "ref": "Psalms 53:1",
+      "first": "To the chief Musician upon Mahalath, Maschil, A Psalm of David. The fool hath said in his heart, There is no God. Corrupt are they, and have done abominable iniquity: there is none that doeth good.",
+      "second": "The fool hath said in his heart, There isno God. Corrupt are they, and have done abominable iniquity: there isnone that doeth good."
+    },
+    {
+      "ref": "Psalms 54:1",
+      "first": "To the chief Musician on Neginoth, Maschil, A Psalm of David, when the Ziphims came and said to Saul, Doth not David hide himself with us? Save me, O God, by thy name, and judge me by thy strength.",
+      "second": "Save me, O God, by thy name, and judge me by thy strength."
+    },
+    {
+      "ref": "Psalms 55:1",
+      "first": "To the chief Musician on Neginoth, Maschil, A Psalm of David. Give ear to my prayer, O God; and hide not thyself from my supplication.",
+      "second": "Give ear to my prayer, O God; and hide not thyself from my supplication."
+    },
+    {
+      "ref": "Psalms 56:1",
+      "first": "To the chief Musician upon Jonath–elem–rechokim, Michtam of David, when the Philistines took him in Gath. Be merciful unto me, O God: for man would swallow me up; he fighting daily oppresseth me.",
+      "second": "Be merciful unto me, O God: for man would swallow me up; he fighting daily oppresseth me."
+    },
+    {
+      "ref": "Psalms 57:1",
+      "first": "To the chief Musician, Al–taschith, Michtam of David, when he fled from Saul in the cave. Be merciful unto me, O God, be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast.",
+      "second": "Be merciful unto me, O God, be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until thesecalamities be overpast."
+    },
+    {
+      "ref": "Psalms 58:1",
+      "first": "To the chief Musician, Al–taschith, Michtam of David. Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men?",
+      "second": "Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men?"
+    },
+    {
+      "ref": "Psalms 59:1",
+      "first": "To the chief Musician, Al–taschith, Michtam of David; when Saul sent, and they watched the house to kill him. Deliver me from mine enemies, O my God: defend me from them that rise up against me.",
+      "second": "Deliver me from mine enemies, O my God: defend me from them that rise up against me."
+    },
+    {
+      "ref": "Psalms 60:1",
+      "first": "To the chief Musician upon Shushan–eduth, Michtam of David, to teach; when he strove with Aram–naharaim and with Aram–zobah, when Joab returned, and smote of Edom in the valley of salt twelve thousand. O God, thou hast cast us off, thou hast scattered us, thou hast been displeased; O turn thyself to us again.",
+      "second": "O God, thou hast cast us off, thou hast scattered us, thou hast been displeased; O turn thyself to us again."
+    },
+    {
+      "ref": "Psalms 61:1",
+      "first": "To the chief Musician upon Neginah, A Psalm of David. Hear my cry, O God; attend unto my prayer.",
+      "second": "Hear my cry, O God; attend unto my prayer."
+    },
+    {
+      "ref": "Psalms 62:1",
+      "first": "To the chief Musician, to Jeduthun, A Psalm of David. Truly my soul waiteth upon God: from him cometh my salvation.",
+      "second": "Truly my soul waiteth upon God: from him comethmy salvation."
+    },
+    {
+      "ref": "Psalms 63:1",
+      "first": "A Psalm of David, when he was in the wilderness of Judah. O God, thou art my God; early will I seek thee: my soul thirsteth for thee, my flesh longeth for thee in a dry and thirsty land, where no water is;",
+      "second": "O God, thou artmy God; early will I seek thee: my soul thirsteth for thee, my flesh longeth for thee in a dry and thirsty land, where no water is;"
+    },
+    {
+      "ref": "Psalms 64:1",
+      "first": "To the chief Musician, A Psalm of David. Hear my voice, O God, in my prayer: preserve my life from fear of the enemy.",
+      "second": "Hear my voice, O God, in my prayer: preserve my life from fear of the enemy."
+    },
+    {
+      "ref": "Psalms 65:1",
+      "first": "To the chief Musician, A Psalm and Song of David. Praise waiteth for thee, O God, in Sion: and unto thee shall the vow be performed.",
+      "second": "Praise waiteth for thee, O God, in Sion: and unto thee shall the vow be performed."
+    },
+    {
+      "ref": "Psalms 66:1",
+      "first": "To the chief Musician, A Song or Psalm. Make a joyful noise unto God, all ye lands:",
+      "second": "Make a joyful noise unto God, all ye lands:"
+    },
+    {
+      "ref": "Psalms 67:1",
+      "first": "To the chief Musician on Neginoth, A Psalm or Song. God be merciful unto us, and bless us; and cause his face to shine upon us; Selah.",
+      "second": "God be merciful unto us, and bless us; andcause his face to shine upon us; Selah."
+    },
+    {
+      "ref": "Psalms 68:1",
+      "first": "To the chief Musician, A Psalm or Song of David. Let God arise, let his enemies be scattered: let them also that hate him flee before him.",
+      "second": "Let God arise, let his enemies be scattered: let them also that hate him flee before him."
+    },
+    {
+      "ref": "Psalms 69:1",
+      "first": "To the chief Musician upon Shoshannim, A Psalm of David. Save me, O God; for the waters are come in unto my soul.",
+      "second": "Save me, O God; for the waters are come in unto mysoul."
+    },
+    {
+      "ref": "Psalms 70:1",
+      "first": "To the chief Musician, A Psalm of David, to bring to remembrance. Make haste, O God, to deliver me; make haste to help me, O Lord.",
+      "second": "Make haste, O God, to deliver me; make haste to help me, O LORD."
+    },
+    {
+      "ref": "Psalms 72:1",
+      "first": "A Psalm for Solomon. Give the king thy judgments, O God, and thy righteousness unto the king’s son.",
+      "second": "Give the king thy judgments, O God, and thy righteousness unto the king’s son."
+    },
+    {
+      "ref": "Psalms 73:1",
+      "first": "A Psalm of Asaph. Truly God is good to Israel, even to such as are of a clean heart.",
+      "second": "Truly God isgood to Israel, evento such as are of a clean heart."
+    },
+    {
+      "ref": "Psalms 74:1",
+      "first": "Maschil of Asaph. O God, why hast thou cast us off for ever? why doth thine anger smoke against the sheep of thy pasture?",
+      "second": "O God, why hast thou cast usoff for ever? whydoth thine anger smoke against the sheep of thy pasture?"
+    },
+    {
+      "ref": "Psalms 75:1",
+      "first": "To the chief Musician, Al–taschith, A Psalm or Song of Asaph. Unto thee, O God, do we give thanks, unto thee do we give thanks: for that thy name is near thy wondrous works declare.",
+      "second": "Unto thee, O God, do we give thanks, unto theedo we give thanks: for thatthy name is near thy wondrous works declare."
+    },
+    {
+      "ref": "Psalms 76:1",
+      "first": "To the chief Musician on Neginoth, A Psalm or Song of Asaph. In Judah is God known: his name is great in Israel.",
+      "second": "In Judah isGod known: his name isgreat in Israel."
+    },
+    {
+      "ref": "Psalms 77:1",
+      "first": "To the chief Musician, to Jeduthun, A Psalm of Asaph. I cried unto God with my voice, even unto God with my voice; and he gave ear unto me.",
+      "second": "I cried unto God with my voice, evenunto God with my voice; and he gave ear unto me."
+    },
+    {
+      "ref": "Psalms 78:1",
+      "first": "Maschil of Asaph. Give ear, O my people, to my law: incline your ears to the words of my mouth.",
+      "second": "Give ear, O my people, tomy law: incline your ears to the words of my mouth."
+    },
+    {
+      "ref": "Psalms 79:1",
+      "first": "A Psalm of Asaph. O God, the heathen are come into thine inheritance; thy holy temple have they defiled; they have laid Jerusalem on heaps.",
+      "second": "O God, the heathen are come into thine inheritance; thy holy temple have they defiled; they have laid Jerusalem on heaps."
+    },
+    {
+      "ref": "Psalms 80:1",
+      "first": "To the chief Musician upon Shoshannim–Eduth, A Psalm of Asaph. Give ear, O Shepherd of Israel, thou that leadest Joseph like a flock; thou that dwellest between the cherubims, shine forth.",
+      "second": "Give ear, O Shepherd of Israel, thou that leadest Joseph like a flock; thou that dwellest betweenthe cherubims, shine forth."
+    },
+    {
+      "ref": "Psalms 81:1",
+      "first": "To the chief Musician upon Gittith, A Psalm of Asaph. Sing aloud unto God our strength: make a joyful noise unto the God of Jacob.",
+      "second": "Sing aloud unto God our strength: make a joyful noise unto the God of Jacob."
+    },
+    {
+      "ref": "Psalms 82:1",
+      "first": "A Psalm of Asaph. God standeth in the congregation of the mighty; he judgeth among the gods.",
+      "second": "God standeth in the congregation of the mighty; he judgeth among the gods."
+    },
+    {
+      "ref": "Psalms 83:1",
+      "first": "A Song or Psalm of Asaph. Keep not thou silence, O God: hold not thy peace, and be not still, O God.",
+      "second": "Keep not thou silence, O God: hold not thy peace, and be not still, O God."
+    },
+    {
+      "ref": "Psalms 84:1",
+      "first": "To the chief Musician upon Gittith, A Psalm for the sons of Korah. How amiable are thy tabernacles, O Lord of hosts!",
+      "second": "How amiable arethy tabernacles, O LORDof hosts!"
+    },
+    {
+      "ref": "Psalms 85:1",
+      "first": "To the chief Musician, A Psalm for the sons of Korah. Lord, thou hast been favourable unto thy land: thou hast brought back the captivity of Jacob.",
+      "second": "LORD, thou hast been favourable unto thy land: thou hast brought back the captivity of Jacob."
+    },
+    {
+      "ref": "Psalms 86:1",
+      "first": "A Prayer of David. Bow down thine ear, O Lord, hear me: for I am poor and needy.",
+      "second": "Bow down thine ear, O LORD, hear me: for I ampoor and needy."
+    },
+    {
+      "ref": "Psalms 87:1",
+      "first": "A Psalm or Song for the sons of Korah. His foundation is in the holy mountains.",
+      "second": "His foundation isin the holy mountains."
+    },
+    {
+      "ref": "Psalms 88:1",
+      "first": "A Song or Psalm for the sons of Korah, to the chief Musician upon Mahalath Leannoth, Maschil of Heman the Ezrahite. O Lord God of my salvation, I have cried day and night before thee:",
+      "second": "O LORDGod of my salvation, I have cried day andnight before thee:"
+    },
+    {
+      "ref": "Psalms 89:1",
+      "first": "Maschil of Ethan the Ezrahite. I will sing of the mercies of the Lord for ever: with my mouth will I make known thy faithfulness to all generations.",
+      "second": "I will sing of the mercies of the LORDfor ever: with my mouth will I make known thy faithfulness to all generations."
+    },
+    {
+      "ref": "Psalms 90:1",
+      "first": "A Prayer of Moses the man of God. Lord, thou hast been our dwelling place in all generations.",
+      "second": "Lord, thou hast been our dwelling place in all generations."
+    },
+    {
+      "ref": "Psalms 92:1",
+      "first": "A Psalm or Song for the sabbath day. It is a good thing to give thanks unto the Lord, and to sing praises unto thy name, O most High:",
+      "second": "It is agood thingto give thanks unto the LORD, and to sing praises unto thy name, O most High:"
+    },
+    {
+      "ref": "Psalms 98:1",
+      "first": "A Psalm. O sing unto the Lord a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory.",
+      "second": "O sing unto the LORDa new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory."
+    },
+    {
+      "ref": "Psalms 100:1",
+      "first": "A Psalm of praise. Make a joyful noise unto the Lord, all ye lands.",
+      "second": "Make a joyful noise unto the LORD, all ye lands."
+    },
+    {
+      "ref": "Psalms 101:1",
+      "first": "A Psalm of David. I will sing of mercy and judgment: unto thee, O Lord, will I sing.",
+      "second": "I will sing of mercy and judgment: unto thee, O LORD, will I sing."
+    },
+    {
+      "ref": "Psalms 102:1",
+      "first": "A Prayer of the afflicted, when he is overwhelmed, and poureth out his complaint before the Lord. Hear my prayer, O Lord, and let my cry come unto thee.",
+      "second": "Hear my prayer, O LORD, and let my cry come unto thee."
+    },
+    {
+      "ref": "Psalms 103:1",
+      "first": "A Psalm of David. Bless the Lord, O my soul: and all that is within me, bless his holy name.",
+      "second": "Bless the LORD, O my soul: and all that is within me, blesshis holy name."
+    },
+    {
+      "ref": "Psalms 108:1",
+      "first": "A Song or Psalm of David. O God, my heart is fixed; I will sing and give praise, even with my glory.",
+      "second": "O God, my heart is fixed; I will sing and give praise, even with my glory."
+    },
+    {
+      "ref": "Psalms 109:1",
+      "first": "To the chief Musician, A Psalm of David. Hold not thy peace, O God of my praise;",
+      "second": "Hold not thy peace, O God of my praise;"
+    },
+    {
+      "ref": "Psalms 110:1",
+      "first": "A Psalm of David. The Lord said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool.",
+      "second": "The LORDsaid unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool."
+    },
+    {
+      "ref": "Psalms 119:1",
+      "first": "א ALEPH. Blessed are the undefiled in the way, who walk in the law of the Lord.",
+      "second": "Blessed arethe undefiled in the way, who walk in the law of the LORD."
+    },
+    {
+      "ref": "Psalms 119:9",
+      "first": "ב BETH. Wherewithal shall a young man cleanse his way? by taking heed thereto according to thy word.",
+      "second": "Wherewithal shall a young man cleanse his way? by taking heed theretoaccording to thy word."
+    },
+    {
+      "ref": "Psalms 119:17",
+      "first": "ג GIMEL. Deal bountifully with thy servant, that I may live, and keep thy word.",
+      "second": "Deal bountifully with thy servant, thatI may live, and keep thy word."
+    },
+    {
+      "ref": "Psalms 119:25",
+      "first": "ד DALETH. My soul cleaveth unto the dust: quicken thou me according to thy word.",
+      "second": "My soul cleaveth unto the dust: quicken thou me according to thy word."
+    },
+    {
+      "ref": "Psalms 119:33",
+      "first": "ה HE. Teach me, O Lord, the way of thy statutes; and I shall keep it unto the end.",
+      "second": "Teach me, O LORD, the way of thy statutes; and I shall keep it untothe end."
+    },
+    {
+      "ref": "Psalms 119:41",
+      "first": "ו VAU. Let thy mercies come also unto me, O Lord, even thy salvation, according to thy word.",
+      "second": "Let thy mercies come also unto me, O LORD, eventhy salvation, according to thy word."
+    },
+    {
+      "ref": "Psalms 119:49",
+      "first": "ז ZAIN. Remember the word unto thy servant, upon which thou hast caused me to hope.",
+      "second": "Remember the word unto thy servant, upon which thou hast caused me to hope."
+    },
+    {
+      "ref": "Psalms 119:57",
+      "first": "ח CHETH. Thou art my portion, O Lord: I have said that I would keep thy words.",
+      "second": "Thou artmy portion, O LORD: I have said that I would keep thy words."
+    },
+    {
+      "ref": "Psalms 119:65",
+      "first": "ט TETH. Thou hast dealt well with thy servant, O Lord, according unto thy word.",
+      "second": "Thou hast dealt well with thy servant, O LORD, according unto thy word."
+    },
+    {
+      "ref": "Psalms 119:73",
+      "first": "י JOD. Thy hands have made me and fashioned me: give me understanding, that I may learn thy commandments.",
+      "second": "Thy hands have made me and fashioned me: give me understanding, that I may learn thy commandments."
+    },
+    {
+      "ref": "Psalms 119:81",
+      "first": "כ CAPH. My soul fainteth for thy salvation: but I hope in thy word.",
+      "second": "My soul fainteth for thy salvation: butI hope in thy word."
+    },
+    {
+      "ref": "Psalms 119:89",
+      "first": "ל LAMED. For ever, O Lord, thy word is settled in heaven.",
+      "second": "For ever, O LORD, thy word is settled in heaven."
+    },
+    {
+      "ref": "Psalms 119:97",
+      "first": "מ MEM. O how love I thy law! it is my meditation all the day.",
+      "second": "O how love I thy law! it ismy meditation all the day."
+    },
+    {
+      "ref": "Psalms 119:105",
+      "first": "נ NUN. Thy word is a lamp unto my feet, and a light unto my path.",
+      "second": "Thy word isa lamp unto my feet, and a light unto my path."
+    },
+    {
+      "ref": "Psalms 119:113",
+      "first": "ס SAMECH. I hate vain thoughts: but thy law do I love.",
+      "second": "I hate vainthoughts: but thy law do I love."
+    },
+    {
+      "ref": "Psalms 119:121",
+      "first": "ע AIN. I have done judgment and justice: leave me not to mine oppressors.",
+      "second": "I have done judgment and justice: leave me not to mine oppressors."
+    },
+    {
+      "ref": "Psalms 119:129",
+      "first": "פ PE. Thy testimonies are wonderful: therefore doth my soul keep them.",
+      "second": "Thy testimonies arewonderful: therefore doth my soul keep them."
+    },
+    {
+      "ref": "Psalms 119:137",
+      "first": "צ TZADDI. Righteous art thou, O Lord, and upright are thy judgments.",
+      "second": "Righteous artthou, O LORD, and upright arethy judgments."
+    },
+    {
+      "ref": "Psalms 119:145",
+      "first": "ק KOPH. I cried with my whole heart; hear me, O Lord: I will keep thy statutes.",
+      "second": "I cried with mywhole heart; hear me, O LORD: I will keep thy statutes."
+    },
+    {
+      "ref": "Psalms 119:153",
+      "first": "ר RESH. Consider mine affliction, and deliver me: for I do not forget thy law.",
+      "second": "Consider mine affliction, and deliver me: for I do not forget thy law."
+    },
+    {
+      "ref": "Psalms 119:161",
+      "first": "ש SCHIN. Princes have persecuted me without a cause: but my heart standeth in awe of thy word.",
+      "second": "Princes have persecuted me without a cause: but my heart standeth in awe of thy word."
+    },
+    {
+      "ref": "Psalms 119:169",
+      "first": "ת TAU. Let my cry come near before thee, O Lord: give me understanding according to thy word.",
+      "second": "Let my cry come near before thee, O LORD: give me understanding according to thy word."
+    },
+    {
+      "ref": "Psalms 120:1",
+      "first": "A Song of degrees. In my distress I cried unto the Lord, and he heard me.",
+      "second": "In my distress I cried unto the LORD, and he heard me."
+    },
+    {
+      "ref": "Psalms 121:1",
+      "first": "A Song of degrees. I will lift up mine eyes unto the hills, from whence cometh my help.",
+      "second": "I will lift up mine eyes unto the hills, from whence cometh my help."
+    },
+    {
+      "ref": "Psalms 122:1",
+      "first": "A Song of degrees of David. I was glad when they said unto me, Let us go into the house of the Lord.",
+      "second": "I was glad when they said unto me, Let us go into the house of the LORD."
+    },
+    {
+      "ref": "Psalms 123:1",
+      "first": "A Song of degrees. Unto thee lift I up mine eyes, O thou that dwellest in the heavens.",
+      "second": "Unto thee lift I up mine eyes, O thou that dwellest in the heavens."
+    },
+    {
+      "ref": "Psalms 124:1",
+      "first": "A Song of degrees of David. If it had not been the Lord who was on our side, now may Israel say;",
+      "second": "If it had not beenthe LORDwho was on our side, now may Israel say;"
+    },
+    {
+      "ref": "Psalms 125:1",
+      "first": "A Song of degrees. They that trust in the Lord shall be as mount Zion, which cannot be removed, but abideth for ever.",
+      "second": "They that trust in the LORDshall beas mount Zion, whichcannot be removed, butabideth for ever."
+    },
+    {
+      "ref": "Psalms 126:1",
+      "first": "A Song of degrees. When the Lord turned again the captivity of Zion, we were like them that dream.",
+      "second": "When the LORDturned again the captivity of Zion, we were like them that dream."
+    },
+    {
+      "ref": "Psalms 127:1",
+      "first": "A Song of degrees for Solomon. Except the Lord build the house, they labour in vain that build it: except the Lord keep the city, the watchman waketh but in vain.",
+      "second": "Except the LORDbuild the house, they labour in vain that build it: except the LORDkeep the city, the watchman waketh butin vain."
+    },
+    {
+      "ref": "Psalms 128:1",
+      "first": "A Song of degrees. Blessed is every one that feareth the Lord; that walketh in his ways.",
+      "second": "Blessed isevery one that feareth the LORD; that walketh in his ways."
+    },
+    {
+      "ref": "Psalms 129:1",
+      "first": "A Song of degrees. Many a time have they afflicted me from my youth, may Israel now say:",
+      "second": "Many a time have they afflicted me from my youth, may Israel now say:"
+    },
+    {
+      "ref": "Psalms 130:1",
+      "first": "A Song of degrees. Out of the depths have I cried unto thee, O Lord.",
+      "second": "Out of the depths have I cried unto thee, O LORD."
+    },
+    {
+      "ref": "Psalms 131:1",
+      "first": "A Song of degrees of David. Lord, my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me.",
+      "second": "LORD, my heart is not haughty, nor mine eyes lofty: neither do I exercise myself in great matters, or in things too high for me."
+    },
+    {
+      "ref": "Psalms 132:1",
+      "first": "A Song of degrees. Lord, remember David, and all his afflictions:",
+      "second": "LORD, remember David, andall his afflictions:"
+    },
+    {
+      "ref": "Psalms 133:1",
+      "first": "A Song of degrees of David. Behold, how good and how pleasant it is for brethren to dwell together in unity!",
+      "second": "Behold, how good and how pleasant it isfor brethren to dwell together in unity!"
+    },
+    {
+      "ref": "Psalms 134:1",
+      "first": "A Song of degrees. Behold, bless ye the Lord, all ye servants of the Lord, which by night stand in the house of the Lord.",
+      "second": "Behold, bless ye the LORD, all yeservants of the LORD, which by night stand in the house of the LORD."
+    },
+    {
+      "ref": "Psalms 138:1",
+      "first": "A Psalm of David. I will praise thee with my whole heart: before the gods will I sing praise unto thee.",
+      "second": "I will praise thee with my whole heart: before the gods will I sing praise unto thee."
+    },
+    {
+      "ref": "Psalms 139:1",
+      "first": "To the chief Musician, A Psalm of David. O Lord, thou hast searched me, and known me.",
+      "second": "O LORD, thou hast searched me, and known me."
+    },
+    {
+      "ref": "Psalms 140:1",
+      "first": "To the chief Musician, A Psalm of David. Deliver me, O Lord, from the evil man: preserve me from the violent man;",
+      "second": "Deliver me, O LORD, from the evil man: preserve me from the violent man;"
+    },
+    {
+      "ref": "Psalms 141:1",
+      "first": "A Psalm of David. Lord, I cry unto thee: make haste unto me; give ear unto my voice, when I cry unto thee.",
+      "second": "LORD, I cry unto thee: make haste unto me; give ear unto my voice, when I cry unto thee."
+    },
+    {
+      "ref": "Psalms 142:1",
+      "first": "Maschil of David; A Prayer when he was in the cave. I cried unto the Lord with my voice; with my voice unto the Lord did I make my supplication.",
+      "second": "I cried unto the LORDwith my voice; with my voice unto the LORDdid I make my supplication."
+    },
+    {
+      "ref": "Psalms 143:1",
+      "first": "A Psalm of David. Hear my prayer, O Lord, give ear to my supplications: in thy faithfulness answer me, and in thy righteousness.",
+      "second": "Hear my prayer, O LORD, give ear to my supplications: in thy faithfulness answer me, andin thy righteousness."
+    },
+    {
+      "ref": "Psalms 144:1",
+      "first": "A Psalm of David. Blessed be the Lord my strength, which teacheth my hands to war, and my fingers to fight:",
+      "second": "Blessed bethe LORDmy strength, which teacheth my hands to war, andmy fingers to fight:"
+    },
+    {
+      "ref": "Psalms 145:1",
+      "first": "David’s Psalm of praise. I will extol thee, my God, O king; and I will bless thy name for ever and ever.",
+      "second": "I will extol thee, my God, O king; and I will bless thy name for ever and ever."
+    },
+    {
+      "ref": "Matthew 2:1",
+      "first": "Now when Jesus was born in Bethlehem of Judea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,",
+      "second": "Now when Jesus was born in Bethlehem of Judaea in the days of Herod the king, behold, there came wise men from the east to Jerusalem,"
+    },
+    {
+      "ref": "Matthew 2:5",
+      "first": "And they said unto him, In Bethlehem of Judea: for thus it is written by the prophet,",
+      "second": "And they said unto him, In Bethlehem of Judaea: for thus it is written by the prophet,"
+    },
+    {
+      "ref": "Matthew 2:22",
+      "first": "But when he heard that Archelaus did reign in Judea in the room of his father Herod, he was afraid to go thither: notwithstanding, being warned of God in a dream, he turned aside into the parts of Galilee:",
+      "second": "But when he heard that Archelaus did reign in Judaea in the room of his father Herod, he was afraid to go thither: notwithstanding, being warned of God in a dream, he turned aside into the parts of Galilee:"
+    },
+    {
+      "ref": "Matthew 3:1",
+      "first": "In those days came John the Baptist, preaching in the wilderness of Judea,",
+      "second": "In those days came John the Baptist, preaching in the wilderness of Judaea,"
+    },
+    {
+      "ref": "Matthew 3:5",
+      "first": "Then went out to him Jerusalem, and all Judea, and all the region round about Jordan,",
+      "second": "Then went out to him Jerusalem, and all Judaea, and all the region round about Jordan,"
+    },
+    {
+      "ref": "Matthew 4:25",
+      "first": "And there followed him great multitudes of people from Galilee, and from Decapolis, and from Jerusalem, and from Judea, and from beyond Jordan.",
+      "second": "And there followed him great multitudes of people from Galilee, and fromDecapolis, and fromJerusalem, and fromJudaea, and frombeyond Jordan."
+    },
+    {
+      "ref": "Matthew 10:3",
+      "first": "Philip, and Bartholomew; Thomas, and Matthew the publican; James the son of Alpheus, and Lebbeus, whose surname was Thaddeus;",
+      "second": "Philip, and Bartholomew; Thomas, and Matthew the publican; James the sonof Alphaeus, and Lebbaeus, whose surname was Thaddaeus;"
+    },
+    {
+      "ref": "Matthew 16:13",
+      "first": "When Jesus came into the coasts of Cesarea Philippi, he asked his disciples, saying, Whom do men say that I the Son of man am?",
+      "second": "¶ When Jesus came into the coasts of Caesarea Philippi, he asked his disciples, saying, Whom do men say that I the Son of man am?"
+    },
+    {
+      "ref": "Matthew 19:1",
+      "first": "And it came to pass, that when Jesus had finished these sayings, he departed from Galilee, and came into the coasts of Judea beyond Jordan;",
+      "second": "And it came to pass, thatwhen Jesus had finished these sayings, he departed from Galilee, and came into the coasts of Judaea beyond Jordan;"
+    },
+    {
+      "ref": "Matthew 22:17",
+      "first": "Tell us therefore, What thinkest thou? Is it lawful to give tribute unto Cesar, or not?",
+      "second": "Tell us therefore, What thinkest thou? Is it lawful to give tribute unto Caesar, or not?"
+    },
+    {
+      "ref": "Matthew 22:21",
+      "first": "They say unto him, Cesar’s. Then saith he unto them, Render therefore unto Cesar the things which are Cesar’s; and unto God the things that are God’s.",
+      "second": "They say unto him, Cæsar’s. Then saith he unto them, Render therefore unto Cæsar the things which are Cæsar’s; and unto God the things that are God’s."
+    },
+    {
+      "ref": "Matthew 24:16",
+      "first": "Then let them which be in Judea flee into the mountains:",
+      "second": "Then let them which be in Judaea flee into the mountains:"
+    },
+    {
+      "ref": "Matthew 27:57",
+      "first": "When the even was come, there came a rich man of Arimathea, named Joseph, who also himself was Jesus’ disciple:",
+      "second": "When the even was come, there came a rich man of Arimathæa, named Joseph, who also himself was Jesus’ disciple:"
+    },
+    {
+      "ref": "Mark 1:5",
+      "first": "And there went out unto him all the land of Judea, and they of Jerusalem, and were all baptized of him in the river of Jordan, confessing their sins.",
+      "second": "And there went out unto him all the land of Judæa, and they of Jerusalem, and were all baptized of him in the river of Jordan, confessing their sins."
+    },
+    {
+      "ref": "Mark 2:14",
+      "first": "And as he passed by, he saw Levi the son of Alpheus sitting at the receipt of custom, and said unto him, Follow me. And he arose and followed him.",
+      "second": "And as he passed by, he saw Levi the sonof Alphæus sitting at the receipt of custom, and said unto him, Follow me.And he arose and followed him."
+    },
+    {
+      "ref": "Mark 3:7",
+      "first": "But Jesus withdrew himself with his disciples to the sea: and a great multitude from Galilee followed him, and from Judea,",
+      "second": "But Jesus withdrew himself with his disciples to the sea: and a great multitude from Galilee followed him, and from Judæa,"
+    },
+    {
+      "ref": "Mark 3:8",
+      "first": "And from Jerusalem, and from Idumea, and from beyond Jordan; and they about Tyre and Sidon, a great multitude, when they had heard what great things he did, came unto him.",
+      "second": "And from Jerusalem, and from Idumaea, and frombeyond Jordan; and they about Tyre and Sidon, a great multitude, when they had heard what great things he did, came unto him."
+    },
+    {
+      "ref": "Mark 3:18",
+      "first": "And Andrew, and Philip, and Bartholomew, and Matthew, and Thomas, and James the son of Alpheus, and Thaddeus, and Simon the Canaanite,",
+      "second": "And Andrew, and Philip, and Bartholomew, and Matthew, and Thomas, and James the sonof Alphaeus, and Thaddaeus, and Simon the Canaanite,"
+    },
+    {
+      "ref": "Mark 8:27",
+      "first": "And Jesus went out, and his disciples, into the towns of Cesarea Philippi: and by the way he asked his disciples, saying unto them, Whom do men say that I am?",
+      "second": "¶ And Jesus went out, and his disciples, into the towns of Cæsarea Philippi: and by the way he asked his disciples, saying unto them, Whom do men say that I am?"
+    },
+    {
+      "ref": "Mark 10:1",
+      "first": "And he arose from thence, and cometh into the coasts of Judea by the farther side of Jordan: and the people resort unto him again; and, as he was wont, he taught them again.",
+      "second": "And he arose from thence, and cometh into the coasts of Judæa by the farther side of Jordan: and the people resort unto him again; and, as he was wont, he taught them again."
+    },
+    {
+      "ref": "Mark 10:46",
+      "first": "And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimeus, the son of Timeus, sat by the highway side begging.",
+      "second": "¶ And they came to Jericho: and as he went out of Jericho with his disciples and a great number of people, blind Bartimæus, the son of Timæus, sat by the highway side begging."
+    },
+    {
+      "ref": "Mark 12:14",
+      "first": "And when they were come, they say unto him, Master, we know that thou art true, and carest for no man: for thou regardest not the person of men, but teachest the way of God in truth: Is it lawful to give tribute to Cesar, or not?",
+      "second": "And when they were come, they say unto him, Master, we know that thou art true, and carest for no man: for thou regardest not the person of men, but teachest the way of God in truth: Is it lawful to give tribute to Cæsar, or not?"
+    },
+    {
+      "ref": "Mark 12:16",
+      "first": "And they brought it. And he saith unto them, Whose is this image and superscription? And they said unto him, Cesar’s.",
+      "second": "And they brought it. And he saith unto them, Whose isthis image and superscription?And they said unto him, Cæsar’s."
+    },
+    {
+      "ref": "Mark 12:17",
+      "first": "And Jesus answering said unto them, Render to Cesar the things that are Cesar’s, and to God the things that are God’s. And they marvelled at him.",
+      "second": "And Jesus answering said unto them, Render to Cæsar the things that are Cæsar’s, and to God the things that are God’s.And they marvelled at him."
+    },
+    {
+      "ref": "Mark 13:14",
+      "first": "But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Judea flee to the mountains:",
+      "second": "¶ But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Judæa flee to the mountains:"
+    },
+    {
+      "ref": "Mark 14:70",
+      "first": "And he denied it again. And a little after, they that stood by said again to Peter, Surely thou art one of them: for thou art a Galilean, and thy speech agreeth thereto.",
+      "second": "And he denied it again. And a little after, they that stood by said again to Peter, Surely thou art oneof them: for thou art a Galilaean, and thy speech agreeth thereto."
+    },
+    {
+      "ref": "Mark 15:16",
+      "first": "And the soldiers led him away into the hall, called Pretorium; and they call together the whole band.",
+      "second": "And the soldiers led him away into the hall, called Prætorium; and they call together the whole band."
+    },
+    {
+      "ref": "Mark 15:43",
+      "first": "Joseph of Arimathea, an honourable counsellor, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus.",
+      "second": "Joseph of Arimathaea, an honourable counsellor, which also waited for the kingdom of God, came, and went in boldly unto Pilate, and craved the body of Jesus."
+    },
+    {
+      "ref": "Luke 1:5",
+      "first": "There was in the days of Herod, the king of Judea, a certain priest named Zacharias, of the course of Abia: and his wife was of the daughters of Aaron, and her name was Elisabeth.",
+      "second": "¶ There was in the days of Herod, the king of Judæa, a certain priest named Zacharias, of the course of Abia: and his wife wasof the daughters of Aaron, and her name wasElisabeth."
+    },
+    {
+      "ref": "Luke 1:65",
+      "first": "And fear came on all that dwelt round about them: and all these sayings were noised abroad throughout all the hill country of Judea.",
+      "second": "And fear came on all that dwelt round about them: and all these sayings were noised abroad throughout all the hill country of Judæa."
+    },
+    {
+      "ref": "Luke 2:1",
+      "first": "And it came to pass in those days, that there went out a decree from Cesar Augustus, that all the world should be taxed.",
+      "second": "And it came to pass in those days, that there went out a decree from Cæsar Augustus, that all the world should be taxed."
+    },
+    {
+      "ref": "Luke 2:4",
+      "first": "And Joseph also went up from Galilee, out of the city of Nazareth, into Judea, unto the city of David, which is called Bethlehem; (because he was of the house and lineage of David:)",
+      "second": "And Joseph also went up from Galilee, out of the city of Nazareth, into Judæa, unto the city of David, which is called Bethlehem; (because he was of the house and lineage of David:)"
+    },
+    {
+      "ref": "Luke 3:1",
+      "first": "Now in the fifteenth year of the reign of Tiberius Cesar, Pontius Pilate being governor of Judea, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of Iturea and of the region of Trachonitis, and Lysanias the tetrarch of Abilene,",
+      "second": "Now in the fifteenth year of the reign of Tiberius Cæsar, Pontius Pilate being governor of Judæa, and Herod being tetrarch of Galilee, and his brother Philip tetrarch of Ituraea and of the region of Trachonitis, and Lysanias the tetrarch of Abilene,"
+    },
+    {
+      "ref": "Luke 5:17",
+      "first": "And it came to pass on a certain day, as he was teaching, that there were Pharisees and doctors of the law sitting by, which were come out of every town of Galilee, and Judea, and Jerusalem: and the power of the Lord was present to heal them.",
+      "second": "And it came to pass on a certain day, as he was teaching, that there were Pharisees and doctors of the law sitting by, which were come out of every town of Galilee, and Judæa, and Jerusalem: and the power of the Lord was presentto heal them."
+    },
+    {
+      "ref": "Luke 6:15",
+      "first": "Matthew and Thomas, James the son of Alpheus, and Simon called Zelotes,",
+      "second": "Matthew and Thomas, James the sonof Alphæus, and Simon called Zelotes,"
+    },
+    {
+      "ref": "Luke 6:17",
+      "first": "And he came down with them, and stood in the plain, and the company of his disciples, and a great multitude of people out of all Judea and Jerusalem, and from the sea coast of Tyre and Sidon, which came to hear him, and to be healed of their diseases;",
+      "second": "¶ And he came down with them, and stood in the plain, and the company of his disciples, and a great multitude of people out of all Judæa and Jerusalem, and from the sea coast of Tyre and Sidon, which came to hear him, and to be healed of their diseases;"
+    },
+    {
+      "ref": "Luke 7:17",
+      "first": "And this rumour of him went forth throughout all Judea, and throughout all the region round about.",
+      "second": "And this rumour of him went forth throughout all Judæa, and throughout all the region round about."
+    },
+    {
+      "ref": "Luke 13:1",
+      "first": "There were present at that season some that told him of the Galileans, whose blood Pilate had mingled with their sacrifices.",
+      "second": "There were present at that season some that told him of the Galilæans, whose blood Pilate had mingled with their sacrifices."
+    },
+    {
+      "ref": "Luke 13:2",
+      "first": "And Jesus answering said unto them, Suppose ye that these Galileans were sinners above all the Galileans, because they suffered such things?",
+      "second": "And Jesus answering said unto them, Suppose ye that these Galilæans were sinners above all the Galilæans, because they suffered such things?"
+    },
+    {
+      "ref": "Luke 19:2",
+      "first": "And, behold, there was a man named Zaccheus, which was the chief among the publicans, and he was rich.",
+      "second": "And, behold, there wasa man named Zacchæus, which was the chief among the publicans, and he was rich."
+    },
+    {
+      "ref": "Luke 19:5",
+      "first": "And when Jesus came to the place, he looked up, and saw him, and said unto him, Zaccheus, make haste, and come down; for to day I must abide at thy house.",
+      "second": "And when Jesus came to the place, he looked up, and saw him, and said unto him, Zacchæus, make haste, and come down; for to day I must abide at thy house."
+    },
+    {
+      "ref": "Luke 19:8",
+      "first": "And Zaccheus stood, and said unto the Lord; Behold, Lord, the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore him fourfold.",
+      "second": "And Zacchæus stood, and said unto the Lord; Behold, Lord, the half of my goods I give to the poor; and if I have taken any thing from any man by false accusation, I restore himfourfold."
+    },
+    {
+      "ref": "Luke 20:22",
+      "first": "Is it lawful for us to give tribute unto Cesar, or no?",
+      "second": "Is it lawful for us to give tribute unto Cæsar, or no?"
+    },
+    {
+      "ref": "Luke 20:24",
+      "first": "Shew me a penny. Whose image and superscription hath it? They answered and said, Cesar’s.",
+      "second": "Shew me a penny. Whose image and superscription hath it?They answered and said, Cæsar’s."
+    },
+    {
+      "ref": "Luke 20:25",
+      "first": "And he said unto them, Render therefore unto Cesar the things which be Cesar’s, and unto God the things which be God’s.",
+      "second": "And he said unto them, Render therefore unto Cæsar the things which be Cæsar’s, and unto God the things which be God’s."
+    },
+    {
+      "ref": "Luke 21:21",
+      "first": "Then let them which are in Judea flee to the mountains; and let them which are in the midst of it depart out; and let not them that are in the countries enter thereinto.",
+      "second": "Then let them which are in Judæa flee to the mountains; and let them which are in the midst of it depart out; and let not them that are in the countries enter thereinto."
+    },
+    {
+      "ref": "Luke 22:59",
+      "first": "And about the space of one hour after another confidently affirmed, saying, Of a truth this fellow also was with him: for he is a Galilean.",
+      "second": "And about the space of one hour after another confidently affirmed, saying, Of a truth this fellowalso was with him: for he is a Galilæan."
+    },
+    {
+      "ref": "Luke 23:2",
+      "first": "And they began to accuse him, saying, We found this fellow perverting the nation, and forbidding to give tribute to Cesar, saying that he himself is Christ a King.",
+      "second": "And they began to accuse him, saying, We found this fellowperverting the nation, and forbidding to give tribute to Cæsar, saying that he himself is Christ a King."
+    },
+    {
+      "ref": "Luke 23:6",
+      "first": "When Pilate heard of Galilee, he asked whether the man were a Galilean.",
+      "second": "When Pilate heard of Galilee, he asked whether the man were a Galilæan."
+    },
+    {
+      "ref": "Luke 23:51",
+      "first": "(The same had not consented to the counsel and deed of them;) he was of Arimathea, a city of the Jews: who also himself waited for the kingdom of God.",
+      "second": "(The same had not consented to the counsel and deed of them;) he wasof Arimathæa, a city of the Jews: who also himself waited for the kingdom of God."
+    },
+    {
+      "ref": "John 3:22",
+      "first": "After these things came Jesus and his disciples into the land of Judea; and there he tarried with them, and baptized.",
+      "second": "¶ After these things came Jesus and his disciples into the land of Judæa; and there he tarried with them, and baptized."
+    },
+    {
+      "ref": "John 4:3",
+      "first": "He left Judea, and departed again into Galilee.",
+      "second": "He left Judæa, and departed again into Galilee."
+    },
+    {
+      "ref": "John 4:45",
+      "first": "Then when he was come into Galilee, the Galileans received him, having seen all the things that he did at Jerusalem at the feast: for they also went unto the feast.",
+      "second": "Then when he was come into Galilee, the Galilæans received him, having seen all the things that he did at Jerusalem at the feast: for they also went unto the feast."
+    },
+    {
+      "ref": "John 4:47",
+      "first": "When he heard that Jesus was come out of Judea into Galilee, he went unto him, and besought him that he would come down, and heal his son: for he was at the point of death.",
+      "second": "When he heard that Jesus was come out of Judæa into Galilee, he went unto him, and besought him that he would come down, and heal his son: for he was at the point of death."
+    },
+    {
+      "ref": "John 4:54",
+      "first": "This is again the second miracle that Jesus did, when he was come out of Judea into Galilee.",
+      "second": "This isagain the second miracle thatJesus did, when he was come out of Judæa into Galilee."
+    },
+    {
+      "ref": "John 7:3",
+      "first": "His brethren therefore said unto him, Depart hence, and go into Judea, that thy disciples also may see the works that thou doest.",
+      "second": "His brethren therefore said unto him, Depart hence, and go into Judæa, that thy disciples also may see the works that thou doest."
+    },
+    {
+      "ref": "John 11:7",
+      "first": "Then after that saith he to his disciples, Let us go into Judea again.",
+      "second": "Then after that saith he to hisdisciples, Let us go into Judæa again."
+    },
+    {
+      "ref": "John 19:12",
+      "first": "And from thenceforth Pilate sought to release him: but the Jews cried out, saying, If thou let this man go, thou art not Cesar’s friend: whosoever maketh himself a king speaketh against Cesar.",
+      "second": "And from thenceforth Pilate sought to release him: but the Jews cried out, saying, If thou let this man go, thou art not Cæsar’s friend: whosoever maketh himself a king speaketh against Cæsar."
+    },
+    {
+      "ref": "John 19:15",
+      "first": "But they cried out, Away with him, away with him, crucify him. Pilate saith unto them, Shall I crucify your King? The chief priests answered, We have no king but Cesar.",
+      "second": "But they cried out, Away with him, away with him, crucify him. Pilate saith unto them, Shall I crucify your King? The chief priests answered, We have no king but Cæsar."
+    },
+    {
+      "ref": "John 19:38",
+      "first": "And after this Joseph of Arimathea, being a disciple of Jesus, but secretly for fear of the Jews, besought Pilate that he might take away the body of Jesus: and Pilate gave him leave. He came therefore, and took the body of Jesus.",
+      "second": "¶ And after this Joseph of Arimathaea, being a disciple of Jesus, but secretly for fear of the Jews, besought Pilate that he might take away the body of Jesus: and Pilate gave himleave. He came therefore, and took the body of Jesus."
+    },
+    {
+      "ref": "Acts 1:8",
+      "first": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judea, and in Samaria, and unto the uttermost part of the earth.",
+      "second": "But ye shall receive power, after that the Holy Ghost is come upon you: and ye shall be witnesses unto me both in Jerusalem, and in all Judæa, and in Samaria, and unto the uttermost part of the earth."
+    },
+    {
+      "ref": "Acts 1:13",
+      "first": "And when they were come in, they went up into an upper room, where abode both Peter, and James, and John, and Andrew, Philip, and Thomas, Bartholomew, and Matthew, James the son of Alpheus, and Simon Zelotes, and Judas the brother of James.",
+      "second": "And when they were come in, they went up into an upper room, where abode both Peter, and James, and John, and Andrew, Philip, and Thomas, Bartholomew, and Matthew, James the sonof Alphaeus, and Simon Zelotes, and Judas the brotherof James."
+    },
+    {
+      "ref": "Acts 2:7",
+      "first": "And they were all amazed and marvelled, saying one to another, Behold, are not all these which speak Galileans?",
+      "second": "And they were all amazed and marvelled, saying one to another, Behold, are not all these which speak Galilæans?"
+    },
+    {
+      "ref": "Acts 2:9",
+      "first": "Parthians, and Medes, and Elamites, and the dwellers in Mesopotamia, and in Judea, and Cappadocia, in Pontus, and Asia,",
+      "second": "Parthians, and Medes, and Elamites, and the dwellers in Mesopotamia, and in Judæa, and Cappadocia, in Pontus, and Asia,"
+    },
+    {
+      "ref": "Acts 2:14",
+      "first": "But Peter, standing up with the eleven, lifted up his voice, and said unto them, Ye men of Judea, and all ye that dwell at Jerusalem, be this known unto you, and hearken to my words:",
+      "second": "¶ But Peter, standing up with the eleven, lifted up his voice, and said unto them, Ye men of Judæa, and all yethat dwell at Jerusalem, be this known unto you, and hearken to my words:"
+    },
+    {
+      "ref": "Acts 7:4",
+      "first": "Then came he out of the land of the Chaldeans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell.",
+      "second": "Then came he out of the land of the Chaldæans, and dwelt in Charran: and from thence, when his father was dead, he removed him into this land, wherein ye now dwell."
+    },
+    {
+      "ref": "Acts 8:1",
+      "first": "And Saul was consenting unto his death. And at that time there was a great persecution against the church which was at Jerusalem; and they were all scattered abroad throughout the regions of Judea and Samaria, except the apostles.",
+      "second": "And Saul was consenting unto his death. And at that time there was a great persecution against the church which was at Jerusalem; and they were all scattered abroad throughout the regions of Judæa and Samaria, except the apostles."
+    },
+    {
+      "ref": "Acts 8:40",
+      "first": "But Philip was found at Azotus: and passing through he preached in all the cities, till he came to Cesarea.",
+      "second": "But Philip was found at Azotus: and passing through he preached in all the cities, till he came to Cæsarea."
+    },
+    {
+      "ref": "Acts 9:30",
+      "first": "Which when the brethren knew, they brought him down to Cesarea, and sent him forth to Tarsus.",
+      "second": "Whichwhen the brethren knew, they brought him down to Cæsarea, and sent him forth to Tarsus."
+    },
+    {
+      "ref": "Acts 9:31",
+      "first": "Then had the churches rest throughout all Judea and Galilee and Samaria, and were edified; and walking in the fear of the Lord, and in the comfort of the Holy Ghost, were multiplied.",
+      "second": "Then had the churches rest throughout all Judæa and Galilee and Samaria, and were edified; and walking in the fear of the Lord, and in the comfort of the Holy Ghost, were multiplied."
+    },
+    {
+      "ref": "Acts 9:33",
+      "first": "And there he found a certain man named Eneas, which had kept his bed eight years, and was sick of the palsy.",
+      "second": "And there he found a certain man named Æneas, which had kept his bed eight years, and was sick of the palsy."
+    },
+    {
+      "ref": "Acts 9:34",
+      "first": "And Peter said unto him, Eneas, Jesus Christ maketh thee whole: arise, and make thy bed. And he arose immediately.",
+      "second": "And Peter said unto him, Æneas, Jesus Christ maketh thee whole: arise, and make thy bed. And he arose immediately."
+    },
+    {
+      "ref": "Acts 10:1",
+      "first": "There was a certain man in Cesarea called Cornelius, a centurion of the band called the Italian band,",
+      "second": "There was a certain man in Cæsarea called Cornelius, a centurion of the band called the Italian band,"
+    },
+    {
+      "ref": "Acts 10:24",
+      "first": "And the morrow after they entered into Cesarea. And Cornelius waited for them, and had called together his kinsmen and near friends.",
+      "second": "And the morrow after they entered into Cæsarea. And Cornelius waited for them, and had called together his kinsmen and near friends."
+    },
+    {
+      "ref": "Acts 10:37",
+      "first": "That word, I say, ye know, which was published throughout all Judea, and began from Galilee, after the baptism which John preached;",
+      "second": "That word, I say, ye know, which was published throughout all Judæa, and began from Galilee, after the baptism which John preached;"
+    },
+    {
+      "ref": "Acts 11:1",
+      "first": "And the apostles and brethren that were in Judea heard that the Gentiles had also received the word of God.",
+      "second": "And the apostles and brethren that were in Judæa heard that the Gentiles had also received the word of God."
+    },
+    {
+      "ref": "Acts 11:11",
+      "first": "And, behold, immediately there were three men already come unto the house where I was, sent from Cesarea unto me.",
+      "second": "And, behold, immediately there were three men already come unto the house where I was, sent from Cæsarea unto me."
+    },
+    {
+      "ref": "Acts 11:28",
+      "first": "And there stood up one of them named Agabus, and signified by the spirit that there should be great dearth throughout all the world: which came to pass in the days of Claudius Cesar.",
+      "second": "And there stood up one of them named Agabus, and signified by the Spirit that there should be great dearth throughout all the world: which came to pass in the days of Claudius Cæsar."
+    },
+    {
+      "ref": "Acts 11:29",
+      "first": "Then the disciples, every man according to his ability, determined to send relief unto the brethren which dwelt in Judea:",
+      "second": "Then the disciples, every man according to his ability, determined to send relief unto the brethren which dwelt in Judæa:"
+    },
+    {
+      "ref": "Acts 12:19",
+      "first": "And when Herod had sought for him, and found him not, he examined the keepers, and commanded that they should be put to death. And he went down from Judea to Cesarea, and there abode.",
+      "second": "And when Herod had sought for him, and found him not, he examined the keepers, and commanded that theyshould be put to death. And he went down from Judæa to Cæsarea, and thereabode."
+    },
+    {
+      "ref": "Acts 15:1",
+      "first": "And certain men which came down from Judea taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved.",
+      "second": "And certain men which came down from Judæa taught the brethren, and said, Except ye be circumcised after the manner of Moses, ye cannot be saved."
+    },
+    {
+      "ref": "Acts 17:7",
+      "first": "Whom Jason hath received: and these all do contrary to the decrees of Cesar, saying that there is another king, one Jesus.",
+      "second": "Whom Jason hath received: and these all do contrary to the decrees of Cæsar, saying that there is another king, oneJesus."
+    },
+    {
+      "ref": "Acts 18:22",
+      "first": "And when he had landed at Cesarea, and gone up, and saluted the church, he went down to Antioch.",
+      "second": "And when he had landed at Cæsarea, and gone up, and saluted the church, he went down to Antioch."
+    },
+    {
+      "ref": "Acts 21:8",
+      "first": "And the next day we that were of Paul’s company departed, and came unto Cesarea: and we entered into the house of Philip the evangelist, which was one of the seven; and abode with him.",
+      "second": "And the next daywe that were of Paul’s company departed, and came unto Cæsarea: and we entered into the house of Philip the evangelist, which was oneof the seven; and abode with him."
+    },
+    {
+      "ref": "Acts 21:10",
+      "first": "And as we tarried there many days, there came down from Judea a certain prophet, named Agabus.",
+      "second": "And as we tarried theremany days, there came down from Judæa a certain prophet, named Agabus."
+    },
+    {
+      "ref": "Acts 21:16",
+      "first": "There went with us also certain of the disciples of Cesarea, and brought with them one Mnason of Cyprus, an old disciple, with whom we should lodge.",
+      "second": "There went with us also certainof the disciples of Cæsarea, and brought with them one Mnason of Cyprus, an old disciple, with whom we should lodge."
+    },
+    {
+      "ref": "Acts 23:23",
+      "first": "And he called unto him two centurions, saying, Make ready two hundred soldiers to go to Cesarea, and horsemen threescore and ten, and spearmen two hundred, at the third hour of the night;",
+      "second": "And he called unto himtwo centurions, saying, Make ready two hundred soldiers to go to Cæsarea, and horsemen threescore and ten, and spearmen two hundred, at the third hour of the night;"
+    },
+    {
+      "ref": "Acts 23:33",
+      "first": "Who, when they came to Cesarea, and delivered the epistle to the governor, presented Paul also before him.",
+      "second": "Who, when they came to Cæsarea, and delivered the epistle to the governor, presented Paul also before him."
+    },
+    {
+      "ref": "Acts 25:1",
+      "first": "Now when Festus was come into the province, after three days he ascended from Cesarea to Jerusalem.",
+      "second": "Now when Festus was come into the province, after three days he ascended from Cæsarea to Jerusalem."
+    },
+    {
+      "ref": "Acts 25:4",
+      "first": "But Festus answered, that Paul should be kept at Cesarea, and that he himself would depart shortly thither.",
+      "second": "But Festus answered, that Paul should be kept at Cæsarea, and that he himself would depart shortly thither."
+    },
+    {
+      "ref": "Acts 25:6",
+      "first": "And when he had tarried among them more than ten days, he went down unto Cesarea; and the next day sitting on the judgment seat commanded Paul to be brought.",
+      "second": "And when he had tarried among them more than ten days, he went down unto Cæsarea; and the next day sitting on the judgment seat commanded Paul to be brought."
+    },
+    {
+      "ref": "Acts 25:8",
+      "first": "While he answered for himself, Neither against the law of the Jews, neither against the temple, nor yet against Cesar, have I offended any thing at all.",
+      "second": "While he answered for himself, Neither against the law of the Jews, neither against the temple, nor yet against Cæsar, have I offended any thing at all."
+    },
+    {
+      "ref": "Acts 25:10",
+      "first": "Then said Paul, I stand at Cesar’s judgment seat, where I ought to be judged: to the Jews have I done no wrong, as thou very well knowest.",
+      "second": "Then said Paul, I stand at Cæsar’s judgment seat, where I ought to be judged: to the Jews have I done no wrong, as thou very well knowest."
+    },
+    {
+      "ref": "Acts 25:11",
+      "first": "For if I be an offender, or have committed any thing worthy of death, I refuse not to die: but if there be none of these things whereof these accuse me, no man may deliver me unto them. I appeal unto Cesar.",
+      "second": "For if I be an offender, or have committed any thing worthy of death, I refuse not to die: but if there be none of these things whereof these accuse me, no man may deliver me unto them. I appeal unto Cæsar."
+    },
+    {
+      "ref": "Acts 25:12",
+      "first": "Then Festus, when he had conferred with the council, answered, Hast thou appealed unto Cesar? unto Cesar shalt thou go.",
+      "second": "Then Festus, when he had conferred with the council, answered, Hast thou appealed unto Cæsar? unto Cæsar shalt thou go."
+    },
+    {
+      "ref": "Acts 25:13",
+      "first": "And after certain days king Agrippa and Bernice came unto Cesarea to salute Festus.",
+      "second": "And after certain days king Agrippa and Bernice came unto Cæsarea to salute Festus."
+    },
+    {
+      "ref": "Acts 25:21",
+      "first": "But when Paul had appealed to be reserved unto the hearing of Augustus, I commanded him to be kept till I might send him to Cesar.",
+      "second": "But when Paul had appealed to be reserved unto the hearing of Augustus, I commanded him to be kept till I might send him to Cæsar."
+    },
+    {
+      "ref": "Acts 26:20",
+      "first": "But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judea, and then to the Gentiles, that they should repent and turn to God, and do works meet for repentance.",
+      "second": "But shewed first unto them of Damascus, and at Jerusalem, and throughout all the coasts of Judæa, and thento the Gentiles, that they should repent and turn to God, and do works meet for repentance."
+    },
+    {
+      "ref": "Acts 26:32",
+      "first": "Then said Agrippa unto Festus, This man might have been set at liberty, if he had not appealed unto Cesar.",
+      "second": "Then said Agrippa unto Festus, This man might have been set at liberty, if he had not appealed unto Cæsar."
+    },
+    {
+      "ref": "Acts 27:24",
+      "first": "Saying, Fear not, Paul; thou must be brought before Cesar: and, lo, God hath given thee all them that sail with thee.",
+      "second": "Saying, Fear not, Paul; thou must be brought before Cæsar: and, lo, God hath given thee all them that sail with thee."
+    },
+    {
+      "ref": "Acts 28:19",
+      "first": "But when the Jews spake against it, I was constrained to appeal unto Cesar; not that I had ought to accuse my nation of.",
+      "second": "But when the Jews spake against it, I was constrained to appeal unto Cæsar; not that I had ought to accuse my nation of."
+    },
+    {
+      "ref": "Acts 28:21",
+      "first": "And they said unto him, We neither received letters out of Judea concerning thee, neither any of the brethren that came shewed or spake any harm of thee.",
+      "second": "And they said unto him, We neither received letters out of Judæa concerning thee, neither any of the brethren that came shewed or spake any harm of thee."
+    },
+    {
+      "ref": "Romans 15:31",
+      "first": "That I may be delivered from them that do not believe in Judea; and that my service which I have for Jerusalem may be accepted of the saints;",
+      "second": "That I may be delivered from them that do not believe in Judaea; and that my service which I havefor Jerusalem may be accepted of the saints;"
+    },
+    {
+      "ref": "Romans 16:5",
+      "first": "Likewise greet the church that is in their house. Salute my wellbeloved Epenetus, who is the firstfruits of Achaia unto Christ.",
+      "second": "Likewise greetthe church that is in their house. Salute my wellbeloved Epaenetus, who is the firstfruits of Achaia unto Christ."
+    },
+    {
+      "ref": "Romans 16:27",
+      "first": "To God only wise, be glory through Jesus Christ for ever. Amen. Written to the Romans from Corinthus, and sent by Phebe servant of the church at Cenchrea.",
+      "second": "To God only wise, beglory through Jesus Christ for ever. Amen."
+    },
+    {
+      "ref": "1 Corinthians 4:15",
+      "first": "For though ye have ten thousand instructors in Christ, yet have ye not many fathers: for in Christ Jesus I have begotten you through the gospel.",
+      "second": "For though ye have ten thousand instructers in Christ, yet have yenot many fathers: for in Christ Jesus I have begotten you through the gospel."
+    },
+    {
+      "ref": "1 Corinthians 16:24",
+      "first": "My love be with you all in Christ Jesus. Amen. The first epistle to the Corinthians was written from Philippi by Stephanas, and Fortunatus, and Achaicus, and Timotheus.",
+      "second": "My love bewith you all in Christ Jesus. Amen."
+    },
+    {
+      "ref": "2 Corinthians 1:16",
+      "first": "And to pass by you into Macedonia, and to come again out of Macedonia unto you, and of you to be brought on my way toward Judea.",
+      "second": "And to pass by you into Macedonia, and to come again out of Macedonia unto you, and of you to be brought on my way toward Judaea."
+    },
+    {
+      "ref": "2 Corinthians 13:14",
+      "first": "The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, be with you all. Amen. The second epistle to the Corinthians was written from Philippi, a city of Macedonia, by Titus and Lucas.",
+      "second": "The grace of the Lord Jesus Christ, and the love of God, and the communion of the Holy Ghost, bewith you all. Amen."
+    },
+    {
+      "ref": "Galatians 1:22",
+      "first": "And was unknown by face unto the churches of Judea which were in Christ:",
+      "second": "And was unknown by face unto the churches of Judaea which were in Christ:"
+    },
+    {
+      "ref": "Galatians 6:18",
+      "first": "Brethren, the grace of our Lord Jesus Christ be with your spirit. Amen. Unto the Galatians written from Rome.",
+      "second": "Brethren, the grace of our Lord Jesus Christ bewith your spirit. Amen."
+    },
+    {
+      "ref": "Ephesians 6:24",
+      "first": "Grace be with all them that love our Lord Jesus Christ in sincerity. Amen. Written from Rome unto the Ephesians by Tychicus.",
+      "second": "Grace bewith all them that love our Lord Jesus Christ in sincerity. Amen."
+    },
+    {
+      "ref": "Philippians 4:22",
+      "first": "All the saints salute you, chiefly they that are of Cesar’s household.",
+      "second": "All the saints salute you, chiefly they that are of Caesar’s household."
+    },
+    {
+      "ref": "Philippians 4:23",
+      "first": "The grace of our Lord Jesus Christ be with you all. Amen. It was written to the Philippians from Rome by Epaphroditus.",
+      "second": "The grace of our Lord Jesus Christ bewith you all. Amen."
+    },
+    {
+      "ref": "Colossians 4:18",
+      "first": "The salutation by the hand of me Paul. Remember my bonds. Grace be with you. Amen. Written from Rome to the Colossians by Tychicus and Onesimus.",
+      "second": "The salutation by the hand of me Paul. Remember my bonds. Grace bewith you. Amen."
+    },
+    {
+      "ref": "1 Thessalonians 2:14",
+      "first": "For ye, brethren, became followers of the churches of God which in Judea are in Christ Jesus: for ye also have suffered like things of your own countrymen, even as they have of the Jews:",
+      "second": "For ye, brethren, became followers of the churches of God which in Judaea are in Christ Jesus: for ye also have suffered like things of your own countrymen, even as they haveof the Jews:"
+    },
+    {
+      "ref": "1 Thessalonians 5:28",
+      "first": "The grace of our Lord Jesus Christ be with you. Amen. The first epistle unto the Thessalonians was written from Athens.",
+      "second": "The grace of our Lord Jesus Christ bewith you. Amen."
+    },
+    {
+      "ref": "2 Thessalonians 3:18",
+      "first": "The grace of our Lord Jesus Christ be with you all. Amen. The second epistle to the Thessalonians was written from Athens.",
+      "second": "The grace of our Lord Jesus Christ bewith you all. Amen."
+    },
+    {
+      "ref": "1 Timothy 1:20",
+      "first": "Of whom is Hymeneus and Alexander; whom I have delivered unto Satan, that they may learn not to blaspheme.",
+      "second": "Of whom is Hymenaeus and Alexander; whom I have delivered unto Satan, that they may learn not to blaspheme."
+    },
+    {
+      "ref": "1 Timothy 6:21",
+      "first": "Which some professing have erred concerning the faith. Grace be with thee. Amen. The first to Timothy was written from Laodicea, which is the chiefest city of Phrygia Pacatiana.",
+      "second": "Which some professing have erred concerning the faith. Grace bewith thee. Amen."
+    },
+    {
+      "ref": "2 Timothy 2:17",
+      "first": "And their word will eat as doth a canker: of whom is Hymeneus and Philetus;",
+      "second": "And their word will eat as doth a canker: of whom is Hymenaeus and Philetus;"
+    },
+    {
+      "ref": "2 Timothy 4:22",
+      "first": "The Lord Jesus Christ be with thy spirit. Grace be with you. Amen. The second epistle unto Timotheus, ordained the first bishop of the church of the Ephesians, was written from Rome, when Paul was brought before Nero the second time.",
+      "second": "The Lord Jesus Christ bewith thy spirit. Grace bewith you. Amen."
+    },
+    {
+      "ref": "Titus 3:15",
+      "first": "All that are with me salute thee. Greet them that love us in the faith. Grace be with you all. Amen. It was written to Titus, ordained the first bishop of the church of the Cretians, from Nicopolis of Macedonia.",
+      "second": "All that are with me salute thee. Greet them that love us in the faith. Grace bewith you all. Amen."
+    },
+    {
+      "ref": "Philemon 1:25",
+      "first": "The grace of our Lord Jesus Christ be with your spirit. Amen. Written from Rome to Philemon, by Onesimus a servant.",
+      "second": "The grace of our Lord Jesus Christ bewith your spirit. Amen."
+    },
+    {
+      "ref": "Hebrews 13:25",
+      "first": "Grace be with you all. Amen. Written to the Hebrews from Italy by Timothy.",
+      "second": "Grace bewith you all. Amen."
+    }
+  ],
+  "strongs_entries_with_usage": 14047,
+  "story_breaks_at_source_paragraph": 122,
+  "story_breaks_requiring_literary_review": 68
+}

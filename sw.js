@@ -2,7 +2,7 @@
    Version comes from the registration URL (sw.js?v=N in index.html),
    so updates only ever require editing index.html. */
 const V='mywalk-'+(new URL(self.location).searchParams.get('v')||'1');
-const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=1','cloud-sync.js?v=7','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
+const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=1','cloud-sync.js?v=7','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','overhaul.css?v=6','walk-model.js?v=4','overhaul.js?v=6','data/schedule.json','data/optional-readings.json','data/bible-images.json','data/nature-scenes.json','data/home-scripture.json','data/legacy-plan.json','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
 
 self.addEventListener('install',e=>{
   e.waitUntil(caches.open(V).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()));
@@ -44,9 +44,11 @@ self.addEventListener('fetch',e=>{
         const copy=res.clone(); caches.open(V).then(c=>c.put(req,copy));
       }
       return res;
-    }).catch(()=>caches.match('index.html')))
+    }).catch(()=>Response.error()))
   );
 });
 
 // Let the page tell us to activate a waiting worker immediately.
 self.addEventListener('message',e=>{ if(e.data==='skipWaiting') self.skipWaiting(); });
+// Generated category images are small; cache them for offline study.
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>Promise.all(['doctrine','people','topics','questions'].flatMap(k=>['champagne','ice-blue','teal','plum'].map(v=>'assets/study/'+k+'-'+v+'.webp')).concat(['assets/prayer-water.jpg']).map(u=>c.add(u).catch(()=>{})))));});

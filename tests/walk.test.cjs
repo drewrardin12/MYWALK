@@ -1,0 +1,10 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');require('../walk-model.js');const M=globalThis.MyWalkV2;
+const plan=[{day:1,story:[{id:'s'}],nonstory:[{id:'n'}]},{day:2,story:[{id:'s2'}],nonstory:[{id:'n2'}]}];
+function full(day){return {day,reads:Object.fromEntries((day===1?['s','n']:['s2','n2']).map(id=>[id,{done:true}])),notes:{7:{html:'<p>My application.</p>'}},prayed:true};}
+test('migration leaves legacy reading, notes and study data unchanged',()=>{const s={reads:{1:true},notes:[{text:'existing'}],study:{position:{old:'keep'}}};const before=JSON.stringify(s);M.ensure(s);const {walkV2,...legacy}=s;assert.equal(JSON.stringify(legacy),before);});
+test('one free-thought note meets WALK minimum but not full questionnaire',()=>{const d=full(1);assert.equal(M.walk(d,['s','n']),true);assert.equal(M.questionnaire(d),false);});
+test('Not applicable is valid for questionnaire but cannot earn note minimum',()=>{const d=full(1);d.notes=Object.fromEntries(Array.from({length:7},(_,i)=>[i,{na:true}]));assert.equal(M.questionnaire(d),true);assert.equal(M.written(d),false);assert.equal(M.walk(d,['s','n']),false);});
+test('late completion counts in original month but cannot restore streak',()=>{const s={};M.ensure(s).days={'2026-01-01':full(1),'2026-01-02':{...full(2),onTime:true}};const count=M.count(s,plan,'2026-01-02');assert.equal(count.month,2);assert.equal(count.year,2);assert.equal(count.streak,1);});
+test('prayer is required even for late completed reading',()=>{const s={};const d=full(1);d.prayed=false;M.ensure(s).days={'2026-01-01':d};assert.equal(M.count(s,plan,'2026-01-02').total,0);});
+test('unmarking a reading invalidates totals and streak',()=>{const s={};const d={...full(1),onTime:true};d.reads.s.done=false;M.ensure(s).days={'2026-01-01':d};assert.equal(M.count(s,plan,'2026-01-01').streak,0);assert.equal(M.count(s,plan,'2026-01-01').total,0);});
+test('optional checklist cannot affect daily WALK progress',()=>{const s={};M.ensure(s).optional.test={done:true};assert.equal(M.count(s,plan,'2026-01-01').total,0);});

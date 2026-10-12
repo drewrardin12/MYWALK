@@ -1,0 +1,312 @@
+[
+  {
+    "day": 1,
+    "key": "mountain",
+    "image": "assets/nature/mountain.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Mountain Sunrise"
+  },
+  {
+    "day": 2,
+    "key": "forest",
+    "image": "assets/nature/forest.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Morning Forest"
+  },
+  {
+    "day": 3,
+    "key": "coast",
+    "image": "assets/nature/coast.webp",
+    "bg": "#242333",
+    "card": "#3c3b51",
+    "accent": "#d2badb",
+    "time": "dusk",
+    "scene": "Coastal Dusk"
+  },
+  {
+    "day": 4,
+    "key": "alpine-meadow",
+    "image": "assets/nature/alpine-meadow.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Mountain meadow with wildflowers and distant slate peaks at sunrise"
+  },
+  {
+    "day": 5,
+    "key": "birch-grove",
+    "image": "assets/nature/birch-grove.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Quiet birch grove, pale trunks and soft golden morning mist"
+  },
+  {
+    "day": 6,
+    "key": "forest-afternoon",
+    "image": "assets/nature/forest-afternoon.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "day",
+    "scene": "Deep green forest canopy and stream in calm afternoon light"
+  },
+  {
+    "day": 7,
+    "key": "river-bend",
+    "image": "assets/nature/river-bend.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Wide gentle river winding through wooded hills at dawn"
+  },
+  {
+    "day": 8,
+    "key": "misty-lake",
+    "image": "assets/nature/misty-lake.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "dawn",
+    "scene": "Still mountain lake with delicate mist and pale pink sunrise"
+  },
+  {
+    "day": 9,
+    "key": "alpine-noon",
+    "image": "assets/nature/alpine-noon.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "day",
+    "scene": "Clear alpine lake in restrained midday light with blue-gray peaks"
+  },
+  {
+    "day": 10,
+    "key": "coastal-morning",
+    "image": "assets/nature/coastal-morning.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Rocky coastline with soft early morning light and calm sea"
+  },
+  {
+    "day": 11,
+    "key": "desert-dawn",
+    "image": "assets/nature/desert-dawn.webp",
+    "bg": "#20291f",
+    "card": "#374633",
+    "accent": "#d5d2a4",
+    "time": "dawn",
+    "scene": "Unspoiled desert dunes with warm early sunlight and violet shadows"
+  },
+  {
+    "day": 12,
+    "key": "coastal-overcast",
+    "image": "assets/nature/coastal-overcast.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "day",
+    "scene": "Atmospheric rocky shore and silvery sea under soft overcast sky"
+  },
+  {
+    "day": 13,
+    "key": "snowy-morning",
+    "image": "assets/nature/snowy-morning.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Snow-covered pine forest with soft icy morning light"
+  },
+  {
+    "day": 14,
+    "key": "green-valley",
+    "image": "assets/nature/green-valley.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Lush rolling valley under a golden dawn sky"
+  },
+  {
+    "day": 15,
+    "key": "sunset-valley",
+    "image": "assets/nature/sunset-valley.webp",
+    "bg": "#242333",
+    "card": "#3c3b51",
+    "accent": "#d2badb",
+    "time": "dusk",
+    "scene": "Quiet valley with warm muted sunset and long natural shadows"
+  },
+  {
+    "day": 16,
+    "key": "fern-woods",
+    "image": "assets/nature/fern-woods.webp",
+    "bg": "#20291f",
+    "card": "#374633",
+    "accent": "#d5d2a4",
+    "time": "dawn",
+    "scene": "Forest floor with ferns, soft morning rays and a small clear creek"
+  },
+  {
+    "day": 17,
+    "key": "waterfall",
+    "image": "assets/nature/waterfall.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Natural waterfall in a mossy woodland in soft morning light"
+  },
+  {
+    "day": 18,
+    "key": "rainy-woods",
+    "image": "assets/nature/rainy-woods.webp",
+    "bg": "#2b242c",
+    "card": "#463642",
+    "accent": "#e1bbc8",
+    "time": "day",
+    "scene": "Peaceful rain-damp woods with rich green foliage and gray sky"
+  },
+  {
+    "day": 19,
+    "key": "marsh-dawn",
+    "image": "assets/nature/marsh-dawn.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "dawn",
+    "scene": "Peaceful marsh grasses and open water under a pale dawn sky"
+  },
+  {
+    "day": 20,
+    "key": "tropical-morning",
+    "image": "assets/nature/tropical-morning.webp",
+    "bg": "#2b242c",
+    "card": "#463642",
+    "accent": "#e1bbc8",
+    "time": "dawn",
+    "scene": "Quiet tropical shore with natural palms and pale morning sky"
+  },
+  {
+    "day": 21,
+    "key": "lavender-mountains",
+    "image": "assets/nature/lavender-mountains.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dusk",
+    "scene": "Remote mountain ridges under a muted lavender twilight sky"
+  },
+  {
+    "day": 22,
+    "key": "autumn-morning",
+    "image": "assets/nature/autumn-morning.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Autumn woods beside still water, early morning amber light"
+  },
+  {
+    "day": 23,
+    "key": "highland-dawn",
+    "image": "assets/nature/highland-dawn.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Remote rugged highlands, low morning clouds and restrained rose light"
+  },
+  {
+    "day": 24,
+    "key": "river-evening",
+    "image": "assets/nature/river-evening.webp",
+    "bg": "#2b242c",
+    "card": "#463642",
+    "accent": "#e1bbc8",
+    "time": "dusk",
+    "scene": "Broad calm river and woodland in copper evening light"
+  },
+  {
+    "day": 25,
+    "key": "ocean-sunrise",
+    "image": "assets/nature/ocean-sunrise.webp",
+    "bg": "#20291f",
+    "card": "#374633",
+    "accent": "#d5d2a4",
+    "time": "dawn",
+    "scene": "Calm open ocean seen from natural rocky shore at sunrise"
+  },
+  {
+    "day": 26,
+    "key": "blue-mountain",
+    "image": "assets/nature/blue-mountain.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "dawn",
+    "scene": "Layered blue mountain ridges in clear early morning light"
+  },
+  {
+    "day": 27,
+    "key": "winter-dusk",
+    "image": "assets/nature/winter-dusk.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dusk",
+    "scene": "Snowy woodland at dusk with blue and lilac light"
+  },
+  {
+    "day": 28,
+    "key": "prairie-dawn",
+    "image": "assets/nature/prairie-dawn.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Natural prairie grasses under a broad early morning sky"
+  },
+  {
+    "day": 29,
+    "key": "canyon-morning",
+    "image": "assets/nature/canyon-morning.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Sandstone canyon with soft dawn light entering the valley"
+  },
+  {
+    "day": 30,
+    "key": "still-lake-evening",
+    "image": "assets/nature/still-lake-evening.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dusk",
+    "scene": "Still lake reflecting a softly colored peach evening sky"
+  },
+  {
+    "day": 31,
+    "key": "glacial-morning",
+    "image": "assets/nature/glacial-morning.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Glacial lake and snowy distant peaks in soft sunrise light"
+  }
+]
