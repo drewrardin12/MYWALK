@@ -740,7 +740,7 @@ body.wing-home .homehead{margin-bottom:6px}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
-<link rel="stylesheet" href="overhaul.css?v=9">
+<link rel="stylesheet" href="overhaul.css?v=10">
 </head>
 <body>
 <div id="heroFixed"></div>
@@ -2147,7 +2147,7 @@ function prayTimerHTML(c){
     return `<div class="pt-run">
       <button class="pt-x" onclick="stopListTimer()" aria-label="Stop timer">${ic('refresh')}</button>
       <div class="pt-count" id="pt-count">${fmtClock(left)}</div>
-      <div class="pt-bar"><span id="pt-bar" style="width:${listPerCard?Math.round(100*left/listPerCard):0}%"></span></div>
+      <div class="pt-bar"><span id="pt-bar" style="width:${listPerCard?Math.round(100*(1-left/listPerCard)):0}%"></span></div>
       <div class="pt-seg" id="pt-seg">${flashPos+1} of ${n}</div>
     </div>`;
   }
@@ -2170,7 +2170,7 @@ function startListTimer(totalSec){
     const left=Math.max(0,Math.ceil((listSegEnd-Date.now())/1000));
     const cd=el('pt-count'), bar=el('pt-bar'), seg=el('pt-seg');
     if(cd) cd.textContent=fmtClock(left);
-    if(bar) bar.style.width=(listPerCard?Math.round(100*left/listPerCard):0)+'%';
+    if(bar) bar.style.width=(listPerCard?Math.round(100*(1-left/listPerCard)):0)+'%';
     if(seg) seg.textContent=(flashPos+1)+' of '+prayCount();
     if(left<=0){
       if(flashPos>=prayCount()-1){ stopListTimer(); return; }
@@ -2198,7 +2198,7 @@ function startPrayTimer(sec){
     const left=Math.max(0,Math.ceil((prayTimerEnd-Date.now())/1000));
     const cd=el('pt-count'), bar=el('pt-bar');
     if(cd) cd.textContent=fmtClock(left);
-    if(bar) bar.style.width=(prayTimerDur?Math.round(100*left/prayTimerDur):0)+'%';
+    if(bar) bar.style.width=(prayTimerDur?Math.round(100*(1-left/prayTimerDur)):0)+'%';
     if(left<=0){ prayChime(); prayFlashCue(); clearInterval(prayTimerId); prayTimerId=null;
       praySkip(); // gently move to the next prayer
     }
@@ -2264,7 +2264,7 @@ function runEachSegment(){
     const left=Math.max(0,Math.ceil((eachEnd-Date.now())/1000));
     const cd=el('pt-count'), bar=el('pt-bar');
     if(cd) cd.textContent=fmtClock(left);
-    if(bar) bar.style.width=(eachSegDur?Math.round(100*left/eachSegDur):0)+'%';
+    if(bar) bar.style.width=(eachSegDur?Math.round(100*(1-left/eachSegDur)):0)+'%';
     if(left<=0){ addStrike(eachCurrentId); eachNextSegment(); }
   },250);
   prayRerender();
@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=75').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=76').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3401,7 +3401,7 @@ function showUpdateBanner(reg){
 window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},refresh:()=>navApply(navDesc()),modal,escape:esc});
 </script>
 <script src="walk-model.js?v=4"></script>
-<script src="overhaul.js?v=8"></script>
+<script src="overhaul.js?v=9"></script>
 <script>
 boot().then(()=>window.mywalkCloud.start()).catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
