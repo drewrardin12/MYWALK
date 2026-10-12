@@ -15,3 +15,6 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 .mw-history small{display:block;font-size:11px;line-height:1.5;margin:5px 0;color:var(--muted)}
 
 .mw-hymn-title{font:400 22px/1.15 "EB Garamond",Georgia,serif;text-align:left;color:var(--text);background:none;border:0;padding:8px 0}.mw-hymn-lyrics{padding:24px 4px}.mw-hymn-lyrics .vr-text{white-space:pre-line}.mw-button[href]{display:inline-flex;align-items:center;text-decoration:none}
+
+/* Requested 45% reduction from the 27px memory-verse text. */
+.mw-memory blockquote{font-size:14.85px;line-height:1.65}

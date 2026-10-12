@@ -740,7 +740,7 @@ body.wing-home .homehead{margin-bottom:6px}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
-<link rel="stylesheet" href="overhaul.css?v=7">
+<link rel="stylesheet" href="overhaul.css?v=8">
 </head>
 <body>
 <div id="heroFixed"></div>
@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=73').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=74').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3401,7 +3401,7 @@ function showUpdateBanner(reg){
 window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},refresh:()=>navApply(navDesc()),modal,escape:esc});
 </script>
 <script src="walk-model.js?v=4"></script>
-<script src="overhaul.js?v=7"></script>
+<script src="overhaul.js?v=8"></script>
 <script>
 boot().then(()=>window.mywalkCloud.start()).catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
