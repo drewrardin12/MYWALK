@@ -27,3 +27,5 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 .mw-toolbar button{transition:background-color .16s ease,color .16s ease,box-shadow .16s ease}.mw-toolbar button[aria-pressed="true"]{background:var(--accent);color:var(--bg);box-shadow:inset 0 -3px 0 #0003}.mw-toolbar button:active{transform:scale(.94)}@media(prefers-reduced-motion:reduce){.mw-toolbar button{transition:none}.mw-toolbar button:active{transform:none}}
 
 .mw-optional-button{margin:20px 0 24px;min-height:48px;padding:13px 22px}
+
+.mw-stop-icon{display:block;width:12px;height:12px;border-radius:2px;background:currentColor}.mw-timer-controls button[aria-label="Stop prayer timer"]{width:44px;min-height:44px;justify-content:center;padding:8px}
