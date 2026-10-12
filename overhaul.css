@@ -13,3 +13,5 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 .mw-media-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.45;margin-top:8px}.mw-media-credit{font-size:13px;line-height:1.5;color:var(--muted);margin-top:5px}.mw-art{aspect-ratio:1;flex-shrink:0}
 
 .mw-history small{display:block;font-size:11px;line-height:1.5;margin:5px 0;color:var(--muted)}
+
+.mw-hymn-title{font:400 22px/1.15 "EB Garamond",Georgia,serif;text-align:left;color:var(--text);background:none;border:0;padding:8px 0}.mw-hymn-lyrics{padding:24px 4px}.mw-hymn-lyrics .vr-text{white-space:pre-line}.mw-button[href]{display:inline-flex;align-items:center;text-decoration:none}
