@@ -128,3 +128,7 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 
 /* A subtle extra stroke for the personal font only; preserve font metrics. */
 :root[data-handwriting="personal"] :is(.mw-home-date,.mw-handwritten-title,.mw-lined,.mw-journal-text){-webkit-text-stroke:0.15px currentColor}
+
+/* Keep the home date readable over every landscape. */
+.mw-home-date{font-weight:700;color:#fff8e8;text-shadow:0 2px 3px #000c,0 0 10px #0009}
+:root[data-handwriting="personal"] .mw-home-date{-webkit-text-stroke:0.35px currentColor}
