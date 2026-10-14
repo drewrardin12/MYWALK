@@ -740,7 +740,7 @@ body.wing-home .homehead{margin-bottom:6px}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
-<link rel="stylesheet" href="overhaul.css?v=19">
+<link rel="stylesheet" href="overhaul.css?v=20">
 </head>
 <body>
 <div id="heroFixed"></div>
@@ -3252,7 +3252,7 @@ function renderNotes(){
       <div class="row"><div class="grow"><div style="font-family:Playfair Display,serif;font-weight:600;font-size:16px">${esc(titleCase(n.subject))}</div><div class="tiny">${esc(n.date)}</div></div>
         <div class="star">${'\u2606'}</div>
         <button class="iconb" aria-label="Delete note" onclick="delNote(${n.id})">✕</button></div>
-      <div class="mt" style="white-space:pre-wrap;font-size:15px">${esc(n.text)}</div>
+      <div class="mt mw-journal-text" style="white-space:pre-wrap">${esc(n.text)}</div>
     </div>`).join('')
     : `<div class="card center small" style="padding:36px 16px">Notes you attach to topics and characters gather here.</div>`}
   <div class="card">
@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=86').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=87').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3402,7 +3402,7 @@ window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data
 </script>
 <script src="sheet-gesture.js?v=1"></script>
 <script src="walk-model.js?v=5"></script>
-<script src="overhaul.js?v=17"></script>
+<script src="overhaul.js?v=18"></script>
 <script>
 boot().then(()=>window.mywalkCloud.start()).catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
