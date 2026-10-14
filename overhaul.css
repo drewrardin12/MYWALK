@@ -125,3 +125,6 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 @font-face{font-family:'MyHandwriting';src:url('assets/fonts/my-handwriting.ttf') format('truetype');size-adjust:235%;font-weight:400;font-style:normal;font-display:swap}
 :root{--mw-handwriting:'MyHandwriting','Rock Salt',cursive}
 #mw-handwriting-choice{display:block;width:100%;margin-top:10px}
+
+/* A subtle extra stroke for the personal font only; preserve font metrics. */
+:root[data-handwriting="personal"] :is(.mw-home-date,.mw-handwritten-title,.mw-lined,.mw-journal-text){-webkit-text-stroke:0.15px currentColor}
