@@ -72,3 +72,15 @@ nav button.on{box-shadow:0 2px 5px #00000016}
 @supports(backdrop-filter:blur(16px)){nav{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}}
 @keyframes mw-sheet-enter{from{transform:translateY(28px);opacity:.6}to{transform:translateY(0);opacity:1}}
 @media(prefers-reduced-motion:reduce){button,.mw-button,.btn,.mw-back,.mw-round,.iconb,.mw-check,.mw-toolbar button,.pt-pill,nav button{transition:none!important}.mw-button:active,.btn:active,.mw-back:active,.mw-round:active,.mw-check:active,.pt-pill:active{transform:none}.modal .mbox{animation:none}}
+
+/* Remove the legacy outer app gutter on the wings with landscape banners. */
+body:not(.wing-study) #app{padding:0 0 28px;max-width:800px}
+body:not(.wing-study) .view{--mw-banner-edge:20px}
+body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:calc(-1 * var(--mw-banner-edge));margin-right:calc(-1 * var(--mw-banner-edge))}
+@media(min-width:800px){body:not(.wing-study) .view{--mw-banner-edge:32px}}
+.mw-settings-tile,.mw-prayer-tools,.mw-study-progress,.mw-focussettings summary,.mw-focussettings .mw-menu{background:var(--card)}
+.mw-settings-tile [aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+#mw-restore-date{display:block;width:100%;margin:10px 0 16px}
+
+.flash{background:linear-gradient(140deg,color-mix(in srgb,var(--card) 80%,var(--accent)),var(--card))!important}
+.flash.prayed{background:linear-gradient(140deg,color-mix(in srgb,var(--card) 78%,#6ea58a),var(--card))!important}

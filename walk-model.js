@@ -6,11 +6,15 @@ function ensure(state){if(!state.walkV2)state.walkV2={version:VERSION,days:{},op
 function text(html){return String(html||'').replace(/<[^>]*>/g,' ').replace(/&nbsp;/g,' ').trim();}
 function written(day){return Object.values(day.notes||{}).some(a=>text(a.html).length>0);}
 function reading(day,required){return required.length>0&&required.every(id=>day.reads?.[id]?.done);}
-function walk(day,required){return reading(day,required)&&!!day.prayed&&written(day);}
+function walk(day,required){return !!day.manualCompletion?.confirmedAt||(reading(day,required)&&!!day.prayed&&written(day));}
 function questionnaire(day){return questions.slice(0,7).every((q,i)=>text(day.notes?.[i]?.html)||day.notes?.[i]?.na);}
 function record(state,date,dayNumber){const v=ensure(state);if(!v.days[date])v.days[date]={day:dayNumber,reads:{},notes:{},question:0};return v.days[date];}
+function confirmCompletion(state,date,dayNumber,today,at){
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(date)||localDate(new Date(date+'T12:00:00'))!==date||date>=today||!Number.isInteger(dayNumber)||dayNumber<1||dayNumber>350)return false;
+ const d=record(state,date,dayNumber);d.manualCompletion={confirmedAt:at||new Date().toISOString(),completedOn:date};d.onTime=true;return true;
+}
 function count(state,schedule,today){const days=ensure(state).days;const done=[];for(const [date,d] of Object.entries(days)){const plan=schedule[d.day-1];if(plan&&walk(d,[...plan.story,...plan.nonstory].map(c=>c.id)))done.push(date);}
 let streak=0;let date=new Date(today+'T12:00:00');if(!days[today]?.onTime)date.setDate(date.getDate()-1);for(let i=0;i<3660;i++){const key=localDate(date);const row=days[key],plan=row&&schedule[row.day-1];if(!row?.onTime||!plan||!walk(row,[...plan.story,...plan.nonstory].map(c=>c.id)))break;streak++;date.setDate(date.getDate()-1);}return {streak,month:done.filter(x=>x.slice(0,7)===today.slice(0,7)).length,year:done.filter(x=>x.slice(0,4)===today.slice(0,4)).length,total:done.length};}
 function localDate(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
-root.MyWalkV2={VERSION,questions,ensure,text,written,reading,walk,questionnaire,record,count,localDate};
+root.MyWalkV2={VERSION,questions,ensure,text,written,reading,walk,questionnaire,record,count,confirmCompletion,localDate};
 })(globalThis);
