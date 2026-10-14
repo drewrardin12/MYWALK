@@ -107,3 +107,11 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 .mw-settings>.mw-grid{gap:10px;margin:12px 0 18px!important}
 .mw-settings>.mw-grid .mw-panel{margin:0;padding:16px;font-size:13px}
 @media(min-width:650px){.modal .mbox:has(.mw-settings){padding-left:26px;padding-right:26px}.mw-settings .mw-settings-tile{padding:22px}}
+
+/* The grabber is a working control, not a decorative pseudo-element. */
+.modal .mbox::before{display:none!important}
+.mw-sheet-handle{position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:center;width:100%;height:28px;min-height:28px;margin:-14px 0 12px;padding:0;border:0;border-radius:8px;background:var(--card);cursor:grab;touch-action:none;user-select:none;-webkit-user-select:none}
+.mw-sheet-handle span{display:block;width:36px;height:5px;border-radius:4px;background:color-mix(in srgb,var(--text) 28%,transparent);pointer-events:none}
+.mw-sheet-handle:active{cursor:grabbing;transform:none;opacity:1}
+.mw-sheet-handle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.modal .mbox:has(.mw-settings) .mw-sheet-handle{margin:-10px 0 14px}
