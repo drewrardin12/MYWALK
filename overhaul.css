@@ -115,3 +115,9 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 .mw-sheet-handle:active{cursor:grabbing;transform:none;opacity:1}
 .mw-sheet-handle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .modal .mbox:has(.mw-settings) .mw-sheet-handle{margin:-10px 0 14px}
+
+/* Saved journal prose uses the cover's handwriting; editors retain their typing font. */
+.mw-lined,.mw-journal-text{font-family:'Rock Salt',cursive;font-size:14px;line-height:36px;letter-spacing:0;overflow-wrap:anywhere}
+.mw-lined{background:repeating-linear-gradient(to bottom,transparent 0 35px,#beae8c25 35px 36px)}
+.mw-lined :is(p,div,ul,ol,li),.mw-journal-text :is(p,div,ul,ol,li){font-family:inherit;line-height:36px}
+.mw-lined :is(p,div){margin:0}
