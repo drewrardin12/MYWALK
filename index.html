@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=95').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=96').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3403,6 +3403,7 @@ window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data
 <script src="sheet-gesture.js?v=1"></script>
 <script src="walk-model.js?v=5"></script>
 <script src="overhaul.js?v=21"></script>
+<script src="note-actions.js?v=1"></script>
 <script>
 boot().then(()=>window.mywalkCloud.start()).catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });
 
