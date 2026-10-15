@@ -33,7 +33,7 @@ nav{max-width:560px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);
 #pv,.prayfocus{overflow-x:clip}.flash{will-change:transform}
 
 /* iOS-inspired controls and surfaces. Preserve the approved editorial type. */
-:root{--mw-ui-font:-apple-system,BlinkMacSystemFont,'SF Pro Text','Helvetica Neue',Arial,sans-serif;--mw-hairline:color-mix(in srgb,var(--text) 12%,transparent)}
+:root{--mw-ui-font:'Montserrat',Arial,sans-serif;--mw-hairline:color-mix(in srgb,var(--text) 12%,transparent)}
 body{font-family:var(--mw-ui-font);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 button,input,select,textarea,.mw-label,.mw-sub,.mw-ref,.mw-passage h3,.mw-step,.mw-search{font-family:var(--mw-ui-font)}
 button,a,summary{-webkit-tap-highlight-color:transparent}
@@ -132,3 +132,6 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 .mw-account-identity{font-size:14px;font-weight:600;overflow-wrap:anywhere;margin:0 0 8px}.mw-account-dot{width:10px;height:10px;border-radius:50%;background:var(--text2);flex:none}.mw-account-card[data-cloud-connected="true"] .mw-account-dot{background:#86c99c}.mw-settings .mw-sync-time{font-size:11px}.mw-device-help{margin-top:18px;font-size:13px;line-height:1.65}.mw-device-help summary{cursor:pointer;padding:8px 0;color:var(--accent)}.mw-device-help ol{padding-left:20px;margin:8px 0 14px}.mw-device-help li{margin:0 0 10px}.mw-device-help a{color:var(--accent);overflow-wrap:anywhere}.mw-settings .mw-preview-account{margin:14px 0 0}
 
 @font-face{font-family:'Caligrapher';src:url('assets/fonts/caligrapher.ttf') format('truetype');size-adjust:180%;font-weight:400;font-style:normal;font-display:swap}
+
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-italic.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap}
