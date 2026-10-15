@@ -81,7 +81,7 @@ window.MyWalkCloud = function(adapter) {
       ${!configured()?'<p class="small">Cloud sync is waiting for the one-time account setup. Your entries are still saved on this device.</p>':
       user?`<p class="small">Signed in as ${adapter.escape(user.email||'')}</p><div class="btnrow"><button class="btn solid" id="cloud-now">Sync now</button><button class="btn ghost" id="cloud-out">Sign out</button></div><label class="small" for="cloud-new-password">Set a MYWALK sign-in password</label><input id="cloud-new-password" type="password" autocomplete="new-password" minlength="10" class="input"><button class="btn ghost" id="cloud-set-password">Save sign-in password</button><p class="tiny">Use at least 10 characters. This is separate from your database password. It lets you sign in on your other devices without another email.</p>`:
       '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" required class="input" placeholder="you@example.com"><label class="small" for="cloud-password">MYWALK sign-in password (if already set)</label><input id="cloud-password" type="password" autocomplete="current-password" class="input"><div class="btnrow"><button class="btn solid" id="cloud-password-login">Sign in with password</button><button class="btn ghost" id="cloud-login">Email me a sign-in link</button></div><p class="tiny">Open the link on this device, in the browser where you use MYWALK.</p>'}
-      ${conflict?'<p class="small">This device and the cloud have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.</p><div class="btnrow"><button class="btn ghost" id="cloud-copies">Download both copies</button><button class="btn solid" id="cloud-use">Use cloud version</button><button class="btn ghost" id="cloud-keep">Use this device’s version</button></div>':''}
+      ${conflict?'<p class="small">This device and the cloud have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.</p><div class="btnrow"><button class="btn ghost" id="cloud-device-copy">Download this device’s copy</button><button class="btn ghost" id="cloud-cloud-copy">Download cloud copy</button><button class="btn solid" id="cloud-use">Use cloud version</button><button class="btn ghost" id="cloud-keep">Use this device’s version</button></div>':''}
       <p class="tiny">Edits save offline and sync when you reconnect. Sign in with the same email on your phone, iPad and laptop.</p>`);
     panelElement.dataset.cloudPanel='true';
     notify(status);
@@ -106,7 +106,8 @@ window.MyWalkCloud = function(adapter) {
       notify('Sign-in password saved. Save it in your password manager and use it on your other devices.');
     });
     bind('cloud-out',async()=>{if(busy) throw new Error('Wait for the current sync to finish.');const {error}=await client.auth.signOut();if(error)throw error;user=null;conflict=null;notify('Signed out. Your entries remain on this device.');panel();});
-    bind('cloud-copies',()=>{download(snapshot(),'device');download(conflict.data,'cloud');});
+    bind('cloud-device-copy',()=>download(snapshot(),'device'));
+    bind('cloud-cloud-copy',()=>download(conflict.data,'cloud'));
     bind('cloud-use',()=>resolve(true)); bind('cloud-keep',()=>resolve(false));
   }
   async function session(value){
