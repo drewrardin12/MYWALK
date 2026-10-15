@@ -11,7 +11,7 @@ window.MyWalkCloud = function(adapter) {
   }
   const snapshot=()=>JSON.parse(JSON.stringify(adapter.snapshot()));
   const persist=()=>localStorage.setItem(key,JSON.stringify(meta));
-  const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message); };
+  const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message); document.querySelectorAll('[data-cloud-identity]').forEach(el=>el.textContent=user?'Signed in as '+(user.email||'your account'):'Not signed in on this device'); document.querySelectorAll('[data-cloud-connected]').forEach(el=>el.dataset.cloudConnected=String(!!user)); document.querySelectorAll('[data-cloud-last-sync]').forEach(el=>el.textContent=meta.lastSynced?'Last synced '+new Date(meta.lastSynced).toLocaleString():'No successful sync on this device yet.'); };
   const configured=()=>!!(cfg.url&&cfg.publishableKey);
   function changed(){ clearTimeout(timer); timer=setTimeout(sync,1200); }
   function flushRefresh(){
@@ -43,12 +43,12 @@ window.MyWalkCloud = function(adapter) {
           return;
         }
         if(remote&&MyWalkMerge.equal(result.data,remote.data)){
-          meta.base=remote.data; persist(); apply(remote.data); notify('All changes synced.'); return;
+          meta.base=remote.data; meta.lastSynced=new Date().toISOString(); persist(); apply(remote.data); notify('All changes synced.'); return;
         }
         const {data:revision,error:writeError}=await client.rpc('mywalk_save',{expected_revision:remote?.revision||0,new_data:result.data});
         if(writeError) throw writeError;
         if(revision===null) continue;
-        meta.base=result.data; persist();
+        meta.base=result.data; meta.lastSynced=new Date().toISOString(); persist();
         // Preserve edits made while the request was in flight.
         const latest=MyWalkMerge.merge(local,snapshot(),result.data);
         if(latest.conflicts.length){ changed(); return; }
@@ -111,13 +111,13 @@ window.MyWalkCloud = function(adapter) {
   }
   async function session(value){
     const next=value?.user;
-    if(!next){user=null;return;}
+    if(!next){user=null;notify('Sign in to sync your devices.');return;}
     if(meta.owner&&meta.owner!==next.id){
       await client.auth.signOut(); user=null;
       notify('This device’s entries belong to another account. Sign back into that account to sync.');return;
     }
     const wasSignedIn=!!user;
-    user=next;meta.owner=user.id;persist();await sync();
+    user=next;meta.owner=user.id;persist();notify('Signed in. Checking your saved changes…');await sync();
     if(!wasSignedIn && panelElement?.isConnected) panel();
   }
   async function start(){
@@ -126,7 +126,7 @@ window.MyWalkCloud = function(adapter) {
       if(!window.supabase) throw new Error('Connect to the internet to enable sync.');
       if(!client) client=window.supabase.createClient(cfg.url,cfg.publishableKey);
       client.auth.onAuthStateChange((event,value)=>{
-        if(event==='SIGNED_OUT'){user=null;conflict=null;}
+        if(event==='SIGNED_OUT'){user=null;conflict=null;notify('Signed out. Your entries remain on this device.');}
         else setTimeout(()=>session(value),0);
       });
       const {data,error}=await client.auth.getSession();if(error) throw error;await session(data.session);
@@ -138,5 +138,5 @@ window.MyWalkCloud = function(adapter) {
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')sync();});
   // A stale browser tab must reload local changes before it can save.
   window.addEventListener('storage',event=>{if(event.key===adapter.storageKey&&event.newValue) location.reload();});
-  return {start,changed,panel,getStatus:()=>status};
+  return {start,changed,panel,getStatus:()=>status,getAccount:()=>({signedIn:!!user,email:user?.email||'',status,lastSynced:meta.lastSynced||null,needsReview:!!conflict})};
 };
