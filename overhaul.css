@@ -128,3 +128,5 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 
 /* A subtle extra stroke for the personal font only; preserve font metrics. */
 :root[data-handwriting="personal"] :is(.mw-home-date,.mw-handwritten-title,.mw-lined,.mw-journal-text){-webkit-text-stroke:0.15px currentColor}
+
+.mw-account-identity{font-size:14px;font-weight:600;overflow-wrap:anywhere;margin:0 0 8px}.mw-account-dot{width:10px;height:10px;border-radius:50%;background:var(--text2);flex:none}.mw-account-card[data-cloud-connected="true"] .mw-account-dot{background:#86c99c}.mw-settings .mw-sync-time{font-size:11px}.mw-device-help{margin-top:18px;font-size:13px;line-height:1.65}.mw-device-help summary{cursor:pointer;padding:8px 0;color:var(--accent)}.mw-device-help ol{padding-left:20px;margin:8px 0 14px}.mw-device-help li{margin:0 0 10px}.mw-device-help a{color:var(--accent);overflow-wrap:anywhere}.mw-settings .mw-preview-account{margin:14px 0 0}
