@@ -15,7 +15,7 @@ window.MyWalkCloud = function(adapter) {
   const configured=()=>!!(cfg.url&&cfg.publishableKey);
   function changed(){ clearTimeout(timer); timer=setTimeout(sync,1200); }
   function flushRefresh(){
-    if(refreshPending&&!document.querySelector("textarea:focus,input:focus,.modal")){refreshPending=false;adapter.refresh();}
+    if(refreshPending&&(!adapter.canRefresh||adapter.canRefresh())&&!document.querySelector("textarea:focus,input:focus,select:focus,[contenteditable]:focus,.modal")){refreshPending=false;adapter.refresh();}
   }
   function apply(data){
     if(MyWalkMerge.equal(snapshot(),data)) return;

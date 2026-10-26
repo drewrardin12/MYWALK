@@ -4,20 +4,20 @@ const fs=require('node:fs');
 const vm=require('node:vm');
 const merge=fs.readFileSync('sync-merge.js','utf8');
 const code=fs.readFileSync('cloud-sync.js','utf8');
-function setup({local,remote,base,offline=false,race=false,accountSetup=false}){
+function setup({local,remote,base,offline=false,race=false,accountSetup=false,canRefresh=()=>true}){
   const storage=new Map(base?[['mywalk_cloud_v1',JSON.stringify({owner:'one',base})]]:[]);
-  let writes=0, revision=remote?1:0, value=local; const panels=[];
+  let writes=0, revision=remote?1:0, value=local; const panels=[]; let refreshes=0; const intervals=[],listeners={};
   const context={console,JSON,Set,Blob,URL,navigator:{onLine:!offline},location:{search:accountSetup?'?account=setup':'',reload(){}},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
-    document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,querySelectorAll:()=>[],addEventListener(){}},
-    setTimeout:()=>1,clearTimeout(){},setInterval(){},addEventListener(){},
+    document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,querySelectorAll:()=>[],addEventListener:(name,fn)=>listeners[name]=fn},
+    setTimeout:()=>1,clearTimeout(){},setInterval:fn=>intervals.push(fn),addEventListener(){},
     MYWALK_SYNC_CONFIG:{url:'https://test.supabase.co',publishableKey:'public'},
     supabase:{createClient:()=>({auth:{onAuthStateChange(){},getSession:async()=>({data:{session:{user:{id:'one'}}}})},
       from:()=>({select:()=>({eq:()=>({maybeSingle:async()=>({data:remote?{data:remote,revision}:null})})})}),
       rpc:async(name,args)=>{writes++;if(race&&writes===1){remote={...remote,other:'new remote edit'};revision++;return {data:null};}assert.equal(args.expected_revision,revision);remote=args.new_data;return {data:++revision};}})} };
   context.window=context;vm.createContext(context);vm.runInContext(merge,context);vm.runInContext(code,context);
-  const cloud=context.MyWalkCloud({snapshot:()=>value,apply:d=>value=d,refresh(){},escape:x=>x,modal:html=>{panels.push(html);return {dataset:{},isConnected:true,remove(){this.isConnected=false;}};}});
-  return {cloud,storage,panels,state:()=>({writes,remote,value})};
+  const cloud=context.MyWalkCloud({snapshot:()=>value,apply:d=>value=d,canRefresh,refresh(){refreshes++;},escape:x=>x,modal:html=>{panels.push(html);return {dataset:{},isConnected:true,remove(){this.isConnected=false;}};}});
+  return {cloud,storage,panels,tick:()=>intervals[0](),click:()=>listeners.click(),state:()=>({writes,remote,value,refreshes})};
 }
 test('different reading days merge without dropping either',()=>{
   const c={};vm.createContext(c);vm.runInContext(merge,c);
@@ -65,3 +65,29 @@ test('new plan notes and separate optional checks merge without losing legacy da
 test('account summary distinguishes signed out from a completed sync',async()=>{const s=setup({local:{notes:[]}});assert.equal(s.cloud.getAccount().signedIn,false);assert.equal(s.cloud.getAccount().lastSynced,null);await s.cloud.start();assert.equal(s.cloud.getAccount().signedIn,true);assert.equal(s.cloud.getAccount().status,'All changes synced.');assert.ok(Date.parse(s.cloud.getAccount().lastSynced));});
 test('offline sign-in never claims a successful sync',async()=>{const s=setup({local:{notes:[]},offline:true});await s.cloud.start();assert.equal(s.cloud.getAccount().signedIn,true);assert.equal(s.cloud.getAccount().lastSynced,null);assert.match(s.cloud.getAccount().status,/reconnect/);});
 test('account summary surfaces conflicting devices without replacing data',async()=>{const s=setup({local:{notes:['phone']},remote:{notes:['ipad']}});await s.cloud.start();assert.equal(s.cloud.getAccount().needsReview,true);assert.equal(s.state().writes,0);assert.deepEqual(s.state().value,{notes:['phone']});});
+
+test('remote sync preserves active prayer UI while retaining new local prayer marks',async()=>{
+ let active=true;
+ const base={prayerChecks:{},other:'old'};
+ const local={prayerChecks:{Monday:['card-2']},other:'old'};
+ const remote={prayerChecks:{},other:'updated on iPad'};
+ const s=setup({base,local,remote,canRefresh:()=>!active});
+ await s.cloud.start();
+ assert.equal(s.state().refreshes,0);
+ assert.deepEqual(s.state().remote.prayerChecks.Monday,['card-2']);
+ assert.equal(s.state().value.other,'updated on iPad');
+ active=false;await s.tick();assert.equal(s.state().refreshes,1);
+ await s.tick();assert.equal(s.state().refreshes,1);
+});
+test('unchanged sync does not redraw prayer cards',async()=>{
+ const data={prayerChecks:{Monday:['one']}};
+ const s=setup({base:data,local:data,remote:data});await s.cloud.start();await s.tick();
+ assert.equal(s.state().refreshes,0);assert.equal(s.state().writes,0);
+});
+test('returning to Today preserves current prayer card',()=>{
+ const source=fs.readFileSync('index.html','utf8');
+ const fn=source.match(/function setPrayerView\(v\)\{[^\n]+/)[0];
+ const context={prayFocusOpen:false,prayerView:'overview',flashPos:4,renderPrayer(){},navRecord(){}};
+ vm.createContext(context);vm.runInContext(fn,context);context.setPrayerView('today');
+ assert.equal(context.flashPos,4);assert.equal(context.prayerView,'today');
+});
