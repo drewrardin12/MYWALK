@@ -750,7 +750,7 @@ body.wing-home .homehead{margin-bottom:6px}
 <script src="sync-config.js?v=2"></script>
 <script src="vendor/supabase.js"></script>
 <script src="sync-merge.js?v=1"></script>
-<script src="cloud-sync.js?v=9"></script>
+<script src="cloud-sync.js?v=10"></script>
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
@@ -2042,7 +2042,7 @@ function addSermon(){
 /* ---------- PRAYER ---------- */
 let flashPos=0, prayerView='today';
 let prayEnterDir=0, prayFocusOpen=false, prayDragMoved=false;
-function setPrayerView(v){ if(prayFocusOpen){ prayFocusOpen=false; const o=document.getElementById('prayfocus'); if(o) o.remove(); } prayerView=v; if(v==='today') flashPos=0; renderPrayer(); navRecord(); }
+function setPrayerView(v){ if(prayFocusOpen){ prayFocusOpen=false; const o=document.getElementById('prayfocus'); if(o) o.remove(); } prayerView=v; renderPrayer(); navRecord(); }
 function renderPrayer(sub){
   if(sub) prayerView=sub;
   h(`
@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=98').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=99').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3398,7 +3398,7 @@ function showUpdateBanner(reg){
     if(w){ w.postMessage('skipWaiting'); } else { location.reload(); }
   };
 }
-window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},refresh:()=>navApply(navDesc()),modal,escape:esc});
+window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},canRefresh:()=>WING!=='prayer'&&!document.getElementById('prayfocus'),refresh:()=>navApply(navDesc()),modal,escape:esc});
 </script>
 <script src="sheet-gesture.js?v=1"></script>
 <script src="walk-model.js?v=5"></script>
