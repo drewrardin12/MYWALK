@@ -98,3 +98,14 @@ test('old devices are normalized before merging the fresh-start schedule',async(
  const old={reads:{1:true},notes:[],walkV2:{days:{'2026-01-02':{reads:{old:{done:true}},notes:{0:{html:'Keep my reflection'}},onTime:true}},notes:{general:'Existing notebook'},optional:{old:true}}};
  const c=setup({local:normalize(old),remote:old,base:old,normalize});await c.cloud.start();const result=c.state();assert.equal(c.panels.length,0);assert.deepEqual(result.value.reads,{});assert.deepEqual(result.value.walkV2.days['2026-01-02'].reads,{});assert.match(result.value.walkV2.notes.general,/Keep my reflection/);
 });
+test('another tab saves without reloading or dropping local progress',()=>{
+ const base={prayerChecks:{},notes:{}};
+ const s=setup({local:{prayerChecks:{today:['one']},notes:{}}});
+ s.storage({key:'state',oldValue:JSON.stringify(base),newValue:JSON.stringify({prayerChecks:{},notes:{fromOtherTab:'keep'}})});
+ assert.deepEqual(s.state().value.prayerChecks.today,['one']);assert.equal(s.state().value.notes.fromOtherTab,'keep');assert.equal(s.state().refreshes,1);
+});
+test('conflicting tab saves pause without overwriting local writing',()=>{
+ const s=setup({local:{notes:['current writing']}});
+ s.storage({key:'state',oldValue:JSON.stringify({notes:['before']}),newValue:JSON.stringify({notes:['other tab']})});
+ assert.deepEqual(s.state().value.notes,['current writing']);assert.equal(s.cloud.getAccount().needsReview,true);assert.match(s.cloud.getStatus(),/Another open tab/);
+});
