@@ -6,18 +6,18 @@ const merge=fs.readFileSync('sync-merge.js','utf8');
 const code=fs.readFileSync('cloud-sync.js','utf8');
 function setup({local,remote,base,offline=false,race=false,accountSetup=false,canRefresh=()=>true,normalize}){
   const storage=new Map(base?[['mywalk_cloud_v1',JSON.stringify({owner:'one',base})]]:[]);
-  let writes=0, revision=remote?1:0, value=local; const panels=[]; let refreshes=0; const intervals=[],listeners={};
+  let writes=0, revision=remote?1:0, value=local; const panels=[]; let refreshes=0; const intervals=[],listeners={},windowListeners={};
   const context={console,JSON,Set,Blob,URL,navigator:{onLine:!offline},location:{search:accountSetup?'?account=setup':'',reload(){}},
     localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},
     document:{visibilityState:'visible',getElementById:()=>null,querySelector:()=>null,querySelectorAll:()=>[],addEventListener:(name,fn)=>listeners[name]=fn},
-    setTimeout:()=>1,clearTimeout(){},setInterval:fn=>intervals.push(fn),addEventListener(){},
+    setTimeout:()=>1,clearTimeout(){},setInterval:fn=>intervals.push(fn),addEventListener:(name,fn)=>windowListeners[name]=fn,
     MYWALK_SYNC_CONFIG:{url:'https://test.supabase.co',publishableKey:'public'},
     supabase:{createClient:()=>({auth:{onAuthStateChange(){},getSession:async()=>({data:{session:{user:{id:'one'}}}})},
       from:()=>({select:()=>({eq:()=>({maybeSingle:async()=>({data:remote?{data:remote,revision}:null})})})}),
       rpc:async(name,args)=>{writes++;if(race&&writes===1){remote={...remote,other:'new remote edit'};revision++;return {data:null};}assert.equal(args.expected_revision,revision);remote=args.new_data;return {data:++revision};}})} };
   context.window=context;vm.createContext(context);vm.runInContext(merge,context);vm.runInContext(code,context);
-  const cloud=context.MyWalkCloud({snapshot:()=>value,normalize,apply:d=>value=d,canRefresh,refresh(){refreshes++;},escape:x=>x,modal:html=>{panels.push(html);return {dataset:{},isConnected:true,remove(){this.isConnected=false;}};}});
-  return {cloud,storage,panels,tick:()=>intervals[0](),click:()=>listeners.click(),state:()=>({writes,remote,value,refreshes})};
+  const cloud=context.MyWalkCloud({storageKey:'state',snapshot:()=>value,normalize,apply:d=>value=d,canRefresh,refresh(){refreshes++;},escape:x=>x,modal:html=>{panels.push(html);return {dataset:{},isConnected:true,remove(){this.isConnected=false;}};}});
+  return {cloud,storage,panels,storage:windowListeners.storage,tick:()=>intervals[0](),click:()=>listeners.click(),state:()=>({writes,remote,value,refreshes})};
 }
 test('different reading days merge without dropping either',()=>{
   const c={};vm.createContext(c);vm.runInContext(merge,c);

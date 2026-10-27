@@ -72,8 +72,9 @@ window.MyWalkCloud = function(adapter) {
     if(!conflict||busy) return;
     // Retain a local recovery copy BEFORE any explicit replacement.
     localStorage.setItem('mywalk_before_sync_choice',JSON.stringify({local:snapshot(),cloud:conflict.data,saved:new Date().toISOString()}));
-    if(useCloud) apply(conflict.data);
-    meta.base=conflict.data; persist(); conflict=null;
+    if(conflict.source==='tab'){adapter.apply(useCloud?conflict.data:snapshot());refreshPending=true;flushRefresh();}
+    else {if(useCloud) apply(conflict.data);meta.base=conflict.data;persist();}
+    conflict=null;
     await sync(); panel();
   }
   function panel(){
@@ -86,6 +87,11 @@ window.MyWalkCloud = function(adapter) {
       '<label class="small" for="cloud-email">Email address</label><input id="cloud-email" type="email" autocomplete="email" required class="input" placeholder="you@example.com"><label class="small" for="cloud-password">MYWALK sign-in password (if already set)</label><input id="cloud-password" type="password" autocomplete="current-password" class="input"><div class="btnrow"><button class="btn solid" id="cloud-password-login">Sign in with password</button><button class="btn ghost" id="cloud-login">Email me a sign-in link</button></div><p class="tiny">Open the link on this device, in the browser where you use MYWALK.</p>'}
       ${conflict?'<p class="small">This device and the cloud have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.</p><div class="btnrow"><button class="btn ghost" id="cloud-device-copy">Download this device’s copy</button><button class="btn ghost" id="cloud-cloud-copy">Download cloud copy</button><button class="btn solid" id="cloud-use">Use cloud version</button><button class="btn ghost" id="cloud-keep">Use this device’s version</button></div>':''}
       <p class="tiny">Edits save offline and sync when you reconnect. Sign in with the same email on your phone, iPad and laptop.</p>`);
+    if(conflict?.source==='tab'){
+      panelElement.querySelectorAll?.('p').forEach(p=>{if(p.textContent.includes('This device and the cloud have different entries.'))p.textContent='This tab and another open tab have different entries. Download both copies before choosing which complete version to keep. A recovery copy is also saved on this device.';});
+      panelElement.querySelector?.('#cloud-use')?.replaceChildren(document.createTextNode('Use other tab’s version'));
+      panelElement.querySelector?.('#cloud-cloud-copy')?.replaceChildren(document.createTextNode('Download other tab’s copy'));
+    }
     panelElement.dataset.cloudPanel='true';
     notify(status);
     const bind=(id,fn)=>{const el=document.getElementById(id);if(el) el.onclick=async()=>{el.disabled=true;try{await fn();}catch(e){notify(e.message);}finally{el.disabled=false;}};};
@@ -140,7 +146,16 @@ window.MyWalkCloud = function(adapter) {
   document.addEventListener('click',()=>setTimeout(flushRefresh,0));
   window.addEventListener('online',sync);
   document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')sync();});
-  // A stale browser tab must reload local changes before it can save.
-  window.addEventListener('storage',event=>{if(event.key===adapter.storageKey&&event.newValue) location.reload();});
+  // Reconcile another tab's saves without navigating away from active work.
+  window.addEventListener('storage',event=>{
+    if(event.key!==adapter.storageKey||!event.newValue)return;
+    try{
+      const local=snapshot(),pick=value=>Object.fromEntries(Object.keys(local).filter(k=>Object.prototype.hasOwnProperty.call(value,k)).map(k=>[k,value[k]]));
+      const incoming=pick(normalize(JSON.parse(event.newValue))),previous=event.oldValue?pick(normalize(JSON.parse(event.oldValue))):{};
+      const result=MyWalkMerge.merge(previous,local,incoming);
+      if(result.conflicts.length){conflict={data:incoming,source:'tab'};notify('Another open tab has conflicting changes. Open Sync to review both copies.');return;}
+      apply(result.data);changed();
+    }catch(e){notify('Could not read changes from another tab. Your current work remains open.');}
+  });
   return {start,changed,panel,getStatus:()=>status,getAccount:()=>({signedIn:!!user,email:user?.email||'',status,lastSynced:meta.lastSynced||null,needsReview:!!conflict})};
 };
