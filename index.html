@@ -749,8 +749,9 @@ body.wing-home .homehead{margin-bottom:6px}
 <nav id="nav"></nav>
 <script src="sync-config.js?v=2"></script>
 <script src="vendor/supabase.js"></script>
-<script src="sync-merge.js?v=1"></script>
-<script src="cloud-sync.js?v=11"></script>
+<script src="sync-merge.js?v=2"></script>
+<script src="state-sync-ui.js?v=1"></script>
+<script src="cloud-sync.js?v=12"></script>
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
@@ -1452,7 +1453,7 @@ document.getElementById('nav').addEventListener('click',e=>{
   const ROOT={devo:'today',prayer:'today',study:'home'};
   go(w, ROOT[w]);
 });
-function h(html){ APP.innerHTML='<div class="view">'+html+'</div>'; }
+function h(html){ document.getElementById('mw-sync-update')?.remove(); APP.innerHTML='<div class="view">'+html+'</div>'; }
 function el(id){ return document.getElementById(id); }
 function modal(html){
   const m=document.createElement('div'); m.className='modal';
@@ -3374,7 +3375,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=100').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=101').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3386,7 +3387,7 @@ if('serviceWorker' in navigator && location.protocol.startsWith('http')){
     document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') reg.update().catch(()=>{}); });
   }).catch(()=>{});
   let reloaded=false;
-  navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(reloaded) return; reloaded=true; location.reload(); });
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{ if(reloaded) return; reloaded=true; showUpdateBanner({}); });
 }
 function showUpdateBanner(reg){
   if(document.getElementById('updbar')) return;
@@ -3398,7 +3399,7 @@ function showUpdateBanner(reg){
     if(w){ w.postMessage('skipWaiting'); } else { location.reload(); }
   };
 }
-window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,normalize:data=>mwNormalizePlanState(data),apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},canRefresh:()=>WING!=='prayer'&&!document.getElementById('prayfocus'),refresh:()=>navApply(navDesc()),modal,escape:esc});
+window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,normalize:data=>mwNormalizePlanState(data),apply:data=>{MyWalkState.apply(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},canRefresh:()=>WING!=='prayer'&&!document.getElementById('prayfocus'),refresh:()=>mwOfferSyncedRefresh(),modal,escape:esc});
 </script>
 <script src="sheet-gesture.js?v=1"></script>
 <script src="walk-model.js?v=5"></script>
