@@ -22,11 +22,11 @@ for d in schedule:
   n=0
   for chunk in d[track]:
    assert chunk['id'] not in ids;ids.add(chunk['id'])
-   verses=expand(chunk['ref']);assert len(verses)==chunk['n'];n+=len(verses);coverage.update(verses)
+   verses=expand(chunk['ref']);assert len(verses)==chunk['n'];n+=len(verses);assert not coverage.intersection(verses),chunk['ref'];coverage.update(verses)
    assert 1<=len(re.findall(r'[.!?](?:\s|$)',chunk['what_to_expect']))<=3
    last=verses[-1]
    if track=='story' and last[2]<len(bible[last[0]][last[1]-1]):
-    b,c,v=last;boundaries.append({'day':d['day'],'ref':chunk['ref'],'ending':bible[b][c-1][v-1],'next':bible[b][c-1][v]})
+    b,c,v=last;boundaries.append({'day':d['day'],'ref':chunk['ref'],'ending':bible[b][c-1][v-1],'next':bible[b][c-1][v],'review':'Ends at the retained content boundary of a catalogued printed heading section.'})
   assert n==d[track+'_verses'] and n>=20
  assert d['total']==d['story_verses']+d['nonstory_verses']<=110
 optional=[]

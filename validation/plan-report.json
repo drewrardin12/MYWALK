@@ -1,10 +1,10 @@
 {
   "days": 350,
-  "assigned_verses": 32026,
-  "unique_coverage": 26388,
-  "optional_verses": 4714,
-  "optional_passages": 151,
-  "min_daily": 57,
-  "max_daily": 110,
-  "within_chapter_story_endings": 190
+  "assigned_verses": 26432,
+  "unique_coverage": 26432,
+  "optional_verses": 4670,
+  "optional_passages": 148,
+  "min_daily": 60,
+  "max_daily": 87,
+  "within_chapter_story_endings": 251
 }

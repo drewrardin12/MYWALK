@@ -740,7 +740,7 @@ body.wing-home .homehead{margin-bottom:6px}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 }
 </style>
-<link rel="stylesheet" href="overhaul.css?v=29">
+<link rel="stylesheet" href="overhaul.css?v=30">
 </head>
 <body>
 <div id="heroFixed"></div>
@@ -750,7 +750,7 @@ body.wing-home .homehead{margin-bottom:6px}
 <script src="sync-config.js?v=2"></script>
 <script src="vendor/supabase.js"></script>
 <script src="sync-merge.js?v=1"></script>
-<script src="cloud-sync.js?v=10"></script>
+<script src="cloud-sync.js?v=11"></script>
 <script>
 /* ============ MY WALK — single-file app ============ */
 'use strict';
@@ -3374,7 +3374,7 @@ function pickNave(i){
 
 /* ---------- service worker + boot ---------- */
 if('serviceWorker' in navigator && location.protocol.startsWith('http')){
-  navigator.serviceWorker.register('sw.js?v=99').then(reg=>{
+  navigator.serviceWorker.register('sw.js?v=100').then(reg=>{
     // Tell the user when a newer build is ready — one tap, no deleting the app.
     function watch(w){ if(!w) return;
       w.addEventListener('statechange',()=>{ if(w.state==='installed' && navigator.serviceWorker.controller) showUpdateBanner(reg); }); }
@@ -3398,11 +3398,12 @@ function showUpdateBanner(reg){
     if(w){ w.postMessage('skipWaiting'); } else { location.reload(); }
   };
 }
-window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},canRefresh:()=>WING!=='prayer'&&!document.getElementById('prayfocus'),refresh:()=>navApply(navDesc()),modal,escape:esc});
+window.mywalkCloud=MyWalkCloud({storageKey:LS,snapshot:()=>backupSnapshot().data,normalize:data=>mwNormalizePlanState(data),apply:data=>{Object.assign(S,data);localStorage.setItem(LS,JSON.stringify(S));applyTheme();},canRefresh:()=>WING!=='prayer'&&!document.getElementById('prayfocus'),refresh:()=>navApply(navDesc()),modal,escape:esc});
 </script>
 <script src="sheet-gesture.js?v=1"></script>
 <script src="walk-model.js?v=5"></script>
-<script src="overhaul.js?v=22"></script>
+<script src="reading-plan-migration.js?v=1"></script>
+<script src="overhaul.js?v=23"></script>
 <script src="note-actions.js?v=1"></script>
 <script>
 boot().then(()=>window.mywalkCloud.start()).catch(e=>{ APP.innerHTML='<div class="loading">Could not load data files.<br>'+esc(e.message)+'</div>'; });

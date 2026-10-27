@@ -135,3 +135,7 @@ body:not(.wing-study) :is(.mw-scene,.mw-water,.mw-reading-header){margin-left:ca
 
 @font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Montserrat';src:url('assets/fonts/montserrat-italic.ttf') format('truetype');font-weight:100 900;font-style:italic;font-display:swap}
+
+.mw-card-title{align-items:flex-start;gap:14px}.mw-card-title h3{margin:0;line-height:1.25;overflow-wrap:anywhere}.mw-heading-toggle{flex:0 0 44px;width:44px;height:44px;border:1px solid var(--border,#ffffff30);border-radius:50%;background:transparent;color:inherit;display:grid;place-items:center;cursor:pointer}.mw-heading-toggle[aria-expanded="true"]{background:#ffffff15}.mw-heading-toggle:focus-visible{outline:2px solid currentColor;outline-offset:3px}.mw-card-reference{margin-top:12px}.mw-heading-list[hidden]{display:none}.mw-heading-list{margin:20px 0;padding:18px 0;border-top:1px solid #ffffff25;border-bottom:1px solid #ffffff25}.mw-heading-item{display:grid;gap:5px;padding:10px 0}.mw-heading-item strong{font-size:15px;font-weight:500}.mw-passage .mw-row:last-child{gap:12px;flex-wrap:wrap}
+
+.mw-reading-group .mw-card-title h3{font-size:26px;font-family:var(--serif,Georgia,serif);font-weight:400}.mw-reading-group>.mw-row{padding-bottom:14px}.mw-reading-group .mw-passage{padding-top:18px}

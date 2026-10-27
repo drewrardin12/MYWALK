@@ -9,7 +9,8 @@ window.MyWalkCloud = function(adapter) {
   if(cfg.url&&cfg.publishableKey&&window.supabase){
     try{client=window.supabase.createClient(cfg.url,cfg.publishableKey);}catch(e){status='Sync unavailable: '+e.message;}
   }
-  const snapshot=()=>JSON.parse(JSON.stringify(adapter.snapshot()));
+  const normalize=data=>adapter.normalize?adapter.normalize(data):data;
+  const snapshot=()=>normalize(JSON.parse(JSON.stringify(adapter.snapshot())));
   const persist=()=>localStorage.setItem(key,JSON.stringify(meta));
   const notify=message=>{ status=message; const el=document.getElementById('cloud-status'); if(el) el.textContent=message; document.querySelectorAll('[data-cloud-status]').forEach(el=>el.textContent=message); document.querySelectorAll('[data-cloud-identity]').forEach(el=>el.textContent=user?'Signed in as '+(user.email||'your account'):'Not signed in on this device'); document.querySelectorAll('[data-cloud-connected]').forEach(el=>el.dataset.cloudConnected=String(!!user)); document.querySelectorAll('[data-cloud-last-sync]').forEach(el=>el.textContent=meta.lastSynced?'Last synced '+new Date(meta.lastSynced).toLocaleString():'No successful sync on this device yet.'); };
   const configured=()=>!!(cfg.url&&cfg.publishableKey);
@@ -33,6 +34,8 @@ window.MyWalkCloud = function(adapter) {
         const {data:remote,error}=await client.from('mywalk_sync').select('data,revision').eq('user_id',user.id).maybeSingle();
         if(error) throw error;
         if(!user) return;
+        if(remote)remote.data=normalize(remote.data);
+        if(meta.base)meta.base=normalize(meta.base);
         const local=snapshot();
         // First sign-in never guesses which pre-existing device is authoritative.
         const result=remote ? (meta.base ? MyWalkMerge.merge(meta.base,local,remote.data) :
