@@ -21,8 +21,6 @@ const mwReviewBeforeActions=mwReviewNotes;
 mwReviewNotes=function(){mwReviewBeforeActions();const date=mwDate;el('app').querySelectorAll('.mw-entry').forEach((entry,i)=>mwNoteButton(entry,'Clear reflection',()=>mwClearReading(date,i,()=>mwReviewNotes())));mwNoteButton(el('app'),'Clear all notes for this day',()=>mwClearReading(date,undefined,()=>mwReadingJournal()));};
 const mwJournalBeforeActions=mwReadingJournal;
 mwReadingJournal=function(query=''){mwJournalBeforeActions(query);const dates=Object.keys(MW.ensure(S).days).filter(date=>{const d=MW.ensure(S).days[date];return Object.keys(d.notes||{}).length&&(date+' '+Object.values(d.notes).map(a=>mwPlain(a.html)).join(' ')).toLowerCase().includes(query.toLowerCase());}).sort().reverse();el('app').querySelectorAll('article.mw-entry').forEach((entry,i)=>{const date=dates[i];mwNoteButton(entry,'Edit entry',()=>mwOpenNotes(date));mwNoteButton(entry,'Delete entry',()=>mwClearReading(date,undefined,()=>mwReadingJournal(query)));});};
-const mwStandaloneBeforeActions=mwStandalone;
-mwStandalone=function(edit=false){mwStandaloneBeforeActions(edit);mwNoteButton(el('app'),'Clear entire note',()=>mwConfirmNote('Clear standalone note?','All writing in this note will be removed.',()=>{delete MW.ensure(S).notes.general;mwStandalone();}));};
 const mwStudyStepBeforeActions=mwStudyStep;
 mwStudyStep=function(edit=false){mwStudyStepBeforeActions(edit);const st=mwStudy(),i=currentStepIdx;mwNoteButton(el('app'),'Clear findings for this step',()=>mwConfirmNote('Clear this study step?','Its writing, Not applicable answer, and completion check will be removed.',()=>{delete st.steps[i];st.updated=new Date().toISOString();mwStudyStep(true);}));};
 const mwStudyJournalBeforeActions=mwStudyJournal;
