@@ -2,10 +2,15 @@
    Version comes from the registration URL (sw.js?v=N in index.html),
    so updates only ever require editing index.html. */
 const V='mywalk-'+(new URL(self.location).searchParams.get('v')||'1');
-const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=2','state-sync-ui.js?v=1','cloud-sync.js?v=12','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','overhaul.css?v=31','assets/fonts/rock-salt-original.ttf','assets/fonts/my-handwriting.ttf','assets/fonts/caligrapher.ttf','assets/fonts/montserrat.ttf','assets/fonts/montserrat-italic.ttf','sheet-gesture.js?v=1','walk-model.js?v=5','reading-plan-migration.js?v=1','overhaul.js?v=24','note-actions.js?v=2','notebook.js?v=1','data/schedule.json','data/optional-readings.json','data/bible-images.json','data/nature-scenes.json','data/home-scripture.json','data/legacy-plan.json','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
+const SHELL=['./','index.html','sync-config.js?v=2','sync-merge.js?v=2','state-sync-ui.js?v=1','cloud-sync.js?v=12','vendor/supabase.js','icon-180.png','icon-192.png','icon-512.png','icon-152.png','icon-167.png','icon-120.png','overhaul.css?v=31','assets/fonts/rock-salt-original.ttf','assets/fonts/my-handwriting.ttf','assets/fonts/caligrapher.ttf','assets/fonts/montserrat.ttf','assets/fonts/montserrat-italic.ttf','sheet-gesture.js?v=1','walk-model.js?v=5','reading-plan-migration.js?v=1','overhaul.js?v=25','note-actions.js?v=2','notebook.js?v=1','data/schedule.json','data/optional-readings.json','data/bible-images.json','data/nature-scenes.json','data/home-scripture.json','data/legacy-plan.json','data/plan.json','data/hymns.json','data/content.json','data/naves.json','data/kjv.json','data/bios.json','data/strongs.json'];
 
 self.addEventListener('install',e=>{
-  e.waitUntil(caches.open(V).then(c=>Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()));
+  e.waitUntil(caches.open(V).then(async c=>{
+    await Promise.all(SHELL.map(u=>c.add(u).catch(()=>{})));
+    // Cache every wallpaper for a complete rotation while offline.
+    const response=await c.match('data/nature-scenes.json');
+    if(response){const scenes=await response.json();await Promise.all(scenes.map(s=>c.add(s.image).catch(()=>{})));}
+  }).then(()=>self.skipWaiting()));
 });
 self.addEventListener('activate',e=>{
   e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));

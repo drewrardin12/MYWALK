@@ -30,7 +30,17 @@
     "scene": "Coastal Dusk"
   },
   {
-    "day": 4,
+    "key": "beach-blue-morning",
+    "image": "assets/nature/beach-blue-morning.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Beach Blue Morning",
+    "day": 4
+  },
+  {
+    "day": 5,
     "key": "alpine-meadow",
     "image": "assets/nature/alpine-meadow.webp",
     "bg": "#15251e",
@@ -40,7 +50,7 @@
     "scene": "Mountain meadow with wildflowers and distant slate peaks at sunrise"
   },
   {
-    "day": 5,
+    "day": 6,
     "key": "birch-grove",
     "image": "assets/nature/birch-grove.webp",
     "bg": "#182431",
@@ -50,7 +60,7 @@
     "scene": "Quiet birch grove, pale trunks and soft golden morning mist"
   },
   {
-    "day": 6,
+    "day": 7,
     "key": "forest-afternoon",
     "image": "assets/nature/forest-afternoon.webp",
     "bg": "#182830",
@@ -60,7 +70,17 @@
     "scene": "Deep green forest canopy and stream in calm afternoon light"
   },
   {
-    "day": 7,
+    "key": "midwest-green-fields",
+    "image": "assets/nature/midwest-green-fields.webp",
+    "bg": "#15251e",
+    "card": "#2b4336",
+    "accent": "#d8cc98",
+    "time": "dawn",
+    "scene": "Midwest Green Fields",
+    "day": 8
+  },
+  {
+    "day": 9,
     "key": "river-bend",
     "image": "assets/nature/river-bend.webp",
     "bg": "#182830",
@@ -70,7 +90,7 @@
     "scene": "Wide gentle river winding through wooded hills at dawn"
   },
   {
-    "day": 8,
+    "day": 10,
     "key": "misty-lake",
     "image": "assets/nature/misty-lake.webp",
     "bg": "#282322",
@@ -80,7 +100,7 @@
     "scene": "Still mountain lake with delicate mist and pale pink sunrise"
   },
   {
-    "day": 9,
+    "day": 11,
     "key": "alpine-noon",
     "image": "assets/nature/alpine-noon.webp",
     "bg": "#282322",
@@ -90,7 +110,17 @@
     "scene": "Clear alpine lake in restrained midday light with blue-gray peaks"
   },
   {
-    "day": 10,
+    "key": "beach-sea-oats",
+    "image": "assets/nature/beach-sea-oats.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "dawn",
+    "scene": "Beach Sea Oats",
+    "day": 12
+  },
+  {
+    "day": 13,
     "key": "coastal-morning",
     "image": "assets/nature/coastal-morning.webp",
     "bg": "#182830",
@@ -100,7 +130,7 @@
     "scene": "Rocky coastline with soft early morning light and calm sea"
   },
   {
-    "day": 11,
+    "day": 14,
     "key": "desert-dawn",
     "image": "assets/nature/desert-dawn.webp",
     "bg": "#20291f",
@@ -110,7 +140,7 @@
     "scene": "Unspoiled desert dunes with warm early sunlight and violet shadows"
   },
   {
-    "day": 12,
+    "day": 15,
     "key": "coastal-overcast",
     "image": "assets/nature/coastal-overcast.webp",
     "bg": "#15251e",
@@ -120,7 +150,17 @@
     "scene": "Atmospheric rocky shore and silvery sea under soft overcast sky"
   },
   {
-    "day": 13,
+    "key": "midwest-golden-corn",
+    "image": "assets/nature/midwest-golden-corn.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "dawn",
+    "scene": "Midwest Golden Corn",
+    "day": 16
+  },
+  {
+    "day": 17,
     "key": "snowy-morning",
     "image": "assets/nature/snowy-morning.webp",
     "bg": "#15251e",
@@ -130,7 +170,7 @@
     "scene": "Snow-covered pine forest with soft icy morning light"
   },
   {
-    "day": 14,
+    "day": 18,
     "key": "green-valley",
     "image": "assets/nature/green-valley.webp",
     "bg": "#15251e",
@@ -140,7 +180,7 @@
     "scene": "Lush rolling valley under a golden dawn sky"
   },
   {
-    "day": 15,
+    "day": 19,
     "key": "sunset-valley",
     "image": "assets/nature/sunset-valley.webp",
     "bg": "#242333",
@@ -150,7 +190,17 @@
     "scene": "Quiet valley with warm muted sunset and long natural shadows"
   },
   {
-    "day": 16,
+    "key": "beach-golden-tide",
+    "image": "assets/nature/beach-golden-tide.webp",
+    "bg": "#182431",
+    "card": "#2c4052",
+    "accent": "#edbd92",
+    "time": "dawn",
+    "scene": "Beach Golden Tide",
+    "day": 20
+  },
+  {
+    "day": 21,
     "key": "fern-woods",
     "image": "assets/nature/fern-woods.webp",
     "bg": "#20291f",
@@ -160,7 +210,7 @@
     "scene": "Forest floor with ferns, soft morning rays and a small clear creek"
   },
   {
-    "day": 17,
+    "day": 22,
     "key": "waterfall",
     "image": "assets/nature/waterfall.webp",
     "bg": "#182830",
@@ -170,7 +220,7 @@
     "scene": "Natural waterfall in a mossy woodland in soft morning light"
   },
   {
-    "day": 18,
+    "day": 23,
     "key": "rainy-woods",
     "image": "assets/nature/rainy-woods.webp",
     "bg": "#2b242c",
@@ -180,7 +230,17 @@
     "scene": "Peaceful rain-damp woods with rich green foliage and gray sky"
   },
   {
-    "day": 19,
+    "key": "midwest-soybean-dawn",
+    "image": "assets/nature/midwest-soybean-dawn.webp",
+    "bg": "#20291f",
+    "card": "#374633",
+    "accent": "#d5d2a4",
+    "time": "dawn",
+    "scene": "Midwest Soybean Dawn",
+    "day": 24
+  },
+  {
+    "day": 25,
     "key": "marsh-dawn",
     "image": "assets/nature/marsh-dawn.webp",
     "bg": "#282322",
@@ -190,7 +250,7 @@
     "scene": "Peaceful marsh grasses and open water under a pale dawn sky"
   },
   {
-    "day": 20,
+    "day": 26,
     "key": "tropical-morning",
     "image": "assets/nature/tropical-morning.webp",
     "bg": "#2b242c",
@@ -200,7 +260,7 @@
     "scene": "Quiet tropical shore with natural palms and pale morning sky"
   },
   {
-    "day": 21,
+    "day": 27,
     "key": "lavender-mountains",
     "image": "assets/nature/lavender-mountains.webp",
     "bg": "#182830",
@@ -210,7 +270,17 @@
     "scene": "Remote mountain ridges under a muted lavender twilight sky"
   },
   {
-    "day": 22,
+    "key": "beach-overcast",
+    "image": "assets/nature/beach-overcast.webp",
+    "bg": "#182830",
+    "card": "#2e4854",
+    "accent": "#b5d7dc",
+    "time": "day",
+    "scene": "Beach Overcast",
+    "day": 28
+  },
+  {
+    "day": 29,
     "key": "autumn-morning",
     "image": "assets/nature/autumn-morning.webp",
     "bg": "#182830",
@@ -220,7 +290,7 @@
     "scene": "Autumn woods beside still water, early morning amber light"
   },
   {
-    "day": 23,
+    "day": 30,
     "key": "highland-dawn",
     "image": "assets/nature/highland-dawn.webp",
     "bg": "#182431",
@@ -230,7 +300,7 @@
     "scene": "Remote rugged highlands, low morning clouds and restrained rose light"
   },
   {
-    "day": 24,
+    "day": 31,
     "key": "river-evening",
     "image": "assets/nature/river-evening.webp",
     "bg": "#2b242c",
@@ -240,7 +310,17 @@
     "scene": "Broad calm river and woodland in copper evening light"
   },
   {
-    "day": 25,
+    "key": "midwest-wheat-breeze",
+    "image": "assets/nature/midwest-wheat-breeze.webp",
+    "bg": "#282322",
+    "card": "#443a35",
+    "accent": "#d9b393",
+    "time": "day",
+    "scene": "Midwest Wheat Breeze",
+    "day": 32
+  },
+  {
+    "day": 33,
     "key": "ocean-sunrise",
     "image": "assets/nature/ocean-sunrise.webp",
     "bg": "#20291f",
@@ -250,7 +330,7 @@
     "scene": "Calm open ocean seen from natural rocky shore at sunrise"
   },
   {
-    "day": 26,
+    "day": 34,
     "key": "blue-mountain",
     "image": "assets/nature/blue-mountain.webp",
     "bg": "#282322",
@@ -260,7 +340,7 @@
     "scene": "Layered blue mountain ridges in clear early morning light"
   },
   {
-    "day": 27,
+    "day": 35,
     "key": "winter-dusk",
     "image": "assets/nature/winter-dusk.webp",
     "bg": "#182431",
@@ -270,7 +350,17 @@
     "scene": "Snowy woodland at dusk with blue and lilac light"
   },
   {
-    "day": 28,
+    "key": "beach-dusk",
+    "image": "assets/nature/beach-dusk.webp",
+    "bg": "#242333",
+    "card": "#3c3b51",
+    "accent": "#d2badb",
+    "time": "dusk",
+    "scene": "Beach Dusk",
+    "day": 36
+  },
+  {
+    "day": 37,
     "key": "prairie-dawn",
     "image": "assets/nature/prairie-dawn.webp",
     "bg": "#182830",
@@ -280,7 +370,7 @@
     "scene": "Natural prairie grasses under a broad early morning sky"
   },
   {
-    "day": 29,
+    "day": 38,
     "key": "canyon-morning",
     "image": "assets/nature/canyon-morning.webp",
     "bg": "#15251e",
@@ -290,7 +380,7 @@
     "scene": "Sandstone canyon with soft dawn light entering the valley"
   },
   {
-    "day": 30,
+    "day": 39,
     "key": "still-lake-evening",
     "image": "assets/nature/still-lake-evening.webp",
     "bg": "#15251e",
@@ -300,7 +390,17 @@
     "scene": "Still lake reflecting a softly colored peach evening sky"
   },
   {
-    "day": 31,
+    "key": "midwest-country-evening",
+    "image": "assets/nature/midwest-country-evening.webp",
+    "bg": "#20291f",
+    "card": "#374633",
+    "accent": "#d5d2a4",
+    "time": "dusk",
+    "scene": "Midwest Country Evening",
+    "day": 40
+  },
+  {
+    "day": 41,
     "key": "glacial-morning",
     "image": "assets/nature/glacial-morning.webp",
     "bg": "#182431",
